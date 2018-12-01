@@ -101,7 +101,7 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		  });
 
 		  google.maps.event.addListener(marker, 'dblclick', function() {
-		    window.location.replace("http://localhost:8000/profile/" + id);
+		    window.location.replace("http://107.22.157.123/profile/" + id);
 		  });
 		  // Event that closes the Info Window with a click on the map
 		  google.maps.event.addListener(map, 'click', function() {
