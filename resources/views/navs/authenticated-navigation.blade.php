@@ -124,10 +124,10 @@
 	<div class="row">
 		<div class="col s12 m12 offset-l4 l4">
 			<div class="row">
-				<div class="col s4 m4 l0">
+				<div class="col s3 m3 8">
 					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 				</div>
-				<div class="col s4 m4 12">
+				<div class="col s3 m3 8">
 					<a href="{{ action('EventController@getRequests') }}"
 					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
 					 	REQUESTS
@@ -140,8 +140,11 @@
 					 	@endif
 					 </a>
 				</div>
-				<div class="col s4 m4 l0">
-					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>VIEW ON MAP</a>
+				<div class="col s3 m3 8">
+					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>VENUE ON MAP</a>
+				</div>
+				<div class="col s3 m3 8">
+					<a href="{{ action('MapController@store') }}" @if(Request::is('view-store-map/*')) class="active" @endif>STORE ON MAP</a>
 				</div>
 			</div>
 		</div>

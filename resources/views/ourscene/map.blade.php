@@ -6,14 +6,8 @@
 
 @section('my-events-content')
 
-  <div id="map-canvas"/>
-<!--   @if (count($all) > 0)
-  	@if (isset($all))
-  		@foreach ($all as $venue)
-  		@endforeach
-  	@endif
-  @endif -->
 
+    <div id="map-canvas"/>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATt8YZNu3NjbG6dvkfF5M2KN73B9UxS6Q&libraries=places&**callback=initMap**" async defer></script>
 @stop
 

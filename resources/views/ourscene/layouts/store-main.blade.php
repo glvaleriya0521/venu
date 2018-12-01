@@ -70,7 +70,9 @@
 	<!-- Ourscene styles -->
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-	<link href="{{ asset('css/custome.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('store/store-locator.css') }}">
+	
+
 </head>
 <body>
 

@@ -44,6 +44,14 @@ public function index()
 		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
     }
 
+public function store()
+    {
+
+		return View::make('ourscene.store-map');
+		// return View::make('ourscene.store.store-html');
+
+    }
+
 public function directionTo($city)
     {
 

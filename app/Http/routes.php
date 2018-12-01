@@ -93,6 +93,7 @@ Route::get('/my-events/calendar', 'EventController@getMyEventsCalendar');
 // Google Map
 Route::get('/view-map/index', 'MapController@index');
 Route::get('/view-map/directionTo/{city}', 'MapController@directionTo');
+Route::get('/view-store-map/nearby', 'MapController@store');
 
 // Fetch events
 Route::post('/event/ajax-fetch-private-events-by-user-id', 'EventController@postAjaxFetchPrivateEventsByUserId');
