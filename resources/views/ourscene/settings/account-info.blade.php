@@ -88,7 +88,7 @@
 		<div class="row">
 			<div class="col s12 m10 l8">
 				<p>Before you deactivate your account, you should know:</p>
-				<p>Once deactivated, you will not be able to access any of the components or features of the OurScene application. Any existing events, promotions, messages, and other OurScene components will be inaccessible.</p>
+				<p>Once deactivated, you will not be able to access any of the components or features of the VenU application. Any existing events, promotions, messages, and other OurScene components will be inaccessible.</p>
  				<p>As of right now, deactivation is not permanent. We will be implementing a permanent deletion solution in the near future. Please stay tuned for upcoming releases.</p>
  				<p>We do not control content indexed by search engines.</p>
  				<p>You can reactivate your account at any time. To reactivate, simply log in to your account.</p>

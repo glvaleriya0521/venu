@@ -8,9 +8,9 @@
 				How much does it cost?
 			</span>
 			<p class="col s12 m12 l12">
-				$1 per show booked on OurScene. 
+				$1 per show booked on VenU. 
 				That’s it! 
-				Our goal at OurScene is to help artists and venues create more shows
+				Our goal at VenU is to help artists and venues create more shows
 				and ultimately to get more people to come out and enjoy them. 
 				Your dollar helps us do it!
 			</p>

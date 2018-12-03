@@ -196,7 +196,6 @@ class PaypalController extends Controller {
 			// Get secure token for transparent redirect
 			$user_card_info = PaypalHelper::getUserVault($token,$card_id);
 		}
-
 		return View::make('ourscene.pay-ourscene', compact('user_card_info'));
 	}
 

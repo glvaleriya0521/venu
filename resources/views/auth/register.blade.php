@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>OurScene | Login</title>
+	<title>VenU | Login</title>
 
 	<!-- Bootstrap -->
 	<link href="{{ asset('bootstrap-3.3.5/css/bootstrap.min.css') }}" rel="stylesheet">

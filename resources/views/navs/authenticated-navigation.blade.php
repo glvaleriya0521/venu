@@ -3,7 +3,7 @@
 
 		<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
 			<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
-			<b>OurScene</b>
+			<b>VenU</b>
 		</a>
 		
 		<!-- Top navigation search bar -->
@@ -60,7 +60,7 @@
 			<li>
 				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
 					<img src="{{asset('images/icons/logo.svg')}}" class="brand-logo-icon">
-					<b>OurScene</b>
+					<b>VenU</b>
 				</a>
 			</li>
 			<li>

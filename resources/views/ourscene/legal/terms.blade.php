@@ -16,15 +16,15 @@
 		</div>
 		<div class="row">
 			<p class="col s12 m12 l12">
-				Welcome to [<b>www.ourscene.network</b>]. 
+				Welcome to [<b>www.VenU.network</b>]. 
 				Please read on to learn the rules and restrictions that govern your use of our website(s), products, services and applications (the “Services”). 
-				If you have any questions, comments, or concerns regarding these terms or the Services, please contact us at info@ourscene.network, 929-367-2169, 801 West 28th Street, San Pedro, CA 90731.
+				If you have any questions, comments, or concerns regarding these terms or the Services, please contact us at info@VenU.network, 929-367-2169, 801 West 28th Street, San Pedro, CA 90731.
 			</p>
 			<p class="col s12 m12 l12">
-				These Terms of Use (the “Terms”) are a binding contract between you and OurScene, Inc. (“Company,” “we” and “us”).   
+				These Terms of Use (the “Terms”) are a binding contract between you and VenU, Inc. (“Company,” “we” and “us”).   
 				You must agree to and accept all of the Terms, or you don’t have the right to use the Services.  
 				Your using the Services in any way means that you agree to all of these Terms, and these Terms will remain in effect while you use the Services.  
-				These Terms include the provisions in this document, as well as those in the Privacy Policy and Copyright Dispute Policy [www.ourscene.network].
+				These Terms include the provisions in this document, as well as those in the Privacy Policy and Copyright Dispute Policy [www.VenU.network].
 			</p>
 		</div>
 		<div class="row">
@@ -35,7 +35,7 @@
 				We are constantly trying to improve our Services, 
 				so these Terms may need to change along with the Services.  
 				We reserve the right to change the Terms at any time, but if we do, 
-				we will bring it to your attention by placing a notice on the www.ourscene.network website, 
+				we will bring it to your attention by placing a notice on the www.VenU.network website, 
 				by sending you an email, and/or by some other means. 
 			</p>
 			<p class="col s12 m12 l12">
@@ -62,10 +62,10 @@
 				We do not knowingly collect or solicit personally identifiable information from children under 13; 
 				if you are a child under 13, please do not attempt to register for the Services or send any personal information about yourself to us. 
 				If we learn we have collected personal information from a child under 13, we will delete that information as quickly as possible.  
-				If you believe that a child under 13 may have provided us personal information, please contact us at info@ourscene.network.
+				If you believe that a child under 13 may have provided us personal information, please contact us at info@VenU.network.
 			</p>
 			<p class="col s12 m12 l12 section-title">
-				What are the basics of using www.ourscene.network?
+				What are the basics of using www.VenU.network?
 			</p>
 			<p class="col s12 m12 l12">
 				You may be required to sign up for an account, and select a password and user name (“Company User ID”). 

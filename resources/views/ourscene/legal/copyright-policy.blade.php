@@ -106,7 +106,7 @@
 				<b>Please contact Company's Designated Agent at the following address</b>
 			</p>
 			<span class="col s12 m12 l12">
-				OurScene, Inc.
+				VenU, Inc.
 			</span>
 			<span class="col s12 m12 l12">
 				801 West 28th Street, Suite 18

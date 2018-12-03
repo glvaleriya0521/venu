@@ -29,7 +29,7 @@
 		</div>
 		<div class="hide-on-med-and-up">
 			<img id="m-ourscene-logo" src="{{ asset('images/icons/logo.svg') }}"/>
-			<span>OurScene</span>
+			<span>VenU</span>
 			<button type="button" onclick="changeSignInType(this)" class="change-type-btn btn ourscene-btn-2">SIGN IN AS {{ $sign_in_as_btn }}</button>
 		</div>
 		<div class="hide-on-small-only">

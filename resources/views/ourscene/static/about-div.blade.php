@@ -5,14 +5,14 @@
 		</div>
 		<div class="row">
 			<span class="col s12 m12 l12 section-title">
-				What is OurScene?
+				What is VenU?
 			</span>
 			<p class="col s12 m12 l12">
-				OurScene is for artists and venues. 
+				VenU is for artists and venues. 
 				It is your life as an artist or venue online! 
 				Use it to connect your network and to discover new spaces and collaborators. 
 				Plan and book shows or look for open slots, 
-				with OurScene you can manage your entire performance calendar all in one place. 
+				with VenU you can manage your entire performance calendar all in one place. 
 				Use messaging to discuss upcoming shows or take it further and use it to find inspiration and collaboration. 
 				Most of all: make OurScene <i>yours</i>.
 			</p>
@@ -22,7 +22,7 @@
 				Mission
 			</span>
 			<p class="col s12 m12 l12">
-				OurScene’s mission is to make booking as simple as the push of a button. 
+				VenU's mission is to make booking as simple as the push of a button. 
 				Being artists and small business owners ourselves, we have one goal: to create 
 				a simple platform for artists and venues to discover one another and book shows.
 			</p>
@@ -32,7 +32,7 @@
 				History
 			</span>
 			<p class="col s12 m12 l12">
-				OurScene’s founding team is comprised of five entrepreneurial, 
+				VenU’s founding team is comprised of five entrepreneurial, 
 				artistic spirits who have been working dutifully to achieve 
 				our mission since 2014. We are proud to represent you --  
 				the artist and the small business owner -- 

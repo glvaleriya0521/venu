@@ -7,7 +7,7 @@
 
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-	<title>OurScene</title>
+	<title>VenU</title>
 
 	<!-- Jquery -->
 	<script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>

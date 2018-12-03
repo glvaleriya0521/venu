@@ -44,7 +44,7 @@
 				As noted in the Terms of Use, we do not knowingly collect or solicit personal information from anyone under the age of 13. 
 				If you are under 13, please do not attempt to register for the Services or send any personal information about yourself to us. 
 				If we learn that we have collected personal information from a child under age 13, we will delete that information as quickly as possible. 
-				If you believe that a child under 13 may have provided us personal information, please contact us at info@ourscene.network. 
+				If you believe that a child under 13 may have provided us personal information, please contact us at info@VenU.network. 
 			</p>
 		</div>
 		<div class="row">
@@ -53,7 +53,7 @@
 			</span>
 			<p class="col s12 m12 l12">
 				We’re constantly trying to improve our Services, so we may need to change this Privacy Policy from time to time as well, 
-				but we will alert you to changes by placing a notice on the www.ourscene.network, by sending you an email, and/or by some other means.  
+				but we will alert you to changes by placing a notice on the www.VenU.network, by sending you an email, and/or by some other means.  
 				Please note that if you’ve opted not to receive legal notice emails from us (or you haven’t provided us with your email address), 
 				those legal notices will still govern your use of the Services, and you are still responsible for reading and understanding them.  
 				If you use the Services after any changes to the Privacy Policy have been posted, that means you agree to all of the changes.  
@@ -86,7 +86,7 @@
 				or email you about your use of the Services.  
 				Also, we may receive a confirmation when you open an email from us. 
 				This confirmation helps us make our communications with you more interesting and improve our services. 
-				If you do not want to receive communications from us, please indicate your preference by emailing info@ourscene.network.  
+				If you do not want to receive communications from us, please indicate your preference by emailing info@VenU.network.  
 			</p>
 			<p class="col s12 m12 l12 privacy-policy-section-sub-title">
 				Information Collected Automatically
@@ -236,12 +236,12 @@
 			</p>
 			<p class="col s12 m12 l12">
 				The information you can view, update, and delete may change as the Services change.  
-				If you have any questions about viewing or updating information we have on file about you, please contact us at info@ourscene.network.
+				If you have any questions about viewing or updating information we have on file about you, please contact us at info@VenU.network.
 			<p>
 			<p class="col s12 m12 l12">
 				Under California Civil Code Sections 1798.83-1798.84, California residents are entitled to ask us for a notice identifying the categories of Personal Information 
 				which we share with our affiliates and/or third parties for marketing purposes, and providing contact information for such affiliates and/or third parties.  
-				If you are a California resident and would like a copy of this notice, please submit a written request to: info@ourscene.network.
+				If you are a California resident and would like a copy of this notice, please submit a written request to: info@VenU.network.
 			</p>
 		</div>
 		<div class="row">
@@ -263,7 +263,7 @@
 				What if I have questions about this policy?
 			</span>
 			<p class="col s12 m12 l12">
-				If you have any questions or concerns regarding our privacy policies, please send us a detailed message to info@ourscene.network, and we will try to resolve your concerns.
+				If you have any questions or concerns regarding our privacy policies, please send us a detailed message to info@VenU.network, and we will try to resolve your concerns.
 			</p>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 @extends('ourscene/layouts.http-error')
 
 @section('head')
-<title>404 | OurScene</title>
+<title>404 | VenU</title>
 @stop
 
 @section('code')

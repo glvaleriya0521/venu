@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-	<title>OurScene</title>
+	<title>VenU</title>
 
 	<!-- Jquery -->
 	<script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
@@ -33,7 +33,7 @@
 
 				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
 					<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
-					<b>OurScene</b>
+					<b>VenU</b>
 				</a>
 				
 	    	</div>
