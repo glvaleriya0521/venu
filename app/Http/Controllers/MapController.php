@@ -23,7 +23,12 @@ use OurScene\Helpers\PaypalHelper;
 
 use GuzzleHttp\Client;
 
-class MapController extends Controller {
+class MapController extends Controller {	
+
+public function __construct()
+	{
+		$this->middleware('auth.login');
+	}
 
 public function index()
     {
