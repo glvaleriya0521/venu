@@ -40,9 +40,7 @@
 	</div>
 	<div id="login-form-container">
 		<div id="login-heading">
-			<img id="user-type-icon" src="{{ $user_type_icon }}" />
-			<br/>
-			<span id="user-type-label"><b>{{ $user_type }}</b></span>
+			<span id="user-type-label"><b>Register As {{ $user_type }}</b></span>
 		</div>
 		<div id="login-body">
 			
