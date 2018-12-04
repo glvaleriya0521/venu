@@ -78,6 +78,13 @@
 	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
 }
 
+#main-navigation-2 #menu-bar {
+	margin-left: 15% !important;
+}
+
+#chart-container {
+	text-align: center;
+}
 /*.input-row .input-field input{
 	border: solid 1px !important;
 }*/

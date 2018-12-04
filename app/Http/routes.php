@@ -46,6 +46,9 @@ Route::get('/logout', 'UserController@getLogout');
 
 Route::post('/reset-password', 'UserController@postForgotPassword');
 
+// View dashboard
+Route::get('/dashboard', 'DashboardController@index');
+
 /* Users */
 
 // View public profile

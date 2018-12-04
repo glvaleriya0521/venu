@@ -1269,6 +1269,27 @@ class EventController extends Controller {
 		return View::make('ourscene.my-events-events', compact('confirmed_events', 'pending_events', 'rejected_events'));
 	}
 
+		/* Artist information for dashboard */
+
+	public function getEventsForArtist($id){
+
+		$user_id = $id;
+		$artist_id = $id;
+
+		$confirmed_events = Service::confirmed()
+			->where(function ($query) use ($user_id, $artist_id){
+                $query->servicesBySenderId($user_id)
+                	->orWhere(function ($query) use ($artist_id){
+                		$query->servicesByArtistId($artist_id);
+                	});
+            })
+			->get();
+
+		$pending_events = Service::servicesBySenderId($user_id)->pending()->get();
+		$rejected_events = Service::servicesBySenderId($user_id)->rejected()->get();
+
+	}
+
 	public function getMyEventsCalendar(){
 
 		return View::make('ourscene.my-events-calendar');

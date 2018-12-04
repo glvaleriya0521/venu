@@ -183,7 +183,7 @@ function initialize() {
 		  	var center = new google.maps.LatLng(pos['lat'], pos['lng']);
 		  	 var mapOptions = {
 			    center: center,
-			    zoom: 5,
+			    zoom: 6,
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 			  };
 
@@ -235,10 +235,11 @@ function initialize() {
 				if (direction == 'true') {
 				  	calculateAndDisplayRoute(origin, destination);
 				 }
-			  } else {
-			    alert("Geocode was not successful for the following reason: " + status);
-			  }
-			});
+			  } 
+	  else {
+	    alert("Geocode was not successful for the following reason: " + status);
+	  }
+	});
 		 
 
  

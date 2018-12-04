@@ -8,8 +8,9 @@
 @stop
 
 @section('my-events-content')
+  <input type="hidden" name="" id="zipcode" value="{{$zipCode}}">
 	<div id="panel"></div>
-    <div id="map-canvas"></div>
+  <div id="map-canvas"></div>
 @stop
 
 @section('my-events-scripts')

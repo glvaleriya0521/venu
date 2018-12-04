@@ -15,6 +15,7 @@ use DB;
 
 use OurScene\Models\User;
 use OurScene\Models\Payment;
+use OurScene\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Support\Collection;
@@ -23,7 +24,7 @@ use OurScene\Helpers\PaypalHelper;
 
 use GuzzleHttp\Client;
 
-class MapController extends Controller {	
+class DashboardController extends Controller {	
 
 public function __construct()
 	{
@@ -32,21 +33,37 @@ public function __construct()
 
 public function index()
     {
-
-		// get Current user info
+    		// get Current user info
 		$user_id = Session::get('id');
 		$user 	 = User::find($user_id);
 		$locality = $user->address['city'];
-		// $locality = null;
-		$zipCode = $user->address['zipcode'];
+		$genres = $user->artist_genre;
 
-		// $all = User::where('user_type', 'venue')->get();
-		$all = User::where('user_type', 'venue')->get();
+    	$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+    	$books = array(); 
+    	foreach ($users as $user)
+    	{
+    		$user_id = $user->id;
+    		$name = $user->name;
+			$artist_id = $user->id;
 
-		$direction = "false";
-		$toCity = "";
+			$confirmed_events = Service::confirmed()
+				->where(function ($query) use ($user_id, $artist_id){
+	                $query->servicesBySenderId($user_id)
+	                	->orWhere(function ($query) use ($artist_id){
+	                		$query->servicesByArtistId($artist_id);
+	                	});
+	            })
+				->count();
 
-		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
+			$pending_events = Service::servicesBySenderId($user_id)->pending()->count();
+			$rejected_events = Service::servicesBySenderId($user_id)->rejected()->count();
+			$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
+				"pending" => $pending_events, "rejected" => $rejected_events);
+			array_push($books, $book);
+    	}
+    	$books = collect($books);
+		return View::make('ourscene.dashboard', compact('books'));
     }
 
 public function store()
