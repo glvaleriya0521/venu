@@ -4246,7 +4246,7 @@ a {
 }
 
 html {
-  color       : rgba(0,0,0,0.87);
+  color       : #fff;
   font-family : "Roboto",
                 sans-serif;
   font-weight : normal;
@@ -4980,7 +4980,7 @@ footer.page-footer .footer-copyright {
 .btn,
 .btn-large {
   color            : #fff;
-  background-color : #26a69a;
+  background-color : rgba(26,120,246,1.0);
   text-align       : center;
   text-decoration  : none;
   letter-spacing   : .5px;
@@ -4990,7 +4990,7 @@ footer.page-footer .footer-copyright {
 
 .btn-large:hover,
 .btn:hover {
-  background-color : #2bbbad;
+  background-color : rgba(26,120,246,1.0);
 }
 
 .btn-floating {
@@ -5003,7 +5003,7 @@ footer.page-footer .footer-copyright {
   color            : #fff;
   overflow         : hidden;
   border-radius    : 50%;
-  background-color : #26a69a;
+  background-color : rgba(26,120,246,1.0);
   vertical-align   : middle;
   line-height      : 37px;
   transition       : .3s;
@@ -5020,7 +5020,7 @@ footer.page-footer .footer-copyright {
 }
 
 .btn-floating:hover {
-  background-color : #26a69a;
+  background-color : rgba(26,120,246,1.0);
 }
 
 .btn-floating:before {
@@ -5105,7 +5105,7 @@ button.btn-floating {
 }
 
 .btn-flat:hover {
-  background-color : rgba(0,0,0,0.1);
+  background-color : rgba(26,120,246,1.0);
   box-shadow       : none;
 }
 
@@ -6137,13 +6137,13 @@ textarea.materialize-textarea {
 [type="radio"].with-gap:checked+label:after,
 [type="radio"].with-gap:checked+label:before,
 [type="radio"]:checked+label:after {
-  border : 2px solid #26a69a;
+  border : 2px solid rgba(26,120,246,1.0);
 }
 
 [type="radio"].with-gap:checked+label:after,
 [type="radio"]:checked+label:after {
   z-index          : 0;
-  background-color : #26a69a;
+  background-color : rgba(26,120,246,1.0);
 }
 
 [type="radio"]:checked+label:after {
