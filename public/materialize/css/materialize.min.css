@@ -4085,7 +4085,7 @@ nav .brand-logo {
 }
 
 nav .brand-logo.center {
-  left              : 50%;
+  left              : 25%;
   -webkit-transform : translateX(-50%);
   transform         : translateX(-50%);
 }
