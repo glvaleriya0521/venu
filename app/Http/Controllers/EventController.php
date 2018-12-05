@@ -463,7 +463,7 @@ class EventController extends Controller {
 			//get artist
 			$artist = User::artists()->find($user_id);
 			//send email to venue
-			EmailSender::requestForPerformance($event, $service, $venue, $artist);
+			// EmailSender::requestForPerformance($event, $service, $venue, $artist);
 		}
 		else if($user_type == 'venue'){
 
@@ -491,7 +491,7 @@ class EventController extends Controller {
 				$service->save();
 
 				//send email to requested artistsshnaka
-				EmailSender::requestForService($event, $service, $venue, $artist);
+				// EmailSender::requestForService($event, $service, $venue, $artist);
 			}
 
 		}
@@ -1101,7 +1101,7 @@ class EventController extends Controller {
 			$service->save();
 
 			//send email to requested artists
-			EmailSender::requestForService($event, $service, $venue, $artist);
+			// EmailSender::requestForService($event, $service, $venue, $artist);
 		}
 
 		$response['success'] = true;

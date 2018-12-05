@@ -252,7 +252,7 @@ class ServiceController extends Controller {
 		$service->save();
 
 		//send email to venue
-		EmailSender::requestForPerformance($event, $service, $venue, $artist);
+		// EmailSender::requestForPerformance($event, $service, $venue, $artist);
 
 		$response['success'] = true;
 		$response['redirect_url'] = action('EventController@getEvent', array('id' => $id));
@@ -455,7 +455,7 @@ class ServiceController extends Controller {
 		$event->save();
 
 		//send email to venue
-		EmailSender::confirmRequestForPerformance($event, $service, $venue, $artist);
+		// EmailSender::confirmRequestForPerformance($event, $service, $venue, $artist);
 		
 		$response['success'] = true;
 		$response['redirect_url'] = action('EventController@getEvent', ['id' => $service->event_id]);
@@ -764,7 +764,7 @@ class ServiceController extends Controller {
 		$event->save();
 
 		//send email to venue
-		EmailSender::confirmRequestForService($event, $service, $venue, $artist);
+		// EmailSender::confirmRequestForService($event, $service, $venue, $artist);
 
 		$response['success'] = true;
 		$response['redirect_url'] = action('EventController@getEvent', ['id' => $service->event_id]);
