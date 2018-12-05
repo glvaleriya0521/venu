@@ -300,7 +300,6 @@ class PaypalController extends Controller {
 	/* Pay OurScene > Actions */
 
 	public static function payOurSceneSuccess(){
-		dd('payOurSceneSuccess');
 		$response = array();
 
 		if(! Session::has('pay_ourscene_action')){
