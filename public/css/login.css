@@ -762,14 +762,21 @@ a:visited {
 .registration-panel {
   margin        : 0;
   padding       : 0;
-  border-radius : 0px;
+  border        : 2px solid #808080;
+  border-radius : 25px;
 }
 
 @media
   (min-width : 992px) {
   .registration-panel {
+    top         : 72px;
     width       : 50%;
-    margin-left : 25% color:#fff;
+    width       : 620px;
+    height      : 1558px;
+    margin-left : 25%;
+    color       : #fff;
+    opacity     : .9;
+    transform   : rotate(0);
   }
 }
 
@@ -782,8 +789,9 @@ a:visited {
 }
 
 .register-heading img {
-  width  : auto;
-  height : 50px;
+  display : none;
+  width   : auto;
+  height  : 50px;
 }
 
 .register-heading-title {
@@ -833,17 +841,17 @@ a:visited {
 }
 
 .sign-in-link {
-  color         : #534d93;
-  border-bottom : 1px #534d93 dotted;
+  color         : rgba(26,120,246,1.0);
+  border-bottom : 1px rgba(26,120,246,1.0) dotted;
 }
 
 .upload-btn {
-  color            : #534d93;
+  color            : rgba(26,120,246,1.0);
   background-color : #fff;
 }
 
 .upload-btn:hover {
-  color            : #534d93;
+  color            : rgba(26,120,246,1.0);
   background-color : #fff;
 }
 
@@ -868,12 +876,12 @@ a:visited {
 }
 
 .terms-and-condition-label a {
-  color         : #46bfa7;
+  color         : rgba(26,120,246,1.0)rgba(26,120,246,1.0);
   border-bottom : none;
 }
 
 .i-agree-label a {
-  color         : #534d93;
+  color         : #fff;
   border-bottom : none;
   font-size     : 1.2rem;
 }
