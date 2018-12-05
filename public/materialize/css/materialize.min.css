@@ -4085,7 +4085,7 @@ nav .brand-logo {
 }
 
 nav .brand-logo.center {
-  left              : 50%;
+  left              : 25%;
   -webkit-transform : translateX(-50%);
   transform         : translateX(-50%);
 }
@@ -4542,7 +4542,7 @@ footer.page-footer .footer-copyright {
 }
 
 .card {
-  position         : relative;
+  position         : static;
   margin           : 0.5rem 0 1rem 0;
   border-radius    : 1em;
   background-color : rgba(26, 26, 28, 1.0);
@@ -4696,6 +4696,7 @@ footer.page-footer .footer-copyright {
   padding          : 20px;
   border-top       : 1px solid rgba(160,160,160,0.2);
   background-color : inherit;
+  color            : #fff;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
@@ -4911,7 +4912,7 @@ footer.page-footer .footer-copyright {
   height                      : 36px;
   padding                     : 0 2rem;
   border                      : none;
-  border-radius               : 2px;
+  border-radius               : 10px;
   outline                     : 0;
   text-transform              : uppercase;
   vertical-align              : middle;
@@ -5321,7 +5322,7 @@ button.btn-floating {
   padding          : 0;
   overflow-y       : auto;
   border-radius    : 2px;
-  background-color : #fafafa;
+  background-color : #000;
 }
 
 @media
@@ -5352,7 +5353,7 @@ button.btn-floating {
   height           : 56px;
   padding          : 4px 6px;
   border-radius    : 0 0 2px 2px;
-  background-color : #fafafa;
+  background-color : #000;
 }
 
 .modal .modal-footer .btn,
@@ -5415,7 +5416,7 @@ button.btn-floating {
   min-height       : 3rem;
   padding          : 0 1rem;
   border-bottom    : 1px solid #ddd;
-  background-color : #fff;
+  background-color : #000;
   line-height      : 3rem;
   cursor           : pointer;
 }
@@ -5434,6 +5435,7 @@ button.btn-floating {
   display       : none;
   box-sizing    : border-box;
   border-bottom : 1px solid #ddd;
+  background-color: rgba(39,40,42,1.0);
 }
 
 .collapsible-body p {
@@ -6257,8 +6259,8 @@ form p:last-child {
   width             : 12px;
   height            : 22px;
   border-top        : 2px solid transparent;
-  border-right      : 2px solid #26a69a;
-  border-bottom     : 2px solid #26a69a;
+  border-right      : 2px solid rgba(26,120,246,1.0);
+  border-bottom     : 2px solid rgba(26,120,246,1.0);
   border-left       : 2px solid transparent;
   -webkit-transform : rotate(40deg);
   transform         : rotate(40deg);
@@ -6322,7 +6324,7 @@ form p:last-child {
   top              : 0px;
   width            : 20px;
   height           : 20px;
-  border           : 2px solid #5a5a5a;
+  border           : 2px solid #ffffff;
   background-color : transparent;
 }
 
@@ -6346,8 +6348,8 @@ form p:last-child {
   top              : 0;
   width            : 20px;
   height           : 20px;
-  border           : 2px solid #26a69a;
-  background-color : #26a69a;
+  border           : 2px solid rgba(26,120,246,1.0);
+  background-color : rgba(26,120,246,1.0);
 }
 
 [type="checkbox"].filled-in.tabbed:focus+label:after {

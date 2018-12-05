@@ -530,7 +530,7 @@ a:visited {
 @media
   (min-width : 601px) {
   .body-venue {
-    background-image : url('../images/backgrounds/signin-venue.jpg?1466082720');
+    background-image : url('../images/backgrounds/rock-concert-PBZ2JSW.jpg');
   }
 }
 
@@ -544,7 +544,7 @@ a:visited {
 @media
   (min-width : 601px) {
   .body-reg-venue {
-    background-image : url('../images/backgrounds/register-venue.jpg?1466082720');
+    background-image : url('../images/backgrounds/rock-concert-PBZ2JSW.jpg');
   }
 }
 
@@ -616,7 +616,7 @@ a:visited {
     top              : 92px;
     left             : 50%;
     width            : 620px;
-    height           : 748px;
+    height           : 500px;
     margin-top       : 0;
     border-radius    : 10px;
     background-color : rgba(43,46,58,1.0);
@@ -665,8 +665,8 @@ a:visited {
 }
 
 .forgot-password a {
-  color           : #534d93;
-  border-bottom   : 1px #534d93 dotted;
+  color           : rgba(26,120,246,1.0);
+  border-bottom   : 1px rgba(26,120,246,1.0) dotted;
   text-decoration : uderline;
 }
 
@@ -683,8 +683,8 @@ a:visited {
 }
 
 .signup-link-div a {
-  color           : #534d93;
-  border-bottom   : 1px #534d93 dotted;
+  color           : rgba(26,120,246,1.0);
+  border-bottom   : 1px rgba(26,120,246,1.0) dotted;
   text-decoration : uderline;
 }
 
@@ -762,14 +762,21 @@ a:visited {
 .registration-panel {
   margin        : 0;
   padding       : 0;
-  border-radius : 0px;
+  border        : 2px solid #808080;
+  border-radius : 25px;
 }
 
 @media
   (min-width : 992px) {
   .registration-panel {
+    top         : 72px;
     width       : 50%;
-    margin-left : 25% color:#fff;
+    width       : 620px;
+    height      : 1558px;
+    margin-left : 25%;
+    color       : #fff;
+    opacity     : .9;
+    transform   : rotate(0);
   }
 }
 
@@ -782,8 +789,9 @@ a:visited {
 }
 
 .register-heading img {
-  width  : auto;
-  height : 50px;
+  display : none;
+  width   : auto;
+  height  : 50px;
 }
 
 .register-heading-title {
@@ -833,17 +841,17 @@ a:visited {
 }
 
 .sign-in-link {
-  color         : #534d93;
-  border-bottom : 1px #534d93 dotted;
+  color         : rgba(26,120,246,1.0);
+  border-bottom : 1px rgba(26,120,246,1.0) dotted;
 }
 
 .upload-btn {
-  color            : #534d93;
+  color            : rgba(26,120,246,1.0);
   background-color : #fff;
 }
 
 .upload-btn:hover {
-  color            : #534d93;
+  color            : rgba(26,120,246,1.0);
   background-color : #fff;
 }
 
@@ -868,12 +876,12 @@ a:visited {
 }
 
 .terms-and-condition-label a {
-  color         : #46bfa7;
+  color         : rgba(26,120,246,1.0)rgba(26,120,246,1.0);
   border-bottom : none;
 }
 
 .i-agree-label a {
-  color         : #534d93;
+  color         : #fff;
   border-bottom : none;
   font-size     : 1.2rem;
 }
@@ -902,7 +910,7 @@ a:visited {
 
 .tab-navigation .indicator {
   height           : 4px;
-  background-color : #534d93 !important;
+  background-color : rgba(26,120,246,1.0) !important;
 }
 
 #artist-genre-modal #genre-collapsible {
