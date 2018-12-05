@@ -530,7 +530,7 @@ a:visited {
 @media
   (min-width : 601px) {
   .body-venue {
-    background-image : url('../images/backgrounds/signin-venue.jpg?1466082720');
+    background-image : url('../images/backgrounds/venue---register-vishnu-r-nair-639172-unsplash.png');
   }
 }
 
@@ -544,7 +544,7 @@ a:visited {
 @media
   (min-width : 601px) {
   .body-reg-venue {
-    background-image : url('../images/backgrounds/register-venue.jpg?1466082720');
+    background-image : url('../images/backgrounds/venue---register-vishnu-r-nair-639172-unsplash.png');
   }
 }
 
@@ -616,7 +616,7 @@ a:visited {
     top              : 92px;
     left             : 50%;
     width            : 620px;
-    height           : 748px;
+    height           : 500px;
     margin-top       : 0;
     border-radius    : 10px;
     background-color : rgba(43,46,58,1.0);
@@ -665,8 +665,8 @@ a:visited {
 }
 
 .forgot-password a {
-  color           : #534d93;
-  border-bottom   : 1px #534d93 dotted;
+  color           : rgba(26,120,246,1.0);
+  border-bottom   : 1px rgba(26,120,246,1.0) dotted;
   text-decoration : uderline;
 }
 
@@ -683,8 +683,8 @@ a:visited {
 }
 
 .signup-link-div a {
-  color           : #534d93;
-  border-bottom   : 1px #534d93 dotted;
+  color           : rgba(26,120,246,1.0);
+  border-bottom   : 1px rgba(26,120,246,1.0) dotted;
   text-decoration : uderline;
 }
 
@@ -902,7 +902,7 @@ a:visited {
 
 .tab-navigation .indicator {
   height           : 4px;
-  background-color : #534d93 !important;
+  background-color : rgba(26,120,246,1.0) !important;
 }
 
 #artist-genre-modal #genre-collapsible {
