@@ -63,7 +63,7 @@
             "theme": "fusion",
             "caption": "Booking Comparison",
             "subCaption": "(Artists)",
-            "xaxisname": "User",
+            "xaxisname": "Artist",
             "yaxisname": "book",
             "numberprefix": "",
             "lineThickness": "3",

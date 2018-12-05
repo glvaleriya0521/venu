@@ -219,7 +219,6 @@ class PaypalController extends Controller {
 
 		$payment_result = PaypalHelper::postPayToOurScene($token,$paypal_card_id,$paypal_payer_id);
 		if ($payment_result['success']){
-
 			$response = PaypalController::payOurSceneSuccess();
 
 			if($response['success'])
@@ -301,7 +300,7 @@ class PaypalController extends Controller {
 	/* Pay OurScene > Actions */
 
 	public static function payOurSceneSuccess(){
-
+		dd('payOurSceneSuccess');
 		$response = array();
 
 		if(! Session::has('pay_ourscene_action')){

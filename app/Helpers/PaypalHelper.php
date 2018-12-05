@@ -115,10 +115,10 @@ class PaypalHelper{
 			"transactions" => array(
 				array(
 					"amount" => array(
-						"total" => "1",
+						"total" => "2",
 						"currency" => "USD"
 					),
-					"description" => "Payment to Ourscene for events"
+					"description" => "Payment to VenU for events"
 				)
 			)
 		);
@@ -279,7 +279,8 @@ class PaypalHelper{
 		$config = array(
 			// values: 'sandbox' for testing
 			//		   'live' for production
-			'mode' => "live",
+			// 'mode' => "live",
+			'mode' => "sandbox",
 	        'log.LogEnabled' => true,
 	        'log.FileName' => storage_path().'/PayPal.log',
 	        'log.LogLevel' => 'FINE'
