@@ -904,7 +904,7 @@ a:visited {
 
 #main-navigation-1-dropdown li {
   min-height       : initial;
-  background-color : #4c4688;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #main-navigation-1-dropdown li:hover {
