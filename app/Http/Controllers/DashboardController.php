@@ -35,9 +35,10 @@ public function zipcodeByRadius($center_zipcode) {
 	$client = new Client();
 	$apiKey = "s431dFLAqyr4u93tjRGP58F5JoglJ9dAaWM1FOa255l0Mk3XxnVjxiRWSv1uTCp6";
 
-	$res = $client->get('http://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=90210&minimumradius=0&maximumradius=10&key=DEMOAPIKEY')->json();
-	dd($res);
-	dd(json_encode($zip_array));
+	$res = $client->get('https://www.zipcodeapi.com/rest/eHDNzamDYfeTdqShQC7zfstg6bje8c0uoig73qZ9HXdY4foUUL5GUpcKhVt6IGlX/radius.json/90210/10/mile');
+	$temp = $res->getBody()->getContents();
+
+	dd('dsf');
 	return $zip_array['Code'];
 }
 
