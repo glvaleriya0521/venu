@@ -854,7 +854,7 @@ class EventController extends Controller {
 				$artist = User::find($artist_id);
 				// dd($artist->email);?
 				//send email to artist
-				EmailSender::updateEvent($event, $related_service, $venue, $artist);
+				// EmailSender::updateEvent($event, $related_service, $venue, $artist);
 
 				$artist_ids[] = $artist_id;
 			}

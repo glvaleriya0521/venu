@@ -40,9 +40,13 @@
 		var ROOT = "{{ action('HomeController@getIndex') }}";
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	</script>
-
-	<script>
-
+	<!-- kendo Timepicker -->
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.3.1017/styles/kendo.mobile.all.min.css"/>
+    <script src="https://kendo.cdn.telerik.com/2018.3.1017/js/kendo.all.min.js"></script>
+		
 	var login_type;
 
 	function changeSignInType($this){

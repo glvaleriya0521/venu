@@ -992,3 +992,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .input-field textarea.materialize-textarea:focus+label {
   color : #333;
 }
+
+.k-timepicker .k-picker-wrap{
+  border-radius: 10px !important;
+}
+
+.venu-time{
+  margin-left: 4% !important;
+}

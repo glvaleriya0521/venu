@@ -31,6 +31,15 @@ public function __construct()
 		$this->middleware('auth.login');
 	}
 
+public function zipcodeByRadius($center_zipcode) {
+	$client = new Client();
+	$apiKey = "s431dFLAqyr4u93tjRGP58F5JoglJ9dAaWM1FOa255l0Mk3XxnVjxiRWSv1uTCp6";
+
+	$res = $client->get('https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=90210&minimumradius=0&maximumradius=10&key=DEMOAPIKEY');
+	$zip_array = $res->getBody();
+	return $zip_array;
+}
+
 public function index()
     {
     		// get Current user info
@@ -40,9 +49,22 @@ public function index()
 		$genres = $user->artist_genre;
 		$user_type = $user->user_type;
 
+		// Index view for search
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+
 		if ($user_type == "artist") {
 
 			$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+			if (isset($input['params'])) {
+				$type = $input['type'];
+				$params = $input['params'];
+				if ($type == "age") {
+					$users = User::where('user_type', 'artist')
+						->where('address.city', $locality)
+						->where('ages', 'LIKE', '%'.$params.'%')->get();
+				}
+			}
 	    	$books = array(); 
 	    	foreach ($users as $user)
 	    	{
@@ -70,8 +92,19 @@ public function index()
 		}
 		else {
 
-			// $users = User::where('user_type', 'venue')->where('address.city', $locality)->get();
-			$users = User::where('user_type', 'venue')->get();
+			$users = User::where('user_type', 'venue')
+				->where('address.city', $locality)->get();
+			// $users = User::where('user_type', 'venue')->get();
+			if (isset($input['params'])) {
+				$type = $input['type'];
+				$params = $input['params'];
+				if ($type == "type") {
+					$users = User::where('user_type', 'venue')
+						->where('address.city', $locality)
+						->where('venue_type.0', $params)
+						->orWhere('venue_type.0', $params)->get();
+				}
+			}
 			$books = array(); 
 	    	foreach ($users as $user)
 	    	{

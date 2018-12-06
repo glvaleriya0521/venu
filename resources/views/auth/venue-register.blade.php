@@ -189,18 +189,18 @@ use OurScene\Models\User;
 				</div>
 
 				<div class="row">
-		    		<div class="col s6 m3 l3 input-field">
+		    		<div class="col s6 m3 l3 venu-time input-field">
 
-							<input type="text" name="operating_hrs_open" id="operating_hrs_open" class="time-picki-picker"  required>
+							<input type="text" name="operating_hrs_open" id="operating_hrs_open" class=""  required>
 							<label for="operating_hrs_open" style="top:-.8rem">Open </label>
 					</div>
 
-					<div class="col s6 m3 l3 input-field">
+					<div class="col s6 m3 l3 venu-time input-field">
 
-						<input type="text" name="operating_hrs_close" id="operating_hrs_close"  class="time-picki-picker" required>
+						<input type="text" name="operating_hrs_close" id="operating_hrs_close"  class="" required>
 						<label for="operating_hrs_close" style="top:-.8rem">Close </label>
 					</div>
-					<div class="col s12 m4 l4 input-field">
+					<div class="col s12 m4 l4 venu-time input-field">
 						<label for="seating_capacity">Seating Capacity <font style="color: #f00;">*</font></label>
 						<input type="number" name="seating_capacity" class="registration-txtbx-1" min="1" step="1" placeholder="Seating Capacity" value="{!! old('seating_capacity') !!}" />
 					</div>
@@ -440,4 +440,17 @@ use OurScene\Models\User;
 		});
 	});
 </script>
+
+<script>
+$(document).ready(function() {
+
+	$("#operating_hrs_open").kendoTimePicker({
+	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	});
+	$("#operating_hrs_close").kendoTimePicker({
+	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	});
+});
+</script>
+
 @endsection
