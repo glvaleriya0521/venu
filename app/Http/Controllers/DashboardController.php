@@ -35,9 +35,10 @@ public function zipcodeByRadius($center_zipcode) {
 	$client = new Client();
 	$apiKey = "s431dFLAqyr4u93tjRGP58F5JoglJ9dAaWM1FOa255l0Mk3XxnVjxiRWSv1uTCp6";
 
-	$res = $client->get('https://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=90210&minimumradius=0&maximumradius=10&key=DEMOAPIKEY');
-	$zip_array = $res->getBody();
-	return $zip_array;
+	$res = $client->get('http://api.zip-codes.com/ZipCodesAPI.svc/1.0/FindZipCodesInRadius?zipcode=90210&minimumradius=0&maximumradius=10&key=DEMOAPIKEY')->json();
+	dd($res);
+	dd(json_encode($zip_array));
+	return $zip_array['Code'];
 }
 
 public function index()
@@ -48,6 +49,9 @@ public function index()
 		$locality = $user->address['city'];
 		$genres = $user->artist_genre;
 		$user_type = $user->user_type;
+		$zipCode = $user->address['zipcode'];
+		// $zipcodeByRadius = $this->zipcodeByRadius($zipCode);
+		// dd($zipcodeByRadius);
 
 		// Index view for search
 		Input::merge(array_map('trim', Input::all()));
