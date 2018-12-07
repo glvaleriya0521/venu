@@ -48,6 +48,7 @@ Route::post('/reset-password', 'UserController@postForgotPassword');
 
 // View dashboard
 Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard/mystate', 'DashboardController@getMyState');
 
 /* Users */
 
@@ -192,8 +193,8 @@ Route::get('messages/unread','MessageController@getAjaxNumberOfUnreadMessages');
 
 /* Search */
 
-Route::get('/search', 'SearchController@getSearch');
-Route::get('/search-results', 'SearchController@getSearchResults');
+Route::get('view-map/search', 'SearchController@getSearch');
+Route::get('view-map/search-results', 'SearchController@getSearchResults');
 
 /* Paypal */
 

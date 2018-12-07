@@ -291,6 +291,7 @@ class EventController extends Controller {
 
 		$start_date = $input['start_date'];
 		$end_date = $input['end_date'];
+		
 		$start_time = DatetimeUtils::formatTimeFromFrontendToBackend($input['start_time']);
 		$end_time = DatetimeUtils::formatTimeFromFrontendToBackend($input['end_time']);
 
@@ -312,7 +313,6 @@ class EventController extends Controller {
 
 		$start_datetime = DatetimeUtils::convertMongoClientDatetimeToMongoUTCDatetime($start_client_datetime);
 		$end_datetime = DatetimeUtils::convertMongoClientDatetimeToMongoUTCDatetime($end_client_datetime);
-
 		$g_start_datetime = getUTCDateTime($start_date, $start_time, $timezone_offset);
 		$g_end_datetime   = getUTCDateTime($end_date, $end_time, $timezone_offset);
 
@@ -463,7 +463,7 @@ class EventController extends Controller {
 			//get artist
 			$artist = User::artists()->find($user_id);
 			//send email to venue
-			// EmailSender::requestForPerformance($event, $service, $venue, $artist);
+			EmailSender::requestForPerformance($event, $service, $venue, $artist);
 		}
 		else if($user_type == 'venue'){
 
@@ -491,7 +491,7 @@ class EventController extends Controller {
 				$service->save();
 
 				//send email to requested artistsshnaka
-				// EmailSender::requestForService($event, $service, $venue, $artist);
+				EmailSender::requestForService($event, $service, $venue, $artist);
 			}
 
 		}
@@ -738,7 +738,6 @@ class EventController extends Controller {
 				}
 			}
 		}
-
 		//get invited artists changes
 
 		$invited_artists_changes = [];
@@ -832,7 +831,6 @@ class EventController extends Controller {
 		$event->user_id = $user_id;
 		$event->pay_to_play = $pay_to_play;
 		$event->equipments = $equipments;
-
 		$event->save();
 
 		//send email to artists that event is updated
@@ -854,7 +852,7 @@ class EventController extends Controller {
 				$artist = User::find($artist_id);
 				// dd($artist->email);?
 				//send email to artist
-				// EmailSender::updateEvent($event, $related_service, $venue, $artist);
+				EmailSender::updateEvent($event, $related_service, $venue, $artist);
 
 				$artist_ids[] = $artist_id;
 			}
@@ -1101,7 +1099,7 @@ class EventController extends Controller {
 			$service->save();
 
 			//send email to requested artists
-			// EmailSender::requestForService($event, $service, $venue, $artist);
+			EmailSender::requestForService($event, $service, $venue, $artist);
 		}
 
 		$response['success'] = true;

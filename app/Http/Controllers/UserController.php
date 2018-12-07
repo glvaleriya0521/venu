@@ -159,6 +159,7 @@ class UserController extends Controller {
 		}
 
 		return Redirect::to(action('HomeController@getIndex'));
+		// return Redirect::to(action('DashboardController@index'));
 
 	}
 

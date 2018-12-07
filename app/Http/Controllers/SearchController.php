@@ -74,14 +74,14 @@ class SearchController extends Controller {
 			} else {
 				$all = User::searchArtists($name, $genre, $locality)->isActive()->paginate(6);
 			}
-			$all->setPath(env('PAGINATE_URI') . '/search');
+			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
 		}else{
 			if ($user->user_type == 'artist') {
 				$all = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->paginate(6);
 			} else {
 				$all = User::searchArtists($name, $genre, $locality)->isActive()->paginate(6);
 			}
-			$all->setPath(env('PAGINATE_URI') . '/search');
+			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
 		}
 
 		return View::make('ourscene.search', compact('all','search_results','name','genre','locality','isSingleParam','singleParam'));

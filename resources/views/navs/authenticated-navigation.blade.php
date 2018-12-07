@@ -1,7 +1,7 @@
 <nav id="main-navigation-1">
 	<div class="nav-wrapper">
 
-		<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
+		<a href="{{ action('DashboardController@index') }}" class="brand-logo left">
 			<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
 			<b>VenU</b>
 		</a>
@@ -125,7 +125,7 @@
 		<div class="col s12 m12 offset-l4 l4">
 			<div class="row">
 				<div class="col s2 m2 5">
-					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard/*')) class="active" @endif>DASHBOARD</a>
+					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
 				</div>
 				<div class="col s2 m2 5">
 					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>

@@ -136,6 +136,100 @@ public function index()
     	
     }
 
+public function getMyState()
+    {
+    		// get Current user info
+		$user_id = Session::get('id');
+		$user 	 = User::find($user_id);
+		$locality = $user->address['city'];
+		$genres = $user->artist_genre;
+		$user_type = $user->user_type;
+		$zipCode = $user->address['zipcode'];
+		// $zipcodeByRadius = $this->zipcodeByRadius($zipCode);
+		// dd($zipcodeByRadius);
+
+		// Index view for search
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+
+		if ($user_type == "artist") {
+
+			$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+			if (isset($input['params'])) {
+				$type = $input['type'];
+				$params = $input['params'];
+				if ($type == "age") {
+					$users = User::where('user_type', 'artist')
+						->where('address.city', $locality)
+						->where('ages', 'LIKE', '%'.$params.'%')->get();
+				}
+			}
+	    	$books = array(); 
+	    	foreach ($users as $user)
+	    	{
+	    		$user_id = $user->id;
+	    		$name = $user->name;
+				$artist_id = $user->id;
+
+				$confirmed_events = Service::confirmed()
+					->where(function ($query) use ($user_id, $artist_id){
+		                $query->servicesBySenderId($user_id)
+		                	->orWhere(function ($query) use ($artist_id){
+		                		$query->servicesByArtistId($artist_id);
+		                	});
+		            })
+					->count();
+
+				$pending_events = Service::servicesBySenderId($user_id)->pending()->count();
+				$rejected_events = Service::servicesBySenderId($user_id)->rejected()->count();
+				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
+					"pending" => $pending_events, "rejected" => $rejected_events);
+				array_push($books, $book);
+	    	}
+	    	$books = collect($books);
+			return View::make('ourscene.art-dashboard', compact('books'));
+		}
+		else {
+
+			$users = User::where('user_type', 'venue')
+				->where('address.city', $locality)->get();
+			// $users = User::where('user_type', 'venue')->get();
+			if (isset($input['params'])) {
+				$type = $input['type'];
+				$params = $input['params'];
+				if ($type == "type") {
+					$users = User::where('user_type', 'venue')
+						->where('address.city', $locality)
+						->where('venue_type.0', $params)
+						->orWhere('venue_type.0', $params)->get();
+				}
+			}
+			$books = array(); 
+	    	foreach ($users as $user)
+	    	{
+	    		$name = $user->name;
+	    		$user_id = $user->id;
+				$venue_id = $user->id;
+
+				$confirmed_events = Service::servicesByReceiverId($user_id)
+					->confirmed()
+					->count();
+
+				$pending_events = Service::servicesByReceiverId($user_id)->pending()->count();
+				$rejected_events = Service::servicesByReceiverId($user_id)->rejected()->count();
+				$seating_capacity = $user->seating_capacity;
+				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
+					"pending" => $pending_events, "rejected" => $rejected_events, "seating_capacity" => $seating_capacity);
+				array_push($books, $book);
+	    	}
+	    	$books = collect($books);
+			return View::make('ourscene.venue-dashboard', compact('books'));
+
+		}
+
+    	
+    }
+
 public function store()
     {
     	// get Current user info
