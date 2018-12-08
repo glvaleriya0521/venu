@@ -10,6 +10,10 @@
 	color: black !important;
 }
 
+/* Request Form Field Label Font color */
+div.input-row:nth-child(4) > div:nth-child(1) > label:nth-child(2) {
+	color: #fff !important;
+}
 
 
 #map-canvas {
