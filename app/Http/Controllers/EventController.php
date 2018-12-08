@@ -151,6 +151,7 @@ class EventController extends Controller {
 		$start_datetime = DatetimeUtils::convertMongoClientDatetimeToMongoUTCDatetime($start_client_datetime);
 		$end_datetime = DatetimeUtils::convertMongoClientDatetimeToMongoUTCDatetime($end_client_datetime);
 
+
 		if(isset($input['other_type']))
 			$event_type = $input['other_type'];
 		else

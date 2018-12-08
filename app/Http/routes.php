@@ -13,8 +13,8 @@
 
 /* Root */
 
-Route::get('/convert', 'UserController@convertTolan');
-Route::get('/generate', 'MapController@generateLatLon');
+Route::get('/convertToLan/{zipcode}', 'UserController@convertToLan');
+Route::get('/fillLatLon', 'UserController@fillLatLon');
 
 Route::get('/', 'HomeController@getIndex');
 

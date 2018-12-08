@@ -208,8 +208,8 @@ function initialize() {
 						"zipcode": "{{ $venue['address']['zipcode'] }}",
 						"state": "{{ $venue['address']['state'] }}",
 						"country": "{{ $venue['address']['country'] }}",
-						"lat": "{{ $venue['address']['lat'] }}",
-						"lon": "{{ $venue['address']['lon'] }}",
+						"lat": "{{ $venue['latlon']['lat'] }}",
+						"lon": "{{ $venue['latlon']['lng'] }}",
 					}
 				}
 			 @endforeach

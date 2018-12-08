@@ -19,6 +19,7 @@ use OurScene\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Support\Collection;
+use OurScene\Helpers\DatetimeUtils;
 
 use OurScene\Helpers\PaypalHelper;
 
@@ -31,16 +32,22 @@ public function __construct()
 		$this->middleware('auth.login');
 	}
 
-public function zipcodeByRadius($center_zipcode) {
-	$client = new Client();
-	$apiKey = "s431dFLAqyr4u93tjRGP58F5JoglJ9dAaWM1FOa255l0Mk3XxnVjxiRWSv1uTCp6";
+public function distanceAsMile(
+	  $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 3959)
+	{
+		  // convert from degrees to radians
+		  $latFrom = deg2rad($latitudeFrom);
+		  $lonFrom = deg2rad($longitudeFrom);
+		  $latTo = deg2rad($latitudeTo);
+		  $lonTo = deg2rad($longitudeTo);
 
-	$res = $client->get('https://www.zipcodeapi.com/rest/eHDNzamDYfeTdqShQC7zfstg6bje8c0uoig73qZ9HXdY4foUUL5GUpcKhVt6IGlX/radius.json/90210/10/mile');
-	$temp = $res->getBody()->getContents();
+		  $latDelta = $latTo - $latFrom;
+		  $lonDelta = $lonTo - $lonFrom;
 
-	dd('dsf');
-	return $zip_array['Code'];
-}
+		  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+		    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+		  return $angle * $earthRadius;
+	}
 
 public function index()
     {
@@ -51,12 +58,16 @@ public function index()
 		$genres = $user->artist_genre;
 		$user_type = $user->user_type;
 		$zipCode = $user->address['zipcode'];
-		// $zipcodeByRadius = $this->zipcodeByRadius($zipCode);
-		// dd($zipcodeByRadius);
-
+		$centerLat = $user->latlon['lat'];
+		$centerLon = $user->latlon['lng'];
+		
 		// Index view for search
 		Input::merge(array_map('trim', Input::all()));
 		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+
+		$type_filter = null;
+		$age_filter = null;
+		$distance_filter = null;
 
 		if ($user_type == "artist") {
 
@@ -68,6 +79,21 @@ public function index()
 					$users = User::where('user_type', 'artist')
 						->where('address.city', $locality)
 						->where('ages', 'LIKE', '%'.$params.'%')->get();
+					$age_filter = $params;
+				}
+				if ($type == "distance") {
+
+					$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+					foreach ($users as $user) {
+						$lat = $user->latlon['lat'];
+						$lon = $user->latlon['lng'];
+						$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+						$user ->distance = $distance;
+						$user->save();
+					}
+					$users = User::where('user_type', 'artist')->where('address.city', $locality)
+						->where('distance', '<', (double)$params)->get();
+					$distance_filter = $params;
 				}
 			}
 	    	$books = array(); 
@@ -77,23 +103,26 @@ public function index()
 	    		$name = $user->name;
 				$artist_id = $user->id;
 
-				$confirmed_events = Service::confirmed()
-					->where(function ($query) use ($user_id, $artist_id){
-		                $query->servicesBySenderId($user_id)
-		                	->orWhere(function ($query) use ($artist_id){
-		                		$query->servicesByArtistId($artist_id);
-		                	});
-		            })
-					->count();
+				$confirmed_events1 = Service::servicesByReceiverId($user_id)->confirmed()->count();
 
-				$pending_events = Service::servicesBySenderId($user_id)->pending()->count();
-				$rejected_events = Service::servicesBySenderId($user_id)->rejected()->count();
+				$pending_events1 = Service::servicesByReceiverId($user_id)->pending()->count();
+				$rejected_events1 = Service::servicesByReceiverId($user_id)->rejected()->count();
+
+				$confirmed_events2 = Service::servicesBySenderId($user_id)->confirmed()->count();
+
+				$pending_events2 = Service::servicesBySenderId($user_id)->pending()->count();
+				$rejected_events2 = Service::servicesBySenderId($user_id)->rejected()->count();
+
+				$confirmed_events = $confirmed_events1 + $confirmed_events2;
+				$pending_events = $pending_events1 + $pending_events2;
+				$rejected_events = $rejected_events1 + $rejected_events2;
+
 				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
 					"pending" => $pending_events, "rejected" => $rejected_events);
 				array_push($books, $book);
 	    	}
 	    	$books = collect($books);
-			return View::make('ourscene.art-dashboard', compact('books'));
+			return View::make('ourscene.art-dashboard', compact('books', 'age_filter', 'distance_filter'));
 		}
 		else {
 
@@ -108,6 +137,21 @@ public function index()
 						->where('address.city', $locality)
 						->where('venue_type.0', $params)
 						->orWhere('venue_type.0', $params)->get();
+					$type_filter = $params;
+				}
+				if ($type == "distance") {
+
+					$users = User::where('user_type', 'venue')->where('address.city', $locality)->get();
+					foreach ($users as $user) {
+						$lat = $user->latlon['lat'];
+						$lon = $user->latlon['lng'];
+						$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+						$user ->distance = $distance;
+						$user->save();
+					}
+					$users = User::where('user_type', 'venue')->where('address.city', $locality)
+						->where('distance', '<', (double)$params)->get();
+					$distance_filter = $params;
 				}
 			}
 			$books = array(); 
@@ -117,19 +161,27 @@ public function index()
 	    		$user_id = $user->id;
 				$venue_id = $user->id;
 
-				$confirmed_events = Service::servicesByReceiverId($user_id)
-					->confirmed()
-					->count();
+				$confirmed_events1 = Service::servicesByReceiverId($user_id)->confirmed()->count();
 
-				$pending_events = Service::servicesByReceiverId($user_id)->pending()->count();
-				$rejected_events = Service::servicesByReceiverId($user_id)->rejected()->count();
+				$pending_events1 = Service::servicesByReceiverId($user_id)->pending()->count();
+				$rejected_events1 = Service::servicesByReceiverId($user_id)->rejected()->count();
+
+				$confirmed_events2 = Service::servicesBySenderId($user_id)->confirmed()->count();
+
+				$pending_events2 = Service::servicesBySenderId($user_id)->pending()->count();
+				$rejected_events2 = Service::servicesBySenderId($user_id)->rejected()->count();
+
+				$confirmed_events = $confirmed_events1 + $confirmed_events2;
+				$pending_events = $pending_events1 + $pending_events2;
+				$rejected_events = $rejected_events1 + $rejected_events2;
+
 				$seating_capacity = $user->seating_capacity;
 				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
 					"pending" => $pending_events, "rejected" => $rejected_events, "seating_capacity" => $seating_capacity);
 				array_push($books, $book);
 	    	}
 	    	$books = collect($books);
-			return View::make('ourscene.venue-dashboard', compact('books'));
+			return View::make('ourscene.venue-dashboard', compact('books', 'type_filter', 'distance_filter'));
 
 		}
 
@@ -142,90 +194,84 @@ public function getMyState()
 		$user_id = Session::get('id');
 		$user 	 = User::find($user_id);
 		$locality = $user->address['city'];
-		$genres = $user->artist_genre;
-		$user_type = $user->user_type;
-		$zipCode = $user->address['zipcode'];
-		// $zipcodeByRadius = $this->zipcodeByRadius($zipCode);
-		// dd($zipcodeByRadius);
 
-		// Index view for search
-		Input::merge(array_map('trim', Input::all()));
-		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+		$books = array();
+		$curYear = date('Y'); 
+		for ($i = 1; $i < 13; $i++) {
 
-		if ($user_type == "artist") {
+			$start_datetime = $i.'/1/'.$curYear.'00:00';
+			$end_datetime = $i.'/31/'.$curYear.'23:59';
 
-			$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
-			if (isset($input['params'])) {
-				$type = $input['type'];
-				$params = $input['params'];
-				if ($type == "age") {
-					$users = User::where('user_type', 'artist')
-						->where('address.city', $locality)
-						->where('ages', 'LIKE', '%'.$params.'%')->get();
-				}
+			$start_datetime = new MongoDate(strtotime($start_datetime));
+			$end_datetime = new MongoDate(strtotime($end_datetime));
+
+
+			$confirmed_events1 = Service::servicesByReceiverId($user_id)
+				->whereBetween('confirmation_date',[$start_datetime, $end_datetime])->confirmed()->count();
+
+			$pending_events1 = Service::servicesByReceiverId($user_id)
+				->whereBetween('request_date',[$start_datetime, $end_datetime])->pending()->count();
+			$rejected_events1 = Service::servicesByReceiverId($user_id)
+				->whereBetween('rejection_date',[$start_datetime, $end_datetime])->rejected()->count();
+
+			$confirmed_events2 = Service::servicesBySenderId($user_id)
+				->whereBetween('confirmation_date',[$start_datetime, $end_datetime])->confirmed()->count();
+
+			$pending_events2 = Service::servicesBySenderId($user_id)
+				->whereBetween('request_date',[$start_datetime, $end_datetime])->pending()->count();
+			$rejected_events2 = Service::servicesBySenderId($user_id)
+				->whereBetween('rejection_date',[$start_datetime, $end_datetime])->rejected()->count();
+
+			$confirmed_events = $confirmed_events1 + $confirmed_events2;
+			$pending_events = $pending_events1 + $pending_events2;
+			$rejected_events = $rejected_events1 + $rejected_events2;
+			$month = "";
+			switch ($i) {
+			    case 1:
+			        $month = "January";
+			        break;
+			    case 2:
+			        $month = "February";
+			        break;
+			    case 3:
+			        $month = "March";
+			        break;
+			    case 4:
+			        $month = "April";
+			        break;
+			    case 5:
+			        $month = "May";
+			        break;
+			    case 6:
+			        $month = "June";
+			        break;
+			    case 7:
+			        $month = "July";
+			        break;
+			    case 8:
+			        $month = "August";
+			        break;
+			    case 9:
+			        $month = "September";
+			        break;
+			    case 10:
+			        $month = "October";
+			        break;
+			    case 11:
+			        $month = "November";
+			        break;
+			    case 12:
+			        $month = "December";
+			        break;
 			}
-	    	$books = array(); 
-	    	foreach ($users as $user)
-	    	{
-	    		$user_id = $user->id;
-	    		$name = $user->name;
-				$artist_id = $user->id;
 
-				$confirmed_events = Service::confirmed()
-					->where(function ($query) use ($user_id, $artist_id){
-		                $query->servicesBySenderId($user_id)
-		                	->orWhere(function ($query) use ($artist_id){
-		                		$query->servicesByArtistId($artist_id);
-		                	});
-		            })
-					->count();
-
-				$pending_events = Service::servicesBySenderId($user_id)->pending()->count();
-				$rejected_events = Service::servicesBySenderId($user_id)->rejected()->count();
-				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
-					"pending" => $pending_events, "rejected" => $rejected_events);
-				array_push($books, $book);
-	    	}
-	    	$books = collect($books);
-			return View::make('ourscene.art-dashboard', compact('books'));
+			$book = array("id" => $user_id, "name" => $month, "confirmed" => $confirmed_events, 
+				"pending" => $pending_events, "rejected" => $rejected_events);
+			array_push($books, $book);
 		}
-		else {
-
-			$users = User::where('user_type', 'venue')
-				->where('address.city', $locality)->get();
-			// $users = User::where('user_type', 'venue')->get();
-			if (isset($input['params'])) {
-				$type = $input['type'];
-				$params = $input['params'];
-				if ($type == "type") {
-					$users = User::where('user_type', 'venue')
-						->where('address.city', $locality)
-						->where('venue_type.0', $params)
-						->orWhere('venue_type.0', $params)->get();
-				}
-			}
-			$books = array(); 
-	    	foreach ($users as $user)
-	    	{
-	    		$name = $user->name;
-	    		$user_id = $user->id;
-				$venue_id = $user->id;
-
-				$confirmed_events = Service::servicesByReceiverId($user_id)
-					->confirmed()
-					->count();
-
-				$pending_events = Service::servicesByReceiverId($user_id)->pending()->count();
-				$rejected_events = Service::servicesByReceiverId($user_id)->rejected()->count();
-				$seating_capacity = $user->seating_capacity;
-				$book = array("id" => $user_id, "name" => $name, "confirmed" => $confirmed_events, 
-					"pending" => $pending_events, "rejected" => $rejected_events, "seating_capacity" => $seating_capacity);
-				array_push($books, $book);
-	    	}
-	    	$books = collect($books);
-			return View::make('ourscene.venue-dashboard', compact('books'));
-
-		}
+	
+	$books = collect($books);
+	return View::make('ourscene.my-dashboard', compact('books', 'curYear'));
 
     	
     }

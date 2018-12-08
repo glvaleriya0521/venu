@@ -20,7 +20,7 @@
     ]
   )
 
-    <div class="container filter-artist">
+<!--     <div class="container filter-artist">
         <div class="row">
             <div class="col-md-6">
                 <div class="custom-select" id="venu-type" style="width:200px;">
@@ -44,7 +44,44 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+  <div class="container filter-artist">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="input-field col-md-3">
+            <input type="radio" class="venu-type" name="venu-type" id="restaurant" value="restaurant"/>
+            <label for="restaurant" class="active">Restaurant</label>
+          </div>
+          <div class="input-field col-md-3">
+            <input type="radio" class="venu-type" name="venu-type" id="bar" value="bar"/>
+            <label for="bar" class="active">Bar</label>
+          </div>
+          <div class="input-field col-md-3">
+            <input type="radio" class="venu-type" name="venu-type" id="music" value="music"/>
+            <label for="music" class="active">Music</label>
+          </div>
+          <div class="input-field col-md-3">
+            <input type="radio" class="venu-type" name="venu-type" id="dance" value="dance"/>
+            <label for="dance" class="active">Dance</label>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="5" value="5"/>
+            <label for="5" class="active">5 mile</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="10" value="10"/>
+            <label for="10" class="active">10 mile</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="15" value="15"/>
+            <label for="15" class="active">15 mile</label>
+          </div>
+      </div>
     </div>
+  </div>
 	<div id="chart-container">FusionCharts XT will load here!</div>
 @endsection
 
@@ -215,8 +252,32 @@
     document.addEventListener("click", closeAllSelect);
 </script>
 <script>
-    $(document).on('click','#venu-type', function(e){
-        location.href = "{{action('DashboardController@index')}}?params=" + $('#venu-type-value').val() + "&type=type";
+ //   $(document).on('click','#venu-type', function(e){
+ //       location.href = "{{action('DashboardController@index')}}?params=" + $('#venu-type-value').val() + "&type=type";
+ //   })
+
+    $(document).on('click','.venu-type', function(e){
+      var radioValue = $("input[name='venu-type']:checked").val();
+      if(radioValue){
+        location.href = "{{action('DashboardController@index')}}?params=" + radioValue + "&type=type";
+      }
     })
+
+    $(document).on('click','.distance', function(e){
+      var radioValue = $("input[name='distance']:checked").val();
+      if(radioValue){
+        location.href = "{{action('DashboardController@index')}}?params=" + radioValue + "&type=distance";
+      }
+    })
+
+    var venu_type = '{{ $type_filter }}';
+    if (venu_type != null) {
+        $("#"+venu_type).prop('checked', true);
+    }
+
+    var distance_allowance = '{{ $distance_filter }}';
+    if (distance_allowance != null) {
+        $("#"+distance_allowance).prop('checked', true);
+    }
 </script>
 @endsection

@@ -84,7 +84,13 @@
 
 #chart-container {
 	text-align: center;
+	padding-bottom: 50px;
 }
+
+.chart-container-top {
+	height: 66px;
+}
+
 g.raphael-group-7-background rect{
 	fill: #1a1a1c;
 }
@@ -157,8 +163,13 @@ span#chartobject-1.fusioncharts-container svg#raphael-paper-5{
 }
 
 .filter-artist{
-	margin-top: 43px;
+	margin-top: 66px;
 	margin-bottom: 10px;
+}
+
+.filter-artist .row {
+	padding-left: 10%;
+	padding-right: 10%;
 }
 /*.input-row .input-field input{
 	border: solid 1px !important;

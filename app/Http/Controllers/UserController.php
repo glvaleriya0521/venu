@@ -52,6 +52,47 @@ class UserController extends Controller {
 		$this->venue_types = json_decode(file_get_contents(base_path()."/resources/assets/venue_types.json"),true);
 	}
 
+	public function convertToLan($zip){
+		 $mapsApiKey = 'AIzaSyATt8YZNu3NjbG6dvkfF5M2KN73B9UxS6Q';
+		 $url = "https://maps.googleapis.com/maps/api/geocode/json?address=
+			".urlencode($zip)."&sensor=false&key=".$mapsApiKey;
+			$result_string = file_get_contents($url);
+			$result = json_decode($result_string, true);
+			$result1[]=$result['results'][0];
+			$result2[]=$result1[0]['geometry'];
+			$result3[]=$result2[0]['location'];
+			return $result3[0];
+	}
+
+	public function validateUSAZip($zip_code)
+	{
+	  if(preg_match("/^([0-9]{5})(-[0-9]{4})?$/i",$zip_code))
+	    return true;
+	  else
+	    return false;
+	}
+
+	public function fillLatLon(){
+
+		$users = User::where('user_type', 'artist')->orWhere('user_type', 'venue')->get();
+		// dd($users->count());
+		foreach ($users as $user) {
+			$address = $user->address;
+			$zipcode =$address['zipcode'];
+			$latlon = $user->latlon;
+			$lat = $latlon['lat'];
+			if(!$this->validateUSAZip($zipcode)) {
+				$user->delete();
+			}
+			if ($this->validateUSAZip($zipcode) && $lat == "") {
+				$latlng = $this->convertToLan($zipcode);
+				$user->latlon = $latlng;
+				$user->save();
+			}
+		}
+		dd('fisnish');
+	}
+
 
 	protected $genres;
 	protected $venue_types;
@@ -103,6 +144,7 @@ class UserController extends Controller {
 		$user->address 		= $address;
 		$user->paypal_info 	= $paypal_info;
 		$user->social_media = $social_media;
+		$user->latlong      = $this->convertToLan($input['zipcode']);
 
 		$user->updateArtistGenreWithInput(Input::get('genre'));
 
@@ -174,27 +216,6 @@ class UserController extends Controller {
 
 	}
 
-	public function getLatLong($code){
-
-		 $mapsApiKey = 'AIzaSyDVPLLlJAQ679Frd0gu11khJ9mW02wsvWQ';
-		 $query = "http://maps.google.co.uk/maps/geo?q=".urlencode($code)."&output=json&key=".$mapsApiKey;
-		 $data = file_get_contents($query);
-		 // if data returned
-		 if($data){
-		  // convert into readable format
-		  $data = json_decode($data);
-		  $long = $data->Placemark[0]->Point->coordinates[0];
-		  $lat = $data->Placemark[0]->Point->coordinates[1];
-		  return array('Latitude'=>$lat,'Longitude'=>$long);
-		 }else{
-		  return false;
-		 }
-	}
-	public function convertTolan(){
-
-		print_r($this->getLatLong('90267'));
-		
-	}
 	public function postRegisterAsVenue(){
 
 		//trim and sanitize all inputs
@@ -213,15 +234,26 @@ class UserController extends Controller {
 			'twitter' 	=> $input['twitter_account']
 		);
 
+		$latlon = $this->convertToLan($input['zipcode']);
+		$lat = $latlon['lat'];
+		$lon = $latlon['lng'];
 		$address = array(
 			'unit_street' 	=> $input['unit_street'],
 			'city' 			=> $input['city'],
 			'zipcode' 		=> $input['zipcode'],
 			'state' 		=> $input['state'],
 			'country' 		=> $input['country'],
-			'lat' 		    => $input['lat'],
-			'lon' 		    => $input['lon']
+			'lat' 		    => $lat,
+			'lon' 		    => $lon
 		);
+
+		// $address = array(
+		// 	'unit_street' 	=> $input['unit_street'],
+		// 	'city' 			=> $input['city'],
+		// 	'zipcode' 		=> $input['zipcode'],
+		// 	'state' 		=> $input['state'],
+		// 	'country' 		=> $input['country']
+		// );
 
 		$user->user_type 	= 'venue';
 		$user->status 		= 'active';
@@ -233,6 +265,7 @@ class UserController extends Controller {
 		$user->phone_number = $input['phone_number'];
 		$user->email 		= $input['register-email'];
 		$user->paypal_info 	= $paypal_info;
+		$user->latlon       = $latlon;
 
 		//VENUE: Get venue types
 		$venue_type = array();
