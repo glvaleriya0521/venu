@@ -4696,14 +4696,13 @@ footer.page-footer .footer-copyright {
 .card .card-action {
   position         : relative;
   padding          : 20px;
-  color            : #fff;
-  border-top       : 1px solid rgba(160,160,160,0.2);
+  color            : rgba(26, 26, 28, 1.0);
   background-color : inherit;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
   margin-right   : 20px;
-  color          : #ffab40;
+  color          : #fff;
   text-transform : uppercase;
   transition     : color .3s ease;
 }
