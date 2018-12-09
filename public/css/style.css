@@ -1234,7 +1234,7 @@ div.card:nth-child(3) {
 }
 
 #my-events-events .booked-color {
-  color : darkred;
+  color : #46bfa7;
 }
 
 #my-events-events .pending-color {
@@ -1242,7 +1242,7 @@ div.card:nth-child(3) {
 }
 
 #my-events-events .next-time-color {
-  color : #ef6b24;
+  color : darkred;
 }
 
 #my-events-calendar #calendar-container {
