@@ -1755,7 +1755,6 @@ a:visited {
 @media
   (min-width : 992px) {
   #register-artist .registration-panel {
-    top         : 72px;
     width       : 40%;
     height      : 100%;
     margin-left : 15%;
