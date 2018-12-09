@@ -20,30 +20,6 @@
     ]
   )
 
-<!--     <div class="container filter-artist">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="custom-select" id="age-allowance" style="width:200px;">
-                  <select id="age-value">
-                    <option value="0">Select age allowance:</option>
-                    <option value="none">None</option>
-                    <option value="18+">18+</option>
-                    <option value="21+">21+</option>
-                  </select>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="custom-select" id="distance" style="width:200px;">
-                  <select>
-                    <option value="0">Select distance:</option>
-                    <option value="5">5 mile</option>
-                    <option value="10">10 mile</option>
-                    <option value="15">15 mile</option>
-                  </select>
-                </div>
-            </div>
-        </div>
-    </div> -->
   <div class="container filter-artist">
     <div class="row">
       <div class="col-md-6">
@@ -110,8 +86,7 @@
 			"value": '{{ $book['rejected'] }}'
 		});
 	@endforeach
-	console.log(user_name)
-	
+  var curYear = '{{ $curYear }}';	
 
 	// console.log(books);
     FusionCharts.ready(function(){
@@ -126,8 +101,8 @@
         "chart": {
             "theme": "fusion",
             "caption": "Booking Comparison",
-            "subCaption": "(Artists)",
-            "xaxisname": "Artist",
+            "subCaption": "(" + curYear + ")",
+            "xaxisname": "Month",
             "yaxisname": "book",
             "numberprefix": "",
             "lineThickness": "3",
@@ -231,21 +206,17 @@ document.addEventListener("click", closeAllSelect);
 </script>
 
 <script>
-// $(document).on('click','#age-allowance', function(e){
-//     location.href = "{{action('DashboardController@index')}}?params=" + $('#age-value').val() + "&type=age";
-// })
-
 $(document).on('click','.age-allowance', function(e){
   var radioValue = $("input[name='age']:checked").val();
   if(radioValue){
-    location.href = "{{action('DashboardController@index')}}?params=" + radioValue + "&type=age";
+    location.href = "{{action('DashboardController@getMyState')}}?params=" + radioValue + "&type=age";
   }
 })
 
 $(document).on('click','.distance', function(e){
   var radioValue = $("input[name='distance']:checked").val();
   if(radioValue){
-    location.href = "{{action('DashboardController@index')}}?params=" + radioValue + "&type=distance";
+    location.href = "{{action('DashboardController@getMyState')}}?params=" + radioValue + "&type=distance";
   }
 })
 
@@ -259,5 +230,4 @@ if (distance_allowance != null) {
     $("#"+distance_allowance).prop('checked', true);
 }
 </script>
-
 @endsection

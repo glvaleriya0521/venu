@@ -45,7 +45,7 @@ PlacesDataSource.prototype.getStores = function(bounds, features, callback) {
     bounds: bounds
   }, function(results, status) {
     var stores = [];
-
+    console.log(results);
     for (var i = 0, result; result = results[i]; i++) {
       var latLng = result.geometry.location;
       var store = new storeLocator.Store(result.id, latLng, null, {

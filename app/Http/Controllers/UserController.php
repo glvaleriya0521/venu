@@ -144,7 +144,7 @@ class UserController extends Controller {
 		$user->address 		= $address;
 		$user->paypal_info 	= $paypal_info;
 		$user->social_media = $social_media;
-		$user->latlong      = $this->convertToLan($input['zipcode']);
+		$user->latlon      = $this->convertToLan($input['zipcode']);
 
 		$user->updateArtistGenreWithInput(Input::get('genre'));
 

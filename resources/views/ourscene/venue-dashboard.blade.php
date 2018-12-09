@@ -14,8 +14,8 @@
 @section('content')
   @include('navs.main-navigation-3',
     ['items' => array(
-      array('text' => "OTHERS STATE", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('DashboardController@index')),
-      array('text' => "MY STATE", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('DashboardController@getMyState')),
+      array('text' => "OTHERS STATS", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('DashboardController@index')),
+      array('text' => "MY STATS", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('DashboardController@getMyState')),
       )
     ]
   )

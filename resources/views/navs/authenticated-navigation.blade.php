@@ -128,7 +128,12 @@
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
 				</div>
 				<div class="col s2 m2 5">
-					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
+					@if(Session::get('user_type') == 'venue')
+						<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>EVENTS</a>
+					@endif
+					@if(Session::get('user_type') == 'artist')
+						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>EVENTS</a>
+					@endif
 				</div>
 				<div class="col s2 m2 5">
 					<a href="{{ action('EventController@getRequests') }}"

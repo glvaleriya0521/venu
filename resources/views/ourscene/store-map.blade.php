@@ -1,38 +1,77 @@
-<?php
-	use OurScene\Models\Event;
-?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-@extends('ourscene.layouts.store-map')
+      var map;
+      var infowindow;
 
-@section('my-store-head')
-@stop
+      function initMap() {
+        var pyrmont = {lat: 34.05223, lng:  -118.24368};
 
-@section('my-events-content')
-  <input type="hidden" name="" id="zipcode" value="{{$zipCode}}">
-	<div id="panel"></div>
-  <div id="map-canvas"></div>
-@stop
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
 
-@section('my-events-scripts')
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['store']
+        }, callback);
+      }
 
-	<script
-	  src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
 
-	<script src="{{ asset('store/store-locator.min.js') }}"></script>
-	<script src="{{ asset('store/places.js') }}"></script>
-<!-- 	<script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-12846745-20']);
-      _gaq.push(['_trackPageview']);
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var photos = place.photos;
+        if (!photos) {
+          return;
+        }
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location,
+          title: place.name,
+          // icon: photos[0].getUrl({'maxWidth': 35, 'maxHeight': 35})
+        });
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script> -->
-
-	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc2Iddfy8NwxvC7sdbdvUa-pfqMnRXIBI&libraries=places&**callback=initMap**" async defer></script>
-   
-
-@stop
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc2Iddfy8NwxvC7sdbdvUa-pfqMnRXIBI&libraries=places&callback=initMap" async defer></script>
+  </body>
+</html>

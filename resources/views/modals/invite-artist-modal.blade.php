@@ -35,11 +35,12 @@
 		</div>
 
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly" name="start_date" value="<?= $start_date; ?>" required></input>
+			<input type="text" name="start_date" id="invite-start-date" placeholder="" 
+				class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
 		</div>
 
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="start_time" value="<?= $start_time; ?>" required></input></br>
+			<input type="text" class="" name="start_time" id="invite-start-time" placeholder="" value="<?= $start_time; ?>" required></br>
 			<label for="" class="active">
 				Start time
 				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
@@ -51,11 +52,12 @@
 		</div>
 
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly" name="end_date" value="<?= $end_date; ?>" required></input>
+			<input type="text" name="end_date" id="invite-end-date" placeholder=""
+				class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
 		</div>
 
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="end_time" value="<?= $end_time; ?>" required></input></br>
+			<input type="text" class="" name="end_time" id="invite-end-time" placeholder="" value="<?= $end_time; ?>" required></br>
 			<label for="" class="active">
 				End time
 				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
@@ -69,6 +71,36 @@
 				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
 			</label>
 		</div>
+
+		<script>
+		$(document).ready(function() {
+			var timezone_offset = new Date().getTimezoneOffset();
+			$("#timezone_offset").val(timezone_offset);
+
+			// $("#start-time").timepicker({
+			// 	// timeFormat: 'h:mm p',
+			// 	interval: 15,
+			// 	scrollbar: true
+			// });
+			$("#invite-start-time").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+			$("#invite-end-time").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+			$("#invite-opening-time").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+
+			$('#invite-start-date').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+
+		    $('#invite-end-date').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+		});
+		</script>
 
 		{!! Form::close() !!}
 	</div>

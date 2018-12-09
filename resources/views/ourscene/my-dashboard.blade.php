@@ -14,12 +14,44 @@
 @section('content')
   @include('navs.main-navigation-3',
     ['items' => array(
-      array('text' => "OTHERS STATE", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('DashboardController@index')),
-      array('text' => "MY STATE", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('DashboardController@getMyState')),
+      array('text' => "OTHERS STATS", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('DashboardController@index')),
+      array('text' => "MY STATS", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('DashboardController@getMyState')),
       )
     ]
   )
-  <div class="chart-container-top"></div>
+
+  <div class="container filter-artist">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" class="age-allowance" name="age" id="none" value="none"/>
+            <label for="none" class="active">None</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" class="age-allowance" name="age" id="18" value="18"/>
+            <label for="18" class="active">18+</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" class="age-allowance" name="age" id="21" value="21"/>
+            <label for="21" class="active">21+</label>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="5" value="5"/>
+            <label for="5" class="active">5 mile</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="10" value="10"/>
+            <label for="10" class="active">10 mile</label>
+          </div>
+          <div class="input-field col s12 m8 l4">
+            <input type="radio" name="distance" class="distance" id="15" value="15"/>
+            <label for="15" class="active">15 mile</label>
+          </div>
+      </div>
+    </div>
+  </div>
 	<div id="chart-container">FusionCharts XT will load here!</div>
 @endsection
 
