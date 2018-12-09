@@ -1107,6 +1107,22 @@ a:visited {
   margin-top : 25px;
 }
 
+/*booked*/
+
+div.card:nth-child(1) {
+  border: 1px solid #46bfa7;
+}
+
+/*pending*/
+div.card:nth-child(2) {
+  border: 1px solid rgba(238, 143, 31, 1.0);
+}
+
+/*next time*/
+div.card:nth-child(3) {
+  border: 1px sold darkred;
+}
+
 #my-events-events .events-under-status .header-title {
   padding     : 10px;
   font-family : "OpenSans-SemiBold";
