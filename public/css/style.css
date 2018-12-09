@@ -1223,7 +1223,7 @@ div.card:nth-child(3) {
 }
 
 #my-events-events .event-title-link {
-  color          : #534d93;
+  color          : rgba(26, 120, 246, 1.0);
   text-transform : none;
 }
 
@@ -1234,11 +1234,11 @@ div.card:nth-child(3) {
 }
 
 #my-events-events .booked-color {
-  color : #46bfa7;
+  color : darkred;
 }
 
 #my-events-events .pending-color {
-  color : #534d93;
+  color : rgba(238, 143, 31, 1.0);
 }
 
 #my-events-events .next-time-color {
