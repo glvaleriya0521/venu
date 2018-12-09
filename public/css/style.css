@@ -2205,7 +2205,7 @@ div.card:nth-child(3) {
 }
 
 #ourscene-tab-navigation-row .col a {
-  color          : #333;
+  color          : #fff;
   text-transform : none;
   font-family    : "OpenSans-SemiBold";
   letter-spacing : normal;
@@ -2213,7 +2213,7 @@ div.card:nth-child(3) {
 
 #ourscene-tab-navigation-row .col .indicator {
   height           : 4px;
-  background-color : #534d93;
+  background-color : rgba(26, 120, 246, 1.0);
 }
 
 #search-results {
