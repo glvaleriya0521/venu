@@ -1770,7 +1770,6 @@ a:visited {
 @media
   (min-width : 992px) {
   #register-venue .registration-panel {
-    top       : 72px;
     left      : 0px;
     width     : 40%;
     height    : 100%;
