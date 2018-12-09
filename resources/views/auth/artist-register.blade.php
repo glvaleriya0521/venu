@@ -22,7 +22,7 @@ use OurScene\Models\User;
 
 		<div class="register-heading">
 			<div>
-				<img id="user-type-icon" src="{{asset('images/icons/artist.svg')}}" />
+				<img id="user-type-icon" src="{{asset('images/icons/artist-avatar.png')}}" />
 				<span>Register as <b>Artist</b> </span>
 			</div>
 			<br/>
@@ -60,7 +60,7 @@ use OurScene\Models\User;
 		</div>
 
 		<div class="row" style="margin: 0;">
-			
+
 			<!-- Tab navigation -->
 
 			<div class="tab-navigation">
@@ -69,11 +69,11 @@ use OurScene\Models\User;
 					<li role="presentation" class="tab col s3 reg-step-tab @if(Session::has('success')) active @else disabled @endif"><a href="#materials"><span>2 &nbsp;&nbsp;&nbsp; Media</span></a> </li>
 				</ul>
 		  	</div>
-		
+
 			<!-- Tab for profile details -->
 
 			<div id="details" class="col s12 m12 l12" role="tabpanel">
-				
+
 				{!! Form::open(array(
 					'url'		=> action('UserController@postRegisterAsArtist'),
 					'method'	=> 'POST',
@@ -161,7 +161,7 @@ use OurScene\Models\User;
 				<div class="row input-field">
 		    		<div class="col s12 m6 l6 ">
 						<label for="phone_number">Contact Number</label>
-						<input type="text" id="phone_number" name="phone_number" class="registration-txtbx-1" 
+						<input type="text" id="phone_number" name="phone_number" class="registration-txtbx-1"
 							value="{!! old('phone_number') !!}" placeholder="Contact number" pattern="[0-9-+\s\(\)]*"/>
 					</div>
 				</div>
@@ -206,7 +206,7 @@ use OurScene\Models\User;
 						<input type="text" id="bandcamp_account" name="bandcamp_account" class="registration-txtbx-1" placeholder="" value="{!! old('bandcamp_account') !!}"/>
 					</div>
 				</div>
-				
+
 				<br/>
 
 				<div class="row" style="display:none">
@@ -224,7 +224,7 @@ use OurScene\Models\User;
 		  	<!-- End tab for profile details -->
 
 			<!-- Tab for materials -->
-			
+
 			<div id="materials" class="col s12 m12 l12" role="tabpanel">
 				{!! Form::open(array(
 					'url'		=> action('UserController@postRegisterMaterials'),
@@ -249,7 +249,7 @@ use OurScene\Models\User;
 						<a href="javascript:void(0);" id="add-more-songs" class="btn btn-link">Add Song</a>
 					</label>
 				</div>
-				
+
 				<br/><br/>
 
 				<!-- Images -->
@@ -304,13 +304,13 @@ use OurScene\Models\User;
 <script type="text/javascript">
 
 	var payment_is_required = false;
-	
+
 	$(".payment-input").on("change blur", function() {
    		if(!payment_is_required){
    			$('.payment_required').show();
    			payment_is_required = true;
    		}
-   			
+
 	});
 
 	var materials_has_loaded_animators = false;
@@ -318,7 +318,7 @@ use OurScene\Models\User;
 	$('#add-media-form').submit(function(e){
 
 		//validate
-		var file_size_exceeded = false;		
+		var file_size_exceeded = false;
 
 		var totalsize = 0;
 
@@ -342,7 +342,7 @@ use OurScene\Models\User;
 
 		if(!file_size_exceeded && !materials_has_loaded_animators){
 			e.preventDefault()
-			
+
 			$('#file-size-exceeded-error').hide();
 
 			if($("#register-materials-images > div.col.s12.m10.l10.file-field.input-field > div > div.col.s2.m2.l2.upload-btn > input[type='file']").val() != ""){
@@ -370,7 +370,7 @@ use OurScene\Models\User;
 	var $register_artist_btn = $('#register-btn');
 
 	$('#register-artist-form').submit(function(e){
-		
+
 		$register_artist_btn.css({"opacity":".6"});
 
 		if(!register_artist_form_validated){
@@ -439,15 +439,15 @@ use OurScene\Models\User;
 
 				$.ajax({
 					url: ROOT+"/validate-email",
-					type: "GET", 
+					type: "GET",
 					data: "email="+$email.val(),
 					success: function(data){
 						response = data;
 
 						if(data['error']){
-							
+
 							no_error=false;
-							
+
 							//show email error
 							$email_error.html('The given email address is already in use.');
 							$email_error.show();
@@ -468,13 +468,13 @@ use OurScene\Models\User;
 							else{
 								$.ajax({
 									url: paypal_api_url+"/v1/oauth2/token",
-									type: "POST", 
+									type: "POST",
 									data: "grant_type=client_credentials",
 									beforeSend: function (xhr) {
 											xhr.setRequestHeader('Authorization', 'Basic ' + btoa(paypal_client_id));
 											xhr.setRequestHeader('Accept-Language', 'en_US');
 									},
-									dataType: "json", 
+									dataType: "json",
 									success: function(data){
 										console.log('auth success');
 									}
@@ -489,7 +489,7 @@ use OurScene\Models\User;
 
 									$.ajax({
 											 url: paypal_api_url+"/v1/vault/credit-card",
-											 type: "POST", 
+											 type: "POST",
 											 data: JSON.stringify({
 												"number": $('#paypal-number').val().replace(new RegExp("-", 'g'),""),
 												"payer_id": payer_id_registration,

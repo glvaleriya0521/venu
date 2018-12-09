@@ -10,6 +10,13 @@
 	color: black !important;
 }
 
+/* Request Form Field Label Font color */
+div.input-row:nth-child(4) > div:nth-child(1) > label:nth-child(2),
+div.input-row:nth-child(5) > div:nth-child(1) > label:nth-child(2),
+#start-date,
+#end-date {
+	color: #fff !important;
+}
 
 
 #map-canvas {

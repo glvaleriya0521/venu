@@ -4542,8 +4542,11 @@ footer.page-footer .footer-copyright {
 }
 
 .card {
-  position         : static;
+  position         : relative;
+  left             : 20%;
+  width            : 60%;
   margin           : 0.5rem 0 1rem 0;
+  color            : #fff;
   border-radius    : 1em;
   background-color : rgba(26, 26, 28, 1.0);
   transition       : box-shadow .25s;
@@ -4694,14 +4697,13 @@ footer.page-footer .footer-copyright {
 .card .card-action {
   position         : relative;
   padding          : 20px;
-  border-top       : 1px solid rgba(160,160,160,0.2);
+  color            : rgba(26, 26, 28, 1.0);
   background-color : inherit;
-  color            : #fff;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
   margin-right   : 20px;
-  color          : #ffab40;
+  color          : #fff;
   text-transform : uppercase;
   transition     : color .3s ease;
 }
@@ -4830,15 +4832,15 @@ footer.page-footer .footer-copyright {
 
 .tabs {
   display          : -webkit-flex;
-  display          : flex;
   display          : -ms-flexbox;
+  display          : flex;
   position         : relative;
   width            : 100%;
   height           : 48px;
   margin           : 0 auto;
   overflow-x       : auto;
   overflow-y       : hidden;
-  background-color : #fff;
+  background-color : rgba(26, 26, 28, 1.0);
   white-space      : nowrap;
 }
 
@@ -5432,10 +5434,10 @@ button.btn-floating {
 }
 
 .collapsible-body {
-  display       : none;
-  box-sizing    : border-box;
-  border-bottom : 1px solid #ddd;
-  background-color: rgba(39,40,42,1.0);
+  display          : none;
+  box-sizing       : border-box;
+  border-bottom    : 1px solid #ddd;
+  background-color : rgba(39,40,42,1.0);
 }
 
 .collapsible-body p {
@@ -5670,8 +5672,8 @@ textarea.materialize-textarea {
   padding          : 0;
   border           : none;
   border-bottom    : 1px solid #9e9e9e;
-  border-radius    : 0;
-  background-color : transparent;
+  border-radius    : .5em;
+  background-color : rgba(255, 255, 255, 0.2);
   outline          : none;
   box-shadow       : none;
   font-size        : 1rem;
