@@ -1107,20 +1107,22 @@ a:visited {
   margin-top : 25px;
 }
 
-/*booked*/
+/* booked */
 
 div.card:nth-child(1) {
-  border: 1px solid #46bfa7;
+  border : 1px solid #46bfa7;
 }
 
-/*pending*/
+/* pending */
+
 div.card:nth-child(2) {
-  border: 1px solid rgba(238, 143, 31, 1.0);
+  border : 1px solid rgba(238, 143, 31, 1.0);
 }
 
-/*next time*/
+/* next time */
+
 div.card:nth-child(3) {
-  border: 1px sold darkred;
+  border : 1px sold darkred;
 }
 
 #my-events-events .events-under-status .header-title {
@@ -1285,6 +1287,7 @@ div.card:nth-child(3) {
 }
 
 #event-form {
+  left          : 15%;
   margin        : 0;
   border-radius : 2em;
 }
@@ -1298,6 +1301,8 @@ div.card:nth-child(3) {
 }
 
 #event-form .title {
+  margin-left   : 2%;
+  color         : #fff;
   overflow      : hidden;
   border-radius : 2em;
   font-family   : "OpenSans-SemiBold";
@@ -1305,6 +1310,7 @@ div.card:nth-child(3) {
 }
 
 #event-form .title img {
+  display      : none;
   height       : 25px;
   margin-right : 20px;
 }
@@ -1350,6 +1356,10 @@ div.card:nth-child(3) {
   border-bottom  : solid 1px #ddd;
   font-family    : "OpenSans-SemiBold";
   font-size      : 1.25rem;
+}
+
+div.section-header:nth-child(1) > img:nth-child(1) {
+  display : none;
 }
 
 #event-form .row {
