@@ -1771,7 +1771,7 @@ a:visited {
   (min-width : 992px) {
   #register-venue .registration-panel {
     top       : 72px;
-    left      : 30%;
+    left      : 0px;
     width     : 40%;
     height    : 100%;
     margin    : auto;
