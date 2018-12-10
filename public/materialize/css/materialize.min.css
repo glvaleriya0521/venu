@@ -2828,7 +2828,7 @@ table.bordered>thead>tr {
 }
 
 table.striped>tbody>tr:nth-child(odd) {
-  background-color : #f2f2f2;
+  background-color : rgba(26, 26, 28, 1.0);
 }
 
 table.striped>tbody>tr>td {
@@ -2840,7 +2840,7 @@ table.highlight>tbody>tr {
 }
 
 table.highlight>tbody>tr:hover {
-  background-color : #f2f2f2;
+  background-color : rgba(26, 26, 28, 1.0);
 }
 
 table.centered tbody tr td,
@@ -4697,7 +4697,7 @@ footer.page-footer .footer-copyright {
 .card .card-action {
   position         : relative;
   padding          : 20px;
-  color            : rgba(26, 26, 28, 1.0);
+  color            : #fff;
   background-color : inherit;
 }
 
@@ -4869,7 +4869,7 @@ footer.page-footer .footer-copyright {
   position         : absolute;
   bottom           : 0;
   height           : 2px;
-  background-color : #f6b2b5;
+  background-color : rgba(26,120,246,1.0);
 }
 
 .material-tooltip {
