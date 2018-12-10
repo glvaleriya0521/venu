@@ -3314,7 +3314,6 @@ input[type=range]+.thumb {}
 .row {
   margin-right  : auto;
   margin-bottom : 20px;
-  margin-left   : 50%;
 }
 
 .row:after {
@@ -4129,6 +4128,8 @@ nav .brand-logo i.material-icons {
   margin-right : 15px;
 }
 
+
+
 nav ul {
   margin : 0;
 }
@@ -4223,6 +4224,10 @@ nav .input-field label.active {
 
 .navbar-fixed nav {
   position : fixed;
+}
+
+.nav-row {
+  margin-left   : 45%;
 }
 
 @media
