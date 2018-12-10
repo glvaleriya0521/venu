@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
 	//event colors
-	
+
 	const CREATED_EVENT_BY_VENUE_COLOR = '#46bfa7'; //green
-	
+
 	const CONFIRMED_REQUEST_OF_VENUE_COLOR = '#46bfa7'; //green
-	const PENDING_REQUEST_OF_VENUE_COLOR = '#534d93'; //purple
-	const REJECTED_REQUEST_OF_VENUE_COLOR = '#ef6b24'; //orange
+	const PENDING_REQUEST_OF_VENUE_COLOR = 'rgba(238, 143, 31, 1.0)'; //orange
+	const REJECTED_REQUEST_OF_VENUE_COLOR = 'rgba(139, 0, 0, 1.0)'; //darkred
 
 	const CONFIRMED_REQUEST_OF_ARTIST_COLOR = '#46bfa7';//green
-	const PENDING_REQUEST_OF_ARTIST_COLOR = '#534d93'; //purple
+	const PENDING_REQUEST_OF_ARTIST_COLOR = 'rgba(238, 143, 31, 1.0)'; //orange
 
 	const DEFAULT_EVENT_COLOR = '#2CA5E0'; //blue
 
@@ -39,12 +39,12 @@ $(document).ready(function() {
 
 				$create_event_from_drag_and_drop_form.submit();
 		    }
-			
+
 		},
 		eventLimit: true,
 		eventLimitText: 'event',
 		viewRender: function(view, element){
-			
+
 			$('#calendar-title').html(view.title); //show calendar title
 
 			//set content height
@@ -60,14 +60,14 @@ $(document).ready(function() {
 				type: "POST",
 				data: "_token="+CSRF_TOKEN,
 				success: function(data){
-					
+
 					var calendar_events = []; //container of events and promotions
 
 					var json_data = JSON.parse(data);
 
 					//get events
 					var events = json_data['events'];
-					
+
 					//get promotions
 					var promotions = json_data['promotions'];
 
@@ -81,9 +81,9 @@ $(document).ready(function() {
 						var event = events[index];
 
 						//format event details
-	
+
 						var title = event['title'];
-						
+
 						var age_requirements = event['age_requirements'];
 						var type = event['event_type'];
 						var payment_status = event['payment_status'];
@@ -127,7 +127,7 @@ $(document).ready(function() {
 								id: event['id'],
 								title: title,
 								start: start_datetime,
-								end: end_datetime,	
+								end: end_datetime,
 								color: color
 						});
 
@@ -140,9 +140,9 @@ $(document).ready(function() {
 						var promotion = promotions[index];
 
 						//format promotion details
-	
+
 						var title = promotion['title'];
-						
+
 						var age_requirements = promotion['age_requirements'];
 						var type = promotion['promotion_type'];
 						var payment_status = promotion['payment_status'];
@@ -167,7 +167,7 @@ $(document).ready(function() {
 								id: promotion['id'],
 								title: title,
 								start: start_datetime,
-								end: end_datetime,	
+								end: end_datetime,
 								color: color
 						});
 

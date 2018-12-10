@@ -1,5 +1,5 @@
 <div class="settings-tab-container">
-    
+
     <div class="section">
 	    <div class="large-form-section">CHANGE PASSWORD</div>
 
@@ -23,7 +23,7 @@
 
 		<div class="row">
 			<div class="col s12 m6 l6 input-field">
-				<label class="control-label">Old password <font style="color: #f00;">*</font></label>	
+				<label class="control-label">Old password <font style="color: #f00;">*</font></label>
 				<input type="password" name="current_password" id="current-password" class="form-control" placeholder="Type old password" required/>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 	<div class="long-divider"></div>
 
 	<div class="section">
-		
+
 		<div class="large-form-section">GOOGLE CALENDAR</div>
 
 		<div class="row">
@@ -70,7 +70,7 @@
 			@else
 				<a href="{{ action('EventController@authenticateGoogleCalendar') }}" class="btn ourscene-btn-1">Integrate with Google Calendar</a>
 			@endif
-			
+
 			</div>
 		</div>
 	</div>
@@ -79,16 +79,16 @@
 
 	<div class="section">
 
-		@if ($user->status === 'active') 
+		@if ($user->status === 'active')
 			<div class="large-form-section">DEACTIVATE ACCOUNT</div>
 		@else
 		  <div class="large-form-section">REACTIVATE ACCOUNT</div>
 		@endif
-		
+
 		<div class="row">
 			<div class="col s12 m10 l8">
 				<p>Before you deactivate your account, you should know:</p>
-				<p>Once deactivated, you will not be able to access any of the components or features of the VenU application. Any existing events, promotions, messages, and other OurScene components will be inaccessible.</p>
+				<p>Once deactivated, you will not be able to access any of the components or features of the VenU application. Any existing events, promotions, messages, and other VenU components will be inaccessible.</p>
  				<p>As of right now, deactivation is not permanent. We will be implementing a permanent deletion solution in the near future. Please stay tuned for upcoming releases.</p>
  				<p>We do not control content indexed by search engines.</p>
  				<p>You can reactivate your account at any time. To reactivate, simply log in to your account.</p>

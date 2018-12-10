@@ -941,7 +941,7 @@ a:visited {
 }
 
 .tab-navigation .col a {
-  color          : #333;
+  color          : #fff;
   text-transform : none;
   font-family    : "OpenSans-SemiBold";
   letter-spacing : normal;
@@ -949,7 +949,7 @@ a:visited {
 
 .tab-navigation .indicator {
   height           : 4px;
-  background-color : #534d93 !important;
+  background-color : rgba(26,120,246,1.0) !important;
 }
 
 #artist-genre-modal #genre-collapsible {
@@ -1819,7 +1819,7 @@ a:visited {
 }
 
 .reg-step-tab span {
-  color       : #534d93;
+  color       : #fff;
   font-size   : 1.1rem;
   font-weight : 800;
 }
