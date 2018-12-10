@@ -3314,6 +3314,7 @@ input[type=range]+.thumb {}
 .row {
   margin-right  : auto;
   margin-bottom : 20px;
+  margin-left   : 50%;
 }
 
 .row:after {
@@ -3582,8 +3583,8 @@ input[type=range]+.thumb {}
   .row .col.m3 {
     right       : auto;
     left        : auto;
-    width       : 20%;
-    margin-left : 3%;
+    width       : 25%;
+    margin-left : auto;
   }
 
   .row .col.m4 {
@@ -4138,17 +4139,13 @@ nav ul li {
   transition : background-color .3s;
 }
 
-ul.right:nth-child(1) > li:nth-child(1) {
-  padding-left : 4em;
-}
-
 nav ul li.active {
   background-color : rgba(0,0,0,0.1);
 }
 
 nav ul a {
   display    : block;
-  padding    : 0 10px;
+  padding    : 0 15px;
   color      : #fff;
   font-size  : 1rem;
   transition : background-color .3s;
@@ -4226,12 +4223,6 @@ nav .input-field label.active {
 
 .navbar-fixed nav {
   position : fixed;
-}
-
-.nav-row {
-  margin-right  : auto;
-  margin-bottom : 20px;
-  margin-left   : 45%;
 }
 
 @media
