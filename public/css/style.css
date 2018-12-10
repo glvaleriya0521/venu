@@ -331,7 +331,7 @@
 .ourscene-calendar th,
 .ourscene-calendar thead {
   color               : #7A7A7A;
-  border-color        : #e4e4e4;
+  border-color        : #7A7A7A;
   border-bottom-color : rgba(26, 26, 28, 1.0);
 }
 
@@ -1250,12 +1250,12 @@ div.card:nth-child(3) {
 
 #my-events-calendar #calendar-container {
   margin  : 0;
-  padding : 5%;
+  padding : 2%;
 }
 
 #my-events-calendar #calendar-title-container {
   margin-bottom  : 30px;
-  color          : #534d93;
+  color          : #fff;
   text-align     : center;
   text-transform : uppercase;
   font-size      : 1.5rem;
@@ -1275,6 +1275,7 @@ div.card:nth-child(3) {
 }
 
 #my-events-calendar #calendar-title-container img {
+  display      : none;
   height       : 20px;
   margin-right : 10px;
 }
