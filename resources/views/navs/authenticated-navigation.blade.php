@@ -17,7 +17,7 @@
 		</a>
 		<!-- Testing one nav bar -->
 		<div class="col s12 m12 offset-l4 l4">
-			<div class="row"><!-- New class for one row -->
+			<div class="row" style="margin-left: 45%;"><!-- New class for one row -->
 				<!-- Dashboard nav not needed if home = dashboard
 				<div class="col s2 m2 5">
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
@@ -42,7 +42,7 @@
 				<div class="col s3 m3 7">
 					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
 				</div>
-				<div class="col s3 m3 7 side-btn-container right-align">
+				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
 					@endif
@@ -50,7 +50,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
 					@endif
 				</div>
-				<div class="col s3 m3 7">
+				<div class="col s3 m3 7" style="margin-left: 5%">
 					<ul style="display:inline">
 			        <li>
 			        	<a href="{!! url('/messages') !!}">
