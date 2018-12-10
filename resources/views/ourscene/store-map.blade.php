@@ -59,6 +59,22 @@
         opacity: 0.8;
       }
 
+      #type-selector {
+        color: #fff;
+        background-color: #000;
+        /* margin-left: 0; */
+        padding: 5px 11px 0px 11px;
+        margin-top: 3px;
+        border-radius: 10px;
+        size: 20px;
+        height: 38px;
+        opacity: 0.9;
+      }
+
+      #type-selector label {
+        margin-right: 2%;
+      }
+
       #mode-selector label {
         font-family: Roboto;
         font-size: 13px;
@@ -69,11 +85,25 @@
 @stop
 
 @section('my-events-content')
-    <div id="mode-selector1">
+    <div id="type-selector">
       <input type="radio" name="store" class="store-type" id="restaurant" value="restaurant">
       <label for="restaurant">Restaurant</label>
       <input type="radio" class="store-type" name="store" id="bar" value="bar">
       <label for="bar">Bar</label>
+      <input type="radio" name="store" class="store-type" id="atm" value="atm">
+      <label for="atm">Atm</label>
+      <input type="radio" class="store-type" name="store" id="bank" value="bank">
+      <label for="bank">Bank</label>
+      <input type="radio" name="store" class="store-type" id="cafe" value="cafe">
+      <label for="cafe">Cafe</label>
+      <input type="radio" class="store-type" name="store" id="gas_station" value="gas_station">
+      <label for="gas_station">Gas_station</label>
+      <input type="radio" name="store" class="store-type" id="meal_delivery" value="meal_delivery">
+      <label for="meal_delivery">Meal_delivery</label>
+      <input type="radio" class="store-type" name="store" id="meal_takeaway" value="meal_takeaway">
+      <label for="meal_takeaway">Meal_takeaway</label>
+      <input type="radio" class="store-type" name="store" id="liquor_store" value="liquor_store">
+      <label for="liquor_store">Liquor_store</label>
     </div>
     <input id="origin-input" class="controls" type="text"
         placeholder="Enter an origin location">
