@@ -42,16 +42,17 @@
 				<div class="col s3 m3 7">
 					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
 				</div>
+				<div class="col m12 l4 side-btn-container right-align">
+					@if(Session::get('user_type') == 'venue')
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
+					@endif
+					@if(Session::get('user_type') == 'artist')
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
+					@endif
+				</div>
 			</div>
 		</div>
-		<div class="col m12 l4 side-btn-container right-align">
-			@if(Session::get('user_type') == 'venue')
-				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
-			@endif
-			@if(Session::get('user_type') == 'artist')
-				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
-			@endif
-		</div>
+
 
 		<a href="#" data-activates="mobile-demo" class="button-collapse">
 			<i class="material-icons hamburger-icon">menu</i>
