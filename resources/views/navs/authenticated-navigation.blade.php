@@ -73,7 +73,7 @@
 	    <ul class="right hide-on-med-and-down">
 	        <li>
 	        	<a href="{!! url('/messages') !!}">
-	        		<img src="{{asset('images/icons/message-black.svg')}}" class="nav-icon">
+	        		<img src="{{asset('images/icons/artists---popup-profile-message-icon@2x.png')}}" class="nav-icon">
 	        		<span class="badge red messages-counter-icon" style="display:none"></span>
 	        	</a>
 	    	</li>
