@@ -330,12 +330,9 @@
 .ourscene-calendar td,
 .ourscene-calendar th,
 .ourscene-calendar thead {
-  color        : #7A7A7A;
-  border-color : #e4e4e4;
-}
-
-.ourscene-calendar tbody {
-  border-bottom-color: rgba(26, 26, 28, 1.0);
+  color               : #7A7A7A;
+  border-color        : #e4e4e4;
+  border-bottom-color : rgba(26, 26, 28, 1.0);
 }
 
 .ourscene-calendar thead td,
