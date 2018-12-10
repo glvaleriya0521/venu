@@ -49,7 +49,9 @@
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
 					@endif
-					<ul class="right hide-on-med-and-down">
+				</div>
+				<div class="col s3 m3 7">
+					<ul style="display:inline">
 			        <li>
 			        	<a href="{!! url('/messages') !!}">
 			        		<img src="{{asset('images/icons/artists---popup-profile-message-icon@2x.png')}}" class="nav-icon">
