@@ -4695,7 +4695,7 @@ footer.page-footer .footer-copyright {
 }
 
 .card .card-action {
-  position         : relative;
+  position         : absolute;
   padding          : 20px;
   color            : #fff;
   background-color : inherit;
