@@ -49,13 +49,28 @@ public function index()
 		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
     }
 
-public function store()
+public function store($id)
     {
+
     	// get Current user info
 		$user_id = Session::get('id');
-		$user 	 = User::find($user_id);
-		$zipCode = $user->address['zipcode'];
-		return View::make('ourscene.store-map', compact('zipCode'));
+		$id = $id;
+		$user = User::find($id);
+		$latlon = $user->latlon;
+		$name = $user->name;
+		$unit_street = $user->address['unit_street'];
+		$city = $user->address['city'];
+		$state = $user->address['state'];
+		$country = $user->address['country'];
+		$lat = $latlon['lat'];
+		$lon = $latlon['lng'];
+		$type = "restaurant";
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+		if (isset($input['params'])) {
+			$type = $input['params'];
+		}
+		return View::make('ourscene.store-map', compact('lat', 'lon', "type", "id", "name", "unit_street", "city", "state", "country"));
 		// return View::make('ourscene.store.store-html');
 
     }

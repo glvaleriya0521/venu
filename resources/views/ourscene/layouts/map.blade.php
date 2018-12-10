@@ -13,7 +13,6 @@
 			)
 		]
 	)
-
 	@yield('my-events-content')
 
 @stop
