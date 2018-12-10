@@ -49,6 +49,28 @@
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
 					@endif
+					<ul class="right hide-on-med-and-down">
+			        <li>
+			        	<a href="{!! url('/messages') !!}">
+			        		<img src="{{asset('images/icons/artists---popup-profile-message-icon@2x.png')}}" class="nav-icon">
+			        		<span class="badge red messages-counter-icon" style="display:none"></span>
+			        	</a>
+			    	</li>
+			    	<li>
+			    		<a href="{!! url('/profile') !!}">
+				    		@if(getProfilePicture(Session::get('id')) != "")
+				    			<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
+				    		@else
+				    			{!! Session::get('name') !!}
+				    		@endif
+			    		</a>
+			    	</li>
+					<li>
+						<a class="dropdown-button" href="#!" data-activates="main-navigation-1-dropdown" data-constrainwidth="false" data-beloworigin="true" data-gutter="10">
+							<img class="dropdown-icon" src="{{ asset('images/icons/dropdown.svg') }}">
+						</a>
+					</li>
+			    </ul>
 				</div>
 			</div>
 		</div>
@@ -69,7 +91,7 @@
 				</li>
 			</ul>
 
-		<!--  Topright icons on large screen -->
+		<!--  Topright icons on large screen
 	    <ul class="right hide-on-med-and-down">
 	        <li>
 	        	<a href="{!! url('/messages') !!}">
@@ -92,7 +114,7 @@
 				</a>
 			</li>
 	    </ul>
-
+-->
 	    <!-- Drawer Menu -->
 		<ul class="side-nav" id="mobile-demo" style="z-index:9999;">
 			<li>
