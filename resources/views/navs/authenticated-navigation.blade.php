@@ -44,6 +44,14 @@
 				</div>
 			</div>
 		</div>
+		<div class="col m12 l4 side-btn-container right-align">
+			@if(Session::get('user_type') == 'venue')
+				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
+			@endif
+			@if(Session::get('user_type') == 'artist')
+				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
+			@endif
+		</div>
 
 		<a href="#" data-activates="mobile-demo" class="button-collapse">
 			<i class="material-icons hamburger-icon">menu</i>
@@ -158,7 +166,7 @@
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
 				</div>
 				-->
-				<!-- 
+				<!--
 				<div class="col s2 m2 5">
 					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 				</div>
@@ -180,7 +188,7 @@
 				</div>
 			</div>
 		</div>
-		-->
+
 		<div class="col m12 l4 side-btn-container right-align">
 			@if(Session::get('user_type') == 'venue')
 				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
@@ -191,6 +199,7 @@
 		</div>
 	</div>
 </div>
+		-->
 <div>
 	<ul id="search-sidebar-dropdown" class="dropdown-content">
 		<span class="search-divider">Artist</span>
