@@ -5,7 +5,7 @@
 			<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
 			<b>VenU</b>
 		</a>
-		
+
 		<!-- Top navigation search bar -->
 		<a href="#" class="brand-logo center hide-on-med-and-down">
 			<!-- Search input -->
@@ -15,6 +15,35 @@
 				<i class="material-icons"> close </i>
 			</div>
 		</a>
+		<!-- Testing one nav bar -->
+		<div class="col s12 m12 offset-l4 l4">
+			<div class="row">
+				<!-- Dashboard nav not needed if home = dashboard
+				<div class="col s2 m2 5">
+					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
+				</div>
+				-->
+				<div class="col s2 m2 5">
+					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
+				</div>
+				<div class="col s2 m2 5">
+					<a href="{{ action('EventController@getRequests') }}"
+					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
+					 	REQUESTS
+					 	<?php
+					 		$pending_requests = OurScene\Models\Service::servicesByReceiverId(Session::get('id'))->pending()->get();
+                        	$pending_requests_counter = count($pending_requests);
+					 	?>
+					 	@if($pending_requests_counter > 0)
+					 		<span class="badge red"> {{$pending_requests_counter}}</span>
+					 	@endif
+					 </a>
+				</div>
+				<div class="col s3 m3 7">
+					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
+				</div>
+			</div>
+		</div>
 
 		<a href="#" data-activates="mobile-demo" class="button-collapse">
 			<i class="material-icons hamburger-icon">menu</i>
@@ -43,7 +72,7 @@
 	    		<a href="{!! url('/profile') !!}">
 		    		@if(getProfilePicture(Session::get('id')) != "")
 		    			<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
-		    		@else 
+		    		@else
 		    			{!! Session::get('name') !!}
 		    		@endif
 	    		</a>
@@ -69,16 +98,16 @@
 					<input id="search-sidebar" type="search" placeholder="Search">
 					<label for="search" id="search_label"><i class="material-icons valign">search</i></label>
 					<i class="material-icons">close</i>
-				
+
 					<!-- Search dropdown -->
 					<ul id="search-sidebar-dropdown" class="dropdown-content search-dropdown"></ul>
 				</div>
 			</li>
 			<li class="profile-info">
 				<div class="img">
-					@if(getProfilePicture(Session::get('id')) != "") 
+					@if(getProfilePicture(Session::get('id')) != "")
 						<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
-					@else 
+					@else
 						{!! Session::get('name') !!}
 					@endif
 				</div>
@@ -86,8 +115,8 @@
 			</li>
 			<li class="sidebar-nav"><a href="{{ url('/search')   }}">	Home 	 	</a></li>
 			<li class="sidebar-nav">
-				<a href="{{ url('/messages') }}">	
-					Messages  
+				<a href="{{ url('/messages') }}">
+					Messages
 					<span class="badge red messages-counter-icon"></span>
 				</a>
 			</li>
@@ -119,21 +148,19 @@
 		<li><a href="{!! url('/logout') !!}">Sign out</a></li>
 	</ul>
 </div>
-
+<!-- Testing one nav bar
 <div id="main-navigation-2">
 	<div class="row">
 		<div class="col s12 m12 offset-l4 l4">
 			<div class="row">
+				<!-- Dashboard nav not needed if home = dashboard
 				<div class="col s2 m2 5">
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
 				</div>
+				-->
+				<!-- 
 				<div class="col s2 m2 5">
-					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>EVENTS</a>
-					@endif
-					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>EVENTS</a>
-					@endif
+					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 				</div>
 				<div class="col s2 m2 5">
 					<a href="{{ action('EventController@getRequests') }}"
@@ -153,6 +180,7 @@
 				</div>
 			</div>
 		</div>
+		-->
 		<div class="col m12 l4 side-btn-container right-align">
 			@if(Session::get('user_type') == 'venue')
 				<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
