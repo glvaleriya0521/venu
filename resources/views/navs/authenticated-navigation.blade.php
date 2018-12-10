@@ -39,7 +39,7 @@
 					 	@endif
 					 </a>
 				</div>
-				<div class="col s3 m3 7">
+				<div class="col s3 m3 7" style="width: 20%">
 					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
