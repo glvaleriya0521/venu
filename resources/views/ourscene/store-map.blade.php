@@ -37,8 +37,9 @@
         margin-left: 12px;
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
-        width: 200px;
+        width: 400px;
         margin-top: 39px;
+        margin-right: 80px;
       }
 
       #origin-input:focus,
@@ -102,8 +103,15 @@
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
       var map;
       var infowindow;
+      var geocoder;
       var lat = '{{ $lat }}';
       var lon = '{{ $lon }}';
+      var name = '{{ $name }}';
+      var unit_street = '{{ $unit_street }}';
+      var city = '{{ $city }}';
+      var state = '{{ $state }}';
+      var country = '{{ $country }}';
+      var address = unit_street + ", " + city + ',' + state + ',' +country;
      
       function initMap() {
         
@@ -114,7 +122,7 @@
           mapTypeControl: false,
           center: pyrmont,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          zoom: 13
+          zoom: 15
         });
 
 
@@ -127,7 +135,49 @@
           type: [store_type]
         }, callback);
 
+        var center = new google.maps.LatLng(lat, lon);
+
+        var geocoder = new google.maps.Geocoder();
+         if (geocoder) {
+          geocoder.geocode({
+            'address': address
+          }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+                map.setCenter(results[0].geometry.location);
+
+                var pinColor = "0000FF";
+                var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+                  new google.maps.Size(51, 64),
+                  new google.maps.Point(0,0),
+                  new google.maps.Point(20, 34));
+
+                var marker_center = new google.maps.Marker({
+                  position: results[0].geometry.location,
+                  map: map,
+                  title: address,
+                  icon: pinImage
+                });
+               
+                
+                google.maps.event.addListener(marker_center, 'click', function() {
+                      infowindow.setContent('<div><strong>' + name + '</strong><br>' +
+                          address + '</div>');
+                      infowindow.open(map, this);
+                    });
+
+
+              } else {
+                alert("No results found");
+              }
+            } else {
+              alert("Geocode was not successful for the following reason: " + status);
+            }
+          });
+        }
+
         new AutocompleteDirectionsHandler(map);
+
       }
 
        /**
@@ -226,30 +276,7 @@
           return;
         }
 
-        var center = new google.maps.LatLng(lat, lon);
 
-        var pinColor = "0000FF";
-        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
-            new google.maps.Size(51, 64),
-            new google.maps.Point(0,0),
-            new google.maps.Point(30, 64));
-        
-        var marker_center = new google.maps.Marker({
-              map: map,
-              position: center,
-              icon: pinImage
-            });
-        var name = '{{ $name }}';
-        var unit_street = '{{ $unit_street }}';
-        var city = '{{ $city }}';
-        var state = '{{ $state }}';
-        var country = '{{ $country }}';
-        var address = unit_street + " " + city + '' + state + '' +country;
-        google.maps.event.addListener(marker_center, 'click', function() {
-              infowindow.setContent('<div><strong>' + name + '</strong><br>' +
-                  address + '</div>');
-              infowindow.open(map, this);
-            });
 
         var service = new google.maps.places.PlacesService(map);
         service.getDetails({
@@ -260,6 +287,7 @@
               map: map,
               position: place.geometry.location
             });
+            console.log(place.geometry.location);
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                   place.formatted_address + '</div>');
