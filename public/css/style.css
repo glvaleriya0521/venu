@@ -1529,7 +1529,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 
 #view-event #event-navigation .indicator {
   height           : 4px;
-  background-color : #534d93;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #view-event #event-details {
@@ -1773,7 +1773,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 
 #payment #payment-navigation .indicator {
   height           : 4px;
-  background-color : #534d93;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #pay-ourscene {
@@ -1825,6 +1825,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #settings {
+  left   : 15%;
   margin : 0;
 }
 
@@ -1876,7 +1877,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
   width            : 50px;
   height           : 1px;
   margin           : 10px auto;
-  background-color : #534d93;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #settings .long-divider {
@@ -1887,7 +1888,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 
 #settings .label {
   margin-top  : 10px;
-  color       : #534d93;
+  color       : rgba(26,120,246,1.0);
   font-family : "OpenSans-SemiBold";
 }
 
@@ -2005,7 +2006,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 
 #view-profile #profile-container #profile-navigation .indicator {
   height           : 4px;
-  background-color : #534d93;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #view-profile #profile-container #images-container img {
