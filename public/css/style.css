@@ -334,7 +334,7 @@
   border-color : #e4e4e4;
 }
 
-.ourscene-calendar td {
+.ourscene-calendar tbody {
   border-bottom-color: rgba(26, 26, 28, 1.0);
 }
 
