@@ -3314,7 +3314,7 @@ input[type=range]+.thumb {}
 .row {
   margin-right  : auto;
   margin-bottom : 20px;
-  margin-left   : auto;
+  margin-left   : 50%;
 }
 
 .row:after {
@@ -3576,7 +3576,7 @@ input[type=range]+.thumb {}
   .row .col.m2 {
     right       : auto;
     left        : auto;
-    width       : 25%;
+    width       : 15%;
     margin-left : auto;
   }
 
