@@ -17,7 +17,7 @@
 		</a>
 		<!-- Testing one nav bar -->
 		<div class="col s12 m12 offset-l4 l4">
-			<div class="nav-row">
+			<div class="row">
 				<!-- Dashboard nav not needed if home = dashboard
 				<div class="col s2 m2 5">
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
