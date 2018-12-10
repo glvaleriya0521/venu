@@ -8,7 +8,7 @@ We're just informing you that {{ $artist->name }} cancelled the following reques
 
 <br/><br/><br/>
 
-<span style="color: #534d93; font-weight: bold;">Event details</span>
+<span style="color: rgba(26, 120, 246, 1.0); font-weight: bold;">Event details</span>
 
 <br/><br/>
 
@@ -27,7 +27,7 @@ We're just informing you that {{ $artist->name }} cancelled the following reques
 
 <br/><br/>
 
-<span style="color: #534d93; font-weight: bold;">Performance time</span>
+<span style="color: rgba(26, 120, 246, 1.0); font-weight: bold;">Performance time</span>
 
 <br/><br/>
 
@@ -41,7 +41,7 @@ We're just informing you that {{ $artist->name }} cancelled the following reques
 
 <br/><br/><br/>
 
-You can <a href="{{ action('UserController@getLogin') }}" style="color: #534d93; text-decoration: none;">log in</a> to check if you have more incoming requests.
+You can <a href="{{ action('UserController@getLogin') }}" style="color: rgba(26, 120, 246, 1.0); text-decoration: none;">log in</a> to check if you have more incoming requests.
 
 <br/><br/><br/><br/>
 
