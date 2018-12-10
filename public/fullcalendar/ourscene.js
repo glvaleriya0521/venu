@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	const EVENT_COLOR = '#3E82F7';
-	const PROMOTION_COLOR = '#ECB500';
+	const PROMOTION_COLOR = 'rgba(238, 143, 31, 1.0)'; //orange
 	const PENDING_COLOR = '#9A9A9A';
 
 	// Initialize private calender
@@ -16,7 +16,7 @@ $(document).ready(function() {
 		},
 		eventLimitText: 'event',
 		select: function(start, end) {
-				
+
 			$("#event-form").append('<input type="hidden" name="start_datetime" value="'+start+'"/>');
 			$("#event-form").append('<input type="hidden" name="end_datetime" value="'+end+'"/>');
 			$("#event-form").submit();
@@ -31,14 +31,14 @@ $(document).ready(function() {
 				type: "POST",
 				data: "_token="+CSRF_TOKEN+"&user_id="+user_id,
 				success: function(data){
-					
+
 					var calendar_events = []; //container of events and promotions
-					
+
 					var json_data = JSON.parse(data);
 
 					//get events
 					var events = json_data['events'];
-					
+
 					//get promotions
 					var promotions = json_data['promotions'];
 
@@ -50,9 +50,9 @@ $(document).ready(function() {
 					//process events
 
 					for (var index in events){
-						
+
 						var event = events[index];
-						
+
 						//format event details
 
 						var title = event['title'];
@@ -172,9 +172,9 @@ $(document).ready(function() {
 				window.location.href = PROMOTION_ROOT+"/"+calEvent.id;
 				return;
 			}
-			
+
 			// Event: View event modal
-			
+
 			document.getElementById('myModalLabel').innerHTML = calEvent.title;
 			document.getElementById('view_age_restrictions').innerHTML = calEvent.age_requirements;
 			document.getElementById('view_event_type').innerHTML = calEvent.type;
@@ -206,7 +206,7 @@ $(document).ready(function() {
 				var equipment_element = '<tr class="equipment-row">' + equipment_name + equipment_owner + equipment_qty + inclusion + "</tr>";
 				$('#equipment-table-body').append(equipment_element);
 			}
-			
+
 			if (calEvent.cover_charge_access){
 				$('#update-cover-charge-button').css('display', 'block');
 				document.getElementById('view_event_cover_charge').removeAttribute("disabled");
@@ -244,7 +244,7 @@ $(document).ready(function() {
 	});
 
 	$('#modal-alert').on('hidden.bs.modal', function () {
-    	
+
 	})
 
 	$('#update-cover-charge-form').submit(function(e){
@@ -267,7 +267,7 @@ $(document).ready(function() {
 
 			}
 		});
-		
+
 	});
 
 	$('#create-service-form').submit(function(e){
@@ -300,7 +300,7 @@ $(document).ready(function() {
 					var option_closing_tags = '<input type="hidden" name="services[]" value="'+service_id+'">';
 					var options = change_option + remove_option + option_closing_tags;
 
-					$('#service-table-body').append('<tr id="'+service_id+'"class="service-row"><td class="artist_name" value="'+artist_name+'">' + artist_name + '</td><td> From <p class="start_time" value="'+start_datetime+'">' + start_time + '</p> to <p class="end_time" value="'+end_datetime+'">' + end_time + '</p></td><td class="price" value="'+price+'">' + price + '</td><td>'+ options +'</td></tr>');					
+					$('#service-table-body').append('<tr id="'+service_id+'"class="service-row"><td class="artist_name" value="'+artist_name+'">' + artist_name + '</td><td> From <p class="start_time" value="'+start_datetime+'">' + start_time + '</p> to <p class="end_time" value="'+end_datetime+'">' + end_time + '</p></td><td class="price" value="'+price+'">' + price + '</td><td>'+ options +'</td></tr>');
 					if ($('#service-table-body').css('display') == 'none'){
 						$('#service-table-body').css('display', 'block');
 					}
@@ -415,14 +415,14 @@ $(document).ready(function() {
 					document.getElementById('alert-message').innerHTML = data['success'];
 
 					window.open(data['redirect_url'], "GC",  "height=600,width=400");
-					$('#modal-alert').modal();	
+					$('#modal-alert').modal();
 					$('#modal-alert').on('hidden.bs.modal', function () {
     					window.location=ROOT;
 					})
-					
+
 				} else {
 					document.getElementById('alert-message').innerHTML = data['error'];
-					$('#modal-alert').modal();	
+					$('#modal-alert').modal();
 				}
 
 				// Insert Google Calendar create event here
@@ -479,7 +479,7 @@ $(document).ready(function() {
 
 				$('#service-equipment-table-body').append(row_equipment);
 			}
-		});	
+		});
 	});
 
     $("#venue-selector").on('focusout',function() {
@@ -497,14 +497,14 @@ $(document).ready(function() {
 
         var new_start_time = $('#event-start-time').val()
         document.getElementById('event-opening-time').setAttribute('max', new_start_time);
-        
+
     });
 
 });
 
 
 function removeNewServiceEquipment(node){
-	$(node).closest('.service-equipment-row').remove();	
+	$(node).closest('.service-equipment-row').remove();
 }
 
 function removeService(node){
@@ -696,7 +696,7 @@ function makeDefaultProfilePic(image){
 
 	image.onerror = "";
     image.src = "/profile-pictures/blank-profile-picture-973460_960_720.png";
-    
+
     return true;
 
 }
@@ -709,7 +709,7 @@ function removeEquipmentFromEvent(equipment_id, event_id){
 				success: function(data){
 					document.getElementById('alert-message').innerHTML='Deleted!';
 					$('#modal-alert').modal();
-					
+
 				}
 			});
 }
@@ -720,11 +720,3 @@ function addtoGroupChat(user){
 	var remove_option = '<button class="btn btn-primary" onclick="this.closest(\'.group-chat-entry\').remove()">Remove</button';
 	$('#list-group-chat').append('<span class="group-chat-entry">' + user_id_input + user_name_display + remove_option +'</span>');
 }
-
-
-
-
-
-
-
-
