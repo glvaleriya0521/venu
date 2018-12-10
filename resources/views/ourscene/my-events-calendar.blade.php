@@ -14,7 +14,7 @@
 <div id="my-events-calendar">
 
 	<div id="calendar-container" class="card">
-		
+
 		<!-- Calendar title -->
 
 		<div id="calendar-title-container">
@@ -24,8 +24,8 @@
 
 		<!-- Calendar -->
 
-		<div id="calendar" class="ourscene-calendar"></div>
-				
+		<div id="calendar" class="ourscene-calendar" style="border-bottom: 1px solid #7a7a7a;"></div>
+
 	</div>
 
 	<!-- Create event from drag and drop form -->
