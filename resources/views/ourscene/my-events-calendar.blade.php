@@ -13,7 +13,7 @@
 
 <div id="my-events-calendar">
 
-	<div id="calendar-container" class="card">
+	<div id="calendar-container" class="card" style="border: 2px solid #7a7a7a;">
 
 		<!-- Calendar title -->
 
