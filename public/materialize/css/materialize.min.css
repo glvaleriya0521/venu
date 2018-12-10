@@ -3587,11 +3587,6 @@ input[type=range]+.thumb {}
     margin-left : auto;
   }
 
-  /* Request Button Spacing */
-  div.col:nth-child(4) {
-    width : 15% !important;
-  }
-
   .row .col.m4 {
     right       : auto;
     left        : auto;
@@ -4142,6 +4137,10 @@ nav ul li {
   float      : left;
   padding    : 0;
   transition : background-color .3s;
+}
+
+ul.right:nth-child(1) > li:nth-child(1) {
+  padding-left: 4em;
 }
 
 nav ul li.active {
