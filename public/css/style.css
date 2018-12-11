@@ -1030,6 +1030,7 @@ a:visited {
   height           : auto;
   padding          : 10px 8px;
   color            : #333;
+  border-radius    : 1em;
   background-color : #FFF;
   font-size        : 0.85rem;
   line-height      : initial;
@@ -1050,7 +1051,9 @@ a:visited {
 
 #main-navigation-3 a.active {
   color            : #FFF;
-  background-color : #46bfa7;
+  border-color     : rgba(26, 120, 246, 1.0);
+  border-radius    : 1em;
+  background-color : rgba(26, 120, 246, 1.0);
   box-shadow       : none;
 }
 
