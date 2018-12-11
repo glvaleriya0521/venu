@@ -562,7 +562,7 @@ input:focus {
   margin           : 0;
   border           : 0;
   border-radius    : 0;
-  background-color : #4c4688;
+  background-color : rgba(0, 0, 0, 1.0);
 }
 
 #legal-navigation div a.brand-logo.center {
