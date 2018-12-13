@@ -55,7 +55,7 @@
 							<br/>
 						@elseif(Session::get('user_type') == 'artist')
 							@if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
-								<a class="btn ourscene-btn-2 disabled">Request</a>
+								<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a>
 							@else
 								<a href="#request-for-performance-modal" class="btn ourscene-btn-2 modal-trigger">Request</a>
 							@endif
@@ -170,6 +170,16 @@
 							<div class="label">Cover charge</div>
 							<br/>
 							{{ $event['cover_charge'] }}
+						</div>
+						<div class="detail">
+							<div class="label">Merchandise</div>
+							<br/>
+							{{ $event['merchandise'] }}
+						</div>
+						<div class="detail">
+							<div class="label">Attendance</div>
+							<br/>
+							{{ $event['attendance'] }}
 						</div>
 						<div class="detail">
 							<div class="label">Address</div>

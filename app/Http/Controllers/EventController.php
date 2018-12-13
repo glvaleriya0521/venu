@@ -556,7 +556,6 @@ class EventController extends Controller {
 			abort(404);
 
 		//check permissions
-
 		if(Session::get('user_type') == 'venue' && $event->venue['id'] != Session::get('id'))
 			abort(401);
 		
@@ -605,6 +604,61 @@ class EventController extends Controller {
 		return View::make('ourscene.edit-regular-event', compact('event', 'start_date', 'start_time', 'end_date', 'end_time', 'opening_time', 'equipments', 'all_equipments', 'artist_lineup', 'invited_artists', 'form_action'));
 	}
 
+	public function getEditEventAfter($id) {
+
+		$event = Event::find($id);
+
+		if(!$event)
+			abort(404);
+
+		//check permissions
+		if(Session::get('user_type') == 'venue' && $event->venue['id'] != Session::get('id'))
+			abort(401);
+		
+		// if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
+		// 	return Redirect::to(action('EventController@getEvent', array('id' => $event['_id'])))->with('error', 'Sorry, you cannot edit a past event.');
+
+		$start_datetime_local = DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($event->start_datetime);
+		$start_date = date('m/d/Y', $start_datetime_local->sec);
+		$start_time = DatetimeUtils::formatTimeFromBackendToFrontend($start_datetime_local->sec);
+
+
+		$end_datetime_local = DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($event->end_datetime);
+		$end_date = date('m/d/Y', $end_datetime_local->sec);
+		$end_time = DatetimeUtils::formatTimeFromBackendToFrontend($end_datetime_local->sec);
+
+		$opening_time;
+		if($event->opening_time != null || $event->opening_time != ""){
+			$opening_time = DatetimeUtils::formatTimeFromBackendToFrontend($event->opening_time->sec);
+		}
+		
+		$equipments = [];
+
+		foreach($event->equipments as $equipment){
+			
+			$eq = Equipment::withTrashed()->find($equipment['equipment_id']);
+
+			if($eq)
+				$equipments[] = $eq;
+
+		}
+			
+
+		$all_equipments = Equipment::user(Session::get('id'))->get();
+
+		$artist_lineup = Service::servicesByEventId($event->_id)
+			->confirmed()
+			->get();
+
+		$invited_artists = Service::servicesByEventId($event->_id)
+			->service()
+			->pending()
+			->get();
+
+		$form_action = "edit";
+
+		return View::make('ourscene.edit-after-event', compact('event', 'start_date', 'start_time', 'end_date', 'end_time', 'opening_time', 'equipments', 'all_equipments', 'artist_lineup', 'invited_artists', 'form_action'));
+	}
 	public function postEditEvent($id){
 
 		//get event
@@ -1074,6 +1128,52 @@ class EventController extends Controller {
 		return Redirect::to(action('EventController@getEvent', array('id' => $event['_id'])))->with('success', 'The event was successfully updated.');
 	}
 
+	public function postEditEventAfter($id){
+
+		//get event
+		$event = Event::find($id);
+
+		if(!$event)
+			abort(404);
+
+		//check permissions
+
+		// if(Session::get('user_type') == 'venue' && $event->venue['id'] != Session::get('id'))
+		// 	abort(401);
+
+		//trim inputs
+		//NOTE: do not sanitize all inputs because this method accepts JSON
+		Input::merge(array_map_recursive('trim', Input::all()));
+		$input = Input::all();
+
+		//get, validate, and format inputs
+
+		$errors = [];
+
+		$user_id = Session::get('id');
+		$user_name = Session::get('name');
+		$user_type = Session::get('user_type');
+
+		$merchandise = $input['merchandise'];
+		$attendance = $input['attendance'];
+
+		$event->merchandise = $merchandise;
+		$event->attendance = $attendance;
+		$event->save();
+
+		//send email to artists that event is updated
+
+		$related_services = Service::where('event_id', $id)->get();
+		foreach ($related_services as $service) {
+			$service->merchandise = $merchandise;
+			$service->attendance = $attendance;
+			$service->save();
+		}
+
+		return Redirect::to('/my-events/venue/events');
+		
+	}
+
 	public static function paidEditEvent($artists, $event, $venue){
 
 		foreach($artists as $artist){
@@ -1252,7 +1352,6 @@ class EventController extends Controller {
 
 		$user_id = Session::get('id');
 		$artist_id = Session::get('id');
-
 		$confirmed_events = Service::confirmed()
 			->where(function ($query) use ($user_id, $artist_id){
                 $query->servicesBySenderId($user_id)

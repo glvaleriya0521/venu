@@ -81,6 +81,10 @@ Route::get('/event/{id}', 'EventController@getEvent');
 Route::get('/event/edit/{id}', 'EventController@getEditEvent');
 Route::post('/event/edit/{id}', 'EventController@postEditEvent');
 
+// Edit event after finish performance
+Route::get('/event/after/edit/{id}', 'EventController@getEditEventAfter');
+Route::post('/event/edit/{id}', 'EventController@postEditEventAfter');
+
 // Cancel event
 Route::get('/event/cancel/{id}', 'EventController@getCancelEvent');
 
@@ -93,6 +97,8 @@ Route::get('/events-feed/calendar', 'EventController@getEventsFeedCalendar');
 // My events
 Route::get('/my-events/events', 'EventController@getMyEventsEvents');
 Route::get('/my-events/calendar', 'EventController@getMyEventsCalendar');
+
+Route::get('/my-events/venue/events', 'EventController@getMyEventsEvents');
 
 // Google Map
 Route::get('/view-map/index', 'MapController@index');
