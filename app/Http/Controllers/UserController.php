@@ -441,6 +441,7 @@ class UserController extends Controller {
 
 		$user = User::find($user_id);
 		$equipments = Equipment::user($user_id)->get();
+		$nearbyLink ='/view-map/store/nearby/'.$user_id;
 
 		if(empty($user))
 			abort(404);
@@ -456,7 +457,7 @@ class UserController extends Controller {
 			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('songs',$songs)->with('images',$images)->with('videos',$videos);
 		}
 
-		return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
+		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
 
 	}
 
@@ -464,6 +465,7 @@ class UserController extends Controller {
 
 		$user_id = Session::get('id');
 		$user 	 = User::find($user_id);
+		$nearbyLink ='/view-map/store/nearby/'.$user_id;
 
 		if($user->user_type == 'artist'){
 			$songs  = Materials::userId($user_id)->where('type','=','song')->get();
@@ -472,8 +474,7 @@ class UserController extends Controller {
 
 			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('songs',$songs)->with('images',$images)->with('videos',$videos);
 		}
-
-		return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
+		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
 	}
 
 	/* Profile Settings */

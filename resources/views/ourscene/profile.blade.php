@@ -203,6 +203,10 @@
 						<p class="col s12 m12 l12">{{ $user->seating_capacity }}</p>
 					</div>
 
+					<div class="row">
+						<a href='{{ $nearbyLink }}'>Go to nearby stores</a>
+					</div>
+
 					@else
 					<div class="row">
 						<div class="label col s12 m12 l12">City</div>
@@ -228,6 +232,7 @@
 							</ul>
 						</div>
 					</div>
+					
 					@endif
 				</div>
 			</div>
