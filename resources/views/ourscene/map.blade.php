@@ -102,7 +102,7 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		  });
 
 		  google.maps.event.addListener(marker, 'dblclick', function() {
-		    window.location.replace("http://184.73.131.149/profile/" + id);
+		    window.location.replace("https://venu.glbdd.com/profile/" + id);
 		  });
 		  // Event that closes the Info Window with a click on the map
 		  google.maps.event.addListener(map, 'click', function() {
