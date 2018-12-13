@@ -41,17 +41,17 @@ class EventController extends Controller {
 	public function __construct(){
 		$this->middleware('auth.login');
 
-		$this->middleware('auth.venue',
-			['only' =>
-				['getEditEvent', 'postEditEvent']
-			]
-		);
+		// $this->middleware('auth.venue',
+		// 	['only' =>
+		// 		['getEditEvent', 'postEditEvent']
+		// 	]
+		// );
 
-		$this->middleware('auth.artist',
-			['only' =>
-				['getMyEventsEvents']
-			]
-		);
+		// $this->middleware('auth.artist',
+		// 	['only' =>
+		// 		['getMyEventsEvents']
+		// 	]
+		// );
 	}
 
 	/**
@@ -1352,17 +1352,28 @@ class EventController extends Controller {
 
 		$user_id = Session::get('id');
 		$artist_id = Session::get('id');
-		$confirmed_events = Service::confirmed()
-			->where(function ($query) use ($user_id, $artist_id){
-                $query->servicesBySenderId($user_id)
-                	->orWhere(function ($query) use ($artist_id){
-                		$query->servicesByArtistId($artist_id);
-                	});
-            })
-			->get();
+		$user = User::find($user_id);
+		$user_type = $user->user_type;
 
-		$pending_events = Service::servicesBySenderId($user_id)->pending()->get();
-		$rejected_events = Service::servicesBySenderId($user_id)->rejected()->get();
+		if ($user_type == "artist") {
+			$confirmed_events = Service::confirmed()
+				->where(function ($query) use ($user_id, $artist_id){
+	                $query->servicesBySenderId($user_id)
+	                	->orWhere(function ($query) use ($artist_id){
+	                		$query->servicesByArtistId($artist_id);
+	                	});
+	            })
+				->get();
+
+			$pending_events = Service::servicesBySenderId($user_id)->pending()->get();
+			$rejected_events = Service::servicesBySenderId($user_id)->rejected()->get();
+		}
+		else {
+			$confirmed_events = Service::where('receiver_id', $user_id)->confirmed()->get();
+			$pending_events = Service::where('receiver_id', $user_id)->pending()->get();
+			$rejected_events = Service::where('receiver_id', $user_id)->rejected()->get();
+		}
+		
 
 		return View::make('ourscene.my-events-events', compact('confirmed_events', 'pending_events', 'rejected_events'));
 	}

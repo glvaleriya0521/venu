@@ -48,14 +48,14 @@
 					@elseif($event['status'] == 'confirmed')
 						@if(Session::get('user_type') == 'venue' && Session::get('id') == $event['venue']['id'])
 							@if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
-								<a class="btn ourscene-btn-4 disabled">Edit Event details</a>
+								<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a>
 							@else
 								<a href="{{ action('EventController@getEditEvent', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Edit Event details</a>
 							@endif
 							<br/>
 						@elseif(Session::get('user_type') == 'artist')
 							@if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
-								<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a>
+								<!-- <a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a> -->
 							@else
 								<a href="#request-for-performance-modal" class="btn ourscene-btn-2 modal-trigger">Request</a>
 							@endif
