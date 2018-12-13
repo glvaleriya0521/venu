@@ -8,7 +8,7 @@ We're informing you that {{ $venue->name }} updated this event.
 
 <br/><br/><br/>
 
-<span style="color: #534d93; font-weight: bold;">Event details</span>
+<span style="color: rgba(26, 120, 246, 1.0); font-weight: bold;">Event details</span>
 
 <br/><br/>
 
@@ -27,7 +27,7 @@ We're informing you that {{ $venue->name }} updated this event.
 
 <br/><br/><br/>
 
-You may <a href="{{ action('UserController@getLogin') }}" style="color: #534d93; text-decoration: none;">log in</a> to view your calendar and check your requests section.
+You may <a href="{{ action('UserController@getLogin') }}" style="color: rgba(26, 120, 246, 1.0); text-decoration: none;">log in</a> to view your calendar and check your requests section.
 
 <br/><br/><br/><br/>
 

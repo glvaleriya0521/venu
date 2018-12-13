@@ -8,14 +8,14 @@
 @extends('ourscene.layouts.main')
 
 @section('head')
-    
+
 @endsection
 
 @section('content')
   @include('navs.main-navigation-3',
     ['items' => array(
-      array('text' => "COMPS", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('DashboardController@index')),
-      array('text' => "PERSONAL", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('DashboardController@getMyState')),
+      array('text' => "COMPS", 'image' => asset('images/icons/blue-combo-chart-24.png'), 'image-active' => asset('images/icons/white-combo-chart-24.png'), 'url' => action('DashboardController@index')),
+      array('text' => "PERSONAL", 'image' => asset('images/icons/blue-graph-24.png'), 'image-active' => asset('images/icons/white-graph-24.png'), 'url' => action('DashboardController@getMyState')),
       )
     ]
   )
@@ -111,7 +111,7 @@
 		});
 	@endforeach
 	console.log(user_name)
-	
+
 
 	// console.log(books);
     FusionCharts.ready(function(){

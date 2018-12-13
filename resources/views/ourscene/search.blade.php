@@ -20,8 +20,8 @@
 
 @include('navs.main-navigation-3',
 	['items' => array(
-		array('text' => "SEARCH", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('SearchController@getSearch')),
-		array('text' => "VIEW ON MAP", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('MapController@index')),
+		array('text' => "SEARCH", 'image' => asset('images/icons/blue-search-24.png'), 'image-active' => asset('images/icons/white-search-24.png'), 'url' => action('SearchController@getSearch')),
+		array('text' => "VIEW ON MAP", 'image' => asset('images/icons/blue-map-marker-24.png'), 'image-active' => asset('images/icons/white-map-marker-24.png'), 'url' => action('MapController@index')),
 		)
 	]
 )
@@ -30,9 +30,9 @@
 		<!-- Search form -->
 
 		<div id="search-form" class="card">
-			
+
 			<!-- Search input -->
-			
+
 			<div class="input-field col s12 m12 l12">
 				<i class="material-icons prefix" style="top:.3em;">search</i>
 				<input id="search-results-search-input" type="text" class="validate" >
@@ -43,9 +43,9 @@
 
 			<ul id="search-results-search-dropdown" class="dropdown-content search-dropdown"></ul>
 		</div>
-			
+
 		<!-- Search results items -->
-	
+
 		<div id="search-results-item" class="card">
 			<div class="card-action title">
 				<img src="{{ asset('images/icons/pending.svg') }}"/>
@@ -97,7 +97,7 @@
 				@endif
 			</div>
 		</div>
-		
+
 		@if ($isSingleParam)
 			{!! $all->appends(['params' => $singleParam])->render() !!}
 		@else

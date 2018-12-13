@@ -8,7 +8,7 @@ Sorry to say but {{ $artist->name }} declined your request for service.
 
 <br/><br/><br/>
 
-<span style="color: #534d93; font-weight: bold;">Event details</span>
+<span style="color: rgba(26, 120, 246, 1.0); font-weight: bold;">Event details</span>
 
 <br/><br/>
 
@@ -27,7 +27,7 @@ Sorry to say but {{ $artist->name }} declined your request for service.
 
 <br/><br/>
 
-<span style="color: #534d93; font-weight: bold;">Performance time</span>
+<span style="color: rgba(26, 120, 246, 1.0); font-weight: bold;">Performance time</span>
 
 <br/><br/>
 
@@ -41,7 +41,7 @@ Sorry to say but {{ $artist->name }} declined your request for service.
 
 <br/><br/><br/>
 
-Don't worry you can still <a href="{{ action('UserController@getLogin') }}" style="color: #534d93; text-decoration: none;">log in</a> and invite artists in your event.
+Don't worry you can still <a href="{{ action('UserController@getLogin') }}" style="color: rgba(26, 120, 246, 1.0); text-decoration: none;">log in</a> and invite artists in your event.
 
 <br/><br/><br/><br/>
 

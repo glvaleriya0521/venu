@@ -50,7 +50,7 @@ Required items are indicated with <span class="required-color">*</span>.
 
 	<div class="row input-row">
 		<div class="input-field col s12 m8 l4">
-			<input type="text" name="start_date" id="start-date" placeholder="" 
+			<input type="text" name="start_date" id="start-date" placeholder=""
 				class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
 			<label for="start-date" class="active time-label"><span class="required-color">*</span> Start date</label>
 		</div>
@@ -186,7 +186,7 @@ Required items are indicated with <span class="required-color">*</span>.
 	</div>
 
 	<div class="row">
-		<div class="col s12 m8 l6">
+		<div class="col s12 m8 l6" style="width: 60%;">
 			<table id="add-equipments-table">
 			@foreach($equipments as $equipment)
 				<tr class="equipment-row">
@@ -199,7 +199,7 @@ Required items are indicated with <span class="required-color">*</span>.
 						@endforeach
 					@endif
 					</td>
-					<td class="right-align">
+					<td class="right-align" style="padding-top: 25px">
 						<a onclick="removeHouseEquipment(this)">
 							<img class="remove-icon" src="{{ asset('images/icons/delete.svg') }}"/>
 						</a>
@@ -269,7 +269,7 @@ Required items are indicated with <span class="required-color">*</span>.
 	<div id="invited-artists-performance-outside-event" class="error-field" style="display: none;">
 		The requested performance schedule for each invited artists should be within the event duration.
 	</div>
- 
+
 	<div class="row">
 		<div class="col s12 m12 l8">
 			<table id="invited-artists-table">

@@ -27,7 +27,7 @@
 	<link href="{{ asset('css/legal.css') }}" rel="stylesheet">
 
 </head>
-<body>
+<body style="background-color: rgba(39, 40, 42, 1.0)">
 		<nav id="legal-navigation">
 	    	<div class="nav-wrapper">
 
@@ -35,7 +35,7 @@
 					<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
 					<b>VenU</b>
 				</a>
-				
+
 	    	</div>
 		</nav>
 	@yield('content')

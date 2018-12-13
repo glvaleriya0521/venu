@@ -3314,7 +3314,6 @@ input[type=range]+.thumb {}
 .row {
   margin-right  : auto;
   margin-bottom : 20px;
-  margin-left   : 45%;
 }
 
 .row:after {
