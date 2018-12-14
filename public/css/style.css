@@ -1958,9 +1958,11 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #view-profile {
-  left          : 15%;
-  margin        : 0;
-  border-radius : 2em;
+  left             : 5%;
+  width            : 80%;
+  margin           : 0;
+  border-radius    : 2em;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 @media
@@ -2002,7 +2004,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #view-profile #profile-container #profile-navigation {
-  padding : 0;
+  padding : 1em;
 }
 
 #view-profile #profile-container #profile-navigation a {
@@ -2173,7 +2175,7 @@ div.row:nth-child(4) > div:nth-child(1) {
 
 #view-profile .profile-header {
   position         : relative;
-  background-color : rgba(26, 26, 28, 1.0);
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #view-profile .profile-header .nav {
