@@ -26,7 +26,7 @@
 				<div class="col s2 m2 5">
 					<a href="{{ action('EventController@getMyEventsCalendar') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 				</div>
-				<div class="col s2 m2 5">
+				<div class="col s2 m2 5 style="width: 20%">
 					<a href="{{ action('EventController@getRequests') }}"
 					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
 					 	REQUESTS
