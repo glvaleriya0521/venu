@@ -2330,6 +2330,7 @@ div.row:nth-child(4) > div:nth-child(1) {
 
 #search-results table td {
   padding : 15px 10px;
+  border: 1px solid rgba(26, 120, 246, 1.0);
 }
 
 @media
