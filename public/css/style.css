@@ -1691,7 +1691,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 #requests .request-card .performance-time {
   color            : #FFF;
   overflow         : hidden;
-  background-color : #534d93;
+  background-color : rgba(26, 120, 246, 1.0);
   font-family      : "OpenSans-Light";
 }
 
@@ -1706,7 +1706,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #requests .request-card .event-venue a {
-  color          : #534d93;
+  color          : rgba(26, 120, 246, 1.0);
   text-transform : none;
 }
 
@@ -2267,8 +2267,9 @@ div.row:nth-child(4) > div:nth-child(1) {
 }
 
 #search-results #search-form {
-  margin-top : 25px;
-  padding    : 10px 15px;
+  margin-top   : 25px;
+  padding      : 10px 15px;
+  border-color : rgba(26, 120, 246, 1.0);
 }
 
 @media
@@ -2284,7 +2285,8 @@ div.row:nth-child(4) > div:nth-child(1) {
 }
 
 #search-results #search-results-item {
-  margin-top : 25px;
+  margin-top   : 25px;
+  border-color : rgba(26, 120, 246, 1.0);
 }
 
 #search-results #search-results-item .content {
