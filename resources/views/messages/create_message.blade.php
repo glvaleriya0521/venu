@@ -29,8 +29,8 @@ $(document).on('keyup','#users',function(e){
     $('#dropdown-user').empty()
     $.ajax({
          url: "{{action('SearchController@getSearchResults')}}?param=" + $(this).val(),
-         type: "GET", 
-         dataType: "json", 
+         type: "GET",
+         dataType: "json",
          success: function(data){
           $('#dropdown-user').empty()
           var venue="",artists=""
@@ -125,12 +125,12 @@ $(document).on('click','#reply',function(){
 </script>
 
 <div class="row">
-  <div id="message-form" class="card col s12 m12 l8 offset-l2">
-    
+  <div id="message-form" class="card col s12 m12 l8 offset-l2" style="border: 1px solid rgba(26, 120, 246, 1.0)">
+
     <div class="card-action title">
       <div class="row" style="margin-bottom: 0;">
 				<div class="col s7 m9 l9">
-					<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:inline-block; top: 7px; position:relative; margin-right: 4px;"/>
+					<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px;"/>
 					<h5 style="display: inline-block;">New Message</h5>
 				</div>
 				<div class="col s5 m2 l2">
@@ -144,7 +144,7 @@ $(document).on('click','#reply',function(){
         <div class="input-field col s12">
           <input autocomplete="off" id="users" type="text" name="name" class="validate" data-activates='dropdown-user'>
           <ul id='dropdown-user' class='dropdown-content'>
-            
+
           </ul>
           <label for="name">To:</label>
         </div>
@@ -157,9 +157,9 @@ $(document).on('click','#reply',function(){
 
       <div class="row">
         <div id="messages-conversation" class="col s12">
-          
+
           <ul class="collection">
-           
+
           </ul>
 
           <div class="col s12 message-footer">

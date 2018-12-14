@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-	<div id="profile-container">
+	<div id="profile-container" style="border: 1px solid #7a7a7a;border-radius: 2em;background-color: rgba(26, 26, 28, 1.0);">
 		<div class="row">
 			<div class="col s12 m12 l6 offset-l3 ourscene-tab-navigation" id="profile-navigation">
 			  <!-- Navigation tabs -->
@@ -194,17 +194,17 @@
 					</div>
 
 					<div class="row">
-						<div class="label col s12 m12 l12">Operating Hours</div>
+						<div class="label col s12 m12 l12" style="text-align: left;">Operating Hours</div>
 						<p class="col s12 m12 l12"> {{$user->operating_hrs_open}} - {{$user->operating_hrs_close}} </p>
 					</div>
 
 					<div class="row">
-						<div class="label col s12 m12 l12">Seating Capacity</div>
+						<div class="label col s12 m12 l12" style="text-align: left;">Seating Capacity</div>
 						<p class="col s12 m12 l12">{{ $user->seating_capacity }}</p>
 					</div>
 
 					<div class="row">
-						<a href='{{ $nearbyLink }}'>Go to nearby stores</a>
+						<a href='{{ $nearbyLink }}'>See what's nearby</a>
 					</div>
 
 					@else
@@ -232,7 +232,7 @@
 							</ul>
 						</div>
 					</div>
-					
+
 					@endif
 				</div>
 			</div>
@@ -240,9 +240,9 @@
 			<!-- Tab for events calendar -->
 
 			<div id="events" class="col s12 m12 l12 profile-tab">
-				
+
 				<div id="calendar-container">
-		
+
 					<!-- Calendar title -->
 
 					<div id="calendar-title-container">
@@ -253,7 +253,7 @@
 					<!-- Calendar -->
 
 					<div id="calendar" class="ourscene-calendar"></div>
-							
+
 				</div>
 
 			</div>
@@ -266,7 +266,7 @@
 						<img src="{{ asset('images/icons/house-equipment.svg') }}"/>
 						House Equipment
 					</div>
-					
+
 					<br/><br/><br/>
 
 				@if(count($equipments))
@@ -329,7 +329,7 @@
 						No songs.
 					</div>
 				@endif
-					
+
 				</div>
 
 				<div class="row card-action">

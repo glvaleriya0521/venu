@@ -13,12 +13,12 @@
 </script>
 <div class="container-fluid">
 	<div class="row">
-		<div id="message-form" class="card col s12 m12 l8 offset-l2 messsage-all">
+		<div id="message-form" class="card col s12 m12 l8 offset-l2 messsage-all" style="border: 1px solid rgba(26, 120, 246, 1.0) !impportant;">
 
 		    <div class="card-action title">
 		    	<div class="row" style="margin-bottom:0;">
 					<div class="col s8" style="display: inline-block;">
-						<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:inline-block; top: 7px; position:relative; margin-right: 4px; float:left;"/>
+						<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px; float:left;"/>
 						<h5 data-position="bottom" data-delay="50" data-tooltip="{{$conversation['title']}}" style="display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="con title tooltipped">
 							{{$conversation['title']}}
 						</h5>

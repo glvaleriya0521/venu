@@ -30,8 +30,9 @@
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 					@endif
+
 				</div>
-				<div class="col s2 m2 5">
+				<div class="col s2 m2 5" style="width: 19%">
 					<a href="{{ action('EventController@getRequests') }}"
 					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
 					 	REQUESTS
@@ -44,12 +45,12 @@
 					 	@endif
 					 </a>
 				</div>
-				<div class="col s3 m3 7" style="width: 20%">
+				<div class="col s3 m3 7" style="width: 17%">
 					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem;">CREATE EVENT/PROMOTION</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
