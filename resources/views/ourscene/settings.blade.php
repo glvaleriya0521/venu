@@ -16,16 +16,16 @@
 @section('content')
 
 <div id="settings" class="card">
-	<div class="card-action title">
+	<div class="card-action title" style="display: none;">
 		<img src="{{ asset('images/icons/settings.svg') }}"/>
 		Settings
 	</div>
 
 	<div class="row card-action" id="ourscene-tab-navigation-row">
 
-		<div class="col s12 m10 l6">
+		<div class="col s12 m10 l6" style="width: 100%;font-size: 1.2em;margin-left: 5%;">
 		  <!--tabs -->
-		  <ul class="tabs" role="tablist">
+		  <ul class="tabs" role="tablist" style="width: 100%;background-color: rgba(39, 40, 42, 1.0);">
 		    <li role="presentation" class="tab col s3 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>
 		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#equipment"><span>@if(Session::get('user_type') == 'venue') Equipment @elseif(Session::get('user_type') == 'artist') Media @endif</span></a></li>
 		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#payments"><span>Payments</span></a></li>
