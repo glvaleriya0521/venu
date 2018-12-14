@@ -23,7 +23,7 @@
 
 	<div class="row card-action" id="ourscene-tab-navigation-row">
 
-		<div class="col s12 m10 l6" style="width: 100%;font-size: 1.2em;margin-left: 5%;">
+		<div class="col s12 m10 l6" style="width: 75%;font-size: 1.2em;">
 		  <!--tabs -->
 		  <ul class="tabs" role="tablist" style="width: 100%;background-color: rgba(39, 40, 42, 1.0);">
 		    <li role="presentation" class="tab col s3 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>
@@ -34,7 +34,10 @@
 	  	</div>
 	</div>
 
-	<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);border-radius: 2em;">
+	<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
+																			border-radius: 2em;
+																			border: 1px solid rgba(26, 120, 246, 1.0);
+																			margin-top: 20px;">
 		<div id="details" class="col s12 m12 l12" role="tabpanel">
 			@if($user->user_type === 'venue')
 				@include('ourscene/settings.venue-details')
