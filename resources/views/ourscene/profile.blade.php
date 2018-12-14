@@ -31,7 +31,7 @@
 
 <div id="view-profile" class="card">
 
-	<div class="profile-header card-title" style="left: 235%;">
+	<div class="profile-header card-title">
 	@if(Session::get('id') == $user->_id)
 		<div class="nav right-align">
 			<a href="{{ action('UserController@getProfileSettings') }}" class="btn ourscene-btn-1 nav-btn">Edit Profile</a>
@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-	<div id="profile-container" style="border: 1px solid #7a7a7a;border-radius: 2em;">
+	<div id="profile-container" style="border: 1px solid #7a7a7a;border-radius: 2em;background-color: rgba(26, 26, 28, 1.0);">
 		<div class="row">
 			<div class="col s12 m12 l6 offset-l3 ourscene-tab-navigation" id="profile-navigation">
 			  <!-- Navigation tabs -->
