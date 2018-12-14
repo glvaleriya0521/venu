@@ -44,7 +44,7 @@
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT/PROMOTION</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding: 0, .5rem">CREATE EVENT/PROMOTION</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
