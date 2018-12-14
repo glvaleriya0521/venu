@@ -3305,6 +3305,8 @@ input[type=radio] {
 
 input[type=file] {
   display : block;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 50%;
 }
 
 input[type=range] {
