@@ -17,7 +17,7 @@
 	    <div class="card-action title">
 	      <div class="row" style="margin-bottom:0;">
 	      	<div class="col s9">
-		      	<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:inline-block; top: 7px; position:relative; margin-right: 4px;"/>
+		      	<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px;"/>
 				<h5 style="display: inline-block;">Messages</h5>
 		    </div>
 			<div class="col s3 hide-on-med-and-up">
