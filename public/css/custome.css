@@ -66,7 +66,7 @@ div.input-row:nth-child(5) > div:nth-child(1) > label:nth-child(2),
 }
 .iw-content img {
 	float: right;
-	margin: 0 5px 5px 10px;	
+	margin: 0 5px 5px 10px;
 }
 .iw-subTitle {
 	font-size: 16px;
@@ -175,8 +175,10 @@ span#chartobject-1.fusioncharts-container svg#raphael-paper-5{
 }
 
 .filter-artist .row {
+	/*
 	padding-left: 10%;
 	padding-right: 10%;
+	*/
 }
 /*.input-row .input-field input{
 	border: solid 1px !important;
