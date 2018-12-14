@@ -3,7 +3,7 @@
 
 		<a href="{{ action('DashboardController@index') }}" class="brand-logo left">
 			<img src="{{ asset('images/icons/Venu.png') }}" class="brand-logo-icon"/>
-			<b>VenU</b>
+			<b style="font-size: 8px;margin-left: -15px;">Beta Version</b>
 		</a>
 
 		<!-- Top navigation search bar -->
