@@ -2240,6 +2240,7 @@ div.row:nth-child(4) > div:nth-child(1) {
 
 #ourscene-tab-navigation-row .col {
   padding : 0;
+  background-color: rgba(39, 40, 42, 1.0);
 }
 
 #ourscene-tab-navigation-row .col a {
