@@ -130,7 +130,7 @@ $(document).on('click','#reply',function(){
     <div class="card-action title">
       <div class="row" style="margin-bottom: 0;">
 				<div class="col s7 m9 l9">
-					<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:inline-block; top: 7px; position:relative; margin-right: 4px;"/>
+					<img src="{{asset('images/icons/message-purple.svg')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px;"/>
 					<h5 style="display: inline-block;">New Message</h5>
 				</div>
 				<div class="col s5 m2 l2">
