@@ -1833,8 +1833,10 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #settings {
-  left   : 15%;
-  margin : 0;
+  left             : 5%;
+  width            : 80%;
+  margin           : 0;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 @media
@@ -1940,7 +1942,8 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #settings .card-action {
-  margin : 0;
+  margin           : 0;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #settings .file-btn {
@@ -2230,8 +2233,9 @@ div.row:nth-child(4) > div:nth-child(1) {
 }
 
 #ourscene-tab-navigation-row {
-  margin  : 0;
-  padding : 0;
+  margin           : 0;
+  padding          : 0;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #ourscene-tab-navigation-row .col {
