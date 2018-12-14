@@ -34,7 +34,7 @@
 	  	</div>
 	</div>
 
-	<div class="row card-action">
+	<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);border-radius: 2em;">
 		<div id="details" class="col s12 m12 l12" role="tabpanel">
 			@if($user->user_type === 'venue')
 				@include('ourscene/settings.venue-details')
