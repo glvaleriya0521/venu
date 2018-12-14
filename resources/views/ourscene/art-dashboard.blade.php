@@ -44,7 +44,7 @@
             </div>
         </div>
     </div> -->
-  <div class="container filter-artist" style="width: 90% !important;">
+  <div class="container filter-artist">
     <div class="row">
       <div class="col-md-6">
           <div class="input-field col s12 m8 l4">
