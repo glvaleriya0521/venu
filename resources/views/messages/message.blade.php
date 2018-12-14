@@ -13,7 +13,7 @@
 </script>
 <div class="container-fluid">
 	<div class="row">
-		<div id="message-form" class="card col s12 m12 l8 offset-l2 messsage-all">
+		<div id="message-form" class="card col s12 m12 l8 offset-l2 messsage-all" style="border: 1px solid rgba(26, 120, 246, 1.0);">
 
 		    <div class="card-action title">
 		    	<div class="row" style="margin-bottom:0;">
