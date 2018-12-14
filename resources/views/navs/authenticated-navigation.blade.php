@@ -32,7 +32,7 @@
 					@endif
 
 				</div>
-				<div class="col s2 m2 5" style="width: 19%">
+				<div class="col s2 m2 5" style="width: 18%">
 					<a href="{{ action('EventController@getRequests') }}"
 					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
 					 	REQUESTS
