@@ -1378,7 +1378,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #event-form #event-form-nav label {
-  color       : #333;
+  color       : #fff;
   font-family : "OpenSans-SemiBold";
 }
 
