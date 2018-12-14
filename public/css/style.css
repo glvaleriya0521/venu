@@ -2239,8 +2239,8 @@ div.row:nth-child(4) > div:nth-child(1) {
 }
 
 #ourscene-tab-navigation-row .col {
-  padding : 0;
-  background-color: rgba(39, 40, 42, 1.0);
+  padding          : 0;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #ourscene-tab-navigation-row .col a {
@@ -2251,6 +2251,7 @@ div.row:nth-child(4) > div:nth-child(1) {
 }
 
 #ourscene-tab-navigation-row .col .indicator {
+  width            : 15%;
   height           : 4px;
   background-color : rgba(26, 120, 246, 1.0);
 }
