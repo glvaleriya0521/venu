@@ -60,6 +60,10 @@
 
 @include('modals.add-house-equipments-modal')
 
+<!-- Add guests modal -->
+
+@include('modals.add-guests-modal')
+
 <!-- Autocompletes -->
 
 @if(Session::get('user_type') == 'venue')

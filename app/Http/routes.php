@@ -77,6 +77,9 @@ Route::post('/event/create-from-drag-and-drop', 'EventController@postCreateEvent
 // Get event
 Route::get('/event/{id}', 'EventController@getEvent');
 
+// Export Guest info
+Route::get('/event/{id}/guests', 'EventController@exportGuestsInfo');
+
 // Edit event
 Route::get('/event/edit/{id}', 'EventController@getEditEvent');
 Route::post('/event/edit/{id}', 'EventController@postEditEvent');

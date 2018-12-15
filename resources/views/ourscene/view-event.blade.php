@@ -29,11 +29,11 @@
 
 		<div id="venue-profile">
 			<div class="row">
-				<div class="col s12 m8 l8">
+				<div class="col s12 m4 l4">
 					<div class="circular-img-container profile-pic" style="background-image: url('{{ getProfilePicture($event['venue']['id']) }}')"></div>
 					<span class="name">{{ $event['venue']['name'] }}</span>
 				</div>
-				<div class="col s12 m4 l4 right-align">
+				<div class="col s12 m8 l8 right-align">
 					<div class="left-align" style="display: inline-block;">
 
 					@if($event['status'] == 'pending')
@@ -48,7 +48,11 @@
 					@elseif($event['status'] == 'confirmed')
 						@if(Session::get('user_type') == 'venue' && Session::get('id') == $event['venue']['id'])
 							@if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
-								<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a>
+								<div class="row">
+									<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-6">Merchandise/Attendance</a>
+									<div class="col-md-1"></div>
+									<a href="{{ action('EventController@exportGuestsInfo', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-5">Export GuestsInfo</a>
+								</div>
 							@else
 								<a href="{{ action('EventController@getEditEvent', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Edit Event details</a>
 							@endif

@@ -217,6 +217,28 @@ Required items are indicated with <span class="required-color">*</span>.
 	</div>
 </div>
 
+@if(Session::get('user_type') == 'artist')
+<!-- Invited guests -->
+	<div id="equipments" class="section">
+		<div class="section-header"><img src="{{ asset('images/icons/house-equipment.svg') }}" width="25" style="position:relative;top:.5em;margin-right:.4em;" alt="" />
+			<span>Guests</span>
+		</div>
+
+		<div class="row">
+			<div class="col s12 m8 l6" style="width: 60%;">
+				<table id="add-guests-table">
+					
+				</table>
+
+				<br/><br/>
+
+		    	<!-- Add house equipment button -->
+				<button type="button" data-target="add-guests-modal" class="btn ourscene-btn-2 modal-trigger">Add Guests</a>
+			</div>
+		</div>
+	</div>
+@endif
+
 @if(Session::get('user_type') == 'venue' && $form_action == 'edit')
 
 <!-- Artist lineup -->

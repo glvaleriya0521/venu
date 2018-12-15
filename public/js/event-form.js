@@ -471,8 +471,43 @@ function addHouseEquipment(){
 	$add_equipments_table.append(row);
 }
 
+function addGuest(){
+	
+	var guest_name = $("#guest_name").val();
+	var guest_number = $("#guest_number").val();
+	var $add_guests_table = $('#add-guests-table');
+	var index = index + 1;
+
+	var row = '\
+		<tr class="guest-row"> \
+			<td> \
+				<div class="row" id="guest-info-' + index + '"> \
+					<div class="col-md-6"><br> \
+						'+guest_name+' \
+					</br></div> \
+					<div class="col-md-6"><br> \
+						'+guest_number+' \
+					</br></div> \
+				</div> \
+			</td> \
+			<td class="right-align"> \
+				<a onclick="removeGuest(this)"> \
+					<img class="remove-icon" src="'+remove_icon_src+'"/> \
+				</a> \
+				<input type="hidden" name="guests[]" value="'+ guest_name +','+ guest_number +'"> \
+			</td> \
+		</tr> \
+	';
+
+	$add_guests_table.append(row);
+}
+
 function removeHouseEquipment(this_ref){
 	$(this_ref).closest('.equipment-row').remove();	
+}
+
+function removeGuest(this_ref){
+	$(this_ref).closest('.guest-row').remove();	
 }
 
 function showInviteArtistModal(){

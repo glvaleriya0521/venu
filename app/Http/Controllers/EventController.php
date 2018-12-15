@@ -251,7 +251,6 @@ class EventController extends Controller {
 			}
 		}
 
-
 		//create event first then tsaka prompt them to pay it.
 
 
@@ -404,6 +403,24 @@ class EventController extends Controller {
 			}
 		}
 
+		$guest_lists = [];
+
+		if(isset($input['guests'])){
+			$guests = $input['guests'];
+
+			foreach($guests as $guest){
+
+				// $equipment = Equipment::find($equipment_id);
+				list($guest_name, $guest_number) = explode(",", $guest);
+
+					//add to equipments
+					$guest_lists[] = array(
+						'guest_name' => $guest_name,
+						'guest_number' => $guest_number
+					);
+				}
+		}
+
 		//create event
 
 		$event = new Event;
@@ -458,6 +475,7 @@ class EventController extends Controller {
 			$service->request_date = new MongoDate();
 			$service->payment_status = 'unpaid';
 			$service->equipments = $equipments;
+			$service->guests = $guest_lists;
 
 			$service->save();
 
@@ -659,6 +677,55 @@ class EventController extends Controller {
 
 		return View::make('ourscene.edit-after-event', compact('event', 'start_date', 'start_time', 'end_date', 'end_time', 'opening_time', 'equipments', 'all_equipments', 'artist_lineup', 'invited_artists', 'form_action'));
 	}
+
+	public function cleanData(&$str) {
+	  
+	    $str = preg_replace("/\t/", "\\t", $str);
+	    $str = preg_replace("/\r?\n/", "\\n", $str);
+	    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+	}
+
+	public function exportGuestsInfo($id) {
+
+		$event = Event::find($id);
+
+		if(!$event)
+			abort(404);
+
+		$event_venue = User::find($event['venue']['id']);
+
+		$performance_request = Service::servicesByEventId($event['_id'])->confirmed()->performance()->first();
+		$artist_id = $performance_request['sender_id'];
+		$artist = User::find($artist_id);
+		$artist_name = $artist->name;
+		$guests = $performance_request['guests'];
+
+		if ($guests) {
+			
+		 // file name for download
+		  $filename = $artist_name . "-Guest_list" . date('Ymd') . ".xls";
+
+		  header("Content-Disposition: attachment; filename=\"$filename\"");
+		  header("Content-Type: application/vnd.ms-excel");
+
+		  $flag = false;
+		  foreach($guests as $row) {
+		    if(!$flag) {
+		      // display field/column names as first row
+		      echo implode("\t", array_keys($row)) . "\n";
+		      $flag = true;
+		    }
+		    echo implode("\t", array_values($row)) . "\r\n";
+		  }
+		  exit;
+		}
+		else {
+
+			return Redirect::to('/event/'.$id)->with('error', 'Sorry, There is no any quests.');
+		}
+
+	}
+
 	public function postEditEvent($id){
 
 		//get event
