@@ -58,13 +58,13 @@
 				</div>
 				<div class="col s3 m3 7" style="margin-left: 5%">
 					<ul style="display:inline">
-			        <li>
+			        <li style="margin-left: 5%">
 			        	<a href="{!! url('/messages') !!}">
 			        		<img src="{{asset('images/icons/artists---popup-profile-message-icon@2x.png')}}" class="nav-icon">
 			        		<span class="badge red messages-counter-icon" style="display:none"></span>
 			        	</a>
 			    	</li>
-			    	<li>
+			    	<li style="margin-left: -5%">
 			    		<a href="{!! url('/profile') !!}">
 				    		@if(getProfilePicture(Session::get('id')) != "")
 				    			<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
@@ -73,9 +73,9 @@
 				    		@endif
 			    		</a>
 			    	</li>
-					<li>
+					<li style="margin-left: -5%">
 						<a class="dropdown-button" href="#!" data-activates="main-navigation-1-dropdown" data-constrainwidth="false" data-beloworigin="true" data-gutter="10">
-							<img class="dropdown-icon" src="{{ asset('images/icons/dropdown.svg') }}">
+							<img class="dropdown-icon" src="{{ asset('images/icons/white-expand-arrow-50.png') }}">
 						</a>
 					</li>
 			    </ul>
