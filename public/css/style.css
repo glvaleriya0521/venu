@@ -1713,6 +1713,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 }
 
 #requests .request-card .event-icon {
+  display  : none;
   position : absolute;
   top      : 10px;
   left     : 10px;
