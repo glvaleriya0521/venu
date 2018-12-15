@@ -5130,15 +5130,16 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  z-index          : 999;
-  display          : none;
-  position         : absolute;
-  min-width        : 100px;
-  max-height       : 650px;
-  margin           : 0;
-  opacity          : 0;
-  overflow-y       : auto;
-  background-color : #fff;
+  z-index       : 999;
+  display       : none;
+  position      : absolute;
+  min-width     : 100px;
+  max-height    : 650px;
+  margin        : 0;
+  opacity       : 0;
+  overflow-y    : auto;
+  border-radius : .5em;
+  /* background-color : #fff; */
 }
 
 .dropdown-content li {
