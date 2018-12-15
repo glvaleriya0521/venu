@@ -32,7 +32,7 @@
 	    	<div class="nav-wrapper">
 
 				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
-					<img src="{{ asset('images/icons/logo.svg') }}" class="brand-logo-icon"/>
+					<img src="{{ asset('images/icons/Venu.png') }}" class="brand-logo-icon"/>
 					<b>VenU</b>
 				</a>
 

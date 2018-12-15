@@ -22,7 +22,7 @@
 	<div class="wrapper">
 		<div class="wrapper-content">
 			<div id="http-status">
-				<img id="ourscene-logo" src="{{ asset('images/icons/logo.svg') }}">
+				<img id="ourscene-logo" src="{{ asset('images/icons/Venu.png') }}">
 				<div id="code">ERROR @yield('code')</div>
 				<div id="message">@yield('message')</div>
 			</div>

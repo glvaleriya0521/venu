@@ -28,7 +28,7 @@
 			<button type="button" class="change-type-btn l-change-type-btn" onclick="changeSignInType(this)">SIGN IN AS {{ $sign_in_as_btn }}</button>
 		</div>
 		<div class="hide-on-med-and-up">
-			<img id="m-ourscene-logo" src="{{ asset('images/icons/logo.svg') }}"/>
+			<img id="m-ourscene-logo" src="{{ asset('images/icons/Venu.png') }}"/>
 			<span>VenU</span>
 			<button type="button" onclick="changeSignInType(this)" class="change-type-btn btn ourscene-btn-2">SIGN IN AS {{ $sign_in_as_btn }}</button>
 		</div>
@@ -43,7 +43,7 @@
 			<span id="user-type-label"><b>{{ $user_type }} Login</b></span>
 		</div>
 		<div id="login-body">
-			
+
 			@if(Session::has('success'))
 				<br/>
 				<div class="success-field">
@@ -71,7 +71,7 @@
 				</div>
 
 				<div class="row form-group">
-					<div class="col s12 m12 l12 login-textbox"> 
+					<div class="col s12 m12 l12 login-textbox">
 						<input type="password" class="form-control" name="password" placeholder="Password" required/>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 					<div class="col s12 m12 l12">
 						<input type="checkbox" class="filled-in" name="remember_me" id="remember-me"/>
 						<label for="remember-me">Remember Me</label>
-					</div>		
+					</div>
 				</div>
 
 				<div class="form-group row login-btn-div">
@@ -99,7 +99,7 @@
 				<a id="signup-link" href="{{ $sign_up_url }}">Sign up</a>
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
 </div>
 <footer class="hide-on-med-and-up page-footer"><!-- style="padding-left:20px;padding-top:10px;margin-bottom:40px;margin-top:-30px;border-top:solid gray .5px" class="signup-link-div"> -->
