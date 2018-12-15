@@ -38,7 +38,7 @@
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
         width: 400px;
-        margin-top: 39px;
+        margin-top: 20px;
         margin-right: 80px;
       }
 
@@ -52,7 +52,7 @@
         background-color: #000;
         margin-left: 12px;
         padding: 5px 11px 0px 11px;
-        margin-top: 39px;
+        margin-top: 20px;
         border-radius: 10px;
         size: 20px;
         height: 38px;
@@ -81,6 +81,9 @@
         font-weight: 300;
       }
 
+     .direct-container {
+        margin-bottom: 0px;
+     }
     </style>
 @stop
 
@@ -105,23 +108,28 @@
       <input type="radio" class="store-type" name="store" id="liquor_store" value="liquor_store">
       <label for="liquor_store">Liquor_store</label>
     </div>
-    <input id="origin-input" class="controls" type="text"
-        placeholder="Enter an origin location">
+    <div class="row direct-container">
+      <div class="col-md-4">
+          <input id="origin-input" class="controls store-direct" type="text"
+              placeholder="Enter an origin location">
+      </div>
+      <div class="col-md-4">
+         <input id="destination-input" class="controls store-direct" type="text"
+          placeholder="Enter a destination location">
+      </div>
+      <div class="col-md-4">
+          <div id="mode-selector" class="controls store-direct">
+            <input type="radio" name="type" id="changemode-walking" checked="checked">
+            <label for="changemode-walking">Walking</label>
 
-    <input id="destination-input" class="controls" type="text"
-        placeholder="Enter a destination location">
+            <input type="radio" name="type" id="changemode-transit">
+            <label for="changemode-transit">Transit</label>
 
-    <div id="mode-selector" class="controls">
-      <input type="radio" name="type" id="changemode-walking" checked="checked">
-      <label for="changemode-walking">Walking</label>
-
-      <input type="radio" name="type" id="changemode-transit">
-      <label for="changemode-transit">Transit</label>
-
-      <input type="radio" name="type" id="changemode-driving">
-      <label for="changemode-driving">Driving</label>
+            <input type="radio" name="type" id="changemode-driving">
+            <label for="changemode-driving">Driving</label>
+          </div>
+      </div>
     </div>
-
     <div id="map"></div>
 @stop
 
@@ -237,9 +245,9 @@
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
       }
 
       // Sets a listener on a radio button to change the filter type on Places
@@ -322,6 +330,8 @@
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                   place.formatted_address + '</div>');
               infowindow.open(map, this);
+              var placeFullInfo = place.name + ',' + place.formatted_address;
+              $('#destination-input').val = placeFullInfo;
             });
           }
         });

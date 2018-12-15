@@ -104,6 +104,7 @@ Route::get('/my-events/venue/events', 'EventController@getMyEventsEvents');
 Route::get('/view-map/index', 'MapController@index');
 Route::get('/view-map/directionTo/{city}', 'MapController@directionTo');
 Route::get('/view-map/store/nearby/{id}', 'MapController@store');
+Route::get('/view-map/others', 'MapController@others');
 
 // Fetch events
 Route::post('/event/ajax-fetch-private-events-by-user-id', 'EventController@postAjaxFetchPrivateEventsByUserId');

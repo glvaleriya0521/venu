@@ -18,6 +18,7 @@ use OurScene\Models\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Support\Collection;
+use OurScene\Models\Service;
 
 use OurScene\Helpers\PaypalHelper;
 
@@ -47,6 +48,80 @@ public function index()
 		$toCity = "";
 
 		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
+    }
+
+public function distanceAsMile(
+	  $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 3959)
+	{
+		  // convert from degrees to radians
+		  $latFrom = deg2rad($latitudeFrom);
+		  $lonFrom = deg2rad($longitudeFrom);
+		  $latTo = deg2rad($latitudeTo);
+		  $lonTo = deg2rad($longitudeTo);
+
+		  $latDelta = $latTo - $latFrom;
+		  $lonDelta = $lonTo - $lonFrom;
+
+		  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+		    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+		  return $angle * $earthRadius;
+	}
+
+public function others()
+    {
+
+		// get Current user info
+		$user_id = Session::get('id');
+		$user 	 = User::find($user_id);
+		$locality = $user->address['city'];
+		$zipCode = $user->address['zipcode'];
+		$centerLat = $user->latlon['lat'];
+		$centerLon = $user->latlon['lng'];
+
+		$current_datetime = new MongoDate();
+		$services = Service::where('status', 'confirmed')
+			->where('start_datetime', '<', $current_datetime)
+			->where('end_datetime', '>', $current_datetime)->get();
+
+		$venue_ids = array();
+		foreach ($services as $service) {
+
+			$sender_id = $service['sender_id'];
+			$receiver_id = $service['receiver_id'];
+			array_push($venue_ids, $sender_id);
+			array_push($venue_ids, $receiver_id);
+		}
+
+		$venues = User::where('user_type', 'venue')->whereIn('_id', $venue_ids)->get();
+
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+
+		$distance_filter = null;
+
+		if (isset($input['params'])) {
+			$type = $input['type'];
+			$params = $input['params'];
+			if ($type == "distance") {
+
+					foreach ($venues as $venue) {
+						$lat = $venue->latlon['lat'];
+						$lon = $venue->latlon['lng'];
+						$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+						$venue ->distance = $distance;
+						$venue->save();
+					}
+					$venues = User::where('user_type', 'venue')->whereIn('_id', $venue_ids)
+						->where('distance', '<', (double)$params)->get();
+					$distance_filter = $params;
+			}
+		}
+		
+		$all = $venues;
+
+		$direction = "false";
+		$toCity = "";
+		return View::make('ourscene.current_map', compact('all','locality','zipCode',  'toCity','direction', 'distance_filter'));
     }
 
 public function store($id)

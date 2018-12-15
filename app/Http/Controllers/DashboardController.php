@@ -205,7 +205,6 @@ public function getMyState()
 			$start_datetime = new MongoDate(strtotime($start_datetime));
 			$end_datetime = new MongoDate(strtotime($end_datetime));
 
-
 			$confirmed_events1 = Service::servicesByReceiverId($user_id)
 				->whereBetween('confirmation_date',[$start_datetime, $end_datetime])->confirmed()->count();
 

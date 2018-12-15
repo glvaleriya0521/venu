@@ -1369,9 +1369,30 @@ class EventController extends Controller {
 			$rejected_events = Service::servicesBySenderId($user_id)->rejected()->get();
 		}
 		else {
-			$confirmed_events = Service::where('receiver_id', $user_id)->confirmed()->get();
-			$pending_events = Service::where('receiver_id', $user_id)->pending()->get();
-			$rejected_events = Service::where('receiver_id', $user_id)->rejected()->get();
+			$confirmed_events = Service::confirmed()
+				->where(function ($query) use ($user_id){
+	                $query->servicesBySenderId($user_id)
+	                	->orWhere(function ($query) use ($user_id){
+	                		$query->servicesByReceiverId($user_id);
+	                	});
+	            })
+				->get();
+			$pending_events = Service::pending()
+				->where(function ($query) use ($user_id){
+	                $query->servicesBySenderId($user_id)
+	                	->orWhere(function ($query) use ($user_id){
+	                		$query->servicesByReceiverId($user_id);
+	                	});
+	            })
+				->get();
+			$rejected_events = Service::rejected()
+				->where(function ($query) use ($user_id){
+	                $query->servicesBySenderId($user_id)
+	                	->orWhere(function ($query) use ($user_id){
+	                		$query->servicesByReceiverId($user_id);
+	                	});
+	            })
+				->get();
 		}
 		
 
