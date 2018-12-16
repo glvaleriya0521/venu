@@ -905,11 +905,11 @@ a:visited {
 
 #main-navigation-1-dropdown li {
   min-height       : initial;
-  background-color : rgba(26,120,246,1.0);
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #main-navigation-1-dropdown li:hover {
-  background-color : #23203e;
+  background-color : rgba(26, 120, 246, 1.0);
 }
 
 #main-navigation-1-dropdown a {
