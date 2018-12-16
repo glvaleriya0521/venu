@@ -196,7 +196,7 @@
 
 .ourscene-modal-title-1 {
   margin-bottom : 20px;
-  color         : #534d93;
+  color         : #fff;
   font-size     : 1.5rem;
 }
 
@@ -483,15 +483,13 @@ a:visited {
 }
 
 .modal {
-  width      : 95%;
-  max-height : 85%;
+  width      : 50%;
 }
 
 @media
   (min-width : 601px) {
   .modal {
-    width      : 80%;
-    max-height : 80%;
+    width      : 50%;
   }
 }
 
