@@ -43,7 +43,7 @@
 			<!-- Search dropdown -->
 
 			<ul id="search-results-search-dropdown" class="dropdown-content search-dropdown"
-			style="display: block; opacity: 1; background-color: rgba(26, 26, 28, 1.0);"></ul>
+			style="display: block; opacity: 1; background-color: rgba(26, 26, 28, 1.0) !important;"></ul>
 		</div>
 
 		<!-- Search results items -->
