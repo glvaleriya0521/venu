@@ -5315,7 +5315,7 @@ button.btn-floating {
 
 .modal {
   display          : none;
-  position         : sticky;
+  position         : fixed;
   right            : 0;
   left             : 0;
   width            : 50%;
