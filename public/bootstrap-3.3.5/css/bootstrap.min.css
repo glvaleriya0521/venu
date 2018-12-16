@@ -7528,7 +7528,7 @@ button.close {
 
 .modal-content {
   position         : relative;
-  background-color : rgba(39, 40, 42, 1.0);
+  background-color : rgba(39, 40, 42, 1.0) !important;
 }
 
 .modal-backdrop {
