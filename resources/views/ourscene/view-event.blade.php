@@ -48,12 +48,13 @@
 					@elseif($event['status'] == 'confirmed')
 						@if(Session::get('user_type') == 'venue' && Session::get('id') == $event['venue']['id'])
 							@if(DatetimeUtils::datetimeGreaterThan(new MongoDate(), $event->end_datetime))
+									<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Merchandise/Attendance</a>
+							@else
 								<div class="row">
-									<a href="{{ action('EventController@getEditEventAfter', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-6">Merchandise/Attendance</a>
+									<a href="{{ action('EventController@getEditEvent', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-6">Edit Event details</a>
 									<div class="col-md-1"></div>
 									<a href="{{ action('EventController@exportGuestsInfo', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-5">Export GuestsInfo</a>
 								</div>
-							@else
 								<a href="{{ action('EventController@getEditEvent', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Edit Event details</a>
 							@endif
 							<br/>
