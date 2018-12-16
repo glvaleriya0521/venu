@@ -55,7 +55,6 @@
 									<div class="col-md-1"></div>
 									<a href="{{ action('EventController@exportGuestsInfo', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4 col-md-5">Export GuestsInfo</a>
 								</div>
-								<a href="{{ action('EventController@getEditEvent', array('id' => $event['_id'])) }}" class="btn ourscene-btn-4">Edit Event details</a>
 							@endif
 							<br/>
 						@elseif(Session::get('user_type') == 'artist')
