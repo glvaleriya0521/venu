@@ -364,8 +364,8 @@
 .search-dropdown .search-divider {
   display          : inline-block;
   width            : 100%;
-  color            : #aaa;
-  background-color : #efefef;
+  color            : #fff;
+  background-color : rgba(39, 40, 42, 1.0);
   text-align       : center;
   font-family      : "OpenSans-Regular" !important;
   font-size        : 0.9rem !important;
@@ -374,7 +374,7 @@
 
 .search-dropdown .search-divider a {
   display : block;
-  color   : #aaa;
+  color   : #fff;
 }
 
 .search-dropdown .view-all-search {
@@ -394,7 +394,7 @@
 
 .search-dropdown li a {
   padding        : 5px 15px 0;
-  color          : #46bfa7 !important;
+  color          : rgba(26, 120, 246, 1.0) !important;
   text-transform : none !important;
   font-size      : 14px;
   font-weight    : 100;
