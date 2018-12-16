@@ -7528,7 +7528,7 @@ button.close {
 
 .modal-content {
   position         : relative;
-  background-color : #fff;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 .modal-backdrop {
@@ -7606,8 +7606,8 @@ button.close {
   }
 
   .modal-content {
-    -webkit-box-shadow : 0 5px 15px rgba(0,0,0,.5);
-    box-shadow         : 0 5px 15px rgba(0,0,0,.5);
+    /*-webkit-box-shadow : 0 5px 15px rgba(0,0,0,.5);
+    box-shadow         : 0 5px 15px rgba(0,0,0,.5);*/
   }
 
   .modal-sm {
