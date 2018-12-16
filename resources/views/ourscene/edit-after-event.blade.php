@@ -18,7 +18,7 @@
 
 	<div class="card-action title">
 		<img src="{{ asset('images/icons/create.svg') }}"/>
-		Merchandise/Attendance<span class="edit-event-title">{{ $event['title'] }}</span>
+		Merchandise/Attendance<span class="edit-event-title white-color">{{ $event['title'] }}</span>
 	</div>
 
 	<div id="event-form-container">

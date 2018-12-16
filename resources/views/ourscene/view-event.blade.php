@@ -98,11 +98,11 @@
 
 				<div id="event-navigation" class="col s12 m12 l6 offset-l3">
 					<ul class="tabs">
-						<li class="tab col s4"><a class="active" href="#event-details">Event details</a></li>
-						<li class="tab col s4"><a href="#artist-line-up">Artist Line up</a></li>
+						<li class="tab col s4"><a class="active white-color" href="#event-details">Event details</a></li>
+						<li class="tab col s4"><a href="#artist-line-up" class="white-color">Artist Line up</a></li>
 					@if(Session::get('user_type') == 'venue' && Session::get('id') == $event['venue']['id'])
-						<li class="tab col s4"><a href="#invited-artists">Invited artists</a></li>
-						<li class="tab col s4"><a href="#artist-applied">Artist Applied</a></li>
+						<li class="tab col s4"><a href="#invited-artists" class="white-color">Invited artists</a></li>
+						<li class="tab col s4"><a href="#artist-applied" class="white-color">Artist Applied</a></li>
 					@endif
 					</ul>
 				</div>
@@ -114,25 +114,25 @@
 						<div class="row">
 							<div class="col s3 m3 l3 center-align">
 								<img src="{{ asset('images/icons/contact.svg') }}"/><br/>
-								<div class="label">Contact No.</div>
+								<div class="label white-color">Contact No.</div>
 								<div class="divider"></div>
 								{{ $event_venue['phone_number'] }}
 							</div>
 							<div class="col s3 m3 l3 center-align">
 								<img src="{{ asset('images/icons/email.svg') }}"/><br/>
-								<div class="label">Email</div>
+								<div class="label white-color">Email</div>
 								<div class="divider"></div>
 								{{ $event_venue['email'] }}
 							</div>
 							<div class="col s3 m3 l3 center-align">
 								<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-								<div class="label">Facebook</div>
+								<div class="label white-color">Facebook</div>
 								<div class="divider"></div>
 								<a href="{{ getHyperLink($event_venue['social_media']['fb']) }}" class="ourscene-link-1" target="_blank">{{ $event_venue['social_media']['fb'] }}</a>
 							</div>
 							<div class="col s3 m3 l3 center-align">
 								<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-								<div class="label">Twitter</div>
+								<div class="label white-color">Twitter</div>
 								<div class="divider"></div>
 								<a href="{{ getHyperLink($event_venue['social_media']['twitter']) }}" class="ourscene-link-1" target="_blank">{{ $event_venue['social_media']['twitter'] }}</a>
 							</div>
@@ -143,7 +143,7 @@
 					<div id="details" class="card-action">
 
 						<div class="detail">
-							<div class="label">When</div>
+							<div class="label white-color">When</div>
 							<br/>
 							{{ date('F d, Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($event['start_datetime'])->sec) }}
 							-
@@ -151,43 +151,43 @@
 						</div>
 						@if(isset($event['opening_time']) && $event['opening_time']!="")
 						<div class="detail">
-							<div class="label">Doors</div>
+							<div class="label white-color">Doors</div>
 							<br/>
 							{{ date('h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($event['opening_time'])->sec) }}
 						</div>
 						@endif
 						<div class="detail">
-							<div class="label">About the event</div>
+							<div class="label white-color">About the event</div>
 							<br/>
 							{{ $event['description'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Event type</div>
+							<div class="label white-color">Event type</div>
 							<br/>
 							{{ $event['event_type'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Age requirements</div>
+							<div class="label white-color">Age requirements</div>
 							<br/>
 							{{ $event['age_requirements'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Cover charge</div>
+							<div class="label white-color">Cover charge</div>
 							<br/>
 							{{ $event['cover_charge'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Merchandise</div>
+							<div class="label white-color">Merchandise</div>
 							<br/>
 							{{ $event['merchandise'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Attendance</div>
+							<div class="label white-color">Attendance</div>
 							<br/>
 							{{ $event['attendance'] }}
 						</div>
 						<div class="detail">
-							<div class="label">Address</div>
+							<div class="label white-color">Address</div>
 							<br/>
 						@if(isset($event_venue['address']['unit_street']))
 							<span class="bold-weight">Unit/Street</span><br/>{{ $event_venue['address']['unit_street'] }}<br/><br/>
@@ -216,7 +216,7 @@
 						<!-- Services line up -->
 
 						<div id="services-lineup" class="col s12 m12 l7">
-							<div class="label big-label">Artist schedule</div>
+							<div class="label big-label white-color">Artist schedule</div>
 							<br/>
 
 						@if(count($event['services_lineup']))
@@ -231,7 +231,7 @@
 
 										<!-- Performance time -->
 
-										<div class="label">Performance time</div>
+										<div class="label white-color">Performance time</div>
 										<br/>
 										<span class="bold-weight">Start</span><br/> {{ date('F d, Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($service['start_datetime'])->sec) }} <br/>
 										<span class="bold-weight">End</span><br/> {{ date('F d, Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($service['end_datetime'])->sec) }} <br/>
@@ -240,7 +240,7 @@
 
 										<!-- Artist equipments -->
 
-										<div class="label">
+										<div class="label white-color">
 											<img class="equipment-icon" src="{{ asset('images/icons/house-equipment.svg') }}">
 											Artist equipment
 											
@@ -281,7 +281,7 @@
 						<!-- House equipments -->
 
 						<div id="house-equipments" class="col s12 m12 l5">
-							<div class="label">
+							<div class="label white-color">
 								<img class="equipment-icon" src="{{ asset('images/icons/house-equipment.svg') }}">
 								House equipment
 							</div>

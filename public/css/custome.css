@@ -181,6 +181,10 @@ span#chartobject-1.fusioncharts-container svg#raphael-paper-5{
 .radius-filter .row {
 	margin-bottom: 0px;
 }
+
+.white-color {
+	color: white !important;
+}
 /*.input-row .input-field input{
 	border: solid 1px !important;
 }*/
