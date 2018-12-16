@@ -42,7 +42,7 @@
 
 			<!-- Search dropdown -->
 
-			<ul id="search-results-search-dropdown" class="dropdown-content search-dropdown"></ul>
+			<ul id="search-results-search-dropdown" class="dropdown-content search-dropdown" style="background-color: rgba(26, 26, 28, 1.0);"></ul>
 		</div>
 
 		<!-- Search results items -->
