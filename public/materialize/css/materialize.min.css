@@ -5344,6 +5344,7 @@ button.btn-floating {
 
 .modal .modal-content {
   padding : 24px;
+  background-color: rgba(39, 40, 42, 1.0);
 }
 
 .modal .modal-close {
