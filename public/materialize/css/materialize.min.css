@@ -2327,7 +2327,7 @@ optgroup,
 select,
 textarea {
   margin : 0;
-  color  : inherit;
+  color  : #fff;
   font   : inherit;
 }
 
@@ -4831,8 +4831,8 @@ footer.page-footer .footer-copyright {
 
 .tabs {
   display          : -webkit-flex;
-  display          : flex;
   display          : -ms-flexbox;
+  display          : flex;
   position         : relative;
   width            : 100%;
   height           : 48px;
@@ -5315,23 +5315,23 @@ button.btn-floating {
 
 .modal {
   display          : none;
-  position         : fixed;
+  position         : sticky;
   right            : 0;
   left             : 0;
-  width            : 55%;
-  max-height       : 70%;
+  width            : 50%;
   margin           : auto;
   padding          : 0;
   overflow-y       : auto;
-  border-radius    : 2px;
-  background-color : #000;
+  border           : 1px solid #7A7A7A;
+  border-radius    : 1em;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 @media
   only screen
   and (max-width : 992px) {
   .modal {
-    width : 80%;
+    width : 50%;
   }
 }
 
@@ -5344,6 +5344,7 @@ button.btn-floating {
 
 .modal .modal-content {
   padding : 24px;
+  background-color: rgba(39, 40, 42, 1.0);
 }
 
 .modal .modal-close {
@@ -5354,8 +5355,8 @@ button.btn-floating {
   width            : 100%;
   height           : 56px;
   padding          : 4px 6px;
-  border-radius    : 0 0 2px 2px;
-  background-color : #000;
+  border-radius    : 0 0 2em;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 .modal .modal-footer .btn,
@@ -5392,9 +5393,8 @@ button.btn-floating {
 }
 
 .modal.modal-fixed-footer .modal-footer {
-  position   : absolute;
-  bottom     : 0;
-  border-top : 1px solid rgba(0,0,0,0.1);
+  position : absolute;
+  bottom   : 0;
 }
 
 .modal.bottom-sheet {

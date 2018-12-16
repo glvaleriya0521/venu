@@ -7,7 +7,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="input-field col s12 m8 l4">
+				<div class="input-field col s12 m8 l4" style="width: 80%;">
 					<input type="text" name="guest_name" id="guest_name" placeholder="Guest name" value="" required/>
 					<label for="guest_name" class="active"><span class="required-color">*</span> Guest Name:</label>
 				</div>
@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="input-field col s12 m8 l4">
 					<input type="text" name="guest_number" id="guest_number" placeholder="Guest number" value="" required/>
-					<label for="guest_number" class="active"><span class="required-color">*</span> Guest Number:</label>
+					<label for="guest_number" class="active"><span class="required-color">*</span> Number of Guests:</label>
 				</div>
 			</div>
 		</div>
