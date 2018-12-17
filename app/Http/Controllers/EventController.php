@@ -1463,7 +1463,7 @@ class EventController extends Controller {
 		}
 		
 
-		return View::make('ourscene.my-events-events', compact('confirmed_events', 'pending_events', 'rejected_events'));
+		return View::make('ourscene.my-events-events', compact('confirmed_events', 'pending_events', 'rejected_events', "user_type"));
 	}
 
 		/* Artist information for dashboard */

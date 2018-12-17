@@ -56,7 +56,7 @@
 @section('scripts')
 <script>
 	var user_profile_pic 		= "@if(getProfilePicture(Session::get('id')) != "") {{getProfilePicture(Session::get('id'))}} @else {{asset("images/icons/profile-pic.png")}} @endif";
-	var conn 					= new WebSocket("ws://{{env('RATCHET_SERVER')}}:8080");
+	var conn 					= new WebSocket("wss://{{env('RATCHET_SERVER')}}:8080");
 	var conversation_id 		= "{{$conversation['_id']}}";
 	var user_id 				= "{{Session::get('id')}}";
 	var default_profile_pic 	= "{{asset("images/icons/profile-pic.png")}}";
