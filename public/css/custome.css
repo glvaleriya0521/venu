@@ -189,6 +189,49 @@ span#chartobject-1.fusioncharts-container svg#raphael-paper-5{
 #conversation-list .collection-item {
 	background: black;
 }
+
+.profile-panel {
+	background-color: rgba(26, 26, 28, 1.0);
+	border-radius: 2em;
+	border: 2px solid #7a7a7a;
+	margin-top: 20px;
+	min-height: 310px !important;
+	padding: 31px !important;
+}
+
+.profile-title {
+	background-color: rgba(255,255,255,0.0);
+    margin: 0;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    font-family: "OpenSans-SemiBold", Helvetica, Arial, serif;
+    font-size: 17.0px;
+    color: rgba(254, 255, 254, 1.0) !important;
+    text-align: left;
+    line-height: 23.0px;
+}
+
+.profile-description {
+	background-color: rgba(255,255,255,0.0);
+    margin: 0;
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    font-family: "Open Sans", Helvetica, Arial, serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14.0px;
+    color: rgba(254, 255, 254, 1.0);
+    text-align: left;
+    line-height: 19.0px;
+    margin-top: 7px !important;
+}
+
+.property-section {
+	margin-bottom: 5px !important;
+}
+
 /*.input-row .input-field input{
 	border: solid 1px !important;
 }*/

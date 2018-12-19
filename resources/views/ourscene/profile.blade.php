@@ -1,409 +1,407 @@
 @extends('ourscene/layouts.main')
 
 @section('head')
-	<!-- FullCalendar -->
 
-	<script src="{{ asset('fullcalendar/fullcalendar.js') }}"></script>
-	<link rel='stylesheet' href="{{ asset('fullcalendar/fullcalendar.css') }}"></link>
-
-	<style>
-		#timeline{
-			width: 400px;
-			height: 20px;
-			background: #4200f7;
-			margin-top: 20px;
-			float: left;
-			border-radius: 15px;
-		}
-
-		#playhead{
-			width: 18px;
-			height: 18px;
-			border-radius: 50%;
-			margin-top: 1px;
-			background: rgba(0, 255, 196, 0.82);
-		}
+<script>
+	var AJAX_VALIDATE_CURRENT_PASSWORD = "{{ action('UserController@getValidateCurrentPassword') }}";
+	var ASSET_URL = "{{asset('')}}"
+</script>
+<style media="screen">
+	#equipment-list tbody tr{
+		cursor: pointer;
+	}
 </style>
-
-@endsection
+@stop
 
 @section('content')
 
-<div id="view-profile" class="card">
+<div id="settings" class="card">
+	<div class="card-action title" style="display: none;">
+		<img src="{{ asset('images/icons/settings.svg') }}"/>
+		Settings
+	</div>
 
-	<div class="profile-header card-title">
-	@if(Session::get('id') == $user->_id)
-		<div class="nav right-align">
-			<a href="{{ action('UserController@getProfileSettings') }}" class="btn ourscene-btn-1 nav-btn">Edit Profile</a>
-		</div>
-	@endif
-		<div class="info valign-wrapper">
-			<div style="display:block; background-image: url('{{getProfilePicture($user->id)}}'); width:90px; height: 90px; background-size: cover; background-position: 50%;" class="circular-img-container valign">
+	<div class="row card-action" id="ourscene-tab-navigation-row">
 
+		<div class="col s12 m10 l6" style="width: 75%;font-size: 1.2em;">
+		  <!--tabs -->
+		  <ul class="tabs" role="tablist" style="width: 100%;background-color: rgba(39, 40, 42, 1.0);">
+		    <li role="presentation" class="tab col s3 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>
+		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#equipment"><span>@if(Session::get('user_type') == 'venue') Equipment @elseif(Session::get('user_type') == 'artist') Media @endif</span></a></li>
+		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#payments"><span>Payments</span></a></li>
+		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#account-info"><span>Account Info</span></a></li>
+		  </ul>
+	  	</div>
+	</div>
+	<div id="details" class="col s12 m12 l12" role="tabpanel">
+		@if($user->user_type === 'venue')
+			@include('ourscene/profile.venue-details')
+		@else
+			@include('ourscene/profile.artist-details')
+		@endif
+	</div>
+
+	<div id="equipment" class="col s12 m12 l12" role="tabpanel">
+		<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
+																		border-radius: 2em;
+																		border: 2px solid #7a7a7a;
+																		margin-top: 20px;">
+			<div id="success-equipment" class="col s12 m10 l7 alert-equipment" style="display:none;">
+				<div class="success-field">The equipment was deleted.</div>
 			</div>
-			<span class="valign">{{ $user->name }}</span>
+			@if(Session::has('success-equipment'))
+				<div class="col s12 m10 l7 alert-equipment">
+					<div class="success-field">{{ Session::get('success-equipment') }}</div>
+				</div>
+			@endif
+				@include('ourscene/settings.equipment')
 		</div>
 	</div>
 
-	<div id="profile-container" style="border: 1px solid #7a7a7a;border-radius: 2em;background-color: rgba(26, 26, 28, 1.0);">
-		<div class="row">
-			<div class="col s12 m12 l6 offset-l3 ourscene-tab-navigation" id="profile-navigation">
-			  <!-- Navigation tabs -->
-			  <ul class="tabs" role="tablist">
-			  @if($user->user_type === 'artist')
-			    <li role="presentation" class="tab col s3 active-reg-step-tab">
-			    	<a href="#profile-details"><span>Profile</span></a>
-			    </li>
-			    <li role="presentation" class="tab col s3 active-reg-step-tab">
-			    	<a href="#media"><span>Media</span></a>
-			    </li>
-			    <li role="presentation" class="tab col s3 inactive-reg-step-tab">
-			    	<a href="#events"><span>Event Calendar</span></a>
-			    </li>
-			  @else
-			  	<li role="presentation" class="tab col s3 active-reg-step-tab">
-			  		<a href="#profile-details"><span>Venue Details</span></a>
-			  	</li>
-			    <li role="presentation" class="tab col s3 active-reg-step-tab">
-			    	<a href="#events"><span>Events</span></a>
-			    </li>
-			    <li role="presentation" class="tab col s3 inactive-reg-step-tab">
-			    	<a href="#profile-equipment"><span>Equipment</span></a>
-			    </li>
-			  @endif
-			  </ul>
-		  	</div>
+	<div id="payments" class="col s12 m12 l12" role="tabpanel">
+		<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
+																		border-radius: 2em;
+																		border: 2px solid #7a7a7a;
+																		margin-top: 20px;">
+			@include('ourscene/settings.payment-info')
+		</div>
+	</div>
 
-			<!-- Tab for profile details -->
-			<div id="profile-details" class="col s12 m12 l12 profile-tab">
-
-				<div id="contacts" class="card-action">
-					@if($user->user_type === 'venue')
-					<div class="row">
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/contact.svg') }}"/><br/>
-							<div class="label">Contact No.</div>
-							<div class="divider"></div>
-							{{ $user['phone_number'] }}
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/email.svg') }}"/><br/>
-							<div class="label">Email</div>
-							<div class="divider"></div>
-							{{ $user['email'] }}
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Facebook</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['fb']) }}" class="ourscene-link-1" target="_blank" >{{ $user['social_media']['fb'] }}</a>
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Twitter</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['twitter']) }}" class="ourscene-link-1" target="_blank">{{ $user['social_media']['twitter'] }}</a>
-						</div>
-					</div>
-					@else
-					<div class="row">
-						<div class="col s6 m4 l4 offset-m2 offset-l2 center-align contact-panel">
-							<img src="{{ asset('images/icons/contact.svg') }}"/><br/>
-							<div class="label">Contact No.</div>
-							<div class="divider"></div>
-							{{ $user['phone_number'] }}
-						</div>
-						<div class="col s6 m4 l4 center-align center-align contact-panel">
-							<img src="{{ asset('images/icons/email.svg') }}"/><br/>
-							<div class="label">Email</div>
-							<div class="divider"></div>
-							{{ $user['email'] }}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Facebook</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['fb']) }}" class="ourscene-link-1" target="_blank" >{{ $user['social_media']['fb'] }}</a>
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Twitter</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['twitter']) }}" class="ourscene-link-1" target="_blank">{{ $user['social_media']['twitter'] }}</a>
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Soundcloud</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['soundcloud']) }}" class="ourscene-link-1" target="_blank" >{{ $user['social_media']['soundcloud'] }}</a>
-						</div>
-						<div class="col s3 m3 l3 center-align contact-panel">
-							<img src="{{ asset('images/icons/website.svg') }}"/><br/>
-							<div class="label">Bandcamp</div>
-							<div class="divider"></div>
-							<a href="{{ getHyperLink($user['social_media']['bandcamp']) }}" class="ourscene-link-1" target="_blank">{{ $user['social_media']['bandcamp'] }}</a>
-						</div>
-					</div>
-
-					@endif
-				</div>
-
-				<div id="details" class="card-action">
-					<div class="row">
-						<div class="label col s12 m12 l12"> About </div>
-						<p class="col s12 m10 l8">{{$user->description}}</p>
-					</div>
-
-					@if($user->user_type === 'venue')
-					<div class="row">
-						<div class="label col s12 m12 l12">Venue Type</div>
-						<div class="col s12 m12 l12">
-							<ul>
-							@foreach ($user->venue_type as $type)
-								@if(array_key_exists($type,$venue_types))
-								<li> {{$venue_types[$type]}} </li>
-								@else
-								<li> {{$type}}
-								@endif
-							@endforeach
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="label col s12 m12 l12">Venue Serves</div>
-						<div class="col s12 m12 l12">
-							<ul>
-							@if ($user->serves_alcohol == true)
-								<li>&#9679; &nbsp; Serves Alcohol </li>
-							@endif
-							@if ($user->serves_food == true)
-								<li>&#9679; &nbsp; Serves Food </li>
-							@endif
-							</ul>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="label col s12 m12 l12">Address</div>
-						<p class="col s12 m12 l12">
-							{{$user->address['unit_street']}}, {{$user->address['city']}}, {{$user->address['state']}}, {{$user->address['country']}}, {{$user->address['zipcode']}}
-						</p>
-					</div>
-
-					<div class="row">
-						<div class="label col s12 m12 l12" style="text-align: left;">Operating Hours</div>
-						<p class="col s12 m12 l12"> {{$user->operating_hrs_open}} - {{$user->operating_hrs_close}} </p>
-					</div>
-
-					<div class="row">
-						<div class="label col s12 m12 l12" style="text-align: left;">Seating Capacity</div>
-						<p class="col s12 m12 l12">{{ $user->seating_capacity }}</p>
-					</div>
-
-					<div class="row">
-						<a href='{{ $nearbyLink }}'>See what's nearby</a>
-					</div>
-
-					@else
-					<div class="row">
-						<div class="label col s12 m12 l12">City</div>
-						<p class="col s12 m12 l12">{{ $user->address['city'] }}</p>
-					</div>
-					<div class="row">
-						<div class="label col s12 m12 l12">Genre</div>
-						<div class="col s12 m12 l12">
-							<ul>
-							@foreach ($user->artist_genre as $key => $genre)
-								<li> {{$genre}} </li>
-							@endforeach
-							</ul>
-						</div>
-					</div>
-					<div class="row">
-						<div class="label col s12 m12 l12">Equipment</div>
-						<div class="col s12 m12 l12">
-							<ul>
-							@foreach ($equipments as $equip)
-							 	<li> -  {{$equip->name}} </li>
-							@endforeach
-							</ul>
-						</div>
-					</div>
-
-					@endif
-				</div>
-			</div>
-
-			<!-- Tab for events calendar -->
-
-			<div id="events" class="col s12 m12 l12 profile-tab">
-
-				<div id="calendar-container">
-
-					<!-- Calendar title -->
-
-					<div id="calendar-title-container">
-						<img src="{{ asset('images/icons/calendar-month-purple.svg') }}"/>
-						<span id="calendar-title"></span>
-					</div>
-
-					<!-- Calendar -->
-
-					<div id="calendar" class="ourscene-calendar"></div>
-
-				</div>
-
-			</div>
-
-			@if($user->user_type === 'venue')
-			<!-- Tab for Equipment (Venue Profile Only) -->
-			<div id="profile-equipment" class="col s12 m12 l12 profile-tab" role="tabpanel">
-				<div class="row card-action">
-					<div class="label col s12 m12 l12" id="equipment-title">
-						<img src="{{ asset('images/icons/house-equipment.svg') }}"/>
-						House Equipment
-					</div>
-
-					<br/><br/><br/>
-
-				@if(count($equipments))
-					<ul style="font-family: 'OpenSans-SemiBold';">
-						@foreach ($equipments as $equip)
-						 	<li>
-								<span style="font-size:20px; line-height: 1px; height: 10px; position:relative; top: 4px; margin-right: 5px; color:#534d93;">•</span>{{$equip->name}}
-								@if(count($equip->inclusion) > 0)
-									<ul style="margin-left: 3%;">
-									@foreach ($equip->inclusion as $incl)
-										<li><span style="font-size:15px; line-height: 1px; height: 10px; position:relative; top: 2px; margin-right: 5px; color:#534d93;">•</span>{{$incl}}</li>
-									@endforeach
-									</ul>
-								@endif
-							</li>
-						@endforeach
-					</ul>
-				@else
-					No equipment.
-				@endif
-
-				</div>
-			</div>
-			@endif
-
-			@if($user->user_type === 'artist')
-			<!-- Tab for Media (Artist Profile Only) -->
-			<div id="media" class="col s12 m12 l12 profile-tab" role="tabpanel">
-				<div class="row card-action" id="songs-container">
-
-					<div class="s12 m8 l6 offset-m2 offset-l3 label" style="margin-bottom:10px;">Songs</div>
-
-				@if(count($songs))
-					<?php $i =0; ?>
-					@foreach ($songs as $song)
-
-						<div class="col s12 m10 l8 offset-m1 offset-l2 song-file-container">
-							<div class="row">
-								<div class="song-icon-container col s1 m1 l1">
-									<img src="{{asset('images/icons/audio.svg')}}" class="song-icon">
-								</div>
-								<div class="song-title-container col s6 m6 l6">
-									<span class="song-title truncate"><b>{{$song->title}}</b></span>
-								</div>
-								<div class="time-display-container col s2 m2 l2">
-									<span class="right time-display" id="time{{$i}}">00:00</span>
-								</div>
-								<div class="control-btn-container col s2 m2 l2">
-									<button class="playBtn controlBtn right" id="play{{$i}}"></button>
-								</div>
-								<audio class="music" id="music{{$i}}" preload='none'>
-								  <source src="{{$song->url}}" type="audio/mp3">
-								</audio>
-							</div>
-						</div>
-						<?php $i++; ?>
-					@endforeach
-				@else
-					<div class="col s6 m2 l2">
-						No songs.
-					</div>
-				@endif
-
-				</div>
-
-				<div class="row card-action">
-					<div class="col s12 m12 l12">
-						<div id="images-container row">
-							<div class="label col s12 m12 l12" style="margin-bottom:10px;"> Photos </div>
-						@if(count($images))
-							@foreach ($images as $image)
-							<div class="col s6 m2 l2">
-						    	<a class="media_images" href="{{$image->url}}" style="width:auto">
-						    		<div alt="" style="background-image: url('{{$image->url}}'); background-size:cover; background-position: 50%; width: 100%;height: 100%; margin:0 auto; align: baseline; top:0; left:0"/></div>
-								</a>
-							</div>
-						  	@endforeach
-						@else
-							<div class="col s6 m2 l2">
-								No photos.
-							</div>
-						@endif
-						</div>
-					</div>
-
-					<br/><br/>
-					<div class="col s12 m12 l12">
-						<div id="videos-container row">
-							<div class="label col s12 m12 l12" style="margin-bottom:10px;"> Videos </div>
-							@if(count($videos))
-								@foreach ($videos as $video)
-									<div class="col s12 m4 l4">
-										<video class="responsive-video" src="{{$video->url}}" controls>
-										   <!-- <source src="{{$video->url}}" type="video/mp4"> -->
-										</video>
-									</div>
-								@endforeach
-							@else
-								<div class="col s6 m2 l2">
-								No videos.
-								</div>
-							@endif
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			@endif
-
+	<div id="account-info" class="col s12 m12 l12" role="tabpanel">
+		<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
+																		border-radius: 2em;
+																		border: 2px solid #7a7a7a;
+																		margin-top: 20px;">
+			@include('ourscene/settings.account-info')
 		</div>
 	</div>
 </div>
-@endsection
+
+<!-- Modals -->
+
+@include('modals.add-update-equipment')
+@include('modals.activate-deactivate-modal')
+@include('modals.equipment-edit')
+@if($user->user_type == 'artist')
+@endif
+
+@stop
+
 
 @section('scripts')
 
-<script>
+	<script src="{{ asset('js/settings.js') }}"></script>
+	<script src="{{ asset('js/update-media.js') }}"></script>
+
+	<script>
+	// get ajax request all equipment
+
+
+
+	//Settings
 	function makeDefaultProfilePic(image){
 		image.onerror = "";
 	    image.src = "{{asset('images/icons/artist.svg')}}";
 	    return true;
 	}
-</script>
+	// Get all equipments
+	function getEquipments(){
+		var table = $('#equipment-list-table')
 
-<script type="text/javascript" src="{{ asset('js/media.js') }}"></script>
-<script>
-	var USER_ID = '{{ $user_id }}';
-</script>
-<script type="text/javascript" src="{{ asset('js/profile-events-calendar.js') }}"></script>
-<script type="text/javascript">
-	$('.media_images').fancybox()
 
-	$(document).one('click','a[href=#events]',function(){
-		//force click of calendar month button because full calendar does not render automatically on hidden tabs
-		$('#calendar > div.fc-toolbar > div.fc-left > button.fc-month-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right').trigger('click')
+		table.hide()
+		$.ajax({
+			url: "{{action('EquipmentController@getAjaxEquipment')}}" ,
+			type: "GET",
+				dataType: "json",
+				success: function(data){
+					table.find('tbody').empty()
+					if(data.length < 1){
+						table.append('<tr><td colspan="3">No Equipment Yet.<td><tr>')
+						return
+					}
+					var str = ""
+					str += '<tr class=""></tr>'
+					data.forEach(function(item){
+						str+= '<tr>'
+						str += '<td class="hide"><input type="hidden" class="equipment_id" value="'+  item._id +'"></td>'
+						str += '<td class="hide"><input type="hidden" class="equipment_type" value="' + item.type +  '"></td>'
+						str+= '<td class="equip_name">'+ item.name +'</td>'
+						str+= '<td>'
+						str+= '<ul>'
+
+						item.inclusion.forEach(function(item_){
+							str+= '<li>' + item_ + '</li>'
+						})
+						str+= '</ul>'
+						str+= '</td>'
+						str+= '<td> <a href="javascript:void(0);" class="btn-flat edit-equipment-trigger"><i class="material-icons">mode_edit</i></href> <a href="javascript:void(0);" class="btn-flat delete-equipment-trigger"><i class="material-icons">delete</i></href> </td>'
+						str+= '</tr>'
+					})
+					table.append(str)
+				}
+		 }).done(function(data){
+			 console.log(data)
+			 table.show()
+		 }).fail(function(data){
+			//  console.log(data)
+		 }).always(function(){
+			 console.log("completed")
+			 table.show()
+		 })
+
+	}
+	// Get all images
+	function ajaxGetMaterialsImage(){
+		$("#material-images").empty()
+		$.ajax({
+			url: "{{action('UserController@getAjaxMaterials')}}" ,
+			type: "GET",
+				dataType: "json",
+				success: function(data){
+					var str = ""
+
+					data.forEach(function(item){
+						str+= '<div class="col s6 m2 l2 ">'
+						str+= ' <input type="hidden" value="'+ item._id +'">'
+						str+= '<div class="material-placeholder">'
+						str+= ' <img src="'+ item.url +'" class="materialboxed media-image image-preview">'
+						str+= ' <a href="#!" class="remove-material-image">Remove</a>'
+						str+= '</div>'
+						str+= '</div>'
+					})
+					$("#material-images").append(str)
+				}
+		 }).done(function(data){
+			 console.log(data)
+		 }).fail(function(data){
+			//  console.log(data)
+		 }).always(function(){
+			 console.log("completed")
+		 })
+	}
+
+	var change_own_password_form_validated = false;
+
+	$('#change-own-password-form').submit(function(e){
+		console.log('submit');
+		e.preventDefault();
+		if(!change_own_password_form_validated){
+			e.preventDefault();
+
+			var no_error = true;
+
+			var $new_password = $('#password');
+			var $retype_password = $('#retype-password');
+			var $current_password = $('#current-password');
+
+			var $retype_password_error = $('#error-new-password');
+			var $check_current_password_error = $('#check-current-password-error');
+
+			var $change_own_password_button = $('#change-own-password-btn');
+
+			//disable change own password button
+			// $change_own_password_button.prop('disabled', true);
+
+			//hide errors
+			$retype_password_error.hide();
+			$check_current_password_error.hide();
+
+			//check if current and input current password match
+			$.ajax({
+				url: AJAX_VALIDATE_CURRENT_PASSWORD,
+				type: "GET",
+				data: {
+					password: $current_password.val()
+				},
+				success: function (data) {
+					if(data['error']){
+						//show check current password error
+						// $check_current_password_error.html("Please enter your correct current password.");
+						$check_current_password_error.show();
+
+						console.log('Please enter your correct current password.');
+
+						$current_password.val('');
+
+						no_error=false;
+					}else{
+						//CURRENT PASSWORD VALIDATED
+
+						//hide current password error
+						$check_current_password_error.hide();
+
+						//check if new and retype password match
+						if($new_password.val() == $retype_password.val()){
+							//hide retype password error
+							$retype_password_error.hide();
+							$no_error=true;
+
+						}else{
+
+							$new_password.val('');
+							$retype_password.val('');
+							$new_password.focus();
+
+							//show retype password error
+							$retype_password_error.html('Passwords do not match.');
+							$retype_password_error.show();
+
+							console.log('Passwords do not match');
+							no_error=false;
+						}
+					}
+
+					if(no_error){
+						console.log('will submit');
+						change_own_password_form_validated=true;
+						$('#change-own-password-form')[0].submit();
+					}
+				},
+				error: function (data){
+					console.log('error changing password');
+					//show current password error
+					$check_current_password_error.html("Something went wrong. Please try again.");
+					$check_current_password_error.show();
+
+					//enable change own password button
+					// $change_own_password_button.prop('disabled', false);
+				}
+			});
+		}
+		return false;
+	});
+
+	$('#save-profile-form').submit(function(e){
+		$('#genre-collapsible > li > .collapsible-header > input').each(function(){
+			if($(this).is(':checked')){
+				$("#save-profile-form").append($(this))
+			}
+		})
+
+		$('#genre-collapsible > li > div.collapsible-body > div > div input').each(function(){
+			// console.log($(this).val())
+			if($(this).is(':checked')){
+				$("#save-profile-form").append($(this))
+			}
+		})
+		$("#save-profile-form").append(items)
+		$(this).submit()
+		e.preventDefault()
 	})
-</script>
 
-@endsection
+	// Update equipment modal
+
+	var selectedRow = null;
+	var selecteEquipmentId = null;
+
+	$(document).on('click','.edit-equipment-trigger',function(){
+		$('#equipment-list-table').hide()
+		$('.preloader').show()
+		var $modal = $('#equipment-edit-modal');
+
+		$modal.openModal()
+
+		selecteEquipmentId = ($(this).parent().parent().find('.equipment_id').val())
+		type = ($(this).parent().parent().find('.equipment_type').val())
+		name = $(this).parent().parent().find('td:nth-child(3)').text()
+		inclusion_length = $(this).parent().parent().find('td:nth-child(4) ul li').length
+
+		var $default_checkbox = $modal.find('#edit-equipment-type-default');
+
+		if(type=="default")
+			$default_checkbox.prop('checked', true);
+		else
+			$default_checkbox.prop('checked', false);
+
+		$("#inclusion_edit_field").empty()
+
+		selectedRow = $(this).parent().parent().find('td:nth-child(4) ul li')
+		// $("#inclusion_edit_field").append('<label>Inclusion</label>')
+		selectedRow.each(function(){
+			$("#inclusion_edit_field").append('<div><input type="text" id="inclu" name="inclusions[]"  class="registration-txtbx-1 col s8 m8 l8" placeholder="Content" value="'+ $(this).text() +'"/><a href="javascript:void(0);" id="remove-equipment-content" class="btn ourscene-btn-plain-1 col s4 m2 l2">Remove</a></div>')
+		})
+		$("#equipment_name").val(name)
+	})
+
+	// Update equipment button
+	$("#update-equipment-btn").on('click',function(){
+		$('.alert-equipment').hide()
+
+		$('#success-equipment').text("Updating...")
+		$('#success-equipment').show()
+
+		var $modal = $('#equipment-edit-modal');
+		var flag;
+		var inclusion = []
+		var equipmentName = $('#equipment_name').val();
+		var $default_checkbox = $modal.find('#edit-equipment-type-default');
+
+		var type = ($default_checkbox.is(":checked"))? 'default' : 'others';
+
+		$("#inclusion_edit_field input").each(function(){
+			if ($(this).val() == "") {
+				alert("Please fill up all fields")
+				inclusion = []
+				flag = true
+				return;
+			}
+			else{
+				flag = false
+				inclusion.push($(this).val())
+			}
+
+		})
+		if(flag) return
+		var params = "name="+equipmentName+"&id="+selecteEquipmentId+"&type="+type+"&inclusion="+inclusion
+		$.ajax({
+			url: "{{action('UserController@ajaxUpdateEquipment')}}?" +params ,
+			type: "POST", // default is GET but you can use other verbs based on your needs.
+				dataType: "json", // specify the dataType for future reference
+				success: function(data){
+					console.log(data)
+					// ajaxGetEquipment()
+				}
+		 }).done(function(data){
+			$('#success-equipment').text("").append("<div class='success-field'>The equipment was updated.</div>")
+			getEquipments()
+			$('.preloader').hide()
+		 }).fail(function(data){
+			 alert("Something went wrong. Please try again")
+		 }).always(function(){
+			 console.log("completed")
+		 })
+	})
+	// Delete equipment
+	$(document).on('click','.delete-equipment-trigger',function(){
+		$('#equipment-list-table').hide()
+		$('.preloader').show()
+		var selecteEquipmentId = ($(this).parent().parent().find('input').val())
+		$(this).parent().parent().remove()
+
+		$('.alert-equipment').hide()
+
+		$('#success-equipment').text("Deleting...")
+		$('#success-equipment').show()
+
+		$.ajax({
+			url: "{{action('UserController@ajaxDeleteEquipment')}}?id=" + selecteEquipmentId,
+			type: "POST", // default is GET but you can use other verbs based on your needs.
+				dataType: "json", // specify the dataType for future reference
+				success: function(data){
+					console.log(data)
+					$('#success-equipment').text("").append("<div class='success-field'>The equipment was deleted.</div>")
+					getEquipments()
+					$('.preloader').hide()
+				}
+		 }).done(function(data){
+
+		 }).fail(function(data){
+			 alert("Something went wrong. Please try again")
+		 }).always(function(){
+			 console.log("completed")
+		 })
+	})
+
+	</script>
+@stop

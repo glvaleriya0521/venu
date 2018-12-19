@@ -1,4 +1,4 @@
-<div id="reset-password-modal" class="modal">
+<div id="reset-password-modal" class="modal" style="position: absolute;">
 	<div class="modal-content">
 
 		<div class="ourscene-modal-title-1">Reset password</div>

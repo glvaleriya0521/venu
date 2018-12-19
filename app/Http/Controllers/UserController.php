@@ -454,10 +454,10 @@ class UserController extends Controller {
 			$images = Materials::userId($user_id)->where('type','=','image')->get();
 			$videos = Materials::userId($user_id)->where('type','=','video')->get();
 
-			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('songs',$songs)->with('images',$images)->with('videos',$videos);
+			return View::make('ourscene.profile_back', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('songs',$songs)->with('images',$images)->with('videos',$videos)->with('genres',$this->genres);
 		}
 
-		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
+		return View::make('ourscene.profile_back', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
 
 	}
 
@@ -472,9 +472,11 @@ class UserController extends Controller {
 			$images = Materials::userId($user_id)->where('type','=','image')->get();
 			$videos = Materials::userId($user_id)->where('type','=','video')->get();
 
-			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('songs',$songs)->with('images',$images)->with('videos',$videos);
+			return View::make('ourscene.profile_back', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('songs',$songs)->with('images',$images)->with('videos',$videos);
 		}
-		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
+
+		$equipments = Equipment::user($user_id)->get();
+		return View::make('ourscene.profile_back', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
 	}
 
 	/* Profile Settings */
