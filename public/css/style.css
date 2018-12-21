@@ -512,10 +512,8 @@ a:visited {
 
 #message-form .card-action.title {
   left          : -1%;
-  width         : 102%;
-  margin-left   : -1%;
+  width         : 100%;
   border-bottom : 1px solid rgba(26, 120, 246, 1.0);
-  border-radius : 1em;
 }
 
 #message-form.messsage-all .message-content #messages-conversation ul li .message span {
@@ -1112,24 +1110,6 @@ a:visited {
   margin-top : 25px;
 }
 
-/* booked */
-
-div.card:nth-child(1) {
-  border : 1px solid #46bfa7;
-}
-
-/* pending */
-
-div.card:nth-child(2) {
-  border : 1px solid rgba(238, 143, 31, 1.0);
-}
-
-/* next time */
-
-div.card:nth-child(3) {
-  border : 1px sold rgba(139, 0, 0, 1);
-}
-
 #my-events-events .events-under-status .header-title {
   padding     : 10px;
   font-family : "OpenSans-SemiBold";
@@ -1142,6 +1122,8 @@ div.card:nth-child(3) {
 
 #my-events-events .events-under-status .content {
   padding : 0;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 
 #my-events-events table tr:not(:first-child) {
