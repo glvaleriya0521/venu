@@ -95,7 +95,8 @@ Required items are indicated with <span class="required-color">*</span>.
 				<input type="text" id="venue-name-autocomplete" class="select-dropdown" placeholder="Venue Name" required autocomplete="off">
 				<label for="venue-name-autocomplete" class="active"><span class="required-color">*</span> Venue Request</label>
 				<div>
-					<ul id="venue-name-autocomplete-dropdown"  class="dropdown-content autocomplete" style="top:35px;">
+					<ul id="venue-name-autocomplete-dropdown"  class="dropdown-content autocomplete" style="top: 35px; 
+					display: block; opacity: 1; background: black; left: 3%;">
 					</ul>
 				</div>
 				<!-- <div class="arrow" style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid black; float:right; margin-top: -30px">

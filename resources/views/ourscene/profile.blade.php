@@ -11,6 +11,7 @@
 		cursor: pointer;
 	}
 </style>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 @stop
 
 @section('content')
@@ -23,15 +24,17 @@
 
 	<div class="row card-action" id="ourscene-tab-navigation-row">
 
-		<div class="col s12 m10 l6" style="width: 75%;font-size: 1.2em;">
+		<div class="col-md-10" style="width: 75%;font-size: 1.2em;">
 		  <!--tabs -->
 		  <ul class="tabs" role="tablist" style="width: 100%;background-color: rgba(39, 40, 42, 1.0);">
-		    <li role="presentation" class="tab col s3 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>
-		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#equipment"><span>@if(Session::get('user_type') == 'venue') Equipment @elseif(Session::get('user_type') == 'artist') Media @endif</span></a></li>
-		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#payments"><span>Payments</span></a></li>
-		    <li role="presentation" class="tab col s3 inactive-reg-step-tab"><a href="#account-info"><span>Account Info</span></a></li>
+		    <li role="presentation" class="tab col s4 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>
+		    <li role="presentation" class="tab col s4 inactive-reg-step-tab"><a href="#payments"><span>Payments</span></a></li>
+		    <li role="presentation" class="tab col s4 inactive-reg-step-tab"><a href="#account-info"><span>Account Info</span></a></li>
 		  </ul>
 	  	</div>
+	  	<div class="col-md-2" style="margin-left: 8%; padding-left: 10%;">
+			<a class="btn btn-large ourscene-btn-1" href="http://localhost:8000/settings">Edit</a>
+		</div>
 	</div>
 	<div id="details" class="col s12 m12 l12" role="tabpanel">
 		@if($user->user_type === 'venue')
@@ -41,29 +44,12 @@
 		@endif
 	</div>
 
-	<div id="equipment" class="col s12 m12 l12" role="tabpanel">
+	<div id="payments" class="col s12 m12 l12" role="tabpanel" style="display: block; width: 67%; margin: auto;">
 		<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
 																		border-radius: 2em;
 																		border: 2px solid #7a7a7a;
 																		margin-top: 20px;">
-			<div id="success-equipment" class="col s12 m10 l7 alert-equipment" style="display:none;">
-				<div class="success-field">The equipment was deleted.</div>
-			</div>
-			@if(Session::has('success-equipment'))
-				<div class="col s12 m10 l7 alert-equipment">
-					<div class="success-field">{{ Session::get('success-equipment') }}</div>
-				</div>
-			@endif
-				@include('ourscene/settings.equipment')
-		</div>
-	</div>
-
-	<div id="payments" class="col s12 m12 l12" role="tabpanel">
-		<div class="row card-action" style="background-color: rgba(26, 26, 28, 1.0);
-																		border-radius: 2em;
-																		border: 2px solid #7a7a7a;
-																		margin-top: 20px;">
-			@include('ourscene/settings.payment-info')
+			@include('ourscene/profile.payment-info')
 		</div>
 	</div>
 

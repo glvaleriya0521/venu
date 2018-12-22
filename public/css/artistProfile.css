@@ -1,0 +1,2166 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,300');
+
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  src: url('../fonts/OpenSans-SemiBold.ttf') format("truetype");
+}
+
+.artistprofile {
+  width               : 100%;
+  min-width           : 1440px;
+  height              : 100vh;
+  min-height          : 1024px;
+  position            : relative;
+  overflow            : hidden;
+  margin              : 0px;
+  background-color    : rgba(255, 255, 255, 1.0);
+}
+a {
+  text-decoration     : none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+div {
+  -webkit-text-size-adjust: none;
+}
+.artistprofile .bg {
+  background-color    : rgba(39, 40, 42, 1.0);
+  top                 : 60px;
+  height              : 964px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .cta {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 114px;
+  height              : 36px;
+  width               : 100px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1192px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .cta .rectanglecopy {
+  background-color    : rgba(26, 120, 246, 1.0);
+  top                 : 0px;
+  height              : 34px;
+  width               : 98px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 10px;
+  border-style        : solid;
+  border-width        : 1px;
+  border-color        : rgba(26, 120, 246, 1.0);
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .cta .edit {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 7px;
+  height              : auto;
+  width               : 35px;
+  position            : absolute;
+  margin              : 0;
+  left                : 33px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 19.0px;
+}
+.artistprofile .payments {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 110px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 236px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.3;
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 20.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 27.0px;
+}
+.artistprofile .account {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 110px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 357px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  opacity             : 0.3;
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 20.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 27.0px;
+}
+.artistprofile .profile {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 110px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 147px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 20.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 27.0px;
+}
+.artistprofile .rectanglecopy2 {
+  background-color    : rgba(26, 120, 246, 1.0);
+  top                 : 143px;
+  height              : 3px;
+  width               : 53px;
+  position            : absolute;
+  margin              : 0;
+  left                : 154px;
+  border-radius       : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .leftcol {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 190px;
+  height              : 240px;
+  width               : 800px;
+  position            : absolute;
+  margin              : 0;
+  left                : 147px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.bg1 {
+  background-color    : rgba(26, 26, 28, 1.0);
+  top                 : 0px;
+  height              : 236px;
+  width               : 796px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 25px;
+  border-style        : solid;
+  border-width        : 2px;
+  border-color        : rgba(62, 62, 62, 1.0);
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.socials {
+    background-color: rgba(255,255,255,0.0);
+    /* top: 193px; */
+    height: 32px;
+    width: 252px;
+    position: relative;
+    margin: 0;
+    /* left: 20px; */
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: 39px;
+}
+.fb5copy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 176px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.fb5copy .fill92copy2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.fb5copy .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 16px;
+  width               : 8px;
+  position            : absolute;
+  margin              : 0;
+  left                : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .tw5copy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 220px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .tw5copy .fill93copy2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 31px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .tw5copy .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 9px;
+  height              : 13px;
+  width               : 16px;
+  position            : absolute;
+  margin              : 0;
+  left                : 8px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.soundcloud {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 132px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.soundcloud .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.soundcloud .logo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 12px;
+  height              : 8px;
+  width               : 19px;
+  position            : absolute;
+  margin              : 0;
+  left                : 6px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.soundcloud .logo .fill4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 8px;
+  width               : 19px;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.call {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.call .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .call .phone1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 7px;
+  height              : 11px;
+  width               : 12px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .call .phone1 .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 11px;
+  width               : 11px;
+  position            : relative;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .email {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 44px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .email .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .email .mail2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : 12px;
+  width               : 14px;
+  position            : absolute;
+  margin              : 0;
+  left                : 9px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .email .mail2 .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 12px;
+  width               : 14px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .email .mail2 .path1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 7px;
+  width               : 14px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+ .bandcampbuttoncirclegreen512 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 88px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .leftcol .nameu2019sjustandiu2019m {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 90px;
+  height              : auto;
+  width               : 631px;
+  position            : absolute;
+  margin              : 0;
+  left                : 20px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AppleSystemUIFont", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  line-height         : 20.0px;
+}
+.artistprofile .leftcol .nameu2019sjustandiu2019m .span1 {
+  font-family         : ".AppleSystemUIFont", Helvetica, Arial, serif;
+}
+.artistprofile .leftcol .nameu2019sjustandiu2019m .span2 {
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+}
+.artistprofile .leftcol .nameu2019sjustandiu2019m .span3 {
+  font-family         : "AppleColorEmoji", Helvetica, Arial, serif;
+}
+.artistprofile .leftcol .group2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 15px;
+  height              : 50px;
+  width               : 50px;
+  position            : absolute;
+  margin              : 0;
+  left                : 20px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .leftcol .group2 .profile1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 50px;
+  width               : 50px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .leftcol .group2 .gb {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 13px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 17.5px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 24.0px;
+}
+.artistprofile .leftcol .gabrielabazan {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 28px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 90px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .leftcol .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 193px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 108px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .leftcol .path4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 204px;
+  height              : 10px;
+  width               : 17px;
+  position            : absolute;
+  margin              : 0;
+  left                : 115px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 470px;
+  height              : 68px;
+  width               : 479px;
+  position            : absolute;
+  margin              : 0;
+  left                : 147px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .bgcopy2 {
+  background-color    : rgba(26, 26, 28, 1.0);
+  top                 : 34px;
+  height              : 34px;
+  width               : 148px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 17px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .bgcopy3 {
+  background-color    : rgba(26, 26, 28, 1.0);
+  top                 : 34px;
+  height              : 34px;
+  width               : 133px;
+  position            : absolute;
+  margin              : 0;
+  left                : 158px;
+  border-radius       : 17px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .bgcopy4 {
+  background-color    : rgba(26, 26, 28, 1.0);
+  top                 : 33px;
+  height              : 34px;
+  width               : 178px;
+  position            : absolute;
+  margin              : 0;
+  left                : 301px;
+  border-radius       : 17px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .music1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .music .merryman {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 41px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 15px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AppleSystemUIFont", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+}
+.artistprofile .music .brothers {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 41px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 173px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AppleSystemUIFont", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+}
+.artistprofile .music .funandgames {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 40px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 316px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AppleSystemUIFont", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+}
+.artistprofile .music .callcopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 38px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 117px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 10px;
+  width               : 8px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 38px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 261px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy2 .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy2 .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 10px;
+  width               : 8px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 37px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 449px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy3 .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 26px;
+  width               : 26px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .music .callcopy3 .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 10px;
+  width               : 8px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .rightcol {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 190px;
+  height              : 240px;
+  width               : 325px;
+  position            : absolute;
+  margin              : 0;
+  left                : 967px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .rightcol .bgcopy {
+  background-color    : rgba(26, 26, 28, 1.0);
+  top                 : 0px;
+  height              : 236px;
+  width               : 321px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 25px;
+  border-style        : solid;
+  border-width        : 2px;
+  border-color        : rgba(62, 62, 62, 1.0);
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .rightcol .group {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 25px;
+  height              : 181px;
+  width               : 167px;
+  position            : absolute;
+  margin              : 0;
+  left                : 25px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .rightcol .group .location {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .rightcol .group .genrescopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 67px;
+  height              : auto;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .rightcol .group .equipment {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 134px;
+  height              : auto;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .rightcol .group .brooklyn {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 28px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.artistprofile .rightcol .group .hiphoprapdance {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 95px;
+  height              : auto;
+  width               : 166px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.artistprofile .rightcol .group .guitardjdecks {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 162px;
+  height              : auto;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 300;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.artistprofile .vid1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 778px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 137px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .vishnurnair639172unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .vishnurnair639172unsplash .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .vishnurnair639172unsplash .vishnurnair639172unsplash1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -12px;
+  height              : 163px;
+  width               : 244px;
+  position            : absolute;
+  margin              : 0;
+  left                : -41px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .callcopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 40px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 44px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .callcopy .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid1 .callcopy .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : 12px;
+  width               : 10px;
+  position            : absolute;
+  margin              : 0;
+  left                : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 778px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 253px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .vishnurnair639172unsplashcopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .vishnurnair639172unsplashcopy .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .vishnurnair639172unsplashcopy .vishnurnair639172unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -41px;
+  height              : 163px;
+  width               : 244px;
+  position            : absolute;
+  margin              : 0;
+  left                : -57px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .vishnurnair639172unsplashcopy .erinbiafore660296unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -69px;
+  height              : 218px;
+  width               : 164px;
+  position            : absolute;
+  margin              : 0;
+  left                : 7px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .callcopy4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 40px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 44px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .callcopy4 .fill273 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 32px;
+  width               : 32px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .vid2 .callcopy4 .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : 12px;
+  width               : 10px;
+  position            : absolute;
+  margin              : 0;
+  left                : 12px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .rectangle {
+  background-color    : rgba(26, 120, 246, 1.0);
+  top                 : 143px;
+  height              : 3px;
+  width               : 53px;
+  position            : absolute;
+  margin              : 0;
+  left                : 153px;
+  border-radius       : 1px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .photos {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 578px;
+  height              : auto;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 148px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .viewall {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 721px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 1237px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : right;
+  line-height         : 19.0px;
+}
+.artistprofile .videos {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 751px;
+  height              : auto;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 148px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "OpenSans-SemiBold", Helvetica, Arial, serif;
+  font-size           : 17.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : left;
+  line-height         : 23.0px;
+}
+.artistprofile .navbg {
+  background-color    : rgba(0, 0, 0, 1.0);
+  top                 : 0px;
+  height              : 70px;
+  width               : 1440px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 15px;
+  height              : 40px;
+  width               : 1340px;
+  position            : absolute;
+  margin              : 0;
+  left                : 50px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 40px;
+  width               : 533px;
+  position            : absolute;
+  margin              : 0;
+  left                : 807px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .profileavatar {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 40px;
+  width               : 56px;
+  position            : absolute;
+  margin              : 0;
+  left                : 294px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .profileavatar .picplaceholder {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 40px;
+  width               : 40px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .profileavatar .gb {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 9px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : center;
+  line-height         : 19.0px;
+}
+.artistprofile .menu .right .profileavatar .dropdown-view {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 17px;
+  height              : 7px;
+  width               : 10px;
+  position            : absolute;
+  margin              : 0;
+  left                : 46px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .message {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 5px;
+  height              : 26px;
+  width               : 25px;
+  position            : absolute;
+  margin              : 0;
+  left                : 221px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .message .messageicon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 7px;
+  height              : 19px;
+  width               : 19px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .message .reddot {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 15px;
+  width               : 15px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .line {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 4px;
+  height              : 32px;
+  width               : 2px;
+  position            : absolute;
+  margin              : 0;
+  left                : 268px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .linecopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 4px;
+  height              : 32px;
+  width               : 2px;
+  position            : absolute;
+  margin              : 0;
+  left                : 196px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .linecopy2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 4px;
+  height              : 32px;
+  width               : 2px;
+  position            : absolute;
+  margin              : 0;
+  left                : 91px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .requests {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 111px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : right;
+  line-height         : 19.0px;
+}
+.artistprofile .menu .right .myevents {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 10px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : -2px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 1.0);
+  text-align          : right;
+  line-height         : 19.0px;
+}
+.artistprofile .menu .right .cta1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 3px;
+  height              : 35px;
+  width               : 159px;
+  position            : absolute;
+  margin              : 0;
+  left                : 374px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .cta1 .rectanglecopy {
+  background-color    : rgba(26, 120, 246, 1.0);
+  top                 : 0px;
+  height              : 35px;
+  width               : 159px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .right .cta1 .requestashow {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 7px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 23px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "Open Sans", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : center;
+  line-height         : 19.0px;
+}
+.artistprofile .menu .left {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 3px;
+  height              : 35px;
+  width               : 467px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 35px;
+  width               : 370px;
+  position            : absolute;
+  margin              : 0;
+  left                : 97px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search .container {
+  background-color    : rgba(255, 255, 255, 0.2);
+  top                 : 0px;
+  height              : 35px;
+  width               : 370px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  border-radius       : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search .searchicon {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 9px;
+  height              : 14px;
+  width               : 13px;
+  position            : absolute;
+  margin              : 0;
+  left                : 344px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search .searchicon .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 13px;
+  width               : 12px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search .searchicon .shape {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 6px;
+  width               : 5px;
+  position            : absolute;
+  margin              : 0;
+  left                : 8px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .search .searchforeventsv {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 13px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+  font-family         : "AppleSystemUIFont", Helvetica, Arial, serif;
+  font-size           : 14.0px;
+  color               : rgba(254, 255, 254, 0.75);
+  text-align          : left;
+  line-height         : 16.0px;
+}
+.artistprofile .menu .left .logo {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 20px;
+  width               : 72px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .logo .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 20px;
+  width               : 20px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .menu .left .logo .venu {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 5px;
+  height              : 10px;
+  width               : 43px;
+  position            : absolute;
+  margin              : 0;
+  left                : 28px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img3 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 369px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img3 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img3 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : 100px;
+  width               : 150px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img6 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 717px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img6 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img6 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : 100px;
+  width               : 150px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img9 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1065px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img9 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img9 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : 100px;
+  width               : 150px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img10 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 1182px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img10 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img10 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 6px;
+  height              : 100px;
+  width               : 150px;
+  position            : absolute;
+  margin              : 0;
+  left                : 10px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img4 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 485px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img4 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img4 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -33px;
+  height              : 216px;
+  width               : 324px;
+  position            : absolute;
+  margin              : 0;
+  left                : -36px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img7 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 833px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img7 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img7 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : -33px;
+  height              : 216px;
+  width               : 324px;
+  position            : absolute;
+  margin              : 0;
+  left                : -36px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img1 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 137px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img1 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img1 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 141px;
+  width               : 212px;
+  position            : absolute;
+  margin              : 0;
+  left                : -87px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 253px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img2 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img2 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 141px;
+  width               : 212px;
+  position            : absolute;
+  margin              : 0;
+  left                : -87px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img5 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 601px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img5 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img5 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 141px;
+  width               : 212px;
+  position            : absolute;
+  margin              : 0;
+  left                : -87px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img8 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 605px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 949px;
+  border-radius       : 20px;
+  overflow            : hidden;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img8 .mask {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 120px;
+  width               : 120px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+.artistprofile .img8 .alexjreyes1074986unsplash {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 1px;
+  height              : 141px;
+  width               : 212px;
+  position            : absolute;
+  margin              : 0;
+  left                : -87px;
+  -ms-transform       : rotate(0deg); /* IE 9 */
+  -webkit-transform   : rotate(0deg); /* Chrome, Safari, Opera */
+  transform           : rotate(0deg);
+}
+/* .anima-animate-appear prefix for appear animations */
+.anima-animate-appear {
+  opacity             : 0;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 normal forwards;
+}
+.anima-animate-disappear {
+  opacity             : 1;
+  display             : block;
+  -webkit-animation   : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+  -o-animation        : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  animation           : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+}
+.anima-animate-nodelay {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay  : 0;
+  animation-delay     : 0;
+}
+@-webkit-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-moz-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@-o-keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+@keyframes anima-reveal {
+  0%
+   
+  {
+      opacity: 0;
+    }
+  
+    
+  100%
+   
+  {
+      opacity: 1;
+    }
+}
+
+.socials-item: hover {
+  cursor: pointer;
+}
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+  
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+  content: attr(tooltip); /* magic! */
+  
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  
+  /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1ch 1.5ch;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+  background: #333;
+  color: #fff;
+  z-index: 1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+  bottom: calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+  left: 50%;
+  transform: translate(-50%, -.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^="down"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #333;
+}
+[tooltip][flow^="down"]::after {
+  top: calc(100% + 5px);
+}
+[tooltip][flow^="down"]::before,
+[tooltip][flow^="down"]::after {
+  left: 50%;
+  transform: translate(-50%, .5em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333;
+  left: calc(0em - 5px);
+  transform: translate(-.5em, -50%);
+}
+[tooltip][flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-.5em, -50%);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333;
+  right: calc(0em - 5px);
+  transform: translate(.5em, -50%);
+}
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

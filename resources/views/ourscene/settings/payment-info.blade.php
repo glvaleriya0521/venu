@@ -50,15 +50,15 @@ use OurScene\Models\User;
 
 		 	<div class="col s12 m12 l12">
 				<div class="row">
-					<div class="col s12 m3 l3 input-field">
+					<div class="col-md-4 input-field">
 						<label for="paypal-email">
 							<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
 							Credit Card Number
 						</label>
 						<input type="text" id="paypal-number" name="paypal-card-number" class="registration-txtbx-1" placeholder="Card Number" value="" required autocomplete="off"/>
 					</div>
-					<div class="col s12 m3 l2 input-field">
-						<select name="paypal-card-type" class="icons">
+					<div class="col-md-4 input-field">
+						<select name="paypal-card-type" class="icons input-field">
 							<option value="Visa" 		id="visa" 		class="circle">Visa</option>
 							<option value="MasterCard"  id="mastercard" class="circle">Master Card</option>
 							<option value="Amex"  		id="amex" 		class="circle">American Express</option>
@@ -69,16 +69,17 @@ use OurScene\Models\User;
 							Credit Card Type
 						</label>
 					</div>
-					<div class="col s12 m2 l2 input-field">
+					<div class="col-md-4 input-field">
 						<label for="cvv2">CVV</label>
-						<input type="text" name="cvv2" id="cvv2" maxlength="3" minglength="3" placeholder="CVV" value="" required/>
+						<input type="text" name="cvv2" id="cvv2" maxlength="4" minglength="3" placeholder="CVV" value="" required/>
 					</div>
 				</div>
 			</div>
 
 			<div class="col s12 m12 l12">
 				<div class="row">
-					<div class="col s12"></div>
+					<div class="col s12">
+					</div>
 					<div class="col s12 m2 l2 input-field">
 						<label for="paypal-month">
 							<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
@@ -189,7 +190,6 @@ use OurScene\Models\User;
 
 		$submit_btn.css({"opacity":".6"})
 		$submit_btn.prop("disabled",true)
-
 		$.ajax({
 				 url: "{{ action('PaypalController@postStoreCreditCard')}}",
 				 type: "POST",

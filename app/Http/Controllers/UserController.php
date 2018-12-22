@@ -182,6 +182,11 @@ class UserController extends Controller {
 
 		$user = User::find(Session::get('id'));
 
+		$file1 = Input::file('materials-images-1');
+		$file2 = Input::file('materials-images-2');
+		$file3 = Input::file('materials-images-3');
+		$file4 = Input::file('materials-images-4');
+		echo $file1, $file2, $file3, $file4;
 		for($i=1; $i<=5; $i++){
 
 			if(Input::hasFile('materials-images-'.$i)){
@@ -454,10 +459,11 @@ class UserController extends Controller {
 			$images = Materials::userId($user_id)->where('type','=','image')->get();
 			$videos = Materials::userId($user_id)->where('type','=','video')->get();
 
-			return View::make('ourscene.profile_back', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('songs',$songs)->with('images',$images)->with('videos',$videos)->with('genres',$this->genres);
+			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',$equipments)->with('songs',$songs)->with('images',$images)->with('videos',$videos)->with('genres',$this->genres);
 		}
-
-		return View::make('ourscene.profile_back', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
+		$images = Materials::userId($user_id)->where('type','=','image')->get();
+		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)
+		->with('images',$images)->with('equipments',$equipments)->with('venue_types', $this->venue_types);
 
 	}
 
@@ -472,11 +478,13 @@ class UserController extends Controller {
 			$images = Materials::userId($user_id)->where('type','=','image')->get();
 			$videos = Materials::userId($user_id)->where('type','=','video')->get();
 
-			return View::make('ourscene.profile_back', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('songs',$songs)->with('images',$images)->with('videos',$videos);
+			return View::make('ourscene.profile', compact('user_id'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('songs',$songs)->with('images',$images)->with('videos',$videos);
 		}
 
 		$equipments = Equipment::user($user_id)->get();
-		return View::make('ourscene.profile_back', compact('user_id', 'nearbyLink'))->with('user',$user)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
+		$images = Materials::userId($user_id)->where('type','=','image')->get();
+		return View::make('ourscene.profile', compact('user_id', 'nearbyLink'))->with('user',$user)
+		->with('images',$images)->with('equipments',Equipment::user($user_id)->get())->with('venue_types', $this->venue_types);
 	}
 
 	/* Profile Settings */
@@ -496,9 +504,11 @@ class UserController extends Controller {
 			return View::make('ourscene.settings')->with('user', $user)->with('songs',$songs)->with('images',$images)->with('videos',$videos)->with('equipments',$equipments)->with('genres',$this->genres);
 		}elseif($user->user_type === 'venue') {
 			$full_address = $user->address['unit_street'].', '.$user->address['city'].', '.$user->address['state'].', '.$user->address['country'].' '.$user->address['zipcode'];
+			$images = Materials::userId($id)->where('type','=','image')->get();
 			$open = date('g:i A', strtotime($user->operating_hrs_open));
 			$close = date('g:i A', strtotime($user->operating_hrs_close));
-			return View::make('ourscene.settings')->with('user', $user)->with('full_address', $full_address)->with('open', $open)->with('close', $close)->with('venue_types',$this->venue_types)->with('equipments',$equipments);
+			return View::make('ourscene.settings')->with('user', $user)->with('full_address', $full_address)->with('images',$images)
+			->with('open', $open)->with('close', $close)->with('venue_types',$this->venue_types)->with('equipments',$equipments);
 		}
 	}
 
@@ -735,7 +745,7 @@ class UserController extends Controller {
 			}
 		}
 
-		return Redirect::to('settings#equipment');
+		return Redirect::to('settings');
 	}
 
 	public function deleteMaterial($id){

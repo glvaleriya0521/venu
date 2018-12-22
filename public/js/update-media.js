@@ -76,7 +76,7 @@ $(document).ready(function() {
 		console.log("add more song");
 		if(song < maxNoOfSongs){
 			song++;
-			$('#register-materials-songs').append('<div class="file-field col s12"> <div class="file-btn btn col s2 m2 l2"> <span>File</span> <input type="file" id="materials-songs-'+song+'" name="materials-songs-'+song+'" accept="audio/mp3,audio/m4a,audio/wav,.mp3,.m4a,.wav"> </div> <div class="file-path-wrapper col s4 m4 l4"> <input class="file-path validate" type="text"> </div> <div class="col s2 m2 l2" id="register-materials-songs"> <a href="javascript:void(0);" id="remove-material-song" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2 material-icons"> <img src="'+delete_icon+'" class="remove-media-icon"> </a> </div> </div>');
+			$('#register-materials-songs').append('<div class="file-field col s12" style="margin-left: 10%;"> <div class="file-btn btn col s2 m2 l2"> <span>File</span> <input type="file" id="materials-songs-'+song+'" name="materials-songs-'+song+'" accept="audio/mp3,audio/m4a,audio/wav,.mp3,.m4a,.wav" style="position: relative; width: 100%;"> </div> <div class="file-path-wrapper col s4 m4 l4"> <input class="file-path validate" type="text"> </div> <div class="col s2 m2 l2" id="register-materials-songs"> <a href="javascript:void(0);" id="remove-material-song" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2 material-icons"> <img src="'+delete_icon+'" class="remove-media-icon"> </a> </div> </div>');
 			$("#materials-songs-"+song).trigger('click');
 		}
 		if(song == maxNoOfSongs){
@@ -96,7 +96,17 @@ $(document).ready(function() {
 	$('#add-more-images').click(function(){
 		if(image < maxNoOfImages){
 			image++;
-			$('#register-materials-images').append('<div class="file-field input-field row "> <div class="file-btn btn col s2 m2 l2"> <span>File</span> <input type="file" id="materials-images-'+ image+'" name="materials-images-'+image+'" accept="image/gif,image/jpg,image/png,image/jpeg,.gif,.jpg,.png,.jpeg" style=""> </div> <div class="file-path-wrapper col s4 m4 l4"> <input class="file-path validate" type="text"> </div> <div class="col s2 m2 l2"> <a href="javascript:void(0);" id="remove-material-image" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2" style=> <img src="'+delete_icon+'" class="remove-media-icon"> </a> </div> </div>');
+			$('#register-materials-images').append(
+				'<div class="file-field input-field row" style="margin-left: 10%; margin-top: 74px; margin-bottom: 0;">'+
+					'<div class="file-btn btn col s2 m2 l2">' +
+				 		'<span>File</span>' + 
+				 		'<input type="file" id="materials-images-'+ image+'" name="materials-images-'+image+'" accept="image/gif,image/jpg,image/png,image/jpeg,.gif,.jpg,.png,.jpeg" style="position: relative; width: 100%;">' +
+				 	'</div>' +
+				 	'<div class="file-path-wrapper col s4 m4 l4"><input class="file-path validate" type="text"></div>' +
+				 	'<div class="col s2 m2 l2"> <a href="javascript:void(0);" id="remove-material-image" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2" style=>' +
+				 		'<img src="'+delete_icon+'" class="remove-media-icon"> </a>' +
+				 	'</div>' + 
+				'</div>');
 			$("#materials-images-"+image).trigger('click');
 			if(image == maxNoOfImages){
 				$(this).addClass('disabled');
@@ -115,7 +125,7 @@ $(document).ready(function() {
 	$('#add-more-videos').click(function(){
 		if(video < maxNoOfVideos){
 			video++;
-			$('#register-materials-videos').append('<div class="file-field col s12"> <div class="file-btn btn col s2 m2 l2"> <span>File</span> <input type="file" id="materials-videos-'+video+'" name="materials-videos-'+video+'" accept="video/mp4,video/x-m4v,video/quicktime"> </div> <div class="file-path-wrapper col s4 m4 l4"> <input class="file-path validate" type="text"> </div> <div class="col s2 m2 l2" id="register-materials-videos"> <a href="javascript:void(0);" id="remove-material-video" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2 material-icons"> <img src="'+delete_icon+'" class="remove-media-icon"> </a> </div> </div>');
+			$('#register-materials-videos').append('<div class="file-field col s12" style="margin-left: 10%;"> <div class="file-btn btn col s2 m2 l2"> <span>File</span> <input type="file" id="materials-videos-'+video+'" name="materials-videos-'+video+'" accept="video/mp4,video/x-m4v,video/quicktime" style="position: relative; width: 100%;"> </div> <div class="file-path-wrapper col s4 m4 l4"> <input class="file-path validate" type="text"> </div> <div class="col s2 m2 l2" id="register-materials-videos"> <a href="javascript:void(0);" id="remove-material-video" class="col s1 m1 l1 s-offset-1 m-offset-2 l-offset-2 material-icons"> <img src="'+delete_icon+'" class="remove-media-icon"> </a> </div> </div>');
 			$("#materials-videos-"+video).trigger('click');
 		}
 		if(video == maxNoOfVideos){
@@ -132,7 +142,7 @@ $(document).ready(function() {
 
 
 	// Delete images
-	$("#material-images").on('click','.remove-material-images',function(e){
+	$("#material-images-list").on('click','.remove-material-images',function(e){
 		e.preventDefault()
 		$(this).find('img').show()
 		var selecteMaterialImageId = ($(this).parent().find('input').val())
