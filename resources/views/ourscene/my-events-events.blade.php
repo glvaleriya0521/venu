@@ -14,7 +14,7 @@
 
 	<!-- Booked -->
 
-	<div class="card events-under-status">
+	<div class="card events-under-status" style="border: 1px solid #46bfa7;">
 		<div class="header-title booked-color">
 			<img class="header-icon" src="{{ asset('images/icons/approved.svg') }}"/>
 			Booked
@@ -58,7 +58,7 @@
 								@else
 									<span class="bold-weight">{{ $confirmed_event['artist']['name'] }}</span>
 								@endif
-								
+
 							</div>
 							<div class="col s12 m2 l2" style="overflow-wrap: break-word; word-wrap: break-word;">
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
@@ -96,7 +96,7 @@
 
 	<!-- Pending -->
 
-	<div class="card events-under-status">
+	<div class="card events-under-status" style="border: 1px solid rgba(238, 143, 31, 1.0);">
 		<div class="header-title pending-color">
 			<img class="header-icon" src="{{ asset('images/icons/pending.svg') }}"/>
 			Pending
@@ -175,7 +175,7 @@
 
 	<!-- Next time -->
 
-	<div class="card events-under-status">
+	<div class="card events-under-status" style="border: 1px solid rgba(139, 0, 0, 1)">
 		<div class="header-title next-time-color">
 			<img class="header-icon" src="{{ asset('images/icons/next-time.svg') }}"/>
 			Next time
