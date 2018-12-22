@@ -33,7 +33,7 @@
 		  </ul>
 	  	</div>
 	  	<div class="col-md-2" style="margin-left: 8%; padding-left: 10%;">
-			<a class="btn btn-large ourscene-btn-1" href="http://localhost:8000/settings">Edit</a>
+			<a class="btn btn-large ourscene-btn-1" href="/settings">Edit</a>
 		</div>
 	</div>
 	<div id="details" class="col s12 m12 l12" role="tabpanel">
