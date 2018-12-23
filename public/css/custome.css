@@ -392,6 +392,14 @@ a.socialIcon:hover, .socialHoverClass {
 .k-timepicker {
 	width: 103%;
 }
+
+#ui-datepicker-div {
+	z-index: 10000 !important;
+}
+
+.ui-datepicker {
+	z-index: 10000 !important;
+}
 /****************************************/
 /*.input-row .input-field input{
 	border: solid 1px !important;

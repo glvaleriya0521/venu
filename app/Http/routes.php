@@ -101,8 +101,6 @@ Route::get('/events-feed/calendar', 'EventController@getEventsFeedCalendar');
 Route::get('/my-events/events', 'EventController@getMyEventsEvents');
 Route::get('/my-events/calendar', 'EventController@getMyEventsCalendar');
 
-Route::get('/my-events/venue/events', 'EventController@getMyEventsEvents');
-
 // Google Map
 Route::get('/view-map/index', 'MapController@index');
 Route::get('/view-map/directionTo/{city}', 'MapController@directionTo');

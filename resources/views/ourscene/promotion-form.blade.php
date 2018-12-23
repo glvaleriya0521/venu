@@ -44,28 +44,26 @@ Required items are indicated with <span class="required-color">*</span>.
 		Start datetime should be earlier than your end datetime.
 	</div>
 
-	<div class="row">
+	<div class="row input-row">
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly"
-				 name="start_date" id="promotion-start-date" placeholder=""
-				 value="<?= $start_date; ?>" required>
-			<label for="promotion-start-date" class="active"><span class="required-color">*</span> Start date</label>
+			<input type="text" name="start_date" id="start_date_promotion" placeholder=""
+				class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
+			<label for="start_date_promotion" class="active time-label"><span class="required-color">*</span> Start date</label>
 		</div>
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="start_time" id="promotion-start-time" placeholder="" value="<?= $start_time; ?>" required>
-			<label for="promotion-start-time" class="active"><span class="required-color">*</span> Start time</label>
+			<input type="text" class="" name="start_time" id="start_time_invited_promotion" placeholder="" value="<?= $start_time; ?>" required>
+			<label for="start_time_invited_promotion" class="active"><span class="required-color">*</span> Start time</label>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row input-row">
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly"
-				 name="end_date" id="promotion-end-date" placeholder="" 
-				 value="<?= $end_date; ?>" required>
-			<label for="promotion-end-date" class="active"><span class="required-color">*</span> End date</label>
+			<input type="text" name="end_date" id="end_date_invited_promotion" placeholder=""
+				class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
+			<label for="end_date_invited_promotion" class="active  time-label"><span class="required-color">*</span> End date</label>
 		</div>
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="end_time" id="promotion-end-time" placeholder="" value="<?= $end_time; ?>" required>
-			<label for="promotion-end-time" class="active"><span class="required-color">*</span> End time</label>
+			<input type="text" class="" name="end_time" id="end_time_invited_promotion" placeholder="" value="<?= $end_time; ?>" required>
+			<label for="end-time_invited" class="active"><span class="required-color">*</span> End time</label>
 		</div>
 	</div>
 	<div class="row">
@@ -134,5 +132,23 @@ Required items are indicated with <span class="required-color">*</span>.
 <br/><br/>
 
 <input type="submit" id="submit-btn" class="btn btn-large ourscene-btn-1" value="{{ $submit_btn_label }}"/>
+<script>
+$(document).ready(function() {
 
+	$("#start_time_invited_promotion").kendoTimePicker({
+	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	});
+	$("#end_time_invited_promotion").kendoTimePicker({
+	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	});
+
+	$('#start_date_promotion').datepicker().on('changeDate', function(ev){
+        $(this).datepicker('hide');
+    });
+
+    $('#end_date_invited_promotion').datepicker().on('changeDate', function(ev){
+        $(this).datepicker('hide');
+    });
+});
+</script>
 {!! Form::close() !!}

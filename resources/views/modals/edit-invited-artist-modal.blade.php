@@ -20,36 +20,27 @@
 			</label>
 		</div>
 
-		<div class="input-field col s12 m8 l4">
-			<label class="active">Start date <span class="required-color">*</span></label>
+		<div class="row input-row">
+			<div class="input-field col s12 m8 l4">
+				<input type="text" name="start_date" id="start_date_edit_invited" placeholder=""
+					class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
+				<label for="start_date_edit_invited" class="active time-label"><span class="required-color">*</span> Start date</label>
+			</div>
+			<div class="input-field col s12 m8 l4">
+				<input type="text" class="" name="start_time" id="start_time_edit_invited" placeholder="" value="<?= $start_time; ?>" required>
+				<label for="start_time_edit_invited" class="active"><span class="required-color">*</span> Start time</label>
+			</div>
 		</div>
-
-		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly" name="start_date" required></input>
-		</div>
-
-		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="start_time" required></input></br>
-			<label for="" class="active">
-				Start time
-				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-			</label>
-		</div>
-
-		<div class="input-field col s12 m8 l4">
-			<label class="active">End date <span class="required-color">*</span></label>
-		</div>
-
-		<div class="input-field col s12 m8 l4">
-			<input type="text" class="ourscene-date" readonly="readonly" name="end_date" required></input>
-		</div>
-
-		<div class="input-field col s12 m8 l4">
-			<input type="text" class="time-picki-picker" name="end_time" required></input></br>
-			<label for="" class="active">
-				End time
-				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-			</label>
+		<div class="row input-row">
+			<div class="input-field col s12 m8 l4">
+				<input type="text" name="end_date" id="end_date_edit_invited" placeholder=""
+					class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
+				<label for="end_date_edit_invited" class="active  time-label"><span class="required-color">*</span> End date</label>
+			</div>
+			<div class="input-field col s12 m8 l4">
+				<input type="text" class="" name="end_time" id="end_time_edit_invited" placeholder="" value="<?= $end_time; ?>" required>
+				<label for="end-time_invited" class="active"><span class="required-color">*</span> End time</label>
+			</div>
 		</div>
 		
 		<div class="input-field col s12 m8 l4" style="display: none;">
@@ -59,6 +50,25 @@
 				<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
 			</label>
 		</div>
+		<script>
+		$(document).ready(function() {
+
+			$("#start_time_edit_invited").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+			$("#end_time_edit_invited").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+
+			$('#start_date_edit_invited').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+
+		    $('#end_date_edit_invited').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+		});
+		</script>
 
 		{!! Form::close() !!}
 	</div>
