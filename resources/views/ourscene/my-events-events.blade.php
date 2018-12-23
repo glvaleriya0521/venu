@@ -1,5 +1,7 @@
 <?php
 	use OurScene\Models\Event;
+	use OurScene\Models\Service;
+	use OurScene\Helpers\DatetimeUtils;
 ?>
 
 @extends('ourscene.layouts.my-events')
@@ -63,11 +65,14 @@
 							<div class="col s12 m2 l2" style="overflow-wrap: break-word; word-wrap: break-word;">
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
 							</div>
+
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $confirmed_event['start_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $confirmed_event['end_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
@@ -143,10 +148,12 @@
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
 							</div>
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $pending_event['start_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $pending_event['end_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
@@ -154,14 +161,17 @@
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
 										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
+									@if ($pending_event['type'] == "performance")
+										<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
+									@endif
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="message-btn l-no-display right">
 										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
-								@endif
-								@if ($pending_event['type'] == "service")
-									<a onClick="showCancelRequestForServiceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
+									@if ($pending_event['type'] == "service")
+										<a onClick="showCancelRequestForServiceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
+									@endif
 								@endif
 							</div>
 						</div>
@@ -224,10 +234,12 @@
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
 							</div>
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $rejected_event['start_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								{{ date('F d, Y h:i A', $rejected_event['end_datetime']->sec) }}
+								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
