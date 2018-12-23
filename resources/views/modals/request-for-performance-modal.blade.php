@@ -30,40 +30,27 @@
 			$end_time = DatetimeUtils::formatTimeFromBackendToFrontEnd(DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($event->end_datetime)->sec);
 		?>
 
-		<div class="row">
+		<div class="row input-row">
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="ourscene-date" readonly="readonly"
-					 name="start_date" placeholder="" value="{{ $start_date }}" required>
-				<label class="active">
-					Start date
-					<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-				</label>
+				<input type="text" name="start_date" id="start_date_request" placeholder=""
+					class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
+				<label for="start_date_request" class="active time-label"><span class="required-color">*</span> Start date</label>
 			</div>
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="time-picki-picker" name="start_time" placeholder="" value="{{ $start_time }}" required>
-				<label class="active">
-					Start time
-					<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-				</label>
+				<input type="text" class="" name="start_time" id="start_time_request" placeholder="" value="<?= $start_time; ?>" required>
+				<label for="start_time_request" class="active"><span class="required-color">*</span> Start time</label>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row input-row">
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="ourscene-date" readonly="readonly"
-					 name="end_date" placeholder="" value="{{ $end_date }}" required>
-				<label class="active">
-					End date
-					<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-				</label>
+				<input type="text" name="end_date" id="end_date_request" placeholder=""
+					class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
+				<label for="end_date_request" class="active  time-label"><span class="required-color">*</span> End date</label>
 			</div>
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="time-picki-picker" name="end_time" placeholder="" value="{{ $end_time }}" required>
-				<label class="active">
-					End time
-					<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
-				</label>
+				<input type="text" class="" name="end_time" id="end_time_request" placeholder="" value="<?= $end_time; ?>" required>
+				<label for="end-time_request" class="active"><span class="required-color">*</span> End time</label>
 			</div>
-
 		</div>
 
 		<!-- Equipments -->
@@ -120,6 +107,25 @@
 			You have no equipment.
 		@endif
 		</div>
+		<script>
+		$(document).ready(function() {
+
+			$("#start_time_request").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+			$("#end_time_request").kendoTimePicker({
+			    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+			});
+
+			$('#start_date_request').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+
+		    $('#end_date_request').datepicker().on('changeDate', function(ev){
+		        $(this).datepicker('hide');
+		    });
+		});
+		</script>
 		{!! Form::close() !!}
 
 	</div>
