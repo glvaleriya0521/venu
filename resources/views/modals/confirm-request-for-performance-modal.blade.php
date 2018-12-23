@@ -14,22 +14,22 @@
 		<div class="row input-row">
 			<div class="input-field col s12 m8 l4">
 				<input type="text" name="start_date" id="start_date_confirm_request" placeholder=""
-					class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
+					class="date-input"  readonly="readonly"  value="" required>
 				<label for="start_date_confirm_request" class="active time-label"><span class="required-color">*</span> Start date</label>
 			</div>
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="" name="start_time" id="start_time_confirm_request" placeholder="" value="<?= $start_time; ?>" required>
+				<input type="text" class="" name="start_time" id="start_time_confirm_request" placeholder="" value="" required>
 				<label for="start_time_confirm_request" class="active"><span class="required-color">*</span> Start time</label>
 			</div>
 		</div>
 		<div class="row input-row">
 			<div class="input-field col s12 m8 l4">
 				<input type="text" name="end_date" id="end_date_confirm_request" placeholder=""
-					class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
+					class="date-input" readonly="readonly" value="" required>
 				<label for="end_date_confirm_request" class="active  time-label"><span class="required-color">*</span> End date</label>
 			</div>
 			<div class="input-field col s12 m8 l4">
-				<input type="text" class="" name="end_time" id="end_time_confirm_request" placeholder="" value="<?= $end_time; ?>" required>
+				<input type="text" class="" name="end_time" id="end_time_confirm_request" placeholder="" value="" required>
 				<label for="end-time_confirm_request" class="active"><span class="required-color">*</span> End time</label>
 			</div>
 		</div>
