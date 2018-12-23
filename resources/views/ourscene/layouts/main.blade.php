@@ -128,6 +128,12 @@
 
 	</script>
 
+	<script>
+	$(document).ready(function() {
+
+	    $('#ui-datepicker-div').attr('z-index', '10000 !important');
+	});
+	</script>
 	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 
 	<script src="{{ asset('js/webshim/minified/polyfiller.js')}}"></script>
