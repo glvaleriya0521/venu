@@ -160,7 +160,9 @@
 										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
-								<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
+								@if ($pending_event['type'] == "service")
+									<a onClick="showCancelRequestForServiceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
+								@endif
 							</div>
 						</div>
 					</td>
