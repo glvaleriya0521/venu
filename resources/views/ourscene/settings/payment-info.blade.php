@@ -199,6 +199,7 @@ use OurScene\Models\User;
 					console.log(data)
 				 }
 		 }).done(function(data){
+		 	console.log(data)
 			 $submit_btn.css({"opacity":"1"})
 			 $submit_btn.prop("disabled",false)
 			 $("#success-credit").show().delay(5000).fadeOut()

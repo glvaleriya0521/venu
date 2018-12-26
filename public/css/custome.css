@@ -400,6 +400,14 @@ a.socialIcon:hover, .socialHoverClass {
 .ui-datepicker {
 	z-index: 10000 !important;
 }
+
+.payment-input-field .input-field input {
+	color: white;
+}
+
+#settings-container .input-field input {
+	color: white;
+}
 /****************************************/
 /*.input-row .input-field input{
 	border: solid 1px !important;

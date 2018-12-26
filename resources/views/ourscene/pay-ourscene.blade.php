@@ -40,7 +40,7 @@ use OurScene\Models\User;
 
 		<!-- <img width="130" src="{{ asset('images/icons/paypal.svg') }}"/> -->
 		<br/>
-		<div class="row">
+		<div class="row payment-input-field">
 			@if($user_card_info)
 			{!! Form::open(array(
 				'url'		=> action('PaypalController@postPayToOurScene'),

@@ -32,15 +32,17 @@ class PaypalController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth.login');
+		// $this->middleware('auth.login');
 	}
 
 
 	/* Store credit card */
 	public function postStoreCreditCard(){
+
 		Input::merge(array_map('trim', Input::all()));
 		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
 		$user = User::find(Session::get('id'));
+		$user;
 		
 		$token_result = PaypalHelper::getToken();
 		if($token_result['success']){
@@ -64,8 +66,11 @@ class PaypalController extends Controller {
 
 		$verification_result = PaypalHelper::verifyCreditCard($credit);
 
+		
+		// return Response::json(["result" => $verification_result],400);
 		if($verification_result){
 			if($verification_result->CVV2Code != "M"){
+				var_dump($verification_result);
 				return Response::json("cvv unmatch",500);	
 			}
 			$credit['type'] = $vault_card_types[$credit['type']];
@@ -91,7 +96,7 @@ class PaypalController extends Controller {
 			}
 
 		}else{
-			return Response::json("Problem with authentication",500);
+			return Response::json("Payment has a problem",500);
 		}
 	}
 
@@ -202,6 +207,7 @@ class PaypalController extends Controller {
 	/* Pay OurScene via auto-populated credit card information from vault */
 
 	public function postPayToOurScene(){
+
 
 		Input::merge(array_map('trim', Input::all()));
 
