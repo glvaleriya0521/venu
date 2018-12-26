@@ -32,7 +32,7 @@ class PaypalController extends Controller {
 	 */
 	public function __construct()
 	{
-		// $this->middleware('auth.login');
+		$this->middleware('auth.login');
 	}
 
 
@@ -42,8 +42,6 @@ class PaypalController extends Controller {
 		Input::merge(array_map('trim', Input::all()));
 		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
 		$user = User::find(Session::get('id'));
-		$user;
-		
 		$token_result = PaypalHelper::getToken();
 		if($token_result['success']){
 			$token = $token_result['access_token'];
