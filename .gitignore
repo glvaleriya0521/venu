@@ -4,4 +4,3 @@
 .DS_Store
 composer.lock
 public/.sass-cache
-.env
