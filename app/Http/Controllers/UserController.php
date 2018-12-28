@@ -741,7 +741,6 @@ class UserController extends Controller {
 
 			if(Input::hasFile('materials-videos-'.$i)){
 				$file = Input::file('materials-videos-'.$i);
-				dd($file);
 				$user->addArtistVideo($file);
 			}
 		}

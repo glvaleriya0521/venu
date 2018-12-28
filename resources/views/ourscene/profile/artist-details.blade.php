@@ -109,7 +109,7 @@
 				<div class="label col s12 m12 l12 profile-title" style="margin-bottom:10px;"> Videos </div>
 				@if(count($videos))
 					@foreach ($videos as $video)
-						<div class="col s12 m4 l4">
+						<div class="col s2 m2 l4">
 							<video class="responsive-video" src="{{$video->url}}" controls style="max-width: 69%; border-radius: 20px;">
 							   <!-- <source src="{{$video->url}}" type="video/mp4"> -->
 							</video>

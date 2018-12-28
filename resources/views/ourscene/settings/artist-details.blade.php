@@ -249,28 +249,28 @@
 			<div class="row" id="register-materials-videos">
 				<div class="label col s12 m12 l12 profile-title" style="margin-bottom:10px;"> Videos </div>
 				<?php $video_counter = count($videos); ?>
-				<div class="row" style="position: relative; height: 100px;">
+				<div class="row" style="position: relative; height: 100px; margin-bottom: 138px;">
 					<div class="col-md-1" style="height: 100%;">
 						<a href="javascript:void(0);" class="icoSoundCloud addMeterials @if($video_counter>=5) disabled @endif" id="add-more-videos" title="Rss" style="position: absolute; top: 50%; left: 50%; transform: translate(-62%, -50%);"><i class="fa fa-video-camera" ></i></a>
 					</div>
 					<div class="col-md-11" style="position: relative; height: 100%;">
-						@if(count($videos))
-							@for($i=1; $i<=count($videos) ; $i++)
-								<div class="col s12 m4 l4" style="height: 100%;">
-									<input type="hidden" value="{{$videos[$i-1]->id}}">
-									<video class="responsive-video" src="{{ $videos[$i-1]->url }}" controls 
-										style="max-width: 69%; border-radius: 20px; position: absolute; top: 50%;
-										 left: 50%; transform: translate(-50%, -50%);">
-									   <!-- <source src="{{$video->url}}" type="video/mp4"> -->
-									</video>
-									<a href="#!" class="remove-material-videos" id='remove-material-href' title="Remove" style="text-align: right;"><i class="fa fa-trash" ></i><img src="{{asset('images/icons/media_loader.svg')}}" style="margin-top: 5px; display:none;" alt="" width="13px" /></a>
+						<div class="row" style="margin-left: -2%;">
+							@if(count($videos))
+								@for($i=1; $i<=count($videos) ; $i++)
+									<div class="" style="display: inline; margin-left: 2%;">
+										<input type="hidden" value="{{$videos[$i-1]->id}}">
+										<video class="responsive-video" src="{{ $videos[$i-1]->url }}" controls 
+											style="max-width: 22%; border-radius: 15px;">
+										</video>
+										<a href="#!" class="remove-material-videos" id='remove-material-href' title="Remove" style="text-align: right;"><i class="fa fa-trash" style="margin-left: 0;"></i><img src="{{asset('images/icons/media_loader.svg')}}" style="margin-top: 5px; display:none;" alt="" width="13px" /></a>
+									</div>
+								@endfor
+							@else
+								<div class="col s6 m2 l2">
+								No videos.
 								</div>
-							@endfor
-						@else
-							<div class="col s6 m2 l2">
-							No videos.
-							</div>
-						@endif
+							@endif
+						</div>
 					</div>
 				</div>
 			</div>

@@ -97,7 +97,7 @@ $(document).ready(function() {
 		if(image < maxNoOfImages){
 			image++;
 			$('#register-materials-images').append(
-				'<div class="file-field input-field row" style="margin-left: 10%; margin-top: 74px; margin-bottom: 0;">'+
+				'<div class="file-field input-field row" style="margin-left: 12%; margin-top: 9px; margin-bottom: 0;">'+
 					'<div class="file-btn btn col s2 m2 l2">' +
 				 		'<span>File</span>' + 
 				 		'<input type="file" id="materials-images-'+ image+'" name="materials-images-'+image+'" accept="image/gif,image/jpg,image/png,image/jpeg,.gif,.jpg,.png,.jpeg" style="position: relative; width: 100%;">' +
