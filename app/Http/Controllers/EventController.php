@@ -223,6 +223,7 @@ class EventController extends Controller {
 		//get venue
 
 		$venue = User::find($venue_id);
+		$venue_name = $venue->name; 
 
 		//get equipments
 
@@ -253,6 +254,15 @@ class EventController extends Controller {
 
 		//create event first then tsaka prompt them to pay it.
 
+		$share_event = 'Event name:'.'%20'.$input['title'].'%0A'.
+					   'Description:'.'%20'. $description.'%0A'.
+					   'Start datetime:'.'%20'.$input['start_date'].'%20'.$input['start_time'].'%0A'.
+					   'Opening_time:'.'%20'.$input['opening_time'].'%0A'.
+					   'End datetime:'.'%20'.$input['end_date'].'%20'.$input['end_time'].'%0A'.
+					   'Event type:'.'%20'.$event_type.'%0A'.
+					   'Age allowance:'.'%20'.$age_requirements.'%0A'.
+					   'Venue:'.'%20'.$venue_name;
+
 
 		if($user_type == 'venue' && count($artists) == 0){
 			$response = EventController::paidCreateEvent($input);
@@ -274,7 +284,7 @@ class EventController extends Controller {
 
 
 			//redirect to payment
-			return Redirect::to(action('PaypalController@getPayOurscene'));
+			return Redirect::to(action('PaypalController@getPayOurscene'))->with('share_event', $share_event);
 		}
 
 	}

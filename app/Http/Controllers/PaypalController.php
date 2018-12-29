@@ -175,6 +175,7 @@ class PaypalController extends Controller {
 
 	public function getPayOurscene(){
 
+		$share_event = Session::get('share_event');
 		//check permissions
 		if(! Session::has('pay_ourscene_action')){
 			abort(401);
@@ -184,7 +185,7 @@ class PaypalController extends Controller {
 
 		if (User::where('_id',Session::get('id'))->first()['paypal_info']['card_id'] == "") {
 
-			return View::make('ourscene.pay-ourscene')->with('user_card_info',false);
+			return View::make('ourscene.pay-ourscene')->with('user_card_info',false)->with('share_event', $share_event);
 
 		}else{
 			$token_result = PaypalHelper::getToken();
@@ -199,7 +200,7 @@ class PaypalController extends Controller {
 			// Get secure token for transparent redirect
 			$user_card_info = PaypalHelper::getUserVault($token,$card_id);
 		}
-		return View::make('ourscene.pay-ourscene', compact('user_card_info'));
+		return View::make('ourscene.pay-ourscene', compact('user_card_info', 'share_event'));
 	}
 
 	/* Pay OurScene via auto-populated credit card information from vault */

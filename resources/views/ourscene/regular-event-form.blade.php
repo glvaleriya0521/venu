@@ -362,9 +362,11 @@ Required items are indicated with <span class="required-color">*</span>.
 @endif
 
 <br/><br/>
-
+<div id="fb-root"></div>
 <input type="submit" id="submit-btn" class="btn btn-large ourscene-btn-1" value="{{ $submit_btn_label }}"/>
-
+<div style="display: inline; margin-left: 39%;">
+<div class="fb-share-button" data-href="https://testvenu.glbdd.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse?text=aaa" class="fb-xfbml-parse-ignore" style="margin-left: 50%;">Share</a></div>
+</div>
 <script>
 $(document).ready(function() {
 	var timezone_offset = new Date().getTimezoneOffset();
@@ -394,5 +396,11 @@ $(document).ready(function() {
     });
 });
 </script>
-
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=1862653250707531';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 {!! Form::close() !!}

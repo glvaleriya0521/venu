@@ -129,9 +129,13 @@ use OurScene\Models\User;
 
 	</div>
 </div>
-
 @endsection
 
 @section('scripts')
-
+<script>
+	$(document).ready(function() {
+		window.open('https://twitter.com/intent/tweet?text=' + '{{ $share_event }}','_blank');
+	});
+	
+</script>
 @endsection
