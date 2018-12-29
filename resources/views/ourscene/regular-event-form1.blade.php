@@ -364,13 +364,9 @@ Required items are indicated with <span class="required-color">*</span>.
 <br/><br/>
 <div id="fb-root"></div>
 <input type="submit" id="submit-btn" class="btn btn-large ourscene-btn-1" value="{{ $submit_btn_label }}"/>
-<div style="display: inline; margin-left: 35%;">
 <div class="fb-share-button" data-href="https://testvenu.glbdd.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse?text=aaa" class="fb-xfbml-parse-ignore" style="margin-left: 50%;"><i class="fa fa-facebook" style="font-size: 20px;"></i>Share</a></div>
+<button id="btn_shareTWI"><i></i><span>Tweet</span></button>
 
-<a class="twitter-share-button" target="_blank" 
-  href="https://twitter.com/intent/tweet"
-  data-size="large"><i class="fa fa-twitter" style="font-size: 20px;"></i>
-Tweet</a>
 <script>
 $(document).ready(function() {
 	var timezone_offset = new Date().getTimezoneOffset();
@@ -398,6 +394,23 @@ $(document).ready(function() {
     $('#end-date').datepicker().on('changeDate', function(ev){
         $(this).datepicker('hide');
     });
+
+    var width  = 575,
+    height = 400,
+    left   = ($(window).width()  - width)  / 2,
+    top    = ($(window).height() - height) / 2,
+    url    = location.href,
+    opts   = 'status=1' +
+             ',width='  + width  +
+             ',height=' + height +
+             ',top='    + top    +
+             ',left='   + left;
+
+	$("#btn_shareTWI").click(function() {
+					 window.open('https://twitter.com/share', 
+				  'twitter-sahre-dialog', 
+				  opts); 
+	});
 });
 </script>
 <script>(function(d, s, id) {
