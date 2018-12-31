@@ -46,11 +46,23 @@
 						<div class="label col s12 m12 l12 profile-title">Venue Serves</div>
 						<div class="col s12 m12 l12 profile-description">
 							<ul>
-							@if ($user->serves_alcohol == true)
-								<li>Serves Alcohol </li>
+							@if ($user->full_bar == true)
+								<li>Full Bar </li>
 							@endif
-							@if ($user->serves_food == true)
-								<li>Serves Food </li>
+							@if ($user->beer_wine == true)
+								<li>Beer Wine </li>
+							@endif
+							@if ($user->none_alcohol == true)
+								<li>None Alcohol </li>
+							@endif
+							@if ($user->full_menu == true)
+								<li>Full Menu </li>
+							@endif
+							@if ($user->snacks == true)
+								<li>Snacks </li>
+							@endif
+							@if ($user->none_food == true)
+								<li>None Food </li>
 							@endif
 							</ul>
 						</div>

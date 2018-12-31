@@ -295,11 +295,31 @@ class UserController extends Controller {
 
 		$user->serves_alcohol 	= false;
 		$user->serves_food 		= false;
-		if(Input::get('serves_alcohol') === 'on') {
-			$user->serves_alcohol = true;
+
+		$user->full_bar     	= false;
+		$user->beer_wine 		= false;
+		$user->none_alcohol 	= false;
+		$user->full_menu 		= false;
+		$user->snacks       	= false;
+		$user->none_food 		= false;
+
+		if($input['serve_alcohol'] === 'full_bar') {
+			$user->full_bar = true;
 		}
-		if(Input::get('serves_food') === 'on'){
-			$user->serves_food = true;
+		if($input['serve_alcohol'] === 'beer_wine') {
+			$user->beer_wine = true;
+		}
+		if($input['serve_alcohol'] === 'none_alcohol') {
+			$user->none_alcohol = true;
+		}
+		if($input['serve_food'] === 'full_menu') {
+			$user->full_menu = true;
+		}
+		if($input['serve_food'] === 'snacks') {
+			$user->snacks = true;
+		}
+		if($input['serve_food'] === 'none_food') {
+			$user->none_food = true;
 		}
 
 		$user->social_media = $social_media;
@@ -320,8 +340,6 @@ class UserController extends Controller {
 
 			return Redirect::to(action('EventController@getMyEventsCalendar'))->with('success', 'You have successfully registered.');
 		}
-
-
 
 	}
 
@@ -400,15 +418,39 @@ class UserController extends Controller {
 
 			$user->seating_capacity = (int)$input['seating_capacity'];
 
-			if(Input::get('serves_alcohol') === 'on')
-				$user->serves_alcohol = true;
-			else
-				$user->serves_alcohol = false;
+			$user->serves_alcohol = false;
+			$user->serves_food = false;
 
-			if(Input::get('serves_food') === 'on')
-				$user->serves_food = true;
+			if($input['serve_alcohol'] === 'full_bar')
+				$user->full_bar = true;
 			else
-				$user->serves_food = false;
+				$user->full_bar = false;
+
+			if($input['serve_alcohol'] === 'beer_wine')
+				$user->beer_wine = true;
+			else
+				$user->beer_wine = false;
+
+			if($input['serve_alcohol'] === 'none_alcohol')
+				$user->none_alcohol = true;
+			else
+				$user->none_alcohol = false;
+
+			if($input['serve_food'] === 'full_menu')
+				$user->full_menu = true;
+			else
+				$user->full_menu = false;
+
+			if($input['serve_food'] === 'snacks')
+				$user->snacks = true;
+			else
+				$user->snacks = false;
+
+			if($input['serve_food'] === 'none_food')
+				$user->none_food = true;
+			else
+				$user->none_food = false;
+
 		}
 
 		$social_media = $user->social_media;

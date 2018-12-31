@@ -214,17 +214,36 @@ use OurScene\Models\User;
 					</div>
 				</div>
 
-				<div class="row input-field">
-		    		<div class="col s6 m3 l4">
-						<input type="checkbox" id="serves_alcohol" name="serves_alcohol" class="filled-in"/>
-						<label for="serves_alcohol">Serves Alcohol</label>
-					</div>
-					<div class="col s6 m3 l4">
-						<input type="checkbox" id="serves_food" name="serves_food" class="filled-in"/>
-						<label for="serves_food">Serves Food</label>
-					</div>
-				</div>
-
+				<div class="row">
+			      <div class="col-md-6">
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="full_bar" value="full_bar"/>
+			            <label for="full_bar" class="active">Full Bar</label>
+			          </div>
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="beer_wine" value="beer_wine"/>
+			            <label for="beer_wine" class="active">Beer and Wine</label>
+			          </div>
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="none_alcohol" value="none_alcohol"/>
+			            <label for="none_alcohol" class="active">None Alcohol</label>
+			          </div>
+			      </div>
+			      <div class="col-md-6">
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" name="serve_food" class="serve_food" id="full_menu" value="full_menu"/>
+			            <label for="full_menu" class="active">Full food menu</label>
+			          </div>
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" name="serve_food" class="serve_food" id="snacks" value="snacks"/>
+			            <label for="snacks" class="active">Snacks</label>
+			          </div>
+			          <div class="input-field col s12 m8 l4">
+			            <input type="radio" name="serve_food" class="serve_food" id="none_food" value="none_food"/>
+			            <label for="none_food" class="active">None Food</label>
+			          </div>
+			      </div>
+      			</div>
 				<br/><br/>
 
 				<div class="row input-field">

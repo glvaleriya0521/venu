@@ -138,15 +138,37 @@ use OurScene\Models\User;
 					</div>
 					</br></br></br>
 					<div class="input-field">
-						<span class="col s12 m12 l12">Venue Serves</span>
+						<label for="" class="active">Venue Serves</label>
+					</div>
+					<div class="input-field" style="margin-top: 7%;">
 						<div class="col-md-6">
-							<input type="checkbox" id="serves_alcohol" name="serves_alcohol" class="filled-in" @if($user["serves_alcohol"]){!! 'checked' !!}@endif />
-							<label for="serves_alcohol">Serves Alcohol</label>
-						</div>
-						<div class="col-md-6">
-							<input type="checkbox" id="serves_food" name="serves_food" class="filled-in" @if($user["serves_food"]){!! 'checked' !!}@endif/>
-							<label for="serves_food">Serves Food</label>
-						</div>
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="full_bar" value="full_bar"/>
+				            <label for="full_bar" class="active">FullBar</label>
+				          </div>
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="beer_wine" value="beer_wine"/>
+				            <label for="beer_wine" class="active">Beer_Wine</label>
+				          </div>
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" class="serve-alcohol" name="serve_alcohol" id="none_alcohol" value="none_alcohol"/>
+				            <label for="none_alcohol" class="active">None</label>
+				          </div>
+				      	</div>
+				      	<div class="col-md-6">
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" name="serve_food" class="serve_food" id="full_menu" value="full_menu"/>
+				            <label for="full_menu" class="active">FullFood</label>
+				          </div>
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" name="serve_food" class="serve_food" id="snacks" value="snacks"/>
+				            <label for="snacks" class="active">Snacks</label>
+				          </div>
+				          <div class="input-field col s12 m8 l4">
+				            <input type="radio" name="serve_food" class="serve_food" id="none_food" value="none_food"/>
+				            <label for="none_food" class="active">NoneFood</label>
+				          </div>
+				        </div>
 					</div>
 					<div class="col s6 m4 l4" style="padding-left: 68%; padding-top: 12px;">
 						<input type="submit" class="btn btn-large ourscene-btn-1" value="SAVE" required/>
@@ -219,17 +241,38 @@ $(document).ready(function() {
 	var timezone_offset = new Date().getTimezoneOffset();
 	$("#timezone_offset").val(timezone_offset);
 
-	// $("#start-time").timepicker({
-	// 	// timeFormat: 'h:mm p',
-	// 	interval: 15,
-	// 	scrollbar: true
-	// });
 	$("#operating_hrs_open").kendoTimePicker({
 	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
 	});
 	$("#operating_hrs_close").kendoTimePicker({
 	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
 	});
+
+	var full_bar = '{{ $user->full_bar }}';
+	var beer_wine = '{{ $user->beer_wine }}';
+	var none_alcohol = '{{ $user->none_alcohol }}';
+	var full_menu = '{{ $user->full_menu }}';
+	var snacks = '{{ $user->snacks }}';
+	var none_food = '{{ $user->none_food }}';
+
+	if (full_bar == true) {
+	    $("#full_bar").prop('checked', true);
+	}
+	if (beer_wine == true) {
+	    $("#beer_wine").prop('checked', true);
+	}
+	if (none_alcohol == true) {
+	    $("#none_alcohol").prop('checked', true);
+	}
+	if (full_menu == true) {
+	    $("#full_menu").prop('checked', true);
+	}
+	if (snacks == true) {
+	    $("#snacks").prop('checked', true);
+	}
+	if (none_food == true) {
+	    $("#none_food").prop('checked', true);
+	}
 	
 });
 </script>
