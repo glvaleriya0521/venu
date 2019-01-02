@@ -16,6 +16,7 @@
 Route::get('/convertToLan/{zipcode}', 'UserController@convertToLan');
 Route::get('/fillLatLon', 'UserController@fillLatLon');
 
+
 Route::get('/', 'HomeController@getIndex');
 
 /* Legal */
@@ -106,6 +107,7 @@ Route::get('/view-map/index', 'MapController@index');
 Route::get('/view-map/directionTo/{city}', 'MapController@directionTo');
 Route::get('/view-map/store/nearby/{id}', 'MapController@store');
 Route::get('/view-map/others', 'MapController@others');
+Route::get('/view-map/stores', 'StoreController@others');
 
 // Fetch events
 Route::post('/event/ajax-fetch-private-events-by-user-id', 'EventController@postAjaxFetchPrivateEventsByUserId');
@@ -193,6 +195,7 @@ Route::get('/getconversation', 'MessageController@getConversation');
 Route::get('/createmessage','MessageController@createMessage');
 Route::get('/message/new','MessageController@getNewMessage');
 Route::post('/group', 'MessageController@groupChat');
+Route::get('/messagesToUser', 'UsersController@MessageLive');
 Route::get('/checkconversation','MessageController@checkConversation');
 Route::get('messages/user/{id}','MessageController@getAjaxHeaderMessagesOfUser');
 Route::get('messages/user/','MessageController@getAjaxHeaderMessages');
@@ -221,6 +224,7 @@ Route::get('/pay-merchant/cancel', 'PaypalController@getPayMerchantCancel');
 Route::get('/pay-merchant/error', 'PaypalController@getPayMerchantError');
 Route::post('/pay-merchant', 'PaypalController@postPayToOurScene');
 Route::post('/pay-merchant-credit', 'PaypalController@postPayToOurSceneCredit');
+Route::get('/getPaymentAccount', 'PaypalController@gettPaymentAccount');
 Route::post('/remove-payment-account','PaypalController@removePaymentAccount');
 
 Route::get('/pay/hasvault','PaypalController@checkHasVault');

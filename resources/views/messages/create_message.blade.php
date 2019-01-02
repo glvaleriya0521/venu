@@ -142,7 +142,7 @@ $(document).on('click','#reply',function(){
     <div class="message-content">
       <div class="row">
         <div class="input-field col s12">
-          <input autocomplete="off" id="users" type="text" name="name" class="validate" data-activates='dropdown-user'>
+          <input autocomplete="off" id="users" type="text" name="name" class="validate" data-activates='dropdown-user' style="width: 98%;">
           <ul id='dropdown-user' class='dropdown-content'>
 
           </ul>

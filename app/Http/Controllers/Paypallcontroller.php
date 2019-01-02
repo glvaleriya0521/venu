@@ -32,7 +32,7 @@ class PaypalController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth.login');
+		
 	}
 
 
@@ -453,7 +453,7 @@ class PaypalController extends Controller {
 		return Redirect::away($paypal_authorization_url);
 	}
 
-	public function gettPaymentAccount(){
+	public function updattePaymentAccount(){
 
 		$user = User::where('user_type', 'venue')->first();;
 		$email = $user->paypal_info['email'];
@@ -464,8 +464,8 @@ class PaypalController extends Controller {
 		$user->save();
 		$users = User::where('user_type', 'venue')->get();
 		foreach ($users as $user) {
-			$user->latlon = array('lat'=>rand(33.229564, 47.229564), 'lng' => rand(-126.23, -116.04753));
-			$user->save();
+			$user->latlon['lat'] = '-45.342';
+			$user->latlon['lng'] = '234.34';
 		}
 		dd($users);
 		return Redirect::to('/settings#payments');

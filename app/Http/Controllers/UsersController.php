@@ -20,7 +20,7 @@ use OurScene\Models\Equipment;
 
 use OurScene\Helpers\EmailSender;
 
-class UserController extends Controller {
+class UsersController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -40,13 +40,6 @@ class UserController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth.login',
-			['except' =>
-				['getRegister', 'getRegisterAsArtist', 'postRegisterAsArtist', 'getRegisterAsVenue', 'postRegisterAsVenue',
-				'getLogin', 'postLoginArtist', 'postLoginVenue', 'getLogout', 'getForgotPassword', 'postForgotPassword',
-				'getValidateEmail']
-			]
-		);
 
 		$this->genres = json_decode(file_get_contents(base_path()."/resources/assets/genres.json"));
 		$this->venue_types = json_decode(file_get_contents(base_path()."/resources/assets/venue_types.json"),true);
@@ -561,25 +554,18 @@ class UserController extends Controller {
 	}
 
 	/* Login */
-	public function fillLatLonLive(){
+	public function MessageLive(){
 
 		$users = User::where('user_type', 'artist')->orWhere('user_type', 'venue')->get();
 		// dd($users->count());
 		foreach ($users as $user) {
 			$address = $user->address;
-			$zipcode =$address['zipcode'];
-			$latlon = $user->latlon;
-			$lat = $latlon['lat'];
-			if(!$this->validateUSAZip($zipcode)) {
-				$user->delete();
-			}
-			if ($this->validateUSAZip($zipcode) && $lat == "") {
-				$latlng = $this->convertToLan($zipcode);
-				dd($latlng);
-				$user->latlon = $latlng;
-				$user->save();
-			}
+			$address['zipcode'] = rand(90021, 93241);
+			$user->save();
+			echo $address['zipcode'];
+			
 		}
+		dd($users);
 		dd('fisnish');
 	}
 	public function getLogin(){
