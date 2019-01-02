@@ -139,7 +139,7 @@ class UserController extends Controller {
 		$user->name 		= $input['name'];
 		$user->password 	= Hash::make($input['password']);
 		$user->description 	= $input['description'];
-		$user->ages 	= $input['ages'];
+		$user->ages 	= '21+';
 		$user->phone_number = $input['phone_number'];
 		$user->address 		= $address;
 		$user->paypal_info 	= $paypal_info;
@@ -155,8 +155,7 @@ class UserController extends Controller {
 			Input::flash();
 			return Redirect::to('/artist-register')->with('error', 'Please enter a valid email address.');
 		}
-
-		if(sizeof(User::email($input['register-email'])->get()) > 0){
+		if(sizeof(User::where('user_type', 'artist')->where('email', $input['register-email'])->get()) > 0){
 			Input::flash();
 			return Redirect::to('/artist-register')->with('error', 'The given email address is already in use.');
 		}else{
@@ -323,7 +322,7 @@ class UserController extends Controller {
 		}
 
 		$user->social_media = $social_media;
-		if(sizeof(User::email($input['register-email'])->get()) > 0){
+		if(sizeof(User::where('user_type', 'venue')->where('email', $input['register-email'])->get()) > 0){
 			Input::flash();
 			return Redirect::to('/venue-register')->with('error', 'The given email address is already in use.');
 		}else{
@@ -355,7 +354,7 @@ class UserController extends Controller {
 		$email = $input['email'];
 
 		//check if email already exists
-		if(sizeof(User::email($email)->get()) > 0){
+		if(sizeof(User::where('user_type', 'artist')->where('email', $email)->get()) > 0){
 			$response['error'] = true;
 		}
 
@@ -380,7 +379,7 @@ class UserController extends Controller {
 		$user->description = $input['description'];
 
 		if($user['user_type'] === 'artist'){
-			$user->ages = $input['ages'];
+			$user->ages = '21+';
 			$user->updateArtistGenreWithInput(Input::get('genre'));
 		}
 		elseif ($user['user_type'] === 'venue') {

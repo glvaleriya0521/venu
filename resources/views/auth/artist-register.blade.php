@@ -128,7 +128,7 @@ use OurScene\Models\User;
 					</div>
 				</div>
 
-				<div class="row input-field">
+				<!-- <div class="row input-field">
 					<div class="col s12 m0 l0">
 						<label for="" class="active">Ages <font style="color: #f00;">*</font></label>
 					</div>
@@ -144,7 +144,7 @@ use OurScene\Models\User;
 						<input type="radio" id="age-21" name="ages" value="21+" class="with-gap"/>
 						<label for="age-21">21+</label>
 					</div>
-				</div>
+				</div> -->
 
 				<br/>
 
@@ -155,7 +155,7 @@ use OurScene\Models\User;
 					</div>
 					<div class="col s12 m6 l6 input-field">
 						<label for="zipcode">Zip Code <font style="color: #f00;">*</font></label>
-						<input type="text" id="zipcode" class="registration-txtbx-1" maxlength="5" name="zipcode" value="{!! old('zipcode') !!}" placeholder="5110309" required/>
+						<input type="text" id="zipcode" class="registration-txtbx-1" maxlength="5" name="zipcode" value="{!! old('zipcode') !!}" placeholder="92109" required/>
 					</div>
 				</div>
 				<div class="row input-field">

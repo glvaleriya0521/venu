@@ -46,7 +46,7 @@
 					 </a>
 				</div>
 				<div class="col s3 m3 7" style="width: 17%">
-					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
+					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL ARTISTS</a>
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')

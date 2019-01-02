@@ -88,7 +88,7 @@
 							<label for="bandcamp_account">Bandcamp</label>
 							<input type="text" id="bandcamp_account" name="bandcamp_account" class="registration-txtbx-1" placeholder="" @if(isset($user->social_media['bandcamp'])) value="{!!$user->social_media['bandcamp']  !!}" @endif/>
 						</div>
-						<div class="row input-field age-setting-artist-profile">
+						<!-- <div class="row input-field age-setting-artist-profile">
 							<div class="col s12 m0 l0">
 								<label for="" class="active required-label">Ages</label>
 							</div>
@@ -104,7 +104,7 @@
 								<input type="radio" id="age-21" name="ages" class="with-gap" value="21+" @if($user->ages == '21+') checked @endif/>
 								<label for="age-21">21+</label>
 							</div>
-						</div>
+						</div> -->
 				</div>
 
 				<div class="col-md-4" style="padding-left: 3%; margin-top: -5px;">

@@ -22,7 +22,7 @@ div.input-row:nth-child(5) > div:nth-child(1) > label:nth-child(2),
 #map-canvas {
 	margin: 0;
 	padding: 0;
-	height: 1100px;
+	height: 659px;
 	max-width: none;
 }
 #map-canvas img {
@@ -111,6 +111,7 @@ span#chartobject-1.fusioncharts-container svg#raphael-paper-5{
 }
 
 .select-wrapper span.caret {
+	border-top: none !important;
 }
 
 .custom-select {

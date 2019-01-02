@@ -67,6 +67,18 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 
 	}
 
+	public function scopeArtistEmail($query, $email){
+
+		return $query->where('user_type', 'artist')->where('email', '=', $email);
+
+	}
+
+	public function scopeVenueEmail($query, $email){
+
+		return $query->where('user_type', 'venue')->where('email', '=', $email);
+
+	}
+
 	// Get users with paypal account
 	// Assumption: User has Paypal account if his Paypal email is provided
 

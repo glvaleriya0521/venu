@@ -102,7 +102,7 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		  });
 
 		  google.maps.event.addListener(marker, 'dblclick', function() {
-		    window.location.replace("https://venu.glbdd.com/profile/" + id);
+		    window.location.replace("https://testvenu.glbdd.com/profile/" + id);
 		  });
 		  // Event that closes the Info Window with a click on the map
 		  google.maps.event.addListener(map, 'click', function() {
@@ -184,7 +184,7 @@ function initialize() {
 		  	var center = new google.maps.LatLng(pos['lat'], pos['lng']);
 		  	 var mapOptions = {
 			    center: center,
-			    zoom: 6,
+			    zoom: 4,
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 			  };
 
