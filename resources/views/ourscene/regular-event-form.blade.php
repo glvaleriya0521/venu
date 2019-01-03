@@ -170,13 +170,15 @@ Required items are indicated with <span class="required-color">*</span>.
 			<label for="cover-charge" class="active">Cover charge</label>
 		</div>
 	</div>
+	@if(Session::get('user_type') == 'venue')
 	<br/><br/>
-	<div class="row">
-		<div class="input-field col s12 m8 l4">
-			<input type="checkbox" name="pay_to_play" id="pay-to-play" value="true"/>
-			<label for="pay-to-play" class="active">Pay to play</label>
+		<div class="row">
+			<div class="input-field col s12 m8 l4">
+				<input type="checkbox" name="pay_to_play" id="pay-to-play" value="true"/>
+				<label for="pay-to-play" class="active">Pay to play</label>
+			</div>
 		</div>
-	</div>
+	@endif
 </div>
 
 <!-- Equipments -->

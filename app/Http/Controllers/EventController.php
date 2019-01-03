@@ -162,11 +162,15 @@ class EventController extends Controller {
 		$description = $input['description'];
 		$cover_charge = $input['cover_charge'];
 
-
-		if(isset($input['pay_to_play']))
-			$pay_to_play = true;
-		else
-			$pay_to_play = false;
+		if ($user_type == "venue") {
+			if(isset($input['pay_to_play']))
+				$pay_to_play = true;
+			else
+				$pay_to_play = false;
+		}
+		else {
+				$pay_to_play = false;
+		}
 
 		if($user_type == 'venue'){
 			$status = 'confirmed';

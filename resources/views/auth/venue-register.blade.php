@@ -192,13 +192,13 @@ use OurScene\Models\User;
 		    		<div class="col s6 m3 l3 venu-time input-field">
 
 							<input type="text" name="operating_hrs_open" id="operating_hrs_open" class=""  required>
-							<label for="operating_hrs_open" style="top:-.8rem">Open </label>
+							<label for="operating_hrs_open" style="top:-1.4rem">Open </label>
 					</div>
 
 					<div class="col s6 m3 l3 venu-time input-field">
 
 						<input type="text" name="operating_hrs_close" id="operating_hrs_close"  class="" required>
-						<label for="operating_hrs_close" style="top:-.8rem">Close </label>
+						<label for="operating_hrs_close" style="top:-1.4rem">Close </label>
 					</div>
 					<div class="col s12 m4 l4 venu-time input-field">
 						<label for="seating_capacity">Seating Capacity <font style="color: #f00;">*</font></label>

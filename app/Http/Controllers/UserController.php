@@ -513,7 +513,6 @@ class UserController extends Controller {
 		$user_id = Session::get('id');
 		$user 	 = User::find($user_id);
 		$nearbyLink ='/view-map/store/nearby/'.$user_id;
-
 		if($user->user_type == 'artist'){
 			$songs  = Materials::userId($user_id)->where('type','=','song')->get();
 			$images = Materials::userId($user_id)->where('type','=','image')->get();

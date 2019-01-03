@@ -2007,3 +2007,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .venu-time {
   margin-left : 4% !important;
 }
+ 
+.k-picker-wrap input {
+  color: white !important;
+}

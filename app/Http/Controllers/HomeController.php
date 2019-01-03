@@ -47,9 +47,9 @@ class HomeController extends Controller {
 			$message = Session::get('error');
 		}
 
-		// return Redirect::action('SearchController@getSearch')->with($code, $message);
+		return Redirect::action('SearchController@getSearch')->with($code, $message);
 
-		return Redirect::action('DashboardController@index')->with($code, $message);
+		// return Redirect::action('DashboardController@index')->with($code, $message);
 	}
 
 	public function getPublicCalendar($id){

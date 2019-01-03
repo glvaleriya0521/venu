@@ -20,11 +20,13 @@ div.input-row:nth-child(5) > div:nth-child(1) > label:nth-child(2),
 
 
 #map-canvas {
-	margin: 0;
-	padding: 0;
-	height: 659px;
-	max-width: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+    height: 80vh;
 }
+
 #map-canvas img {
 	max-width: none !important;
 }
@@ -409,7 +411,6 @@ a.socialIcon:hover, .socialHoverClass {
 #settings-container .input-field input {
 	color: white;
 }
-
 
 /****************************************/
 /*.input-row .input-field input{

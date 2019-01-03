@@ -10,8 +10,8 @@
 		<a href="#" class="brand-logo center hide-on-med-and-down">
 			<!-- Search input -->
 			<div class="input-field">
-				<input id="main-navigation-search-input" type="search" placeholder="Search">
-				<label for="search"> <i class="material-icons"> search </i> </label>
+				<input id="main-navigation-search-input" type="search" placeholder="Search for venues or artists...">
+				<!-- <label for="search"> <i class="material-icons"> search </i> </label> -->
 				<i class="material-icons"> close </i>
 			</div>
 		</a>

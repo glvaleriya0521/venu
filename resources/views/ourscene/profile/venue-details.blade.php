@@ -122,6 +122,13 @@
 					<div class="label col s12 m12 l12 profile-title" style="text-align: left;">Capacity</div>
 					<p class="col s12 m12 l12 profile-description">{{ $user->seating_capacity }}</p>
 				</div>
+
+				<div class="row">
+					<!-- <div class="label col s12 m12 l12 profile-title" style="text-align: left;">Capacity</div>
+					<p class="col s12 m12 l12 profile-description">{{ $user->seating_capacity }}</p> -->
+					<a href= "{{ $nearbyLink }}" class="class="label col s12 m12 l12 profile-title map-point">Nearby store:</a>
+				</div>
+
 			</div>
 		</div>
 	</div>
