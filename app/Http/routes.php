@@ -101,6 +101,7 @@ Route::get('/events-feed/calendar', 'EventController@getEventsFeedCalendar');
 // My events
 Route::get('/my-events/events', 'EventController@getMyEventsEvents');
 Route::get('/my-events/calendar', 'EventController@getMyEventsCalendar');
+Route::get('/my-events/requests', 'EventController@getRequests');
 
 // Google Map
 Route::get('/view-map/index', 'MapController@index');
@@ -149,7 +150,7 @@ Route::get('/service/request-for-service/cancel/{id}', 'ServiceController@getCan
 
 /* Requests */
 
-Route::get('/requests', 'EventController@getRequests');
+// Route::get('/requests', 'EventController@getRequests');
 
 /* Deactivate Account */
 Route::get('/deactivate-account', 'UserController@getDeactivateAccount');

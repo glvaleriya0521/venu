@@ -32,6 +32,19 @@
 					@endif
 
 				</div>
+				<div class="col s2 m2 5" style="width: 18%">
+					<a href="{{ action('EventController@getRequests') }}"
+					 @if(Request::is('requests') || Request::is('requests/*')) class="active" @endif>
+					 	REQUESTS
+					 	<?php
+					 		$pending_requests = OurScene\Models\Service::servicesByReceiverId(Session::get('id'))->pending()->get();
+                        	$pending_requests_counter = count($pending_requests);
+					 	?>
+					 	@if($pending_requests_counter > 0)
+					 		<span class="badge red"> {{$pending_requests_counter}}</span>
+					 	@endif
+					 </a>
+				</div>
 				<div class="col s3 m3 7" style="width: 17%">
 					@if(Session::get('user_type') == 'venue')
 						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL ARTISTS</a>
@@ -48,7 +61,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">BOOK A SHOW</a>
 					@endif
 				</div>
-				<div class="col s3 m3 7" style="margin-left: 22%">
+				<div class="col s3 m3 7" style="margin-left: 5%">
 					<ul style="display:inline">
 			        <li style="margin-left: 5%">
 			        	<a href="{!! url('/messages') !!}">

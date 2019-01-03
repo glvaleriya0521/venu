@@ -8,6 +8,13 @@
 			<img src="{{ $item['image'] }}"/>
 		@endif
 			{{ $item['text'] }}
+			<?php
+		 		$pending_requests = OurScene\Models\Service::servicesByReceiverId(Session::get('id'))->pending()->get();
+            	$pending_requests_counter = count($pending_requests);
+		 	?>
+		 	@if($pending_requests_counter > 0 && $item['text'] == "REQUESTS")
+		 		<span class="badge red"> {{$pending_requests_counter}}</span>
+		 	@endif
 		</a>
 	@endforeach
 	</div>

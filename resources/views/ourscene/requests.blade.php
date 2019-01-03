@@ -10,7 +10,7 @@
 	
 @stop
 
-@section('content')
+@section('my-events-content')
 
 <div id="requests">
 
