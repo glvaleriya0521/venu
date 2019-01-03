@@ -67,7 +67,8 @@ class SearchController extends Controller {
 			$singleParam = $input['params'];
 			$name = $singleParam;
 			$genre = $singleParam;
-			$locality = $singleParam;
+			// $locality = $singleParam;
+			$locality = null;
 			$isSingleParam = true;
 			if ($user->user_type == 'artist') {
 				$all = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->paginate(6);
@@ -105,10 +106,9 @@ class SearchController extends Controller {
 		$name = $input['param'];
 		$genre = $input['param'];
 		// $locality = $input['param'];
-
 		// pagination
-		$artists = User::searchArtists($name, $genre, $locality)->isActive()->take(5)->get();
-		$venues = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->take(5)->get();
+		$artists = User::searchAjaxArtists($name, $genre, $locality)->isActive()->take(5)->get();
+		$venues = User::searchAjaxVenues($name, $genre, $locality, $zipcode)->isActive()->take(5)->get();
 
 		$search_results = true;
 		return response()->json(compact('name', 'genre', 'locality', 'artists', 'venues', 'search_results'));

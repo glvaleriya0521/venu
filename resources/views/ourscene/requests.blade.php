@@ -4,7 +4,7 @@
 	use OurScene\Helpers\DatetimeUtils;
 ?>
 
-@extends('ourscene.layouts.main')
+@extends('ourscene.layouts.my-events')
 
 @section('head')
 	

@@ -28,7 +28,7 @@
 						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
+						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>CALENDAR</a>
 					@endif
 
 				</div>
@@ -46,14 +46,19 @@
 					 </a>
 				</div>
 				<div class="col s3 m3 7" style="width: 17%">
-					<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL ARTISTS</a>
+					@if(Session::get('user_type') == 'venue')
+						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL ARTISTS</a>
+					@endif
+					@if(Session::get('user_type') == 'artist')
+						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
+					@endif
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem;">CREATE EVENT/PROMOTION</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">BOOK A SHOW</a>
 					@endif
 				</div>
 				<div class="col s3 m3 7" style="margin-left: 5%">
@@ -159,7 +164,7 @@
 					<span class="badge red messages-counter-icon"></span>
 				</a>
 			</li>
-			<li class="sidebar-nav"><a href="{{ url('/profile')  }}">	My Profile 	</a></li>
+			<!-- <li class="sidebar-nav"><a href="{{ url('/profile')  }}">	My Profile 	</a></li> -->
 			<li class="sidebar-nav"><a href="{{ url('/settings') }}">	Settings 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/about-us') }}">	About 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/faq') }}">	FAQs 	</a></li>
@@ -176,8 +181,8 @@
 
 <div>
 	<ul id="main-navigation-1-dropdown" class="dropdown-content">
-		<li><a href="{!! url('/profile') !!}">My Profile</a></li>
-		<li class="divider"></li>
+		<!-- <li><a href="{!! url('/profile') !!}">My Profile</a></li> -->
+		<!-- <li class="divider"></li> -->
 		<li><a href="{!! url('/settings') !!}">Settings</a></li>
 		<li class="divider"></li>
 		<li><a href="{!! url('/about-us') !!}">About Us</a></li>

@@ -98,18 +98,44 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 			if($name)
 				$query->orWhere('name', 'LIKE', '%'.$name.'%');
 
-			if($genre)
-				$query->orWhereRaw([
-					'artist_genre' => array(
-						'$elemMatch' => array(
-							'$regex' => $genre,
-							'$options' => 'i'
-						)
-					)
-				]);
+			// if($genre)
+			// 	$query->orWhereRaw([
+			// 		'artist_genre' => array(
+			// 			'$elemMatch' => array(
+			// 				'$regex' => $genre,
+			// 				'$options' => 'i'
+			// 			)
+			// 		)
+			// 	]);
 
 			if($locality)
 				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+		});
+
+		return $query;
+	}
+
+	public static function searchAjaxArtists($name, $genre, $locality){
+
+		$query = User::artists();
+
+		$query->where(function ($query) use ($name, $genre, $locality) {
+
+			if($name)
+				$query->orWhere('name', 'LIKE', '%'.$name.'%');
+
+			// if($genre)
+			// 	$query->orWhereRaw([
+			// 		'artist_genre' => array(
+			// 			'$elemMatch' => array(
+			// 				'$regex' => $genre,
+			// 				'$options' => 'i'
+			// 			)
+			// 		)
+			// 	]);
+
+			// if($locality)
+			// 	$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
 		});
 
 		return $query;
@@ -178,28 +204,72 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 			if($name)
 				$query->orWhere('name', 'LIKE', '%'.$name.'%');
 
-			if($genre)
-				$query->orWhereRaw([
-					'venue_type' => array(
-						'$elemMatch' => array(
-							'$regex' => $genre,
-							'$options' => 'i'
-						)
-					)
-				]);
+			// if($genre)
+			// 	$query->orWhereRaw([
+			// 		'venue_type' => array(
+			// 			'$elemMatch' => array(
+			// 				'$regex' => $genre,
+			// 				'$options' => 'i'
+			// 			)
+			// 		)
+			// 	]);
 
 			if($locality){
-				$query->orWhere('address.unit', 'LIKE', '%'.$locality.'%');
-				$query->orWhere('address.street', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.unit', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.street', 'LIKE', '%'.$locality.'%');
 				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
-				$query->orWhere('address.zipcode', 'LIKE', '%'.$locality.'%');
-				$query->orWhere('address.state', 'LIKE', '%'.$locality.'%');
-				$query->orWhere('address.country', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.zipcode', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.state', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.country', 'LIKE', '%'.$locality.'%');
 			}
 		});
 
 		// $query->select('address.city');
 		$query->orderBy('distance', 'asc');
+		return $query;
+	}
+
+	public static function searchAjaxVenues($name, $genre, $locality, $zipcode){
+
+		$query = User::venues();
+
+		if($zipcode)
+		{
+			$venues = $query->get();
+			foreach ($venues as $venue)
+			{
+				 $zipcodeTo = $venue->address['zipcode'];
+				 $distance = User::distanceByZipcde($zipcode, $zipcodeTo);
+				 $venue->distance = $distance;
+			}
+		}
+
+		$query->where(function ($query) use ($name, $genre, $locality) {
+			if($name)
+				$query->orWhere('name', 'LIKE', '%'.$name.'%');
+
+			// if($genre)
+			// 	$query->orWhereRaw([
+			// 		'venue_type' => array(
+			// 			'$elemMatch' => array(
+			// 				'$regex' => $genre,
+			// 				'$options' => 'i'
+			// 			)
+			// 		)
+			// 	]);
+
+			if($locality){
+			// 	$query->orWhere('address.unit', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.street', 'LIKE', '%'.$locality.'%');
+				// $query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.zipcode', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.state', 'LIKE', '%'.$locality.'%');
+			// 	$query->orWhere('address.country', 'LIKE', '%'.$locality.'%');
+			}
+		});
+
+		// $query->select('address.city');
+		// $query->orderBy('distance', 'asc');
 		return $query;
 	}
 

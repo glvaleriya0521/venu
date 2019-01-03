@@ -191,13 +191,13 @@ use OurScene\Models\User;
 				<div class="row">
 		    		<div class="col s6 m3 l3 venu-time input-field">
 
-							<input type="text" name="operating_hrs_open" id="operating_hrs_open" class=""  required>
+							<input type="text" name="operating_hrs_open" id="operating_hrs_open" class=""  value="10:00 AM" required>
 							<label for="operating_hrs_open" style="top:-1.4rem">Open </label>
 					</div>
 
 					<div class="col s6 m3 l3 venu-time input-field">
 
-						<input type="text" name="operating_hrs_close" id="operating_hrs_close"  class="" required>
+						<input type="text" name="operating_hrs_close" id="operating_hrs_close"  value="10:00 AM" class="" required>
 						<label for="operating_hrs_close" style="top:-1.4rem">Close </label>
 					</div>
 					<div class="col s12 m4 l4 venu-time input-field">
@@ -464,10 +464,12 @@ use OurScene\Models\User;
 $(document).ready(function() {
 
 	$("#operating_hrs_open").kendoTimePicker({
-	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    // min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    dateInput: true
 	});
 	$("#operating_hrs_close").kendoTimePicker({
-	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    // min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    dateInput: true
 	});
 });
 </script>

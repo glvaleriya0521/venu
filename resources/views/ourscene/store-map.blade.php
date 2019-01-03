@@ -130,7 +130,7 @@
           </div>
       </div>
     </div>
-    <div id="map"></div>
+    <div id="map" style="height: 70%;"></div>
 @stop
 
 @section('my-events-scripts')
