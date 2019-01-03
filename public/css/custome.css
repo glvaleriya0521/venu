@@ -29,6 +29,7 @@ div.input-row:nth-child(5) > div:nth-child(1) > label:nth-child(2),
 
 #map-canvas img {
 	max-width: none !important;
+	height: 100px;
 }
 .gm-style-iw {
 	width: 350px !important;
@@ -412,7 +413,9 @@ a.socialIcon:hover, .socialHoverClass {
 	color: white;
 }
 
-
+.nav-wrapper a {
+	font-size: 16px;
+}
 /****************************************/
 /*.input-row .input-field input{
 	border: solid 1px !important;

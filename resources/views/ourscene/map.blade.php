@@ -73,8 +73,14 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		  var content = '<div id="iw-container">' +
 		                    '<div class="iw-title">' + name + '</div>' +
 		                    '<div class="iw-content">' +
-		                      '<div class="iw-subTitle">History</div>' +
-		                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt=" '+ name + '" height="115" width="83">' +
+		                      '<div class="iw-subTitle">History</div>';
+		                      if (image == "") {
+		                      	content = content + '<img class="img-responsive" src="' +'{{ asset('images/img/blank_venue.png') }}' + '" alt=" '+ name + '" height="115" width="83">';
+		                      }
+		                      else {
+		                      	content = content + '<img class="img-responsive" src="' +image + '" alt=" '+ name + '" height="115" width="83">';
+		                      }
+		                      content = content +
 		                      '<p>' + description + '</p>' +
 		                      '<div class="iw-subTitle">Contacts</div>' +
 		                      '<p>' + unit_street +', ' + city + ', ' + '<br>' + state + '<br>'+

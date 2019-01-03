@@ -25,27 +25,27 @@
 				-->
 				<div class="col s2 m2 5">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>MY EVENTS</a>
+						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>My Events</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>CALENDAR</a>
+						<a href="{{ action('EventController@getMyEventsEvents') }}" @if(Request::is('my-events/*')) class="active" @endif>Calendar</a>
 					@endif
 
 				</div>
 				<div class="col s3 m3 7" style="width: 17%">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL ARTISTS</a>
+						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>Local Artists</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>LOCAL VENUES</a>
+						<a href="{{ action('MapController@index') }}" @if(Request::is('view-map/*')) class="active" @endif>Members</a>
 					@endif
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem;">CREATE EVENT/PROMOTION</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Create Event/Promotion</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">BOOK A SHOW</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Book a Show</a>
 					@endif
 				</div>
 				<div class="col s3 m3 7" style="margin-left: 22%">
@@ -83,10 +83,10 @@
 			<ul class="right hide-on-large-only">
 		      	<li>
 		      		@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">CREATE EVENT</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Create Event</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">REQUEST A SHOW</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Requests a Show</a>
 					@endif
 				</li>
 			</ul>
@@ -155,7 +155,7 @@
 			<li class="sidebar-nav"><a href="{{ url('/settings') }}">	Settings 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/about-us') }}">	About 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/faq') }}">	FAQs 	</a></li>
-			<li class="sign-out"><a href="{{ url('/logout') }}">	SIGN OUT	</a></li>
+			<li class="sign-out"><a href="{{ url('/logout') }}">	Sign Out	</a></li>
 			<!-- End of drawer menu -->
   		</ul>
 	</div>
