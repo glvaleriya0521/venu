@@ -871,6 +871,10 @@ a:visited {
   font-size : 1.25rem;
 }
 
+#main-navigation-1 .brand-logo:hover {
+  background-color: #000;
+}
+
 #main-navigation-1 .brand-logo * {
   vertical-align : middle;
 }
@@ -910,6 +914,7 @@ a:visited {
 }
 
 #main-navigation-1-dropdown li:hover {
+  color            : #fff;
   background-color : rgba(26, 120, 246, 1.0);
 }
 
