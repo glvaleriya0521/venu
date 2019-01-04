@@ -3,7 +3,7 @@ use OurScene\Models\User;
 ?>
 
 <!-- Artist Genres Modal -->
-  <div id="artist-genre-modal" class="modal" style="position: fixed; top: 10%; left: 10%; width: 50%; height: 500px;">
+  <div id="artist-genre-modal" class="modal" style="position: fixed; top: 10%; left: 10%; width: 87%; height: 500px;">
     <div class="modal-content">
     	<h5>GENRE</h5>
 		<div class="row input-field">

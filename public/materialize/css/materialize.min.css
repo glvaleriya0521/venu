@@ -3420,6 +3420,7 @@ input[type=range]+.thumb {}
   left        : auto;
   width       : 100%;
   margin-left : auto;
+  margin-bottom: 1em !important;
 }
 
 .row .col.offset-s1 {
@@ -4563,10 +4564,11 @@ footer.page-footer .footer-copyright {
 @media
   only screen
   and (max-width : 977px) {
-    .card #about-us-card,
-    .card #faq-card {
-      left: 5%;
-      width: 90%;
+    #about-us-card,
+    #faq-card,
+    #terms-of-service-card {
+      left: 5% !important;
+      width: 90% !important;
     }
 
 }

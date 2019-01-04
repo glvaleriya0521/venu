@@ -18,14 +18,14 @@ use OurScene\Models\User;
 @section('content')
 <div id="register-venue" class="main body-reg-venue">
 	<div class="card registration-panel">
-		
+
 		<div class="register-heading">
 			<div>
 				<img id="user-type-icon" src="{{asset('images/icons/artist.svg')}}" />
 				<span>Register as <b>Venue</b> </span>
 			</div>
 		</div>
-		
+
 		<div class="row" style="margin: 0;">
 			<div class="col s12 m12 l12">
 				@if (count($errors) > 0)
@@ -71,7 +71,7 @@ use OurScene\Models\User;
 
 				<div class="row">
 		    		<div class="col s12 m12 l12 input-field">
-						<img 	id="profile-picture-preview" class="profile-picture-preview" src="{{asset('images/icons/artist.svg')}}"/>
+						<img 	id="profile-picture-preview" class="profile-picture-preview" src="{{asset('images/icons/profile-pic.png')}}"/>
 						<input  id="profile-picture" type="file"  class="form-control" name="profile-picture" onchange="loadProfilePicture(event)"/>
 					</div>
 				</div>
@@ -381,7 +381,7 @@ use OurScene\Models\User;
 
 				if(no_error){
 					register_venue_form_validated=true;
-					
+
 					if ($('#paypal-number').val() == '' && $('#paypal-email').val() == '') {
 						$('#register-venue-form').submit();
 					}else{
@@ -393,14 +393,14 @@ use OurScene\Models\User;
 						          xhr.setRequestHeader('Authorization', 'Basic ' + btoa(paypal_client_id));
 						          xhr.setRequestHeader('Accept-Language', 'en_US');
 						     },
-						     dataType: "json", 
+						     dataType: "json",
 						     success: function(data){
 
 						     }
 						 }).done(function(data){ // Register Credit Card in PAYPAL API VAULT
 						    $.ajax({
 						         url: paypal_api_url+"/v1/vault/credit-card",
-						         type: "POST", 
+						         type: "POST",
 						         data: JSON.stringify({
 						          "number"	: $('#paypal-number').val().replace(new RegExp("-", 'g'),""),
 						          "payer_id": $('#paypal-email').val(),
