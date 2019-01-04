@@ -120,6 +120,19 @@ class EmailSender{
 		});
 	}
 
+	public static function mailToHelp($data){
+
+		$user = $data['user'];
+		$content = $data['content'];
+
+
+		$response = Mail::send('emails.help', ['user' => $user, 'content' => $content], function ($m) use ($user) {
+			$m->from($user->email, $user->name);
+			$m->to('glvaleriya052@gmail.com', $user->name)->subject('I need help!');
+		});
+
+	}
+
 }
 
 ?>

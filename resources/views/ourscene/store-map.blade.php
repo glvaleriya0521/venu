@@ -111,11 +111,11 @@
     <div class="row direct-container">
       <div class="col-md-4">
           <input id="origin-input" class="controls store-direct" type="text"
-              placeholder="Enter an origin location">
+              placeholder="Enter an origin location" style="color: black;">
       </div>
       <div class="col-md-4">
          <input id="destination-input" class="controls store-direct" type="text"
-          placeholder="Enter a destination location">
+          placeholder="Enter a destination location" style="color: black;">
       </div>
       <div class="col-md-4">
           <div id="mode-selector" class="controls store-direct">

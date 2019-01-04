@@ -151,10 +151,11 @@
 					<span class="badge red messages-counter-icon"></span>
 				</a>
 			</li>
-			<!-- <li class="sidebar-nav"><a href="{{ url('/profile')  }}">	My Profile 	</a></li> -->
 			<li class="sidebar-nav"><a href="{{ url('/settings') }}">	Settings 	</a></li>
+			<li class="sidebar-nav"><a href="{{ url('/dashboard')  }}">	Dashboard </a></li>
 			<li class="sidebar-nav"><a href="{{ url('/about-us') }}">	About 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/faq') }}">	FAQs 	</a></li>
+			<li class="sidebar-nav"><a href="{{ url('/help') }}">	Help 	</a></li>
 			<li class="sign-out"><a href="{{ url('/logout') }}">	Sign Out	</a></li>
 			<!-- End of drawer menu -->
   		</ul>
@@ -168,13 +169,15 @@
 
 <div>
 	<ul id="main-navigation-1-dropdown" class="dropdown-content">
-		<!-- <li><a href="{!! url('/profile') !!}">My Profile</a></li> -->
-		<!-- <li class="divider"></li> -->
 		<li><a href="{!! url('/settings') !!}">Settings</a></li>
+		<li class="divider"></li>
+		<li><a href="{!! url('/dashboard') !!}">Dashboard</a></li>
 		<li class="divider"></li>
 		<li><a href="{!! url('/about-us') !!}">About Us</a></li>
 		<li class="divider"></li>
 		<li><a href="{!! url('/faq') !!}">FAQs</a></li>
+		<li class="divider"></li>
+		<li><a href="{!! url('/help') !!}">Help</a></li>
 		<li class="divider"></li>
 		<li><a href="{!! url('/logout') !!}">Sign out</a></li>
 	</ul>

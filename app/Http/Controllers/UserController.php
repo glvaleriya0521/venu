@@ -38,6 +38,24 @@ class UserController extends Controller {
 	 *
 	 * @return void
 	 */
+	public function help(){
+
+		return View::make('ourscene.help.help');
+
+	}
+
+	public function postEmail(){
+
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+		$content = $input['description'];
+		$user = User::find(Session::get('id'));
+		$data['user'] 		= $user;
+		$data['content'] 	= $content;
+		EmailSender::mailToHelp($data);
+		return Redirect::to('/');
+	}
+
 	public function __construct()
 	{
 		$this->middleware('auth.login',

@@ -86,11 +86,9 @@
 					<div class="row property-section">
 						<div class="label col s12 m12 l12 profile-title">Equipment</div>
 						<div class="col s12 m12 l12 profile-description">
-							<ul>
 							@foreach ($equipments as $equip)
-							 	<li>{{$equip->name}} </li>
+							 	<span>{{$equip->name}}, </span>
 							@endforeach
-							</ul>
 						</div>
 					</div>
 				</div>

@@ -20,6 +20,8 @@ Route::get('/fillLatLon', 'UserController@fillLatLon');
 Route::get('/', 'HomeController@getIndex');
 
 /* Legal */
+Route::get('/help', 'UserController@help');
+Route::post('/help', 'UserController@postEmail');
 
 Route::get('/legal/privacy-policy', 'HomeController@getPrivacyPolicy');
 Route::get('/legal/copyright-policy', 'HomeController@getCopyrightPolicy');

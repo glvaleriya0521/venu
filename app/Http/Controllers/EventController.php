@@ -489,7 +489,6 @@ class EventController extends Controller {
 			$service->request_date = new MongoDate();
 			$service->payment_status = 'unpaid';
 			$service->equipments = $equipments;
-			$service->guests = $guest_lists;
 
 			$service->save();
 
@@ -520,6 +519,8 @@ class EventController extends Controller {
 				$service->request_date = new MongoDate();
 				$service->payment_status = 'unpaid';
 				$service->equipments = [];
+				$service->guests = $guest_lists;
+
 
 				$service->save();
 

@@ -220,7 +220,7 @@ Required items are indicated with <span class="required-color">*</span>.
 	</div>
 </div>
 
-@if(Session::get('user_type') == 'artist')
+@if(Session::get('user_type') == 'venue')
 <!-- Invited guests -->
 	<div id="equipments" class="section">
 		<div class="section-header"><img src="{{ asset('images/icons/house-equipment.svg') }}" width="25" style="position:relative;top:.5em;margin-right:.4em;" alt="" />

@@ -416,6 +416,21 @@ a.socialIcon:hover, .socialHoverClass {
 .nav-wrapper a {
 	font-size: 16px;
 }
+
+#help-title {
+	 text-align: center;
+	 color: white;
+     size: 10px; 
+}
+
+#help-form {
+	width: 70%;
+    margin: auto;
+    background: black;
+    border-radius: 20px;
+    border-color: red;
+    margin-top: 24px;
+}
 /****************************************/
 /*.input-row .input-field input{
 	border: solid 1px !important;

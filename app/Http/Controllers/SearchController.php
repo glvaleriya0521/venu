@@ -44,9 +44,87 @@ class SearchController extends Controller {
 	public function distanceByZipcde($zipcodeFrom, $zipcodeTo) {
 		return $zipcodeFrom - $zipcodeTo;
 	}
-	/* Search */
 
+	public function distanceAsMile(
+	  $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 3959)
+	{
+		  // convert from degrees to radians
+		  $latFrom = deg2rad($latitudeFrom);
+		  $lonFrom = deg2rad($longitudeFrom);
+		  $latTo = deg2rad($latitudeTo);
+		  $lonTo = deg2rad($longitudeTo);
+
+		  $latDelta = $latTo - $latFrom;
+		  $lonDelta = $lonTo - $lonFrom;
+
+		  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+		    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+		  return $angle * $earthRadius;
+	}
+	
+	/* Search */
 	public function getSearch(){
+
+		// get Current user info
+		$user_id = Session::get('id');
+		$user 	 = User::find($user_id);
+		$locality = $user->address['city'];
+		// $locality = null;
+		$zipcode = $user->address['zipcode'];
+		$centerLat = $user->latlon['lat'];
+		$centerLon = $user->latlon['lng'];
+
+		// Index view for search
+		Input::merge(array_map('trim', Input::all()));
+		$input = filter_var_array(Input::all(), FILTER_SANITIZE_STRIPPED);
+		$name = null;
+		$genre =null;
+		$search_results = true;
+		$isSingleParam = false;
+		$singleParam = null;
+		if (isset($input['params'])) {
+			$singleParam = $input['params'];
+			$name = $singleParam;
+			$genre = $singleParam;
+			// $locality = $singleParam;
+			$locality = null;
+			$isSingleParam = true;
+			if ($user->user_type == 'artist') {
+				$all = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->paginate(6);
+			} else {
+				$all = User::searchArtists($name, $genre, $locality)->isActive()->paginate(6);
+			}
+			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
+		}else{
+			if ($user->user_type == 'artist') {
+				$users = User::where('user_type', 'venue')->where('address.city', $locality)->get();
+				foreach ($users as $user) {
+					$lat = $user->latlon['lat'];
+					$lon = $user->latlon['lng'];
+					$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+					$user ->distance = $distance;
+					$user->save();
+				}
+				$all = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->paginate(6);
+			} else {
+				$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+				foreach ($users as $user) {
+					$lat = $user->latlon['lat'];
+					$lon = $user->latlon['lng'];
+					$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+					$user ->distance = $distance;
+					$user->save();
+				}
+				$all = User::searchArtists($name, $genre, $locality)->isActive()->paginate(6);
+			}
+			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
+		}
+
+		return View::make('ourscene.search', compact('all','search_results','name','genre','locality','isSingleParam','singleParam'));
+	}
+					
+		/* Search */
+	public function getSearchBackup(){
 
 		// get Current user info
 		$user_id = Session::get('id');

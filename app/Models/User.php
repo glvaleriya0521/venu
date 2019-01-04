@@ -108,8 +108,11 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 			// 		)
 			// 	]);
 
-			if($locality)
+			if($locality) {
 				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+				$query->where('distance', '<',  30.0);
+			}
+
 		});
 
 		return $query;
@@ -214,14 +217,20 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 			// 		)
 			// 	]);
 
-			if($locality){
+
+			if($locality) {
+				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+				$query->where('distance', '<',  30.0);
+			}
+			
+			// if($locality){
 			// 	$query->orWhere('address.unit', 'LIKE', '%'.$locality.'%');
 			// 	$query->orWhere('address.street', 'LIKE', '%'.$locality.'%');
-				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+				// $query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
 			// 	$query->orWhere('address.zipcode', 'LIKE', '%'.$locality.'%');
 			// 	$query->orWhere('address.state', 'LIKE', '%'.$locality.'%');
 			// 	$query->orWhere('address.country', 'LIKE', '%'.$locality.'%');
-			}
+			// }
 		});
 
 		// $query->select('address.city');

@@ -170,6 +170,9 @@ use OurScene\Models\User;
 				          </div>
 				        </div>
 					</div>
+
+
+
 					<div class="col s6 m4 l4" style="padding-left: 68%; padding-top: 12px;">
 						<input type="submit" class="btn btn-large ourscene-btn-1" value="SAVE" required/>
 					</div>
@@ -229,6 +232,60 @@ use OurScene\Models\User;
 	</div>
 </div>
 {!! Form::close() !!}
+<div class="row" id="equipment-list">
+
+	<div class="label col s12 m12 l12 profile-title" style="margin-bottom:10px; margin-left: 0.2%;"> Equipments </div>
+	<table id="equipment-list-table" class="col s12 m10 l10 eqpmnt-table striped highlight centered" style="width: 99%;">
+	    <thead>
+	      <tr>
+	        <th data-field="name">Name</th>
+	        <th data-field="inclusions">Contents</th>
+			<th>Option</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			<div class='preloader col s12 m10 l10' style="display:none;">
+				<div class="progress">
+						<div class="indeterminate"></div>
+				</div>
+			</div>
+			<!-- <tr class=""></tr> -->
+			@if(count($equipments) > 0)
+				@foreach($equipments as $equipment)
+				<tr>
+					<td class="hide"><input type="hidden" class="equipment_id" value="{{$equipment['_id']}}"></td>
+					<td class="hide"><input type="hidden" class="equipment_type" value="{{$equipment['type']}}"></td>
+					<td class="equip_name">{!! $equipment->name !!}</td>
+				   	<td>
+			      		<ul>
+			      		@if(isset($equipment->inclusion))
+				      		@foreach($equipment->inclusion as $inclusion)
+				      			<li>{!! $inclusion !!}</li>
+				      		@endforeach
+				      	@endif
+			      		</ul>
+			      	</td>
+					<td>
+						<a href="javascript:void(0);" class="btn-flat edit-equipment-trigger"><i class="material-icons">mode_edit</i></href>
+						<a href="javascript:void(0);" class="btn-flat delete-equipment-trigger"><i class="material-icons">delete</i></href>
+					</td>
+				 </tr>
+				@endforeach
+			@else
+				<tr><td colspan="3">No Equipment Yet.<td><tr>
+			@endif
+		</tbody>
+    </table>
+</div>
+
+
+<div class="row">
+	<div class=" col s12 m4 l4">
+		<button data-target="add-update-equipment-modal" class="btn btn-link add-more-media-btn modal-trigger" style="text-transform: none;">+ Add Equipment</button>
+	</div>
+</div>
+</br>
+</br>
 @endif
 <script>
 	var image = <?php echo $image_counter; ?>;
