@@ -1278,7 +1278,8 @@ a:visited {
 }
 
 #event-form {
-  left          : 15%;
+  left          : 5%;
+  width         : 90%;
   margin        : 0;
   border-radius : 2em;
 }
@@ -2270,6 +2271,16 @@ div.row:nth-child(4) > div:nth-child(1) {
   and (min-width : 993px) {
   #search-results #search-form {
     padding : 20px 25px;
+  }
+}
+
+@media
+  only screen
+  and (max-width : 992px) {
+  #search-results #search-form,
+  #search-results #search-results-item {
+    left  : 5%;
+    width : 90%;
   }
 }
 
