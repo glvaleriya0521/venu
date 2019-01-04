@@ -49,20 +49,20 @@
 		<div class="row" style="margin-left: 0;">
 			<span class="col s12 m12 l12 section-title">
 				I’m a venue. How do I create a show?
-			</span>	
+			</span>
 			<div class="col s12 m12 l12">
-			<ol>
-				<li>
-					Log In to Your Account
-				</li>
-				<li>
-					Click “Book a Show” on the right hand side
-				</li>
-				<li>
-					Fill out the Event details and click “Create.”
-				</li>
-			</ol>
-			</p>
+				<ol>
+					<li>
+						Log In to Your Account
+					</li>
+					<li>
+						Click “Book a Show” on the right hand side
+					</li>
+					<li>
+						Fill out the Event details and click “Create.”
+					</li>
+				</ol>
+		  </div>
 		</div>
 		<div class="row">
 			<span class="col s12 m12 l12 section-title">
@@ -80,7 +80,7 @@
 						Fill out the Event details and click “Create.”
 					</li>
 				</ol>
-			</p>
+			</div>
 		</div>
 		<div class="row">
 			<span class="col s12 m12 l12 section-title">
