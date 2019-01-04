@@ -4565,8 +4565,8 @@ footer.page-footer .footer-copyright {
   and (max-width : 977px) {
     .card #about-us-card,
     .card #faq-card {
-      left: 5%;
-      width: 90%;
+      left: 5% !important;
+      width: 90% !important;
     }
 
 }
