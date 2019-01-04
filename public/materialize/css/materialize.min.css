@@ -4564,7 +4564,8 @@ footer.page-footer .footer-copyright {
   only screen
   and (max-width : 977px) {
     #about-us-card,
-    #faq-card {
+    #faq-card,
+    #terms-of-service-card {
       left: 5% !important;
       width: 90% !important;
     }
