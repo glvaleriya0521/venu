@@ -91,7 +91,7 @@ use OurScene\Models\User;
 
 				<div class="row">
 		    		<div class="col s12 m12 l12 input-field">
-						<img id="profile-picture-preview" class="profile-picture-preview circle" src="{{asset('images/icons/artist.svg')}}"/>
+						<img id="profile-picture-preview" class="profile-picture-preview circle" src="{{asset('images/icons/profile-pic.png')}}"/>
 						<input id="input-profile-picture" type="file"  class="form-control" name="profile-picture" onchange="loadProfilePicture(event)"/>
 					</div>
 				</div>
