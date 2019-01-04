@@ -86,7 +86,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Create Event</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Requests a Show</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Book a Show</a>
 					@endif
 				</li>
 			</ul>
@@ -120,7 +120,7 @@
 			<li>
 				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
 					<img src="{{asset('images/icons/Venu.png')}}" class="brand-logo-icon">
-					<b>VenU</b>
+					<!--<b>VenU</b>-->
 				</a>
 			</li>
 			<li>
