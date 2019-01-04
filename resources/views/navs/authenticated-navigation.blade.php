@@ -117,11 +117,9 @@
 -->
 	    <!-- Drawer Menu -->
 		<ul class="side-nav" id="mobile-demo" style="z-index:9999;">
-			<li>
-				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
+			<li class="brand-logo left">
 					<img src="{{asset('images/icons/Venu.png')}}" class="brand-logo-icon">
 					<!--<b>VenU</b>-->
-				</a>
 			</li>
 			<li>
 				<!-- Search input -->
@@ -144,7 +142,7 @@
 				</div>
 				<span>{{Session::get('name')}}</span>
 			</li>
-			<li class="sidebar-nav"><a href="{{ url('/search')   }}">	Home 	 	</a></li>
+			<li class="sidebar-nav"><a href="{{ url('/view-map/search')   }}">	Home 	 	</a></li>
 			<li class="sidebar-nav">
 				<a href="{{ url('/messages') }}">
 					Messages
