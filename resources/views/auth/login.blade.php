@@ -40,7 +40,7 @@
 	</div>
 	<div id="login-form-container">
 		<div id="login-heading">
-			<span id="user-type-label"><b>{{ $user_type }} Login</b></span>
+			<span id="user-type-label"><b> Login</b></span>
 		</div>
 		<div id="login-body">
 
