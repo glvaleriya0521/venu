@@ -4117,6 +4117,9 @@ nav .brand-logo.center {
     right : 0.5rem;
     left  : auto;
   }
+  .row .mobile-nav-display {
+    display: none;
+  }
 }
 
 nav .brand-logo.right {
