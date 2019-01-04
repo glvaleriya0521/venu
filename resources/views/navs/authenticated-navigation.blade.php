@@ -48,7 +48,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Book a Show</a>
 					@endif
 				</div>
-				<div class="col s3 m3 7" style="margin-left: 22%">
+				<div class="col s3 m3 7" style="width: 30%">
 					<ul style="display:inline">
 			        <li style="margin-left: 5%">
 			        	<a href="{!! url('/messages') !!}">
