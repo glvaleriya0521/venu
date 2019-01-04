@@ -4563,8 +4563,8 @@ footer.page-footer .footer-copyright {
 @media
   only screen
   and (max-width : 977px) {
-    #about-us-card .card,
-    #faq-card .card {
+    #about-us-card,
+    #faq-card {
       left: 5% !important;
       width: 90% !important;
     }
