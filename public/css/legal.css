@@ -50,20 +50,20 @@
 
 .ourscene-btn-1 {
   color            : #FFF;
+  border-radius    : 10px;
   background-color : rgba(26,120,246,1.0);
-  border-radius: 10px;
 }
 
 .ourscene-btn-1:focus,
 .ourscene-btn-1:hover {
   color            : #FFF;
+  border-radius    : 10px;
   background-color : rgba(26,120,246,1.0);
-  border-radius: 10px;
 }
 
 .ourscene-btn-2 {
   color            : #FFF;
-  background-color : #46bfa7;
+  background-color : rgba(26,120,246,1.0);
 }
 
 .ourscene-btn-3 {
