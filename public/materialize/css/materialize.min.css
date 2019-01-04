@@ -3619,10 +3619,11 @@ input[type=range]+.thumb {}
   }
 
   .row .col.m8 {
-    right       : auto;
-    left        : auto;
-    width       : 100%;
-    margin-left : auto;
+    right         : auto;
+    left          : auto;
+    width         : 100%;
+    margin-bottom : 1.75rem;
+    margin-left   : auto;
   }
 
   .row .col.m9 {
@@ -4559,6 +4560,17 @@ footer.page-footer .footer-copyright {
   transition       : box-shadow .25s;
 }
 
+@media
+  only screen
+  and (max-width : 977px) {
+    .card #about-us-card,
+    .card #faq-card {
+      left: 5%;
+      width: 90%;
+    }
+
+}
+
 .card .card-title {
   display     : inline-flex;
   font-size   : 24px;
@@ -4839,8 +4851,8 @@ footer.page-footer .footer-copyright {
 
 .tabs {
   display          : -webkit-flex;
-  display          : -ms-flexbox;
   display          : flex;
+  display          : -ms-flexbox;
   position         : relative;
   width            : 100%;
   height           : 48px;
@@ -5676,7 +5688,7 @@ textarea.materialize-textarea {
   box-sizing       : content-box;
   width            : 100%;
   height           : 3rem;
-  margin           : 0 0 20px 0;
+  margin           : .5rem 0 20px 0;
   padding          : 0;
   border           : none;
   border-bottom    : 1px solid #9e9e9e;
