@@ -531,7 +531,7 @@ body button:focus {
 
 footer {
   height           : 15%;
-  background-color : #534d93 !important;
+  background-color : #000 !important;
 }
 
 @media
@@ -727,6 +727,20 @@ a:visited {
   (max-width : 601px) {
   .signup-link-div {
     padding-top : 20px;
+  }
+
+  #change-type-div #m-ourscene-logo {
+    height : 6em;
+  }
+
+  body,
+  html {
+    background-color : #000;
+  }
+
+  .registration-panel {
+    left  : 5%;
+    width : 90%;
   }
 }
 
@@ -1462,7 +1476,7 @@ body button:focus {
 
 footer {
   height           : 15%;
-  background-color : #534d93 !important;
+  background-color : #000 !important;
 }
 
 @media
@@ -1773,7 +1787,11 @@ a:visited {
     margin-left : 5%;
     color       : #fff;
     background  : rgba(0, 0, 0, 0.7);
-    /* opacity  : .9; */
+    /**
+    * opacity
+    *
+    * : .9;
+    */
     /* transform: rotate(0); */
   }
 }
@@ -1810,7 +1828,7 @@ a:visited {
   }
 }
 
-/* ***************22222222222222**************************************** */
+/* **************22222222222222**************************************** */
 
 .reg-step-tab {
   margin : 0 20px;
@@ -1827,7 +1845,7 @@ a:visited {
   font-size : 14px;
 }
 
-/* ******************************11111111********************************************* */
+/* *****************************11111111********************************************* */
 
 .inactive-reg-step-tab span {
   color : #7f7f7f;
@@ -2007,7 +2025,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .venu-time {
   margin-left : 4% !important;
 }
- 
+
 .k-picker-wrap input {
-  color: white !important;
+  color : white !important;
 }
