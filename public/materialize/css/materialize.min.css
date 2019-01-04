@@ -2789,7 +2789,7 @@ ul.staggered-list li {
   }
 
   #main-navigation-1 > div > div > div {
-    display : none;
+    display : none !important;
   }
 }
 
