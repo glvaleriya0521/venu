@@ -8,13 +8,13 @@
 				How much does it cost?
 			</span>
 			<p class="col s12 m12 l12">
-				$1 per show booked on VenU. 
-				That’s it! 
+				$1 per show booked on VenU.
+				That’s it!
 				Our goal at VenU is to help artists and venues create more shows
-				and ultimately to get more people to come out and enjoy them. 
+				and ultimately to get more people to come out and enjoy them.
 				Your dollar helps us do it!
 			</p>
-		</div>		
+		</div>
 		<div class="row">
 			<span class="col s12 m12 l12 section-title">
 				How do I sign up?
@@ -38,19 +38,19 @@
 				What if my calendar changes and I need to cancel a booking?
 			</span>
 			<p class="col s12 m12 l12">
-				As with any relationship, it is important to maintain your engagements 
-				to protect your reputation and continue bringing in new bookings. 
-				Of course, things come up and you may need to adjust your calendar from time to time. 
-				If this happens, please contact the artist or venue directly as soon as possible 
-				in order to reschedule your booking. We reserve the right to discontinue service 
+				As with any relationship, it is important to maintain your engagements
+				to protect your reputation and continue bringing in new bookings.
+				Of course, things come up and you may need to adjust your calendar from time to time.
+				If this happens, please contact the artist or venue directly as soon as possible
+				in order to reschedule your booking. We reserve the right to discontinue service
 				for artists or venues who do not maintain their commitments.
 			</p>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-left: 0;">
 			<span class="col s12 m12 l12 section-title">
 				I’m a venue. How do I create a show?
 			</span>	
-			<div class="col s12 m12 l12">		
+			<div class="col s12 m12 l12">
 			<ol>
 				<li>
 					Log In to Your Account
@@ -59,7 +59,7 @@
 					Click “Book a Show” on the right hand side
 				</li>
 				<li>
-					Fill out the Event details and click “Create.”	
+					Fill out the Event details and click “Create.”
 				</li>
 			</ol>
 			</p>
@@ -77,7 +77,7 @@
 						Click “Request a Show” on the right hand side
 					</li>
 					<li>
-						Fill out the Event details and click “Create.”	
+						Fill out the Event details and click “Create.”
 					</li>
 				</ol>
 			</p>
