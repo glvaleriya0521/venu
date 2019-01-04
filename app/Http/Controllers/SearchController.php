@@ -119,7 +119,6 @@ class SearchController extends Controller {
 			}
 			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
 		}
-
 		return View::make('ourscene.search', compact('all','search_results','name','genre','locality','isSingleParam','singleParam'));
 	}
 					

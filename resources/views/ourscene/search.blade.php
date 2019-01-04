@@ -56,7 +56,7 @@
 				@endif
 
 				@if($singleParam == "")
-					Results (within 30 mile)
+					Results (within 30 miles)
 				@else
 					Results for "{{$singleParam}}"
 				@endif
