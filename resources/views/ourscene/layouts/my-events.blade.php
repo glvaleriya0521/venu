@@ -8,9 +8,9 @@
 
 	@include('navs.main-navigation-3',
 			['items' => array(
-				array('text' => "My Events", 'image' => asset('images/icons/calendar-events-purple.svg'), 'image-active' => asset('images/icons/calendar-events-white.svg'), 'url' => action('EventController@getMyEventsEvents')),
-				array('text' => "Calendar", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('EventController@getMyEventsCalendar')),
-				array('text' => "Requests", 'image' => asset('images/icons/calendar-purple.svg'), 'image-active' => asset('images/icons/calendar-white.svg'), 'url' => action('EventController@getRequests')),
+				array('text' => "My Events", 'image' => asset('images/icons/event-500-blue.png'), 'image-active' => asset('images/icons/event-500-white.png'), 'url' => action('EventController@getMyEventsEvents')),
+				array('text' => "Calendar", 'image' => asset('images/icons/calendar-500-blue.png'), 'image-active' => asset('images/icons/calendar-500-white.png	'), 'url' => action('EventController@getMyEventsCalendar')),
+				array('text' => "Requests", 'image' => asset('images/icons/requestss-500-blue.png'), 'image-active' => asset('images/icons/requests-500-white.png'), 'url' => action('EventController@getRequests')),
 				)
 			]
 
@@ -21,7 +21,7 @@
 @stop
 
 @section('scripts')
-	
+
 	@yield('my-events-scripts')
 
 @stop
