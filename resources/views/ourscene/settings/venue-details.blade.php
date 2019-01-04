@@ -166,7 +166,7 @@ use OurScene\Models\User;
 				          </div>
 				          <div class="input-field col s12 m8 l4">
 				            <input type="radio" name="serve_food" class="serve_food" id="none_food" value="none_food"/>
-				            <label for="none_food" class="active">NoneFood</label>
+				            <label for="none_food" class="active">No Food</label>
 				          </div>
 				        </div>
 					</div>

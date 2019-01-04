@@ -257,15 +257,17 @@ class EventController extends Controller {
 		}
 
 		//create event first then tsaka prompt them to pay it.
-
-		$share_event = 'Event name:'.'%20'.$input['title'].'%0A'.
-					   'Description:'.'%20'. $description.'%0A'.
-					   'Start datetime:'.'%20'.$input['start_date'].'%20'.$input['start_time'].'%0A'.
-					   'Opening_time:'.'%20'.$input['opening_time'].'%0A'.
-					   'End datetime:'.'%20'.$input['end_date'].'%20'.$input['end_time'].'%0A'.
-					   'Event type:'.'%20'.$event_type.'%0A'.
-					   'Age allowance:'.'%20'.$age_requirements.'%0A'.
-					   'Venue:'.'%20'.$venue_name;
+		$share_event = 'Hey guys, check out my latest gig I booked on Venu:'.'%0A'.
+						$user_name.'%20'.'appearing at'.'%20'.$venue_name
+						.'%20'.'on'.'%20'.$input['start_date'].'%20'.$input['start_time'].'%0A';
+					   // 'Event name:'.'%20'.$input['title'].'%0A'.
+					   // 'Description:'.'%20'. $description.'%0A'.
+					   // 'Start datetime:'.'%20'.$input['start_date'].'%20'.$input['start_time'].'%0A'.
+					   // 'Opening_time:'.'%20'.$input['opening_time'].'%0A'.
+					   // 'End datetime:'.'%20'.$input['end_date'].'%20'.$input['end_time'].'%0A'.
+					   // 'Event type:'.'%20'.$event_type.'%0A'.
+					   // 'Age allowance:'.'%20'.$age_requirements.'%0A'.
+					   // 'Venue:'.'%20'.$venue_name;
 
 
 		if($user_type == 'venue' && count($artists) == 0){

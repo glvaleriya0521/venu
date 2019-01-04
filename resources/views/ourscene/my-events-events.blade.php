@@ -16,7 +16,7 @@
 
 	<!-- Booked -->
 
-	<div class="card events-under-status" style="border: 1px solid #46bfa7;">
+	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
 		<div class="header-title booked-color">
 			<img class="header-icon" src="{{ asset('images/icons/approved.svg') }}"/>
 			Booked
@@ -101,7 +101,7 @@
 
 	<!-- Pending -->
 
-	<div class="card events-under-status" style="border: 1px solid rgba(238, 143, 31, 1.0);">
+	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
 		<div class="header-title pending-color">
 			<img class="header-icon" src="{{ asset('images/icons/pending.svg') }}"/>
 			Pending
@@ -187,7 +187,7 @@
 
 	<!-- Next time -->
 
-	<div class="card events-under-status" style="border: 1px solid rgba(139, 0, 0, 1)">
+	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
 		<div class="header-title next-time-color">
 			<img class="header-icon" src="{{ asset('images/icons/next-time.svg') }}"/>
 			Next time

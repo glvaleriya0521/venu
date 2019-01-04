@@ -55,7 +55,7 @@ Required items are indicated with <span class="required-color">*</span>.
 			<label for="start-date" class="active time-label"><span class="required-color">*</span> Start date</label>
 		</div>
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="" name="start_time" id="start-time" placeholder="" value="<?= $start_time; ?>" required>
+			<input type="text" class="" name="start_time" id="start-time" placeholder="" value="10:00 AM" required>
 			<label for="start-time" class="active"><span class="required-color">*</span> Start time</label>
 		</div>
 	</div>
@@ -66,7 +66,7 @@ Required items are indicated with <span class="required-color">*</span>.
 			<label for="end-date" class="active  time-label"><span class="required-color">*</span> End date</label>
 		</div>
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="" name="end_time" id="end-time" placeholder="" value="<?= $end_time; ?>" required>
+			<input type="text" class="" name="end_time" id="end-time" placeholder="" value="10:00 AM" required>
 			<label for="end-time" class="active"><span class="required-color">*</span> End time</label>
 		</div>
 	</div>
@@ -76,7 +76,7 @@ Required items are indicated with <span class="required-color">*</span>.
 	</div>
 	<div class="row input-row">
 		<div class="input-field col s12 m8 l4">
-			<input type="text" class="" name="opening_time" id="opening-time" placeholder="" @if(isset($opening_time) && $opening_time!="") value="{{$opening_time}}" @endif/>
+			<input type="text" class="" name="opening_time" id="opening-time" placeholder="" @if(isset($opening_time) && $opening_time!="") value="10:00 AM" @else value="10:00 AM" @endif/>
 			<label for="opening-time" class="active"> Doors</label>
 		</div>
 	</div>
@@ -385,13 +385,16 @@ $(document).ready(function() {
 	// 	scrollbar: true
 	// });
 	$("#start-time").kendoTimePicker({
-	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    // min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    dateInput: true
 	});
 	$("#end-time").kendoTimePicker({
-	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    // min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    dateInput: true
 	});
 	$("#opening-time").kendoTimePicker({
-	    min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    // min: new Date(2000, 0, 1, 8, 0, 0) //date part is ignored
+	    dateInput: true
 	});
 
 	$('#start-date').datepicker().on('changeDate', function(ev){

@@ -59,16 +59,12 @@ $(document).on('click', '.map-point1', function(){
 
 var geocoder; //To use later
 var map; //Your map
+var markers = [];
 function codeAddress(factory, origin, id, zipCode, name, description, phone, email, seating_capacity, image, unit_street, city, state) {
     // geocoder.geocode( { 'address': zipCode}, function(results, status) {
       // if (status == google.maps.GeocoderStatus.OK) {
         //Got result, center the map and put it out there
-        var marker = new google.maps.Marker({
-            map: map,
-            // position: results[0].geometry.location,
-            position: factory,
-            title: name
-        });
+       
 		  // InfoWindow content
 		  var content = '<div id="iw-container">' +
 		                    '<div class="iw-title">' + name + '</div>' +
@@ -100,12 +96,22 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		    // greater control over the various content elements
 		    maxWidth: 350
 		  });
-		   
+
+		  var marker = new google.maps.Marker({
+	            map: map,
+	            infowindow: infowindow,
+	            // position: results[0].geometry.location,
+	            position: factory,
+	            title: name
+	        }); 
+		  markers.push(marker);
 		  // This event expects a click on a marker
 		  // When this event is fired the Info Window is opened.
 		  google.maps.event.addListener(marker, 'click', function() {
-		    infowindow.open(map,marker);
-		  });
+		      hideAllInfoWindows(map);
+		      this.infowindow.open(map, this);
+		    });
+
 
 		  google.maps.event.addListener(marker, 'dblclick', function() {
 		    window.location.replace("https://testvenu.glbdd.com/profile/" + id);
@@ -173,7 +179,11 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
     // });
 }
 
-
+function hideAllInfoWindows(map) {
+   markers.forEach(function(marker) {
+     marker.infowindow.close(map, marker);
+  }); 
+}
 
 function initialize() {
 

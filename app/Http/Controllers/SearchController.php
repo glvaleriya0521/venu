@@ -97,7 +97,7 @@ class SearchController extends Controller {
 			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
 		}else{
 			if ($user->user_type == 'artist') {
-				$users = User::where('user_type', 'venue')->where('address.city', $locality)->get();
+				$users = User::where('user_type', 'venue')->get();
 				foreach ($users as $user) {
 					$lat = $user->latlon['lat'];
 					$lon = $user->latlon['lng'];
@@ -107,7 +107,7 @@ class SearchController extends Controller {
 				}
 				$all = User::searchVenues($name, $genre, $locality, $zipcode)->isActive()->paginate(6);
 			} else {
-				$users = User::where('user_type', 'artist')->where('address.city', $locality)->get();
+				$users = User::where('user_type', 'artist')->get();
 				foreach ($users as $user) {
 					$lat = $user->latlon['lat'];
 					$lon = $user->latlon['lng'];
@@ -119,6 +119,7 @@ class SearchController extends Controller {
 			}
 			$all->setPath(env('PAGINATE_URI') . '/view-map/search');
 		}
+		// dd($all);
 		return View::make('ourscene.search', compact('all','search_results','name','genre','locality','isSingleParam','singleParam'));
 	}
 					

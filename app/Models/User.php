@@ -109,7 +109,7 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 			// 	]);
 
 			if($locality) {
-				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+				// $query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
 				$query->where('distance', '<',  30.0);
 			}
 
@@ -219,7 +219,7 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 
 
 			if($locality) {
-				$query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
+				// $query->orWhere('address.city', 'LIKE', '%'.$locality.'%');
 				$query->where('distance', '<',  30.0);
 			}
 			

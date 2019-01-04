@@ -146,7 +146,7 @@
             "seriesname": "pending",
             "data": pending
         }, {
-            "seriesname": "rejected",
+            "seriesname": "next time",
             "data": rejected
         }]
     }
