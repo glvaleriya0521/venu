@@ -745,11 +745,11 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo a:visited {
-  background-color : white;
+  background-color : #fff;
 }
 
 #main-navigation-1 div #mobile-demo a:hover {
-  background-color : white;
+  background-color : rgba(39, 40, 42, 1.0);
 }
 
 #main-navigation-1 div #mobile-demo li.profile-info {
@@ -760,7 +760,7 @@ a:visited {
   height         : auto;
   padding-top    : .5em;
   padding-bottom : .5em;
-  color          : #534d93;
+  color          : rgba(26,120,246,1.0);
   font-size      : 1.3em !important;
   line-height    : 1em;
 }
@@ -802,6 +802,7 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo #search_label i {
+  display   : none;
   position  : relative;
   top       : 50%;
   transform : translateY(-50%);
@@ -1121,9 +1122,9 @@ a:visited {
 }
 
 #my-events-events .events-under-status .content {
-  padding : 0;
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
+  padding                    : 0;
+  border-bottom-right-radius : 2em;
+  border-bottom-left-radius  : 2em;
 }
 
 #my-events-events table tr:not(:first-child) {
