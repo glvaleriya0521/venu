@@ -749,7 +749,8 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo a:hover {
-  background-color : rgba(39, 40, 42, 1.0);
+  color            : #fff;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #main-navigation-1 div #mobile-demo li.profile-info {
@@ -844,9 +845,9 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo>li:nth-child(2) .input-field {
-  width      : 90%;
-  margin     : 0 auto;
-  box-shadow : 0 4px 2px -2px gray;
+  width  : 90%;
+  margin : 0 auto;
+  /* box-shadow : 0 4px 2px -2px gray; remove line under search */
 }
 
 #main-navigation-1 div #mobile-demo>li:nth-child(2) .input-field label {
