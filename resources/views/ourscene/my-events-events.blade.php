@@ -16,7 +16,7 @@
 
 	<!-- Booked -->
 
-	<div class="card events-under-status" style="border: 1px solid #46bfa7;">
+	<div class="card events-under-status" style="border: 1px solid rgba(46, 191, 70, 1.0);">
 		<div class="header-title booked-color">
 			<img class="header-icon" src="{{ asset('images/icons/approved.svg') }}"/>
 			Booked
