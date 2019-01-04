@@ -46,7 +46,7 @@
 				for artists or venues who do not maintain their commitments.
 			</p>
 		</div>
-		<div class="row" style="margin-left: 0;">
+		<div class="row">
 			<span class="col s12 m12 l12 section-title">
 				I’m a venue. How do I create a show?
 			</span>
