@@ -3,7 +3,7 @@ use OurScene\Models\User;
 ?>
 
 <!-- Artist Genres Modal -->
-  <div id="artist-genre-modal" class="modal" style="position: absolute; top: 1580px; left: 50%; width: 94%; height: 500px;">
+  <div id="artist-genre-modal" class="modal" style="position: fixed; top: 10%; left: 10%; width: 50%; height: 500px;">
     <div class="modal-content">
     	<h5>GENRE</h5>
 		<div class="row input-field">
@@ -17,7 +17,7 @@ use OurScene\Models\User;
 			      <div class="collapsible-header" style="padding-bottom: 1em;">
 			     	<input type="checkbox" name="genre[]" id="genre{{$i}}" value="{{$i}}" @if(User::where('_id',Session::get('id'))->first()['artist_genre'] && array_key_exists($i,User::where('_id',Session::get('id'))->first()['artist_genre'])) checked @endif />
 			     	<label for="genre{{$i}}"> {{ $main }} </label>
-			     	<img class="dropdown-icon" src="{{ asset('images/icons/dropdown.svg') }}" style="float:right;width:15px;margin-top:10px;">
+			     	<img class="dropdown-icon" src="{{ asset('images/icons/white-expand-arrow-50.png') }}" style="float:right;width:15px;margin-top:10px;">
 
 			       <?php $i++;?>
 
