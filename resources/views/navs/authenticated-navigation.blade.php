@@ -149,6 +149,7 @@
 					<span class="badge red messages-counter-icon"></span>
 				</a>
 			</li>
+			<li class="sidebar-nav"><a href="{{ url('/my-events/events') }}"> Events </a></li>
 			<li class="sidebar-nav"><a href="{{ url('/settings') }}">	Settings 	</a></li>
 			<li class="sidebar-nav"><a href="{{ url('/dashboard')  }}">	Dashboard </a></li>
 			<li class="sidebar-nav"><a href="{{ url('/about-us') }}">	About 	</a></li>
