@@ -899,13 +899,13 @@ a:visited {
 }
 
 .upload-btn {
-  color            : #534d93;
+  color            : rgba(26,120,246,1.0);
   background-color : #fff;
 }
 
 .upload-btn:hover {
-  color            : #534d93;
-  background-color : #fff;
+  color            : #fff;
+  background-color : rgba(26,120,246,1.0);
 }
 
 .material-upload {
