@@ -99,6 +99,15 @@ div {
   text-align          : center;
   line-height         : 27.0px;
 }
+
+@media
+  only screen
+  and (max-width : 997px) {
+    .artistprofile .payments {
+      width: 85% !important;
+    };
+  }
+
 .artistprofile .account {
   background-color    : rgba(255,255,255,0.0);
   top                 : 110px;
@@ -1937,56 +1946,56 @@ div {
 }
 @-webkit-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @-moz-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @-o-keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
 }
 @keyframes anima-reveal {
   0%
-   
+
   {
       opacity: 0;
     }
-  
-    
+
+
   100%
-   
+
   {
       opacity: 1;
     }
@@ -1998,7 +2007,7 @@ div {
 
 /* START TOOLTIP STYLES */
 [tooltip] {
-  
+
 }
 
 /* Applies to all tooltips */
@@ -2020,13 +2029,13 @@ div {
 }
 [tooltip]::after {
   content: attr(tooltip); /* magic! */
-  
+
   /* most of the rest of this is opinion */
   font-family: Helvetica, sans-serif;
   text-align: center;
-  
-  /* 
-    Let the content set the size of the tooltips 
+
+  /*
+    Let the content set the size of the tooltips
     but this will also keep them from being obnoxious
     */
   min-width: 3em;
@@ -2131,7 +2140,7 @@ div {
   }
 }
 
-/* FX All The Things */ 
+/* FX All The Things */
 [tooltip]:not([flow]):hover::before,
 [tooltip]:not([flow]):hover::after,
 [tooltip][flow^="up"]:hover::before,
@@ -2147,20 +2156,3 @@ div {
 [tooltip][flow^="right"]:hover::after {
   animation: tooltips-horz 300ms ease-out forwards;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

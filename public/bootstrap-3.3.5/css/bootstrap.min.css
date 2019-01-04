@@ -3304,9 +3304,9 @@ input[type=radio] {
 }
 
 input[type=file] {
-  display : block;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 50%;
+  display          : block;
+  width            : 50%;
+  background-color : rgba(255, 255, 255, 0.2);
 }
 
 input[type=range] {
@@ -5361,7 +5361,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 @media
-  (max-device-width : 480px)
+  (max-device-width : 480px))
   and (orientation      : andscape) {
   .navbar-fixed-bottom .navbar-collapse,
   .navbar-fixed-top .navbar-collapse {
@@ -5988,8 +5988,8 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
   margin-left      : -1px;
   padding          : 6px 12px;
   color            : #337ab7;
-  border           : 1px solid #ddd;
-  background-color : #fff;
+  border           : 1px solid rgba(26,120,246,1.0);
+  background-color : #000;
   text-decoration  : none;
   line-height      : 1.42857143;
 }
@@ -6025,8 +6025,8 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.active>span:hover {
   z-index          : 2;
   color            : #fff;
-  border-color     : #337ab7;
-  background-color : #337ab7;
+  border-color     : rgba(26,120,246,1.0);
+  background-color : rgba(26,120,246,1.0);
   cursor           : default;
 }
 
@@ -6037,8 +6037,8 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.disabled>span:focus,
 .pagination>.disabled>span:hover {
   color            : #777;
-  border-color     : #ddd;
-  background-color : #fff;
+  border-color     : rgba(26,120,246,1.0);
+  background-color : #000;
   cursor           : not-allowed;
 }
 
@@ -7606,8 +7606,17 @@ button.close {
   }
 
   .modal-content {
-    /*-webkit-box-shadow : 0 5px 15px rgba(0,0,0,.5);
-    box-shadow         : 0 5px 15px rgba(0,0,0,.5);*/
+    /**
+    * -webkit-box-shadow : 0 5px 15px rgba(0,0,0,.5); box-shadow
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * : 0 5px 15px rgba(0,0,0,.5);
+    */
   }
 
   .modal-sm {
@@ -7925,6 +7934,7 @@ button.close {
 
 @media
   all
+  and (transform-3d) : )
   and (transform-3d) : and (transform-3d),
   (-webkit-transform-3d) {
   .carousel-inner>.item {
@@ -8289,8 +8299,8 @@ button.close {
 }
 
 .visible-lg-block,
-.visible-lg-inline-block,
 .visible-lg-inline,
+.visible-lg-inline-block,
 .visible-md-block,
 .visible-md-inline,
 .visible-md-inline-block,
@@ -8345,7 +8355,7 @@ button.close {
 }
 
 @media
-  (min-width : 768px)
+  (min-width : 768px))
   and (max-width : 991px) {
   .visible-sm {
     display : block!important;
@@ -8366,7 +8376,7 @@ button.close {
 }
 
 @media
-  (min-width : 768px)
+  (min-width : 768px))
   and (max-width : 991px) {
   .visible-sm-block {
     display : block!important;
@@ -8374,7 +8384,7 @@ button.close {
 }
 
 @media
-  (min-width : 768px)
+  (min-width : 768px))
   and (max-width : 991px) {
   .visible-sm-inline {
     display : inline!important;
@@ -8382,7 +8392,7 @@ button.close {
 }
 
 @media
-  (min-width : 768px)
+  (min-width : 768px))
   and (max-width : 991px) {
   .visible-sm-inline-block {
     display : inline-block!important;
@@ -8390,7 +8400,7 @@ button.close {
 }
 
 @media
-  (min-width : 992px)
+  (min-width : 992px))
   and (max-width : 1199px) {
   .visible-md {
     display : block!important;
@@ -8411,7 +8421,7 @@ button.close {
 }
 
 @media
-  (min-width : 992px)
+  (min-width : 992px))
   and (max-width : 1199px) {
   .visible-md-block {
     display : block!important;
@@ -8419,7 +8429,7 @@ button.close {
 }
 
 @media
-  (min-width : 992px)
+  (min-width : 992px))
   and (max-width : 1199px) {
   .visible-md-inline {
     display : inline!important;
@@ -8427,7 +8437,7 @@ button.close {
 }
 
 @media
-  (min-width : 992px)
+  (min-width : 992px))
   and (max-width : 1199px) {
   .visible-md-inline-block {
     display : inline-block!important;
@@ -8483,7 +8493,7 @@ button.close {
 }
 
 @media
-  (min-width : 768px)
+  (min-width : 768px))
   and (max-width : 991px) {
   .hidden-sm {
     display : none!important;
@@ -8491,7 +8501,7 @@ button.close {
 }
 
 @media
-  (min-width : 992px)
+  (min-width : 992px))
   and (max-width : 1199px) {
   .hidden-md {
     display : none!important;

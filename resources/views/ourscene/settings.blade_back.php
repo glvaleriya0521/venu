@@ -23,7 +23,7 @@
 
 	<div class="row card-action" id="ourscene-tab-navigation-row">
 
-		<div class="col s12 m10 l6" style="width: 75%;font-size: 1.2em;">
+		<div class="col s12 m10 l6" style="width: 90%; font-size: 1em; padding-top: 1em;">
 		  <!--tabs -->
 		  <ul class="tabs" role="tablist" style="width: 100%;background-color: rgba(39, 40, 42, 1.0);">
 		    <li role="presentation" class="tab col s3 active-reg-step-tab"><a href="#details"><span>Profile </span></a></li>

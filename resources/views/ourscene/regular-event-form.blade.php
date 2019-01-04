@@ -38,7 +38,7 @@ Required items are indicated with <span class="required-color">*</span>.
 <div id="event-details" class="section">
 	<input type="hidden" id="timezone_offset" name="timezone_offset" value=""/>
 	<div class="row">
-		<div class="input-field col s12 m8 l4">
+		<div class="input-field col s12 m8 l4" style="margin-bottom: .001rem;">
 			<input type="text" name="title" id="title" placeholder="Event Name" value="{{ isset($event) ? $event['title'] : '' }}" required/>
 			<label for="title" class="active"><span class="required-color">*</span> Event name</label>
 		</div>
@@ -49,7 +49,7 @@ Required items are indicated with <span class="required-color">*</span>.
 	</div>
 
 	<div class="row input-row">
-		<div class="input-field col s12 m8 l4">
+		<div class="input-field col s12 m8 l4" style="margin-bottom: .001rem;">
 			<input type="text" name="start_date" id="start-date" placeholder=""
 				class="date-input"  readonly="readonly"  value="<?= $start_date; ?>" required>
 			<label for="start-date" class="active time-label"><span class="required-color">*</span> Start date</label>
@@ -60,7 +60,7 @@ Required items are indicated with <span class="required-color">*</span>.
 		</div>
 	</div>
 	<div class="row input-row">
-		<div class="input-field col s12 m8 l4">
+		<div class="input-field col s12 m8 l4" style="margin-bottom: .001rem;">
 			<input type="text" name="end_date" id="end-date" placeholder=""
 				class="date-input" readonly="readonly" value="<?= $end_date; ?>" required>
 			<label for="end-date" class="active  time-label"><span class="required-color">*</span> End date</label>
@@ -95,7 +95,7 @@ Required items are indicated with <span class="required-color">*</span>.
 				<input type="text" id="venue-name-autocomplete" class="select-dropdown" placeholder="Venue Name" required autocomplete="off">
 				<label for="venue-name-autocomplete" class="active"><span class="required-color">*</span> Venue Request</label>
 				<div>
-					<ul id="venue-name-autocomplete-dropdown"  class="dropdown-content autocomplete" style="top: 35px; 
+					<ul id="venue-name-autocomplete-dropdown"  class="dropdown-content autocomplete" style="top: 35px;
 					display: block; opacity: 1; background: black; left: 3%;">
 					</ul>
 				</div>
@@ -230,7 +230,7 @@ Required items are indicated with <span class="required-color">*</span>.
 		<div class="row">
 			<div class="col s12 m8 l6" style="width: 60%;">
 				<table id="add-guests-table">
-					
+
 				</table>
 
 				<br/><br/>
@@ -370,7 +370,7 @@ Required items are indicated with <span class="required-color">*</span>.
 <div class="fb-share-button" data-href="https://testvenu.glbdd.com" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse?text=aaa" class="fb-xfbml-parse-ignore" style="margin-left: 50%;"><i class="fa fa-facebook" style="font-size: 20px;"></i>Share</a></div>
 </div>
 
-<a class="twitter-share-button" target="_blank" 
+<a class="twitter-share-button" target="_blank"
   href="https://twitter.com/intent/tweet"
   data-size="large"><i class="fa fa-twitter" style="font-size: 20px;"></i>
 Tweet</a>

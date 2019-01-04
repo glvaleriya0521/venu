@@ -1,5 +1,5 @@
 <div class="row col s12 m12 l12" style="margin-left: 0;">
-	<div class="col-md-12 m12 profile-panel">	
+	<div class="col-md-12 m12 profile-panel">
 		<div class="settings-tab-container" id="" style="width: 100%;">
 			<!-- <div class="row" id="venue-profile"> -->
 			<!-- Start of Form -->
@@ -28,7 +28,7 @@
 				  </div>
 				</div>
 
-				<div class="col s6 m4 l4" style="padding-left: 43%;">
+				<div class="col s6 m4 l4" style="padding-left: 30%;">
 					<input type="submit" class="btn btn-large ourscene-btn-1" value="SAVE" required/>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 					</div>
 					<div class="row input-field settings-about" style="margin: auto; margin-left: 0%;">
 							{!! Form::label('description', 'About', ["class"=>"required-label"]) !!}
-							<textarea name="description" id="description" class="materialize-textarea required" 
+							<textarea name="description" id="description" class="materialize-textarea required"
 							cols="1" rows="30" placeholder="About the artist">{{ isset($user->description) ? $user->description: ''}}</textarea>
 					</div>
 					</br>
@@ -202,7 +202,7 @@
 					<div class="col s5 m3 8  song-file-container" id="songs-container" style="position: relative; height: 100%;">
 						<input type="hidden" value="{{$songs[$i-1]->id}}">
 						<span class="song-title row"><b class="profile-description">{{$songs[$i-1]->title}}</b></span>
-						<audio class="" id="music{{$i}}" controls>	<source src="{{$songs[$i-1]->url}}" type="audio/mp3" 
+						<audio class="" id="music{{$i}}" controls>	<source src="{{$songs[$i-1]->url}}" type="audio/mp3"
 							style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">	</audio>
 						<a href="#!" class="remove-material-songs" title="Remove" style="text-align: right;"><i class="fa fa-trash" ></i><img src="{{asset('images/icons/media_loader.svg')}}" style="margin-top: 5px; display:none;" alt="" width="13px" /></a>
 					</div>
@@ -259,7 +259,7 @@
 								@for($i=1; $i<=count($videos) ; $i++)
 									<div class="" style="display: inline; margin-left: 2%;">
 										<input type="hidden" value="{{$videos[$i-1]->id}}">
-										<video class="responsive-video" src="{{ $videos[$i-1]->url }}" controls 
+										<video class="responsive-video" src="{{ $videos[$i-1]->url }}" controls
 											style="max-width: 22%; border-radius: 15px;">
 										</video>
 										<a href="#!" class="remove-material-videos" id='remove-material-href' title="Remove" style="text-align: right;"><i class="fa fa-trash" style="margin-left: 0;"></i><img src="{{asset('images/icons/media_loader.svg')}}" style="margin-top: 5px; display:none;" alt="" width="13px" /></a>
@@ -287,5 +287,3 @@
 	var delete_icon = "{{asset('images/icons/delete.svg')}}"
 	var delete_material_action = "{{action('UserController@postAjaxDeleteMaterial')}}"
 </script>
-
-

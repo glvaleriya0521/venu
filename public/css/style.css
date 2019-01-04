@@ -511,8 +511,8 @@ a:visited {
 }
 
 #message-form .card-action.title {
-  left          : -1%;
-  width         : 100%;
+  left          : 7%;
+  width         : 90%;
   border-bottom : 1px solid rgba(26, 120, 246, 1.0);
 }
 
@@ -575,7 +575,8 @@ a:visited {
 }
 
 #message-form .message-content .row #messages-conversation .message-footer {
-  border-top : solid 1px #eee;
+  margin-left : 2.5rem;
+  border-top  : solid 1px rgba(26,120,246,1.0);
 }
 
 #message-form .avatar {
@@ -745,11 +746,12 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo a:visited {
-  background-color : white;
+  background-color : #fff;
 }
 
 #main-navigation-1 div #mobile-demo a:hover {
-  background-color : white;
+  color            : #fff !important;
+  background-color : rgba(26,120,246,1.0);
 }
 
 #main-navigation-1 div #mobile-demo li.profile-info {
@@ -760,7 +762,7 @@ a:visited {
   height         : auto;
   padding-top    : .5em;
   padding-bottom : .5em;
-  color          : #534d93;
+  color          : rgba(26,120,246,1.0);
   font-size      : 1.3em !important;
   line-height    : 1em;
 }
@@ -802,6 +804,7 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo #search_label i {
+  display   : none;
   position  : relative;
   top       : 50%;
   transform : translateY(-50%);
@@ -843,9 +846,9 @@ a:visited {
 }
 
 #main-navigation-1 div #mobile-demo>li:nth-child(2) .input-field {
-  width      : 90%;
-  margin     : 0 auto;
-  box-shadow : 0 4px 2px -2px gray;
+  width  : 90%;
+  margin : 0 auto;
+  /* box-shadow : 0 4px 2px -2px gray; remove line under search */
 }
 
 #main-navigation-1 div #mobile-demo>li:nth-child(2) .input-field label {
@@ -908,6 +911,7 @@ a:visited {
 }
 
 #main-navigation-1-dropdown li:hover {
+  color            : #fff;
   background-color : rgba(26, 120, 246, 1.0);
 }
 
@@ -1121,9 +1125,9 @@ a:visited {
 }
 
 #my-events-events .events-under-status .content {
-  padding : 0;
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
+  padding                    : 0;
+  border-bottom-right-radius : 2em;
+  border-bottom-left-radius  : 2em;
 }
 
 #my-events-events table tr:not(:first-child) {
@@ -1275,7 +1279,8 @@ a:visited {
 }
 
 #event-form {
-  left          : 15%;
+  left          : 5%;
+  width         : 90%;
   margin        : 0;
   border-radius : 2em;
 }
@@ -1285,6 +1290,16 @@ a:visited {
   and (min-width : 993px) {
   #event-form {
     margin : 20px 5%;
+  }
+}
+
+@media
+  only screen
+  and (min-width : 977px) {
+  #event-form {
+    left   : 20%;
+    width  : 60%;
+    margin : 0;
   }
 }
 
@@ -1816,7 +1831,7 @@ div.section-header:nth-child(1) > img:nth-child(1) {
 
 #settings {
   left             : 5%;
-  width            : 80%;
+  width            : 90%;
   margin           : 0;
   background-color : rgba(39, 40, 42, 1.0);
 }
@@ -2267,6 +2282,16 @@ div.row:nth-child(4) > div:nth-child(1) {
   and (min-width : 993px) {
   #search-results #search-form {
     padding : 20px 25px;
+  }
+}
+
+@media
+  only screen
+  and (max-width : 992px) {
+  #search-results #search-form,
+  #search-results #search-results-item {
+    left  : 5%;
+    width : 90%;
   }
 }
 

@@ -87,7 +87,7 @@
 											Message
 										</a>
 										<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $result['_id'])) }}" class="message-btn l-no-display">
-											<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon center-element-vertically">
+											<img src="{{ asset('images/icons/artists---popup-profile-message-icon@2x.png') }}" class="table-icon center-element-vertically">
 										</a>
 									</div>
 								</div>

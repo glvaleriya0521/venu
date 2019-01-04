@@ -17,7 +17,7 @@
 		</a>
 		<!-- Testing one nav bar -->
 		<div class="col s12 m12 offset-l4 l4">
-			<div class="row" style="margin-left: 45%;"><!-- New class for one row -->
+			<div class="row hide-on-med-and-down" style="margin-left: 45%;"><!-- New class for one row -->
 				<!-- Dashboard nav not needed if home = dashboard
 				<div class="col s2 m2 5">
 					<a href="{{ action('DashboardController@index') }}" @if(Request::is('dashboard')) class="active" @endif>DASHBOARD</a>
@@ -48,7 +48,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Book a Show</a>
 					@endif
 				</div>
-				<div class="col s3 m3 7" style="margin-left: 22%">
+				<div class="col s3 m3 7" style="width: 30%">
 					<ul style="display:inline">
 			        <li style="margin-left: 5%">
 			        	<a href="{!! url('/messages') !!}">
@@ -86,7 +86,7 @@
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Create Event</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Requests a Show</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2">Book a Show</a>
 					@endif
 				</li>
 			</ul>
@@ -117,11 +117,9 @@
 -->
 	    <!-- Drawer Menu -->
 		<ul class="side-nav" id="mobile-demo" style="z-index:9999;">
-			<li>
-				<a href="{{ action('SearchController@getSearch') }}" class="brand-logo left">
+			<li class="brand-logo left">
 					<img src="{{asset('images/icons/Venu.png')}}" class="brand-logo-icon">
-					<b>VenU</b>
-				</a>
+					<!--<b>VenU</b>-->
 			</li>
 			<li>
 				<!-- Search input -->
@@ -144,7 +142,7 @@
 				</div>
 				<span>{{Session::get('name')}}</span>
 			</li>
-			<li class="sidebar-nav"><a href="{{ url('/search')   }}">	Home 	 	</a></li>
+			<li class="sidebar-nav"><a href="{{ url('/view-map/search')   }}">	Home 	 	</a></li>
 			<li class="sidebar-nav">
 				<a href="{{ url('/messages') }}">
 					Messages
