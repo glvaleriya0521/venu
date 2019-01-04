@@ -1116,10 +1116,10 @@ a:visited {
 
 @media
   only screen
-  and (max-width : 977px;) {
+  and (max-width : 977px) {
     #my-events-events .events-under-status {
-      left: 5%;
-      width: 90%;
+      left: 5% !important;
+      width: 90% !important;
     }
   }
 
