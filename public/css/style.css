@@ -1114,6 +1114,15 @@ a:visited {
   margin-top : 25px;
 }
 
+@media
+  only screen
+  and (max-width : 977px;) {
+    #my-events-events .events-under-status {
+      left: 5%;
+      width: 90%;
+    }
+  }
+
 #my-events-events .events-under-status .header-title {
   padding     : 10px;
   font-family : "OpenSans-SemiBold";
