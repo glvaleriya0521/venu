@@ -511,8 +511,8 @@ a:visited {
 }
 
 #message-form .card-action.title {
-  left          : -1%;
-  width         : 100%;
+  left          : 7%;
+  width         : 90%;
   border-bottom : 1px solid rgba(26, 120, 246, 1.0);
 }
 
@@ -575,7 +575,8 @@ a:visited {
 }
 
 #message-form .message-content .row #messages-conversation .message-footer {
-  border-top : solid 1px #eee;
+  margin-left : 2.5rem;
+  border-top  : solid 1px rgba(26,120,246,1.0);
 }
 
 #message-form .avatar {
@@ -1289,6 +1290,16 @@ a:visited {
   and (min-width : 993px) {
   #event-form {
     margin : 20px 5%;
+  }
+}
+
+@media
+  only screen
+  and (min-width : 977px) {
+  #event-form {
+    left   : 20%;
+    width  : 60%;
+    margin : 0;
   }
 }
 
