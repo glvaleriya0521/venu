@@ -1227,7 +1227,7 @@ a:visited {
 }
 
 #my-events-events .booked-color {
-  color : #46bfa7;
+  color : rgba(46, 191, 70, 1.0);
 }
 
 #my-events-events .pending-color {
