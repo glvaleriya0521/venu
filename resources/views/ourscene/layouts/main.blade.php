@@ -7,6 +7,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	
 	<title>VenU</title>
+	<!-- <link rel="shortcut icon" type="image/png" href="{{ asset('favicon2.png') }}"/> -->
 
 
 	<!-- Jquery -->

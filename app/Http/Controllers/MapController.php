@@ -31,27 +31,8 @@ public function __construct()
 		$this->middleware('auth.login');
 	}
 
-public function index()
-    {
-
-		// get Current user info
-		$user_id = Session::get('id');
-		$user 	 = User::find($user_id);
-		$locality = $user->address['city'];
-		// $locality = null;
-		$zipCode = $user->address['zipcode'];
-
-		// $all = User::where('user_type', 'venue')->get();
-		$all = User::where('user_type', 'venue')->get();
-
-		$direction = "false";
-		$toCity = "";
-
-		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
-    }
-
 public function distanceAsMile(
-	  $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 3959)
+  $latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 3959)
 	{
 		  // convert from degrees to radians
 		  $latFrom = deg2rad($latitudeFrom);
@@ -66,6 +47,35 @@ public function distanceAsMile(
 		    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
 		  return $angle * $earthRadius;
 	}
+
+public function index()
+    {
+
+		// get Current user info
+		$user_id = Session::get('id');
+		$user 	 = User::find($user_id);
+		$locality = $user->address['city'];
+		// $locality = null;
+		$zipCode = $user->address['zipcode'];
+		$centerLat = $user->latlon['lat'];
+		$centerLon = $user->latlon['lng'];
+
+		// $all = User::where('user_type', 'venue')->get();
+		$users = User::where('user_type', 'venue')->get();
+		foreach ($users as $user) {
+			$lat = $user->latlon['lat'];
+			$lon = $user->latlon['lng'];
+			$distance = $this->distanceAsMile((double)$centerLat, (double)$centerLon, (double)$lat, (double)$lon);
+			$user ->distance = $distance;
+			$user->save();
+		}
+
+		$all = User::where('user_type', 'venue')->where('distance', '<', 30.0)->get();
+		$direction = "false";
+		$toCity = "";
+
+		return View::make('ourscene.map', compact('all','locality','zipCode',  'toCity','direction'));
+    }
 
 public function others()
     {

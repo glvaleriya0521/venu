@@ -105,6 +105,7 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 	            title: name
 	        }); 
 		  markers.push(marker);
+		  
 		  // This event expects a click on a marker
 		  // When this event is fired the Info Window is opened.
 		  google.maps.event.addListener(marker, 'click', function() {
@@ -185,6 +186,7 @@ function hideAllInfoWindows(map) {
   }); 
 }
 
+var bounds = new google.maps.LatLngBounds();
 function initialize() {
 
 	var geocoder = new google.maps.Geocoder();
@@ -198,6 +200,7 @@ function initialize() {
 		  	var position = JSON.stringify(results[0].geometry.location);
 		  	var pos = JSON.parse(position);
 		  	var center = new google.maps.LatLng(pos['lat'], pos['lng']);
+		  	var bounds = new google.maps.LatLngBounds();
 		  	 var mapOptions = {
 			    center: center,
 			    zoom: 4,
@@ -246,8 +249,12 @@ function initialize() {
 				 var lon = venues[i].address.lon;
 				 var id = venues[i].id;
 				 var factory = new google.maps.LatLng(lat, lon);
+				 bounds.extend(factory);
 				 codeAddress(factory, origin, id, zipcode, name, description, phone, email, seating_capacity, image, unit_street, city, state);
 				}
+
+				center = bounds.getCenter();
+				map.fitBounds(bounds);
 
 				if (direction == 'true') {
 				  	calculateAndDisplayRoute(origin, destination);
