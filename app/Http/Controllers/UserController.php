@@ -482,10 +482,19 @@ class UserController extends Controller {
 
 		$user->social_media = $social_media;
 
-		if(User::notUserId($user->id)->where('email', '=', $input['email'])->exists()){
-			Input::flash();
-			return Redirect::to('/settings')->with('warning', 'The given email address is already in use.');
+		if ($user->user_type = "artist") {
+			if(User::notUserId($user->id)->where('user_type', 'artist')->where('email', '=', $input['email'])->exists()){
+				Input::flash();
+				return Redirect::to('/settings')->with('warning', 'The given email address is already in use.');
+			}
 		}
+		else {
+			if(User::notUserId($user->id)->where('user_type', 'venue')->where('email', '=', $input['email'])->exists()){
+				Input::flash();
+				return Redirect::to('/settings')->with('warning', 'The given email address is already in use.');
+			}
+		}
+
 		$email = $input['email'];
 
 		if(filter_var($email, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $email)){
