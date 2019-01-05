@@ -19,7 +19,7 @@
 		    <div class="card-action title">
 		    	<div class="row" style="margin-bottom:0;">
 					<div class="col s8" style="display: inline-block;">
-						<img src="{{asset('images/icons/artists--popup-profile-message-icon@2x.png')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px; float:left;"/>
+						<img src="{{asset('images/icons/artists---popup-profile-message-icon@2x.png')}}" alt="" style="width: 25px;display:none; top: 7px; position:relative; margin-right: 4px; float:left;"/>
 						<h5 data-position="bottom" data-delay="50" data-tooltip="{{$conversation['title']}}" style="display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; " class="con title tooltipped">
 							{{$conversation['title']}}
 						</h5>
