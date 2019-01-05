@@ -83,7 +83,7 @@ function codeAddress(factory, origin, id, zipCode, name, description, phone, ema
 		                      '<br>Phone. ' + phone + '<br>Seating capacity. ' + seating_capacity + '<br>e-mail: ' + email + '<br>www: www.myvistaalegre.com</p>' + '<br><a href="/profile/'+ id +'">Calendar:</a>' +
 		                      '<br><a href="/message/conversation/'+ id +'">Message:</a>' +
 		                      '<br><a href="/view-map/directionTo/' + city + '" class="map-point" data-origin="' + origin + '" data-city="' + city + '">Direction to this venue:</a>' +
-		                      '<br><a href="/view-map/store/nearby/' + id + '" class="map-point">Nearby store:</a>' +
+		                      '<br><a href="/view-map/store/nearby/' + id + '" class="map-point"> Explorer nearby:</a>' +
 		                    '</div>' +
 		                    '<div class="iw-bottom-gradient"></div>' +
 		                  '</div>';

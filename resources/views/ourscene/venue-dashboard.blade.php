@@ -149,7 +149,8 @@
             "flatScrollBars": "1",
             "scrollheight": "10",
             "numVisiblePlot": "12",
-            "showHoverEffect": "1"
+            "showHoverEffect": "1",
+            "palettecolors":"#2ebf46,ee8f1f,8b0000, 8bd030"
 
         },
         "categories": [{

@@ -16,7 +16,7 @@
 
 	<!-- Booked -->
 
-	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
+	<div class="card events-under-status" style="border: 1px solid rgba(46, 191, 70, 1.0);">
 		<div class="header-title booked-color">
 			<img class="header-icon" src="{{ asset('images/icons/approved.svg') }}"/>
 			Booked
@@ -43,12 +43,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -78,12 +78,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -101,9 +101,9 @@
 
 	<!-- Pending -->
 
-	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
+	<div class="card events-under-status" style="border: 1px solid rgba(238, 143, 31, 1.0);">
 		<div class="header-title pending-color">
-			<img class="header-icon" src="{{ asset('images/icons/pending.svg') }}"/>
+			<img class="header-icon" src="{{ asset('images/icons/icons8-more-filled-500.png') }}"/>
 			Pending
 		</div>
 		<div class="card-action content">
@@ -127,12 +127,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@endif
 								<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -159,7 +159,7 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 									@if ($pending_event['type'] == "performance")
 										<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -167,7 +167,7 @@
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 									@if ($pending_event['type'] == "service")
 										<a onClick="showCancelRequestForServiceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -187,9 +187,9 @@
 
 	<!-- Next time -->
 
-	<div class="card events-under-status" style="border: 1px solid rgba(26, 120, 246, 1.0);">
+	<div class="card events-under-status" style="border: 1px solid rgba(139,0,0,1);">
 		<div class="header-title next-time-color">
-			<img class="header-icon" src="{{ asset('images/icons/next-time.svg') }}"/>
+			<img class="header-icon" src="{{ asset('images/icons/icons8-musical-filled-500.png') }}"/>
 			Next time
 		</div>
 		<div class="card-action content">
@@ -213,12 +213,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -245,12 +245,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
+										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>

@@ -42,7 +42,7 @@
 				</div>
 				<div class="col s3 m3 7 side-btn-container right-align" style="width: 20%">
 					@if(Session::get('user_type') == 'venue')
-						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Create Event/Promotion</a>
+						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Create Event/Promo</a>
 					@endif
 					@if(Session::get('user_type') == 'artist')
 						<a href="{{ action('EventController@getCreateEvent') }}" class="btn ourscene-btn-2" style="padding-left: .5rem; padding-right: .5rem; text-transform: none; font-size: 13px;">Book a Show</a>
