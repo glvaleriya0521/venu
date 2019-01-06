@@ -79,7 +79,7 @@
 							conversation_str += '<span class="conversation-title col s12 m12 l12"'
 
 							if(conversation['is_read']){
-								conversation_str += 'style="color:#111;"'
+								conversation_str += 'style="color:#fff;"'
 							}
 							conversation_str += '>' + conversation['title'] + '</span>'
 							conversation_str += '</div>'
@@ -88,7 +88,7 @@
 							conversation_str += '<p class="message col s12 m12 l12">'
 							conversation_str += '<span '
 							if(conversation['is_read']){
-								conversation_str += 'style="color:#111;"'
+								conversation_str += 'style="color:#fff;"'
 							}
 							conversation_str += '>' + conversation['last_msg']['body'] + '</span></p></div></div>'
 							conversation_str += '<span class="secondary-content message-time col s1 m1 l1">'
