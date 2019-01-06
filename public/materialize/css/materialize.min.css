@@ -3801,15 +3801,11 @@ input[type=range]+.thumb {}
 }
 
 
-@media
-  only screen
-  and (max-width : 977px) {
-    .request-panels {
-      background: #000;
-      border-radius: 2em;
-      border: 1px solid rgba(26, 120, 246, 1.0);
-    }
-  }
+.request-panels {
+  background: #000;
+  border-radius: 2em;
+  border: 1px solid rgba(26, 120, 246, 1.0);
+}
 
 @media
   only screen
