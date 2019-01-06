@@ -32,7 +32,7 @@
 							<span class="left">{{ date('F d Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec) }}</span>
 							<span class="right">{{ date('h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec) }}</span>
 							<br/>
-							<span class="left">{{ date('d F Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['end_datetime'])->sec) }}</span>
+							<span class="left">{{ date('F d Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['end_datetime'])->sec) }}</span>
 							<span class="right">{{ date('h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['end_datetime'])->sec) }}</span>
 						</div>
 						<div class="card-action">
