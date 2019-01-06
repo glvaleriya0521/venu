@@ -7,7 +7,7 @@
 @extends('ourscene.layouts.my-events')
 
 @section('head')
-	
+
 @stop
 
 @section('my-events-content')
@@ -20,7 +20,7 @@
 			<?php
 				$event = Event::find($request->event_id);
 			?>
-			<div class="col s12 m4 l3">
+			<div class="col s12 m4 l3 request-panels">
 				<div class="ourscene-card-1 request-card">
 					<div class="card main-container">
 						<div class="card-content">
@@ -29,7 +29,7 @@
 							</div>
 						</div>
 						<div class="card-action performance-time">
-							<span class="left">{{ date('d F Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec) }}</span>
+							<span class="left">{{ date('F d Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec) }}</span>
 							<span class="right">{{ date('h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec) }}</span>
 							<br/>
 							<span class="left">{{ date('d F Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['end_datetime'])->sec) }}</span>
@@ -45,13 +45,13 @@
 						</div>
 					</div>
 					<div class="action-container">
-						
+
 						<?php
 							$accept_on_click = '';
 							$next_time_on_click = '';
 
 							if($request['type'] == 'performance'){
-								
+
 								$start_date = date('m/d/Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['start_datetime'])->sec);
 								$end_date = date('m/d/Y', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($request['end_datetime'])->sec);
 
@@ -76,7 +76,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 					<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}">
 						<img src="{{ asset('images/icons/calendar-events-purple.svg') }}" class="icon event-icon"/>
 					</a>
@@ -93,7 +93,7 @@
 </div>
 
 <!-- Modals -->
-	
+
 <!-- Confirm change status of service modal -->
 
 @include('modals.confirm-with-link-modal', [
