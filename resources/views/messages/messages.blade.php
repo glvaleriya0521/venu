@@ -60,7 +60,7 @@
 
 						for (var index in messages){
 							var conversation = messages[index];
-							var conversation_str = '<li class="collection-item avatar row" style="padding:0 !important">'
+							var conversation_str = '<li class="collection-item avatar row" style="padding:0 !important; background-color: #000 !important; color: #000 !important;">'
 							conversation_str += '<a href='
 							conversation_str += "{{action('MessageController@getMessage','')}}" + "/" + conversation['_id'] + " >";
 
