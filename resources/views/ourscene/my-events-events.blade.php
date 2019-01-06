@@ -43,12 +43,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -67,23 +67,23 @@
 							</div>
 
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['start_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['end_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($confirmed_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $confirmed_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -127,12 +127,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
 								<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -148,18 +148,18 @@
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
 							</div>
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['start_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['end_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($pending_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 									@if ($pending_event['type'] == "performance")
 										<a onClick="showCancelRequestForPerformanceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -167,7 +167,7 @@
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $pending_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 									@if ($pending_event['type'] == "service")
 										<a onClick="showCancelRequestForServiceModal('{{ $pending_event['_id'] }}')"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -213,12 +213,12 @@
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
@@ -234,23 +234,23 @@
 								<a href="{{ action('EventController@getEvent', array('id' => $event['_id'])) }}" class="event-title-link">{{ $event['title'] }}</a>
 							</div>
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['start_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['start_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['start_datetime'])->sec) }}</div>
 							</div>
 							<div class="col s12 m2 l2">
-								<div>{{ date('d F', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['end_datetime'])->sec) }}</div>
+								<div>{{ date('F d', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['end_datetime'])->sec) }}</div>
 								<div>{{ date('Y h:i A', DatetimeUtils::convertMongoUTCDatetimeToMongoClientDatetime($rejected_event['end_datetime'])->sec) }}</div>
 							</div>
 							<div class="col hide-on-small-only m2 l3 action right-align">
 								@if ($user_type == "artist")
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $event['venue']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@else
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="btn ourscene-btn-1 l-display-only">Message</a>
 									<a href="{{ action('MessageController@getMessageConversationWithUser', array('id' => $rejected_event['artist']['id'])) }}" class="message-btn l-no-display right">
-										<img src="{{ asset('images/icons/artists--popup-profile-message-icon@2x.png') }}" class="table-icon">
+										<img src="{{ asset('images/icons/message-purple.svg') }}" class="table-icon">
 									</a>
 								@endif
 								<a class="invisible"><img class="table-icon" src="{{ asset('images/icons/cancel.svg') }}"/></a>
