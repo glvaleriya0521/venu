@@ -426,7 +426,7 @@ a.socialIcon:hover, .socialHoverClass {
     margin-top: 24px;
 }
 
-@@media
+@media
   only screen
 	and (max-width : 977px) {
 		#help-form {
