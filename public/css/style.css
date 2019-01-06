@@ -817,7 +817,7 @@ a:visited {
 #main-navigation-1 div #mobile-demo li.profile-info span {
   display     : block;
   margin      : 0 auto;
-  color       : #333;
+  color       : #fff;
   text-align  : center;
   font-size   : 1.1em;
   line-height : 1em !important;
@@ -1117,11 +1117,11 @@ a:visited {
 @media
   only screen
   and (max-width : 977px) {
-    #my-events-events .events-under-status {
-      left: 5% !important;
-      width: 90% !important;
-    }
+  #my-events-events .events-under-status {
+    left  : 5% !important;
+    width : 90% !important;
   }
+}
 
 #my-events-events .events-under-status .header-title {
   padding     : 10px;
@@ -2249,6 +2249,16 @@ div.row:nth-child(4) > div:nth-child(1) {
   background-color : rgba(39, 40, 42, 1.0);
 }
 
+@media
+  only screen
+  and (max-width : 977px) {
+  #ourscene-tab-navigation-row .col {
+    width      : 100% !important;
+    margin-top : 1em !important;
+    font-size  : 1em !important;
+  }
+}
+
 #ourscene-tab-navigation-row .col a {
   color          : #fff;
   text-transform : none;
@@ -2260,6 +2270,14 @@ div.row:nth-child(4) > div:nth-child(1) {
   width            : 15%;
   height           : 4px;
   background-color : rgba(26, 120, 246, 1.0);
+}
+
+@media
+  only screen
+  and (max-width : 977px) {
+  #ourscene-tab-navigation-row .col .indicator {
+    width : 20% !important;
+  }
 }
 
 #search-results {
@@ -2531,4 +2549,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
 button:focus,
 button:hover {
   outline : 0;
+}
+
+@media
+  only screen
+  and (max-width : 977px) {
+  #payments {
+    width : 90% !important;
+  }
 }
