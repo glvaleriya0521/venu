@@ -4938,7 +4938,7 @@ footer.page-footer .footer-copyright {
   border                      : none;
   border-radius               : 10px;
   outline                     : 0;
-  text-transform              : uppercase;
+  /*text-transform              : uppercase;*/
   vertical-align              : middle;
   line-height                 : 36px;
   -webkit-tap-highlight-color : transparent;
