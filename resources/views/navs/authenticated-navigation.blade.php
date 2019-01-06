@@ -133,12 +133,13 @@
 				</div>
 			</li>
 			<li class="profile-info">
-				<div class="img">
+				<div class="img"><a href="{!! url('/profile') !!}">
 					@if(getProfilePicture(Session::get('id')) != "")
 						<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
 					@else
 						{!! Session::get('name') !!}
 					@endif
+				</a>
 				</div>
 				<span>{{Session::get('name')}}</span>
 			</li>
