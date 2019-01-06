@@ -417,12 +417,6 @@ a.socialIcon:hover, .socialHoverClass {
 	font-size: 16px;
 }
 
-#help-title {
-	 text-align: center;
-	 color: white;
-     size: 10px; 
-}
-
 #help-form {
 	width: 70%;
     margin: auto;
@@ -431,6 +425,27 @@ a.socialIcon:hover, .socialHoverClass {
     border-color: red;
     margin-top: 24px;
 }
+
+@@media
+  only screen
+	and (max-width : 977px) {
+		#help-form {
+			width: 90%;
+		}
+	}
+
+#help-subtitle {
+	 text-align: center;
+	 color: white;
+	 font-size: 1em;
+}
+
+#help-title {
+	 text-align: center;
+	 color: white;
+	 font-size: 1.5em;
+}
+
 /****************************************/
 /*.input-row .input-field input{
 	border: solid 1px !important;
