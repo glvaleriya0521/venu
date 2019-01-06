@@ -1,7 +1,7 @@
 @extends('ourscene/layouts.main')
 
 @section('head')
-	
+
 <!-- Autocomplete -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -19,9 +19,10 @@
 <div id="help-form">
 
 		<div id="help-title">Need Help?</div>
+		<div id="help-subtitle">If you'd like to send us an email, please use this message box and we'll get back to you shortly. Thanks!</div>
 		<div class="row input-field settings-about" style="margin: auto; margin-left: 0%; margin-top: 24px;">
 				<div class="col-md-1"></div>
-				<textarea name="description" id="description" class="materialize-textarea col-md-10 required" 
+				<textarea name="description" id="description" class="materialize-textarea col-md-10 required"
 				cols="1" rows="30" placeholder="Please write here..." style="min-height: 292px; font-size: 15px;"></textarea>
 				<button type="submit" class="btn btn-large col-md-1" style="float: right;"><i class="fa fa-paper-plane"></i></button>
 		</div>
