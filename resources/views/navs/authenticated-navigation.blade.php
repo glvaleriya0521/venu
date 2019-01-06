@@ -132,16 +132,16 @@
 					<ul id="search-sidebar-dropdown" class="dropdown-content search-dropdown"></ul>
 				</div>
 			</li>
-			<li class="profile-info">
-				<div class="img"><a href="{!! url('/profile') !!}">
+			<li class="profile-info"><a href="{!! url('/profile') !!}">
+				<div class="img">
 					@if(getProfilePicture(Session::get('id')) != "")
 						<img src="{{getProfilePicture(Session::get('id'))}}" class="nav-icon circle"/>
 					@else
 						{!! Session::get('name') !!}
 					@endif
-				</a>
 				</div>
 				<span>{{Session::get('name')}}</span>
+			</a>
 			</li>
 			<li class="sidebar-nav"><a href="{{ url('/view-map/search')   }}">	Home 	 	</a></li>
 			<li class="sidebar-nav">
