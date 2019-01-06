@@ -27,7 +27,7 @@ use OurScene\Models\User;
 						<label for="paypal-email">
 							<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
 							First Name
-							<span style="font-size:.8em; color: #aaa;">(name used in credit card)</span>
+							<span style="font-size:.8em; color: #aaa;">(as listed on card)</span>
 						</label>
 						<input type="text" id="paypal-first-name" name="paypal-first-name" class="registration-txtbx-1" placeholder="First Name" value="{!! old('paypal-email') !!}" required/>
 					</div>
@@ -35,7 +35,7 @@ use OurScene\Models\User;
 						<label for="paypal-email">
 							<font style="color: #f00; font-style: normal; font-size: 13px;">*</font>
 							Last Name
-							<span style="font-size:.8em; color: #aaa;">(name used in credit card)</span>
+							<span style="font-size:.8em; color: #aaa;">(as listed on card)</span>
 						</label>
 						<input type="text" id="paypal-last-name" name="paypal-last-name" class="registration-txtbx-1" placeholder="Last Name" value="{!! old('paypal-email') !!}" required/>
 					</div>
@@ -128,7 +128,7 @@ use OurScene\Models\User;
 		$("#paypal-payment-update-form :input.registration-txtbx-1").prop("disabled",true)
 		$.ajax({
 				 url: "{{ action('PaypalController@checkHasVault')}}",
-				 type: "GET", 
+				 type: "GET",
 				 dataType: "json",
 				 success: function(data){
 				 	console.log("SUCCESS");
@@ -136,8 +136,8 @@ use OurScene\Models\User;
 					if (data == "false") {
 						$.ajax({
 							 url: "{{ action('PaypalController@ajaxGetVault')}}",
-							 type: "GET", 
-							 dataType: "json", 
+							 type: "GET",
+							 dataType: "json",
 							 success: function(data){
 								//  Autofill the paypal information
 								console.log(data)
@@ -182,7 +182,7 @@ use OurScene\Models\User;
 
 	// Paypal Info Update button event
 	$('#paypal-payment-update-form').submit(function(e){
-		
+
 		e.preventDefault();
 
 		var $submit_btn = $('#update-payment-info');
