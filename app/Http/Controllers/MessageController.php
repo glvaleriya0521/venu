@@ -147,7 +147,6 @@ class MessageController extends Controller {
 		$input = Input::all();
 		$participants = explode(",",$input['participants']);
 
-
 		// Get message based from the users
 		$thread = Message::getConversationWithParticipants($participants);
 		$message = $input['message'];
