@@ -2,6 +2,5 @@
 /node_modules
 /public/images/uploads
 .DS_Store
-composer.lock
 public/.sass-cache
 .env
