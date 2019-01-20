@@ -3,4 +3,3 @@
 /public/images/uploads
 .DS_Store
 public/.sass-cache
-.env
